@@ -2,10 +2,10 @@
 
 There are the following scripts in this repository:
 
-- [beautify-js-code.js](#how-to-beautify-js) - Formats all codeblocks in dita files.
-- code-analizer.js - Validates js-examples.
+- **beautify-js-code.js** — Formats all codeblocks in dita files.
+- **code-analizer.js** - Validates js-examples.
 
-Both of these scripts can be used only in console. The `npm` package installer required.
+Both of them can be used only in console. The `npm` package is required.
 
 Note: Only codeblocks with russian comments are supported. If examples in codeblocks have comments in english, the correct work of this module is not guaranteed.
 
@@ -38,7 +38,7 @@ To see more examples, you can use the folder `examples/`. It contains dita files
 
 **code-analizer.js**
 
-Input:
+Input: file "example1.js"
 
 ```
 // Добавление геообъекта на карту в цикле.
@@ -51,12 +51,13 @@ Output:
 As output the script creates one file that contains non-valid example. In example above the square bracket is missing.
 
 ```
-Check file - "File-name.js"
+Check file: "Example1.js"
 ```
+Note: more information about this script will be added later.
 
 # Usage
 
-Firstly, install required library using npm. Execute the following command in console (you must be in this project folder):
+At first, install required libraries using `npm`. Execute the following command in console (you must be in this project folder):
 
 ``` bash
 $ npm install
