@@ -5,7 +5,7 @@ There are the following scripts in this repository:
 - **beautify-js-code.js** — Formats all codeblocks in dita files.
 - **code-analizer.js** - Validates js-examples.
 
-Both of them can be used only in console. The `npm` package is required.
+You can use these scripts only in console. The [npm](https://nodejs.org/en/download/package-manager/) packager manager is required.
 
 Note: Only codeblocks with russian comments are supported. If examples in codeblocks have comments in english, the correct work of this module is not guaranteed.
 
@@ -40,7 +40,7 @@ Note: information about the `code-analizer.js` will be added later.
 
 # Usage
 
-At first, install required libraries using `npm`. Execute the following command in console (you must be in this project folder):
+At first, install the required libraries using `npm`. Execute the following command in console (you must be in this project folder):
 
 ``` bash
 $ npm install
