@@ -11,7 +11,7 @@
  * Если передать 'justCheck', то скрипт только отформатированный 1 заданный файл. Перезаписывать
  * файлы справочника он не будет. Это нужно для тестов.
  *
- * Пример запуска: node beautify-js-code.js 'reference_broken/' 'reference_fixed/'
+ * Пример запуска: node beautify-js-code.js 'examples/codeblocks_broken/' 'examples/codeblocks_fixed/'
  */
 
 
@@ -89,6 +89,8 @@ function doAll() {
                     }
                 }
             }
+        } else {
+           console.log(err);
         }
     });
 }
@@ -106,7 +108,7 @@ function editCodeBlock(file, fileName, className) {
 
         new_codeblock = gr1 + gr2 + "</codeblock>";
         // console.log(className, offset);
-        writeToFile('/Users/ogorbacheva/Documents/my-scripts/reference_codeblocks/' + className + "_" + offset + ".js", gr2);
+       // writeToFile('/Users/ogorbacheva/Documents/my-scripts/reference_codeblocks/' + className + "_" + offset + ".js", gr2);
 
         return new_codeblock;
     });

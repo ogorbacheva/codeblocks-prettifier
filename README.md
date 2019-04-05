@@ -9,7 +9,7 @@ Both of them can be used only in console. The `npm` package is required.
 
 Note: Only codeblocks with russian comments are supported. If examples in codeblocks have comments in english, the correct work of this module is not guaranteed.
 
-# Example
+# How it works
 
 The following examples demonstrate how the scripts work. For clarity, just one codeblock is shown in each example (not entire dita file).
 
@@ -36,24 +36,7 @@ myMap.geoObjects.add(object);
 
 To see more examples, you can use the folder `examples/`. It contains dita files that were broken after translation ([Maps API reference](https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Balloon-docpage/)).
 
-**code-analizer.js**
-
-Input: file "example1.js"
-
-```
-// Добавление геообъекта на карту в цикле.
-for (var i in objects) {
-   myMap.geoObjects.add(objects[i]);
-```
-
-Output:
-
-As output the script creates one file that contains non-valid example. In example above the square bracket is missing.
-
-```
-Check file: "Example1.js"
-```
-Note: more information about this script will be added later.
+Note: information about the `code-analizer.js` will be added later.
 
 # Usage
 
@@ -63,12 +46,12 @@ At first, install required libraries using `npm`. Execute the following command 
 $ npm install
 ```
 
-## beautify-js-code.js {#how-to-beautify-js}
+## beautify-js-code.js
 
 In console:
 
 ```
-$ node beautify-js-code.js 'path-to-dita-files' 'path-to-out' ['justCheck']
+$ node beautify-js-code.js 'path-to-dita-files' 'path-to-out'
 ```
 
 - 'path-to-dita-files' — Path to the directory that contains dita files with broken codebloks.
@@ -77,5 +60,5 @@ $ node beautify-js-code.js 'path-to-dita-files' 'path-to-out' ['justCheck']
 Example:
 
 ```
-node beautify-js-code.js 'examples/broken-codeblocks/' 'examples/fixed-codeblocks/'
+node beautify-js-code.js 'examples/codeblocks_broken/' 'examples/codeblocks_fixed/'
 ```
