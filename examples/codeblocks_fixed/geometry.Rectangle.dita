@@ -1,0 +1,731 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="geometry.Rectangle" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">geometry.Rectangle</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>geometry.Rectangle</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IRectangleGeometry.dita" type="topic"><keyword>IRectangleGeometry</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Геометрия "Прямоугольник".</p>
+    
+
+
+
+    <p translate="no"><b>См.: </b><xref href="Rectangle.dita" type="topic"><keyword>Rectangle</keyword></xref> </p>
+
+
+
+
+
+    <p translate="no"><xref href="#geometry.Rectangle/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#geometry.Rectangle/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#geometry.Rectangle/events-summary" translate="no" type="section">События </xref> | <xref href="#geometry.Rectangle/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">geometry.Rectangle([<xref href="#geometry.Rectangle/param-coordinates" translate="no" type="entry">coordinates</xref>[, <xref href="#geometry.Rectangle/param-options" translate="no" type="entry">options</xref>]])</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-coordinates" translate="no">
+                    <xref href="#geometry.Rectangle/param-coordinates" type="entry"><parmname>coordinates</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      null
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][]|null</p>
+                    <p/>
+                    <p>Массив, содержащий координаты двух противоположных углов прямоугольника.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options" translate="no">
+                    <xref href="#geometry.Rectangle/param-options" type="entry"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции геометрии.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.coordRendering" translate="no">
+                    <xref href="#geometry.Rectangle/param-options.coordRendering" type="entry"><parmname>options.coordRendering</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Строковый идентификатор, определяющий алгоритм пересчета координат геометрии в пиксельные координаты. Для геометрии "Прямоугольник" может принимать одно из трех значений:<ul>
+    <li>shortestPath - алгоритм, учитывающий зацикленность проекции по осям, и формирующий пиксельные координаты так, чтобы расстояние между противоположными углами было минимальным;</li>
+    <li>straightPath - алгоритм, не учитывающий зацикленность проекции;</li>
+    <li>boundsPath - алгоритм, трактующий координаты углов прямоугольника, как координаты соответственно нижнего и верхнего углов ограничивающей области. При расчете диагонали по зацикленным осям проекции всегда выбирается направление обхода против часовой стрелки.</li>
+</ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.geodesic" translate="no">
+                    <xref href="#geometry.Rectangle/param-options.geodesic" type="entry"><parmname>options.geodesic</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Включает отображение с использованием геодезических линий.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.pixelRendering" translate="no">
+                    <xref href="#geometry.Rectangle/param-options.pixelRendering" type="entry"><parmname>options.pixelRendering</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      "jumpy"
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Метод расчета пиксельных координат отображения в зацикленных проекциях. Опция может принимать одно из следующих значений:<ul>
+    <li>jumpy - отображение располагается как можно ближе к центру области показа карты и может скачкообразно перемещается во время движения карты;</li>
+    <li>static - отображение всегда располагается в начальном мире и не перемещается при движении карты.</li>
+</ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.projection" translate="no">
+                    <xref href="#geometry.Rectangle/param-options.projection" type="entry"><parmname>options.projection</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IProjection.dita" type="topic"><keyword>IProjection</keyword></xref></p>
+                    <p/>
+                    <p>Проекция.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Создаем инстанцию геометрии прямоугольника (указываем координаты противоположных углов).
+var rectangleGeometry = new ymaps.geometry.Rectangle([[30, 50], [31, 51]]),
+    // Создаем инстанцию геообъекта и передаем нашу геометрию в конструктор.
+    rectangleGeoObject = new ymaps.GeoObject({
+        geometry: rectangleGeometry
+    });
+// Изменяем координаты через свойство geometry геообъекта.
+rectangleGeoObject.geometry.setCoordinates([[10, 20], [51, 71]]);
+// Или напрямую.
+rectangleGeometry.setCoordinates([[10, 20], [51, 71]]);
+// Также доступ к rectangleGeometry можно получить через rectangleGeoObject.geometry.</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>ICustomizable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IRectangleGeometryAccess.dita#event_detail/event_detail/event-change"><keyword>change</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение координат углов. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>oldCoordinates - старые координаты углов;</li>
+    <li>newCoordinates - новые координаты углов.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IRectangleGeometryAccess.dita#event_detail/event_detail/event-change"><keyword>IRectangleGeometryAccess</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeometry.dita#event_detail/event_detail/event-mapchange"><keyword>mapchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменилась карта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>oldMap - старая карта;</li>
+    <li>newMap - новая карта.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeometry.dita#event_detail/event_detail/event-mapchange"><keyword>IGeometry</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeometry.dita#event_detail/event_detail/event-pixelgeometrychange"><keyword>pixelgeometrychange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменилась пиксельная геометрия. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>pixelGeometry - новая пиксельная геометрия <xref href="IPixelGeometry.dita" type="topic"><keyword>IPixelGeometry</keyword></xref>.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeometry.dita#event_detail/event_detail/event-pixelgeometrychange"><keyword>IGeometry</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IRectangleGeometryAccess.dita#method_detail/contains" type="section"><keyword>contains</keyword></xref>(<xref href="IRectangleGeometryAccess.dita#method_detail/contains-param-position" translate="no" type="row">position</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Проверяет, лежит ли переданная точка внутри прямоугольника.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IRectangleGeometryAccess.dita#method_detail/contains" type="section"><keyword>IRectangleGeometryAccess</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IFreezable.dita#method_detail/freeze" type="section"><keyword>freeze</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IFreezable.dita" type="topic"><keyword>IFreezable</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Переводит объект в "замороженный" режим.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IFreezable.dita#method_detail/freeze" type="section"><keyword>IFreezable</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeometry.dita#method_detail/getBounds" type="section"><keyword>getBounds</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает координаты двух противоположных углов области, охватывающей геометрию. Первый элемент массива - юго-западный угол области; второй элемент - северо-восточный угол соответственно.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IGeometry.dita#method_detail/getBounds" type="section"><keyword>IGeometry</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IRectangleGeometryAccess.dita#method_detail/getClosest" type="section"><keyword>getClosest</keyword></xref>(<xref href="IRectangleGeometryAccess.dita#method_detail/getClosest-param-anchorPosition" translate="no" type="row">anchorPosition</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Ищет на контуре прямоугольника точку, ближайшую к anchorPosition.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IRectangleGeometryAccess.dita#method_detail/getClosest" type="section"><keyword>IRectangleGeometryAccess</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IRectangleGeometryAccess.dita#method_detail/getCoordinates" type="section"><keyword>getCoordinates</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает координаты двух противоположных углов прямоугольника.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IRectangleGeometryAccess.dita#method_detail/getCoordinates" type="section"><keyword>IRectangleGeometryAccess</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeometry.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает текущую карту.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IGeometry.dita#method_detail/getMap" type="section"><keyword>IGeometry</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeometry.dita#method_detail/getPixelGeometry" type="section"><keyword>getPixelGeometry</keyword></xref>([<xref href="IGeometry.dita#method_detail/getPixelGeometry-param-options" translate="no" type="row">options</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPixelGeometry.dita" type="topic"><keyword>IPixelGeometry</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает пиксельную геометрию, соответствующую данной геометрии, ее опциям и состоянию карты.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IGeometry.dita#method_detail/getPixelGeometry" type="section"><keyword>IGeometry</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IRectangleGeometry.dita#method_detail/getType" type="section"><keyword>getType</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает строку "Rectangle".</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IRectangleGeometry.dita#method_detail/getType" type="section"><keyword>IRectangleGeometry</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IFreezable.dita#method_detail/isFrozen" type="section"><keyword>isFrozen</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true, если объект находится в "замороженном" режиме, иначе false.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IFreezable.dita#method_detail/isFrozen" type="section"><keyword>IFreezable</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IRectangleGeometryAccess.dita#method_detail/setCoordinates" type="section"><keyword>setCoordinates</keyword></xref>(<xref href="IRectangleGeometryAccess.dita#method_detail/setCoordinates-param-coordinates" translate="no" type="row">coordinates</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IRectangleGeometryAccess.dita" type="topic"><keyword>IRectangleGeometryAccess</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает координаты двух противоположных углов прямоугольника.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IRectangleGeometryAccess.dita#method_detail/setCoordinates" type="section"><keyword>IRectangleGeometryAccess</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeometry.dita#method_detail/setMap" type="section"><keyword>setMap</keyword></xref>(<xref href="IGeometry.dita#method_detail/setMap-param-map" translate="no" type="row">map</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает карту.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IGeometry.dita#method_detail/setMap" type="section"><keyword>IGeometry</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IFreezable.dita#method_detail/unfreeze" type="section"><keyword>unfreeze</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IFreezable.dita" type="topic"><keyword>IFreezable</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Переводит объект в активный режим.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IFreezable.dita#method_detail/unfreeze" type="section"><keyword>IFreezable</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body><!-- XLIFF_FARM_ZDc5NjA4_CACHING --></topic>

@@ -1,0 +1,1309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="control.TypeSelector" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">control.TypeSelector</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>control.TypeSelector</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="control.ListBox.dita" type="topic"><keyword>control.ListBox</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Элемент управления "Типы карты". В данный элемент управления можно добавлять элементы списка, которые описывают типы карты, а также дополнительные элементы. Ключ элемента управления в хранилище <xref href="control.storage.dita" type="topic"><keyword>control.storage</keyword></xref> — "typeSelector".</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#control.TypeSelector/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#control.TypeSelector/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#control.TypeSelector/events-summary" translate="no" type="section">События </xref> | <xref href="#control.TypeSelector/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">control.TypeSelector([<xref href="#control.TypeSelector/param-parameters" translate="no" type="entry">parameters</xref>])</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-parameters" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters" type="entry"><parmname>parameters</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String[]|<xref href="MapType.dita" type="topic"><keyword>MapType</keyword></xref>[]|Object</p>
+                    <p/>
+                    <p>Объект с описаниями параметров элемента управления. Если передан массив, то он трактуется как массив типов карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.mapTypes" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.mapTypes" type="entry"><parmname>parameters.mapTypes</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String[]|<xref href="MapType.dita" type="topic"><keyword>MapType</keyword></xref>[]</p>
+                    <p/>
+                    <p>Массив конструкторов типов карты или ключей. Если параметр отсутствует, в элемент будет добавлен стандартный набор типов карты. Список доступных типов карты:<ul>
+    <li>'yandex#map' - тип карты "схема";</li>
+    <li>'yandex#satellite' - тип карты "спутник";</li>
+    <li>'yandex#hybrid' - тип карты "гибрид".</li>
+</ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.options" type="entry"><parmname>parameters.options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции элемента управления.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.adjustMapMargin" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.options.adjustMapMargin" type="entry"><parmname>parameters.options.adjustMapMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Регистрирует ли элемент управления свои размеры в менеджере отступов карты <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.collapseOnBlur" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.options.collapseOnBlur" type="entry"><parmname>parameters.options.collapseOnBlur</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Флаг, разрешающий сворачиваение списка при потере фокуса на кнопке. Например при клике на документ.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.collapseTimeout" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.options.collapseTimeout" type="entry"><parmname>parameters.options.collapseTimeout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     3000
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Временной интервал, по истечении которого раскрытый список автоматически закрывается.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.expandOnClick" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.options.expandOnClick" type="entry"><parmname>parameters.options.expandOnClick</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Флаг, разрешающий автоматическое разворачивание/сворачивание списка по клику.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.float" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.options.float" type="entry"><parmname>parameters.options.float</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     "right"
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Сторона, по которой нужно выравнивать элемент управления. Может принимать три значения: "left", "right" или "none". При значении "left" или "right" элементы управления выстраиваются друг за другом, начиная от левого или правого края карты соответственно. При значении "none" элементы управления позиционируется только по значениям опций left, right, bottom, top относительно границ карты. Также смотрите описание опции position.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.floatIndex" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.options.floatIndex" type="entry"><parmname>parameters.options.floatIndex</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     200
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Приоритет расположения элемента управления. Элемент с максимальным приоритетом находится ближе к указанному в свойстве float краю карты. Не работает при float = "none".</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.layout" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.options.layout" type="entry"><parmname>parameters.options.layout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function|String</p>
+                    <p/>
+                    <p>Конструктор макета элемента управления, реализующий интерфейсы <xref href="ISelectableControlLayout.dita" type="topic"><keyword>ISelectableControlLayout</keyword></xref> и <xref href="IGroupControlLayout.dita" type="topic"><keyword>IGroupControlLayout</keyword></xref> или ключ макета в хранилище <xref href="layout.storage.dita" type="topic"><keyword>layout.storage</keyword></xref>. В конструктор макета передается объект, содержащий поля:<ul>
+    <li>control - ссылка на элемент управления;</li>
+    <li>options - менеджер опций элемента управления control.ListBox.options;</li>
+    <li>data - менеджер данных элемента управления <xref href="control.ListBox.dita#field_detail/data" type="section"><keyword>control.ListBox.data</keyword></xref>;</li>
+    <li>state - менеджер состояния элемента управления <xref href="control.ListBox.dita#field_detail/state" type="section"><keyword>control.ListBox.state</keyword></xref>.</li>
+</ul>Макет меняет свой внешний вид на основе данных, состояния и опций элемента управления. Элемент управления, в свою очередь, реагирует на интерфейсные события макета и меняет значения полей <xref href="control.ListBox.dita#field_detail/state" type="section"><keyword>control.ListBox.state</keyword></xref> в зависимости от полученных команд.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.maxWidth" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.options.maxWidth" type="entry"><parmname>parameters.options.maxWidth</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     [30, 65, 85]
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|Number[]</p>
+                    <p/>
+                    <p>Максимальная ширина кнопки списка при различных состояниях. Если задано число, то считается, что кнопка имеет одинаковые максимальные размеры во всех состояниях. Если задан массив, то он будет трактоваться как максимальная ширина кнопки в различных состояниях - от меньшего к большему.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.panoramasItemMode" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.options.panoramasItemMode" type="entry"><parmname>parameters.options.panoramasItemMode</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'ifMercator'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Показывает или скрывает элемент "Панорамы". Возможные значения:<ul>
+     <li>'on' — элемент "Панорамы" всегда показывается.</li>
+     <li>'ifMercator' — элемент "Панорамы" показывается, только если проекция карты является проекцией меркатора.</li>
+     <li>'off' — элемент "Панорамы" никогда не показывается.</li>
+</ul>Элемент "Панорамы" доступен только при использовании стандартного макета.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.options.position" type="entry"><parmname>parameters.options.position</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Объект, описывающий позицию элемента управления. При указании опции position значение опции float автоматически трактуется как "none".</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position.bottom" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.options.position.bottom" type="entry"><parmname>parameters.options.position.bottom</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                    <p>Положение относительно нижнего края карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position.left" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.options.position.left" type="entry"><parmname>parameters.options.position.left</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                    <p>Положение относительно левого края карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position.right" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.options.position.right" type="entry"><parmname>parameters.options.position.right</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                    <p>Положение относительно правого края карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position.top" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.options.position.top" type="entry"><parmname>parameters.options.position.top</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                    <p>Положение относительно верхнего края карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.visible" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.options.visible" type="entry"><parmname>parameters.options.visible</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Признак того, что элемент управления отображается.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.state" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.state" type="entry"><parmname>parameters.state</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Состояние элемента управления.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.state.expanded" translate="no">
+                    <xref href="#control.TypeSelector/param-parameters.state.expanded" type="entry"><parmname>parameters.state.expanded</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Признак, развернут ли список.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">map.controls.add(new ymaps.control.TypeSelector(['yandex#map', 'yandex#hybrid']));</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="control.TypeSelector.dita#field_detail/data" type="section"><keyword>data</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Данные элемента управления.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IControl.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IControl.dita#field_detail/options" type="section"><keyword>IControl</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="control.ListBox.dita#field_detail/state" type="section"><keyword>state</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Состояние выпадающего списка. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>expanded - признак, раскрыт ли список;</li>
+    <li>size - размер, который в данный момент выставлен списку;</li>
+</ul></p>
+                
+                  <p translate="no">Унаследовано от  <xref href="control.ListBox.dita#field_detail/state" type="section"><keyword>control.ListBox</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICollection.dita#event_detail/event_detail/event-add"><keyword>add</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Произошло добавление дочернего объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICollection.dita#event_detail/event_detail/event-add"><keyword>ICollection</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.ListBox.dita#event_detail/event_detail/event-click"><keyword>click</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Щелчок по заголовку списка. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="control.ListBox.dita#event_detail/event_detail/event-click"><keyword>control.ListBox</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.ListBox.dita#event_detail/event_detail/event-collapse"><keyword>collapse</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Список закрыт. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="control.ListBox.dita#event_detail/event_detail/event-collapse"><keyword>control.ListBox</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.ListBox.dita#event_detail/event_detail/event-expand"><keyword>expand</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Список открыт. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="control.ListBox.dita#event_detail/event_detail/event-expand"><keyword>control.ListBox</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>parentchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменился родительский объект.</p><p>Поля данных:</p>
+<ul>
+    <li>oldParent - старый родитель;</li>
+    <li>newParent - новый родитель.</li>
+</ul>
+                            
+                                <p translate="no">Унаследовано от <xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>IChild</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.ListBox.dita#event_detail/event_detail/event-press"><keyword>press</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, сигнализирующее о том, что кнопка была нажата. В отличии от click генерируется только если состояние isEnabled == true. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="control.ListBox.dita#event_detail/event_detail/event-press"><keyword>control.ListBox</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICollection.dita#event_detail/event_detail/event-remove"><keyword>remove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Произошло удаление дочернего объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICollection.dita#event_detail/event_detail/event-remove"><keyword>ICollection</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICollection.dita#method_detail/add" type="section"><keyword>add</keyword></xref>(<xref href="ICollection.dita#method_detail/add-param-object" translate="no" type="row">object</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="ICollection.dita" type="topic"><keyword>ICollection</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет в коллекцию дочерний объект.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ICollection.dita#method_detail/add" type="section"><keyword>ICollection</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.TypeSelector.dita#method_detail/addMapType" type="section"><keyword>addMapType</keyword></xref>(<xref href="control.TypeSelector.dita#method_detail/addMapType-param-mapType" translate="no" type="row">mapType</xref>[, <xref href="control.TypeSelector.dita#method_detail/addMapType-param-positionIndex" translate="no" type="row">positionIndex</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="control.TypeSelector.dita" type="topic"><keyword>control.TypeSelector</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет тип карты в список.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.ListBox.dita#method_detail/collapse" type="section"><keyword>collapse</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="control.ListBox.dita" type="topic"><keyword>control.ListBox</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Сворачивает список.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="control.ListBox.dita#method_detail/collapse" type="section"><keyword>control.ListBox</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.ListBox.dita#method_detail/expand" type="section"><keyword>expand</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="control.ListBox.dita" type="topic"><keyword>control.ListBox</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Раскрывает список.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="control.ListBox.dita#method_detail/expand" type="section"><keyword>control.ListBox</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICollection.dita#method_detail/getIterator" type="section"><keyword>getIterator</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IIterator.dita" type="topic"><keyword>IIterator</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает итератор по коллекции.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="ICollection.dita#method_detail/getIterator" type="section"><keyword>ICollection</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.TypeSelector.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на карту.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IControl.dita#method_detail/getParent" type="section"><keyword>getParent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IControlParent.dita" type="topic"><keyword>IControlParent</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на родительский объект или null, если родительский элемент не был установлен.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IControl.dita#method_detail/getParent" type="section"><keyword>IControl</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.ListBox.dita#method_detail/isExpanded" type="section"><keyword>isExpanded</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает признак того, находится ли контрол в развернутом состоянии.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="control.ListBox.dita#method_detail/isExpanded" type="section"><keyword>control.ListBox</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICollection.dita#method_detail/remove" type="section"><keyword>remove</keyword></xref>(<xref href="ICollection.dita#method_detail/remove-param-object" translate="no" type="row">object</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="ICollection.dita" type="topic"><keyword>ICollection</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет из коллекции дочерний объект.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ICollection.dita#method_detail/remove" type="section"><keyword>ICollection</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.TypeSelector.dita#method_detail/removeAllMapTypes" type="section"><keyword>removeAllMapTypes</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="control.TypeSelector.dita" type="topic"><keyword>control.TypeSelector</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет все типы карты из элемента управления.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.TypeSelector.dita#method_detail/removeMapType" type="section"><keyword>removeMapType</keyword></xref>(<xref href="control.TypeSelector.dita#method_detail/removeMapType-param-mapType" translate="no" type="row">mapType</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="control.TypeSelector.dita" type="topic"><keyword>control.TypeSelector</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет тип карты.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IControl.dita#method_detail/setParent" type="section"><keyword>setParent</keyword></xref>(<xref href="IControl.dita#method_detail/setParent-param-parent" translate="no" type="row">parent</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IChildOnMap.dita" type="topic"><keyword>IChildOnMap</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает родительский объект. Если передать значение null, то элемент управления будет только удален из текущего родительского объекта.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IControl.dita#method_detail/setParent" type="section"><keyword>IControl</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="data">
+            <title translate="no">data</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>} data</codeblock></p>
+
+            <p>Данные элемента управления.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="addMapType">
+        <title translate="no">addMapType</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="control.TypeSelector.dita" type="topic"><keyword>control.TypeSelector</keyword></xref>} addMapType(<xref href="control.TypeSelector.dita#method_detail/addMapType-param-mapType" translate="no" type="row">mapType</xref>[, <xref href="control.TypeSelector.dita#method_detail/addMapType-param-positionIndex" translate="no" type="row">positionIndex</xref>])</codeblock></p>
+
+         <p>Добавляет тип карты в список.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="addMapType-param-mapType">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/addMapType-param-mapType" type="row"><parmname>mapType</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|<xref href="MapType.dita" type="topic"><keyword>MapType</keyword></xref></p>
+                    <p/>
+                   <p>Тип карты.</p>
+                </entry>
+
+            </row>
+            
+            <row id="addMapType-param-positionIndex">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/addMapType-param-positionIndex" type="row"><parmname>positionIndex</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Позиция в списке (если не указана, новый тип карты добавляется в конец списка). Список значений positionIndex по умолчанию для стандартных типов карты:<ul>
+    <li>'yandex#map' - 5;</li>
+    <li>'yandex#satellite' - 10;</li>
+    <li>'yandex#hybrid' - 15.</li>
+</ul></p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="addMapType_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">var typeSelector = new ymaps.control.TypeSelector([]);
+typeSelector.addMapType('yandex#map', 1);
+typeSelector.addMapType('yandex#hybrid', 0);</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Если используется стандартный набор типов карты, и мы
+// хотим добавить свой из хранилища <xref href="mapType.storage.dita" type="topic"><keyword>mapType.storage</keyword></xref> между
+// типами «спутник» и «схема».
+var typeSelector = myMap.controls.get('typeSelector');
+typeSelector.addMapType('my#mapType', 6);</codeblock>
+        
+
+    </section>
+    
+        <section id="getMap">
+        <title translate="no">getMap</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="Map.dita" type="topic"><keyword>Map</keyword></xref>} getMap()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на карту.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="removeAllMapTypes">
+        <title translate="no">removeAllMapTypes</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="control.TypeSelector.dita" type="topic"><keyword>control.TypeSelector</keyword></xref>} removeAllMapTypes()</codeblock></p>
+
+         <p>Удаляет все типы карты из элемента управления.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="removeMapType">
+        <title translate="no">removeMapType</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="control.TypeSelector.dita" type="topic"><keyword>control.TypeSelector</keyword></xref>} removeMapType(<xref href="control.TypeSelector.dita#method_detail/removeMapType-param-mapType" translate="no" type="row">mapType</xref>)</codeblock></p>
+
+         <p>Удаляет тип карты.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="removeMapType-param-mapType">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/removeMapType-param-mapType" type="row"><parmname>mapType</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|<xref href="MapType.dita" type="topic"><keyword>MapType</keyword></xref></p>
+                    <p/>
+                   <p>Тип карты.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="removeMapType_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_YTg0MDBj_CACHING --></topic>

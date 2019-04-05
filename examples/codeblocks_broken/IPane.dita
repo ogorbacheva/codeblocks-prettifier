@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="IPane" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IPane</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IPane</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IEventEmitter.dita" type="topic"><keyword>IEventEmitter</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Интерфейс пейна карты. Пейн карты представляет собой объект, размещающий внутри контейнера карты свой DOM-элемент с определенным zIndex. Пейн может служить контейнером для размещения отображений различных элементов карты, таких как тайлы, оверлеи, статические элементы управления картой и т.д. Также пейн может выполнять роль непрозрачного для DOM-событий экрана, на котором могут слушаться события мыши.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IPane/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#IPane/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#IPane/events-summary" translate="no" type="section">События </xref> | <xref href="#IPane/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IPane()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPane.dita#event_detail/event_detail/event-overflowchange"><keyword>overflowchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение параметра "overflow", определяющего видимость содержимого пейна при выходе за пределы контейнера карты. Экземпляр <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPane.dita#event_detail/event_detail/event-zindexchange"><keyword>zindexchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение значения zIndex пейна. Экземпляр <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPane.dita#method_detail/destroy" type="section"><keyword>destroy</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Уничтожает пейн.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPane.dita#method_detail/getElement" type="section"><keyword>getElement</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>HTMLElement</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на DOM-контейнер пейна.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPane.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает карту, которой принадлежит пейн.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPane.dita#method_detail/getOverflow" type="section"><keyword>getOverflow</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает значение параметра "overflow", определяющего видимость содержимого пейна при выходе за пределы контейнера карты. Данный параметр может принимать одно из следующих строковых значений:<ul>
+    <li>"visible" - при выходе за пределы контейнера карты содержимое пейна остается видимым;</li>
+    <li>"hidden" - область отображения содержимого пейна ограничена контейнером карты.</li>
+</ul></p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPane.dita#method_detail/getZIndex" type="section"><keyword>getZIndex</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает zIndex пейна.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-overflowchange">
+            <title translate="no">overflowchange</title>
+            
+             <p>Изменение параметра "overflow", определяющего видимость содержимого пейна при выходе за пределы контейнера карты. Экземпляр <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-zindexchange">
+            <title translate="no">zindexchange</title>
+            
+             <p>Изменение значения zIndex пейна. Экземпляр <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="destroy">
+        <title translate="no">destroy</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} destroy()</codeblock></p>
+
+         <p>Уничтожает пейн.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getElement">
+        <title translate="no">getElement</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{HTMLElement} getElement()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>ссылку на DOM-контейнер пейна.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getMap">
+        <title translate="no">getMap</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="Map.dita" type="topic"><keyword>Map</keyword></xref>} getMap()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>карту, которой принадлежит пейн.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getOverflow">
+        <title translate="no">getOverflow</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getOverflow()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> значение параметра "overflow", определяющего видимость содержимого пейна при выходе за пределы контейнера карты. Данный параметр может принимать одно из следующих строковых значений:<ul>
+    <li>"visible" - при выходе за пределы контейнера карты содержимое пейна остается видимым;</li>
+    <li>"hidden" - область отображения содержимого пейна ограничена контейнером карты.</li>
+</ul></p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getZIndex">
+        <title translate="no">getZIndex</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number} getZIndex()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>zIndex пейна.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_MGY4MjM3_CACHING --></topic>

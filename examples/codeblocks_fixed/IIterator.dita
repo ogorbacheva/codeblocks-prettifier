@@ -1,0 +1,309 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="IIterator" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IIterator</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IIterator</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Интерфейс итератора. Итератор позволяет перебрать все составляющие элементы той или иной коллекции.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IIterator/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#IIterator/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#IIterator/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IIterator()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IIterator.dita#field_detail/STOP_ITERATION" type="section"><keyword>STOP_ITERATION</keyword></xref></entry>
+              <entry colname="col2" translate="no">Object</entry>
+        
+              <entry colname="col3">
+                <p>Объект, возвращаемый методом <xref href="IIterator.dita#method_detail/getNext" type="section"><keyword>IIterator.getNext</keyword></xref> по окончанию перебора.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IIterator.dita#method_detail/getNext" type="section"><keyword>getNext</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object|<xref href="IIterator.dita#field_detail/STOP_ITERATION" type="section"><keyword>IIterator.STOP_ITERATION</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на следующий элемент в коллекции или IIterator.#STOP_ITERATION, если перебор завершен.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="STOP_ITERATION">
+            <title translate="no">STOP_ITERATION</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} STOP_ITERATION</codeblock></p>
+
+            <p>Объект, возвращаемый методом <xref href="IIterator.dita#method_detail/getNext" type="section"><keyword>IIterator.getNext</keyword></xref> по окончанию перебора.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getNext">
+        <title translate="no">getNext</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object|<xref href="IIterator.dita#field_detail/STOP_ITERATION" type="section"><keyword>IIterator.STOP_ITERATION</keyword></xref>} getNext()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на следующий элемент коллекции или объект IIterator.#STOP_ITERATION, если перебор завершен.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_N2IzMmYy_CACHING --></topic>

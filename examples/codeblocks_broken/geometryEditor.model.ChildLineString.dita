@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="geometryEditor.model.ChildLineString" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">geometryEditor.model.ChildLineString</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>geometryEditor.model.ChildLineString</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+    
+    <p translate="no"><note>Конструктор класса geometryEditor.model.ChildLineString скрыт, так как данный класс не предназначен для самостоятельной инициализации.</note></p>
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IGeometryEditorChildModel.dita" type="topic"><keyword>IGeometryEditorChildModel</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Модель дочерней ломаной линии. Конструктор недоступен в package.full (стандартный набор модулей). Данный модуль загружается по требованию.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#geometryEditor.model.ChildLineString/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#geometryEditor.model.ChildLineString/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IGeometryEditorChildModel.dita#field_detail/editor" type="section"><keyword>editor</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IGeometryEditor.dita" type="topic"><keyword>IGeometryEditor</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Редактор геометрии.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IGeometryEditorChildModel.dita#field_detail/editor" type="section"><keyword>IGeometryEditorChildModel</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IGeometryEditorChildModel.dita#field_detail/geometry" type="section"><keyword>geometry</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IBaseGeometry.dita" type="topic"><keyword>IBaseGeometry</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Геометрия модели.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IGeometryEditorChildModel.dita#field_detail/geometry" type="section"><keyword>IGeometryEditorChildModel</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeometryEditorModel.dita#method_detail/destroy" type="section"><keyword>destroy</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Деструктор.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IGeometryEditorModel.dita#method_detail/destroy" type="section"><keyword>IGeometryEditorModel</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="geometryEditor.model.ChildLineString.dita#method_detail/getAllVerticesNumber" type="section"><keyword>getAllVerticesNumber</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Integer</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает суммарное количество вершин редактируемой геометрии.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="geometryEditor.model.ChildLineString.dita#method_detail/getEdgeModels" type="section"><keyword>getEdgeModels</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="geometryEditor.model.Edge.dita" type="topic"><keyword>geometryEditor.model.Edge</keyword></xref>[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает массив моделей промежуточных меток.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="geometryEditor.model.ChildLineString.dita#method_detail/getIndex" type="section"><keyword>getIndex</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Integer</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает индекс дочерней ломаной в родительской модели.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeometryEditorChildModel.dita#method_detail/getParent" type="section"><keyword>getParent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IGeometryEditorModel.dita" type="topic"><keyword>IGeometryEditorModel</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает родительскую модель данных.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IGeometryEditorChildModel.dita#method_detail/getParent" type="section"><keyword>IGeometryEditorChildModel</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeometryEditorModel.dita#method_detail/getPixels" type="section"><keyword>getPixels</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает пиксельные данные модели.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IGeometryEditorModel.dita#method_detail/getPixels" type="section"><keyword>IGeometryEditorModel</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="geometryEditor.model.ChildLineString.dita#method_detail/getVertexModels" type="section"><keyword>getVertexModels</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="geometryEditor.model.ChildVertex.dita" type="topic"><keyword>geometryEditor.model.ChildVertex</keyword></xref>[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает массив моделей дочерних вершин.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="geometryEditor.model.ChildLineString.dita#method_detail/setIndex" type="section"><keyword>setIndex</keyword></xref>(<xref href="geometryEditor.model.ChildLineString.dita#method_detail/setIndex-param-index" translate="no" type="row">index</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает индекс дочерней ломаной в родительской модели.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeometryEditorChildModel.dita#method_detail/setPixels" type="section"><keyword>setPixels</keyword></xref>(<xref href="IGeometryEditorChildModel.dita#method_detail/setPixels-param-pixels" translate="no" type="row">pixels</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает пиксельные данные модели.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IGeometryEditorChildModel.dita#method_detail/setPixels" type="section"><keyword>IGeometryEditorChildModel</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="geometryEditor.model.ChildLineString.dita#method_detail/spliceVertices" type="section"><keyword>spliceVertices</keyword></xref>(<xref href="geometryEditor.model.ChildLineString.dita#method_detail/spliceVertices-param-start" translate="no" type="row">start</xref>, <xref href="geometryEditor.model.ChildLineString.dita#method_detail/spliceVertices-param-deleteCount" translate="no" type="row">deleteCount</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет определенное число вершин ломаной начиная с заданного индекса. При этом на место удаляемых вершин могут быть добавлены новые. Координаты новых вершин в глобальных пикселях можно передавать дополнительными аргументами после параметра deleteCount.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getAllVerticesNumber">
+        <title translate="no">getAllVerticesNumber</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Integer} getAllVerticesNumber()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>суммарное количество вершин редактируемой геометрии.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getEdgeModels">
+        <title translate="no">getEdgeModels</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="geometryEditor.model.Edge.dita" type="topic"><keyword>geometryEditor.model.Edge</keyword></xref>[]} getEdgeModels()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>массив моделей промежуточных меток.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getIndex">
+        <title translate="no">getIndex</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Integer} getIndex()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>индекс дочерней ломаной в родительской модели.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getVertexModels">
+        <title translate="no">getVertexModels</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="geometryEditor.model.ChildVertex.dita" type="topic"><keyword>geometryEditor.model.ChildVertex</keyword></xref>[]} getVertexModels()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> массив моделей дочерних вершин.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="setIndex">
+        <title translate="no">setIndex</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} setIndex(<xref href="geometryEditor.model.ChildLineString.dita#method_detail/setIndex-param-index" translate="no" type="row">index</xref>)</codeblock></p>
+
+         <p>Задает индекс дочерней ломаной в родительской модели.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setIndex-param-index">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setIndex-param-index" type="row"><parmname>index</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Индекс дочерней вершины.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setIndex_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="spliceVertices">
+        <title translate="no">spliceVertices</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]} spliceVertices(<xref href="geometryEditor.model.ChildLineString.dita#method_detail/spliceVertices-param-start" translate="no" type="row">start</xref>, <xref href="geometryEditor.model.ChildLineString.dita#method_detail/spliceVertices-param-deleteCount" translate="no" type="row">deleteCount</xref>)</codeblock></p>
+
+         <p>Удаляет определенное число вершин ломаной начиная с заданного индекса. При этом на место удаляемых вершин могут быть добавлены новые. Координаты новых вершин в глобальных пикселях можно передавать дополнительными аргументами после параметра deleteCount.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>массив координат удаленных вершин.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="spliceVertices-param-start">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/spliceVertices-param-start" type="row"><parmname>start</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Индекс, начиная с которого производится удаление и добавление вершин.</p>
+                </entry>
+
+            </row>
+            
+            <row id="spliceVertices-param-deleteCount">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/spliceVertices-param-deleteCount" type="row"><parmname>deleteCount</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Количество удаляемых вершин.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="spliceVertices_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_ZTMwNTNk_CACHING --></topic>

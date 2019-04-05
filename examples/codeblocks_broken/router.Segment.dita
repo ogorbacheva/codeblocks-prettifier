@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="router.Segment" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">router.Segment</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>router.Segment</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+    
+    <p translate="no"><note>Конструктор класса router.Segment скрыт, так как данный класс не предназначен для самостоятельной инициализации.</note></p>
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Объект, описываюший сегмент маршрута. Сегмент - часть маршрута от одного манёвра до другого. Конструктор недоступен в package.full (стандартный набор модулей). Данный модуль загружается по требованию.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#router.Segment/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Segment.dita#method_detail/getAction" type="section"><keyword>getAction</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает направление поворота маршрута в конце сегмента. Возможные значения:<ul>
+<li>left - налево;</li>
+<li>slight left — левее;</li>
+<li>hard left - резкий поворот налево;</li>
+<li>right - направо;</li>
+<li>slight right — правее;</li>
+<li>hard right - резкий поворот направо;</li>
+<li>none - прямо;</li>
+<li>back - разворот;</li>
+<li>enter roundabout - въезд на перекресток с круговым движением;</li>
+<li>leave roundabout [N] - съезд с перекрестка с круговым движением. Число N - номер поворота с круга. Данное число может отсутствовать. Например, "leave roundabout" или "leave roundabout 2";</li>
+<li>merge - въезд (например, на шоссе или магистраль). Обозначает слияние с транспортным потоком;</li>
+<li>board ferry - паромная переправа.</li>
+</ul></p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Segment.dita#method_detail/getAngle" type="section"><keyword>getAngle</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Определяет угол поворота маршрута в конце отрезка.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Segment.dita#method_detail/getCoordinates" type="section"><keyword>getCoordinates</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает координаты ломаной, описывающей геометрию сегмента.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Segment.dita#method_detail/getHumanAction" type="section"><keyword>getHumanAction</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает направление поворота в виде локализованной человекопонятной строки.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Segment.dita#method_detail/getHumanJamsTime" type="section"><keyword>getHumanJamsTime</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает строковое представление времени проезда сегмента с единицами измерения с учетом пробок.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Segment.dita#method_detail/getHumanLength" type="section"><keyword>getHumanLength</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает строковое представление длины сегмента с единицами измерения.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Segment.dita#method_detail/getHumanTime" type="section"><keyword>getHumanTime</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает строковое представление времени проезда сегмента с единицами измерения.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Segment.dita#method_detail/getIndex" type="section"><keyword>getIndex</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Integer</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает индекс данного сегмента в массиве всех сегментов пути.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Segment.dita#method_detail/getJamsTime" type="section"><keyword>getJamsTime</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Integer</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает время проезда сегмента в секундах с учетом пробок.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Segment.dita#method_detail/getLength" type="section"><keyword>getLength</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает длину маршрута в метрах.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Segment.dita#method_detail/getPolylineEndIndex" type="section"><keyword>getPolylineEndIndex</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Integer</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает индекс точки в геометрии пути, на которой заканчивается сегмент.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Segment.dita#method_detail/getPolylineStartIndex" type="section"><keyword>getPolylineStartIndex</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Integer</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает индекс точки в геометрии пути, с которой начинается сегмент.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Segment.dita#method_detail/getStreet" type="section"><keyword>getStreet</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает название улицы, по которой проходит сегмент маршрута.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Segment.dita#method_detail/getTime" type="section"><keyword>getTime</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Integer</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает время проезда сегмента в секундах.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getAction">
+        <title translate="no">getAction</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getAction()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>направление поворота маршрута в конце сегмента. Возможные значения:<ul>
+<li>left - налево;</li>
+<li>slight left — левее;</li>
+<li>hard left - резкий поворот налево;</li>
+<li>right - направо;</li>
+<li>slight right — правее;</li>
+<li>hard right - резкий поворот направо;</li>
+<li>none - прямо;</li>
+<li>back - разворот;</li>
+<li>enter roundabout - въезд на перекресток с круговым движением;</li>
+<li>leave roundabout [N] - съезд с перекрестка с круговым движением. Число N - номер поворота с круга. Данное число может отсутствовать. Например, "leave roundabout" или "leave roundabout 2";</li>
+<li>merge - въезд (например, на шоссе или магистраль). Обозначает слияние с транспортным потоком;</li>
+<li>board ferry - паромная переправа.</li>
+</ul></p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getAngle">
+        <title translate="no">getAngle</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number} getAngle()</codeblock></p>
+
+         <p>Определяет угол поворота маршрута в конце отрезка.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>угол поворота (в градусах).</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getCoordinates">
+        <title translate="no">getCoordinates</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]} getCoordinates()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>координаты ломаной, описывающей геометрию сегмента.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getHumanAction">
+        <title translate="no">getHumanAction</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getHumanAction()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>направление поворота в виде локализованной человекопонятной строки.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getHumanJamsTime">
+        <title translate="no">getHumanJamsTime</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getHumanJamsTime()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>строковое представление времени проезда сегмента с единицами измерения с учетом пробок.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getHumanLength">
+        <title translate="no">getHumanLength</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getHumanLength()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>строковое представление длины сегмента с единицами измерения.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getHumanTime">
+        <title translate="no">getHumanTime</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getHumanTime()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>строковое представление времени проезда сегмента с единицами измерения.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getIndex">
+        <title translate="no">getIndex</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Integer} getIndex()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>индекс данного сегмента в массиве всех сегментов пути.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getJamsTime">
+        <title translate="no">getJamsTime</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Integer} getJamsTime()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> время проезда сегмента в секундах с учетом пробок.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getLength">
+        <title translate="no">getLength</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number} getLength()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> длину маршрута в метрах.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getPolylineEndIndex">
+        <title translate="no">getPolylineEndIndex</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Integer} getPolylineEndIndex()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>индекс точки в геометрии пути, на которой заканчивается сегмент.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getPolylineStartIndex">
+        <title translate="no">getPolylineStartIndex</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Integer} getPolylineStartIndex()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>индекс точки в геометрии пути, с которой начинается сегмент.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getStreet">
+        <title translate="no">getStreet</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getStreet()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>название улицы, по которой проходит сегмент маршрута.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getTime">
+        <title translate="no">getTime</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Integer} getTime()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> время проезда сегмента в секундах.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_YTQwYTYw_CACHING --></topic>

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="modules.define" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">modules.define</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>modules.define</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статическая функция.</p>
+    
+    
+        
+            <p/><p>Определение модуля в модульной системе.</p><p>
+</p><p><note>Рекомендуется создавать собственные модули в своем пространстве имен, чтобы случано не заменить необходимые для работы API модули.</note></p>
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+       <p><b>Возвращает</b> ссылку на себя.</p>
+       
+    
+
+    
+
+    
+        
+         
+              <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{ <xref href="modules.dita" type="topic"><keyword>modules</keyword></xref> } modules.define(<xref href="#modules.define/param-module" translate="no" type="row">module</xref>[, <xref href="#modules.define/param-depends" translate="no" type="row">depends</xref>, <xref href="#modules.define/param-resolveCallback" translate="no" type="row">resolveCallback</xref>[, <xref href="#modules.define/param-context" translate="no" type="row">context</xref>]])</codeblock></p>
+         
+     
+
+    
+        <p translate="no"><b>Параметры:</b></p>
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+
+        <table>
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Параметр</entry>
+              <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+        
+        <row id="param-module">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#modules.define/param-module" type="row"><parmname>module</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: String</p>
+                <p/>
+                <p>Название модуля.</p>
+            </entry>
+        </row>
+        
+        <row id="param-depends">
+            <entry colname="col1" translate="no">
+                <xref href="#modules.define/param-depends" type="row"><parmname>depends</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: String[]</p>
+                <p/>
+                <p>Массив названий необходимых модулей. Этот аргумент может быть пропущен.</p>
+            </entry>
+        </row>
+        
+        <row id="param-resolveCallback">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#modules.define/param-resolveCallback" type="row"><parmname>resolveCallback</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Function</p>
+                <p/>
+                <p>Функция, которая определяет модуль. Первым аргументом в resolveCallback поступит provide-функция, в которую нужно будет передать модуль. Вызов provide-функции может быть отложен во времени. Последующие аргументы - это модули, указанные в зависимостях. Порядок модулей будет соответствовать порядку в массиве depends. В случае если модуль не может быть зарезолвен, то необходимо об этом уведомить модульную систему. Это можно сделать передав в provide-функцию второй аргумент. Второй аргумент будет передан в errorCallback и в promise как ошибка в запрос модуля. Впоследствии модуль можно будет запросить повторно.</p>
+            </entry>
+        </row>
+        
+        <row id="param-context">
+            <entry colname="col1" translate="no">
+                <xref href="#modules.define/param-context" type="row"><parmname>context</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Object</p>
+                <p/>
+                <p>Контекст исполнения функции.</p>
+            </entry>
+        </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+    
+    
+
+
+
+    
+        <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Задание собственного модуля.
+// 'plugin.*' – это собственное пространство имен.
+ymaps.modules.define('CustomModule', function (provide) {
+    var CustomModule = function (defValue) {
+        this.field = defValue;
+    };
+    provide(CustomModule);
+});
+// Запрос модулей.
+ymaps.modules.require(['CustomModule'])
+    .spread(
+        function (CustomModule) {
+            // ...
+        },
+        this
+   );</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Задание собственного асинхронного модуля.
+ymaps.modules.define('CustomAsyncModule', function (provide) {
+	// Для работы модуля необходимо загрузить внешний скрипт.&#13;
+    $.getScript( "ajax/test.js")
+        .done(function( script, textStatus ) {
+            function CustomAsyncModule () {
+                // ...
+            }
+        // Вызов provide-функции после загрузки скрипта.
+        provide(CustomAsyncModule);
+    });
+});
+// Запрос модулей.
+ymaps.modules.require(['CustomAsyncModule'])
+    .spread(
+        function (CustomAsyncModule) {
+            // ...
+        },
+        this
+    );</codeblock><p translate="no"><b>3.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Реализуем собственный асинхронный модуль с учетом ошибки.
+ymaps.modules.define('plugin.CustomModule', function (provide) {
+    $.getScript( "ajax/test.js" )
+        .done(function( script, textStatus ) {
+            // ... Обработка удачной загрузки скрипта.
+            provide({ a: 1 });
+        })
+        .fail(function( jqxhr, settings, exception ) {
+            // Уведомляем модульную систему о том, что модуль
+           // не может быть подготовлен сейчас.
+            provide(null, new Error('Error when loading'));
+        });
+});
+
+// Запрос модулей c обработкой ошибки.
+ymaps.modules.require(['plugin.CustomModule'])
+    .spread(
+        function (CustomModule) {
+            // ... 
+        },
+        function (error) {
+            console.log(error.messsage); // "Произошла ошибка при загрузке".
+            // Код обработки ошибки получения модуля. Модуль можно запросить повторно.
+        },
+        this
+    );</codeblock><p translate="no"><b>4.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Задание собственного модуля с зависимостями.
+ymaps.modules.define('CustomLayoutModule', [
+     'templateLayoutFactory', 
+     'layout.storage'
+], function (provide, templateLayoutFactory, layoutStorage) {
+    var customLayoutClass = templateLayoutFactory.createClass(
+        '&lt;div>My Layout&lt;/div>',
+        {
+            build: function () {
+                 customLayoutClass.superclass.build.call(this);
+                 // ...
+            },
+            clear: function () {
+                 // ...
+                 customLayoutClass.superclass.clear.call(this);
+            }
+        }
+    );
+    layoutStorage.add('customLayout', customLayoutClass);
+    provide(customLayoutClass);
+});
+// Запрос своего макета.
+ymaps.modules.require(['CustomLayoutModule'])
+    .spread(
+        function (CustomLayoutModule) {
+            // ...
+        },
+        this
+   );</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_ZGExZWVh_CACHING --></topic>

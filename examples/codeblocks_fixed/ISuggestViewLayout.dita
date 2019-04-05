@@ -1,0 +1,231 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="ISuggestViewLayout" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">ISuggestViewLayout</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>ISuggestViewLayout</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Интерфейс макета панели поисковых подсказок.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#ISuggestViewLayout/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#ISuggestViewLayout/events-summary" translate="no" type="section">События </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">ISuggestViewLayout()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISuggestViewLayout.dita#event_detail/event_detail/event-hover"><keyword>hover</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, возникающее при выделении одной из подсказок в списке наведением мыши на результат или с помощью клавиатуры. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>index: Number|null – индекс элемента в списке поисковых подсказок.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISuggestViewLayout.dita#event_detail/event_detail/event-select"><keyword>select</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, возникающее при выборе пользователем одной из подсказок. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>item: Object – объект с полями displayName и value.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-hover">
+            <title translate="no">hover</title>
+            
+             <p>Событие, возникающее при выделении одной из подсказок в списке наведением мыши на результат или с помощью клавиатуры. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>index: Number|null – индекс элемента в списке поисковых подсказок.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-select">
+            <title translate="no">select</title>
+            
+             <p>Событие, возникающее при выборе пользователем одной из подсказок. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>item: Object – объект с полями displayName и value.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic><!-- XLIFF_FARM_OTU1MmNm_CACHING --></topic>

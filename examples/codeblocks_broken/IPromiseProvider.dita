@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="IPromiseProvider" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IPromiseProvider</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IPromiseProvider</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Объект, выполняющий "обещание".</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IPromiseProvider/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#IPromiseProvider/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IPromiseProvider()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPromiseProvider.dita#method_detail/then" type="section"><keyword>then</keyword></xref>(<xref href="IPromiseProvider.dita#method_detail/then-param-onResolve" translate="no" type="row">onResolve</xref>, <xref href="IPromiseProvider.dita#method_detail/then-param-onReject" translate="no" type="row">onReject</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPromiseProvider.dita" type="topic"><keyword>IPromiseProvider</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на себя или новый Promise объект.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="then">
+        <title translate="no">then</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IPromiseProvider.dita" type="topic"><keyword>IPromiseProvider</keyword></xref>} then(<xref href="IPromiseProvider.dita#method_detail/then-param-onResolve" translate="no" type="row">onResolve</xref>, <xref href="IPromiseProvider.dita#method_detail/then-param-onReject" translate="no" type="row">onReject</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя или новый Promise объект.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="then-param-onResolve">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/then-param-onResolve" type="row"><parmname>onResolve</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция-обработчик, которая вызывается, если обещание выполнено.</p>
+                </entry>
+
+            </row>
+            
+            <row id="then-param-onReject">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/then-param-onReject" type="row"><parmname>onReject</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция-обработчик, которая вызывается, если обещание не выполнено (произошла ошибка).</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="then_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_NDc2Mjlh_CACHING --></topic>

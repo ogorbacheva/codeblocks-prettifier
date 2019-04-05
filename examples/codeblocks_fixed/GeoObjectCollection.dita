@@ -1,0 +1,1811 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="GeoObjectCollection" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">GeoObjectCollection</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>GeoObjectCollection</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>, <xref href="IGeoObjectCollection.dita" type="topic"><keyword>IGeoObjectCollection</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Коллекция геообъектов. Позволяет группировать геообъекты для добавления на карту, задания опций и т.д. Коллекция также является геообъектом.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#GeoObjectCollection/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#GeoObjectCollection/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#GeoObjectCollection/events-summary" translate="no" type="section">События </xref> | <xref href="#GeoObjectCollection/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">GeoObjectCollection([<xref href="#GeoObjectCollection/param-feature" translate="no" type="entry">feature</xref>[, <xref href="#GeoObjectCollection/param-options" translate="no" type="entry">options</xref>]])</codeblock></p>
+    
+       
+            
+                <p>Создает коллекцию геообъектов.</p>
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-feature" translate="no">
+                    <xref href="#GeoObjectCollection/param-feature" type="entry"><parmname>feature</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Описание коллекции. Функционально соответствует описанию геообъекта. См.: <xref href="GeoObject.dita" type="topic"><keyword>GeoObject</keyword></xref></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-feature.children" translate="no">
+                    <xref href="#GeoObjectCollection/param-feature.children" type="entry"><parmname>feature.children</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>[]</p>
+                    <p/>
+                    <p>Массив дочерних геообъектов.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-feature.geometry" translate="no">
+                    <xref href="#GeoObjectCollection/param-feature.geometry" type="entry"><parmname>feature.geometry</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IGeometry.dita" type="topic"><keyword>IGeometry</keyword></xref>|Object</p>
+                    <p/>
+                    <p>Геометрия коллекции.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-feature.properties" translate="no">
+                    <xref href="#GeoObjectCollection/param-feature.properties" type="entry"><parmname>feature.properties</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IDataManager.dita" type="topic"><keyword>IDataManager</keyword></xref>|Object</p>
+                    <p/>
+                    <p>Данные коллекции.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options" translate="no">
+                    <xref href="#GeoObjectCollection/param-options" type="entry"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции коллекции. Здесь можно задавать все опции, описанные в классе <xref href="GeoObject.dita" type="topic"><keyword>GeoObject</keyword></xref>. Значения опций будут применяться как к самой коллекции, так и к ее дочерним объектам, если для них данные опции не определены.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Создадим коллекцию геообъектов и зададим опции.
+var myGeoObjects = new ymaps.GeoObjectCollection({}, {
+    preset: "islands#redCircleIcon",
+    strokeWidth: 4,
+    geodesic: true
+});
+// Добавим в коллекцию метки и линию.
+myGeoObjects.add(new ymaps.Placemark([13.38, 52.51]));
+myGeoObjects.add(new ymaps.Placemark([30.30, 50.27]));
+myGeoObjects.add(new ymaps.Polyline([[13.38, 52.51], [30.30, 50.27]]));
+// Добавим коллекцию на карту.
+myMap.geoObjects.add(myGeoObjects);
+// Установим карте центр и масштаб так, чтобы охватить коллекцию целиком.
+myMap.setBounds(myGeoObjects.getBounds());</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IDomEventEmitter.dita#field_detail/events" type="section"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IGeoObject.dita#field_detail/geometry" type="section"><keyword>geometry</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IGeometry.dita" type="topic"><keyword>IGeometry</keyword></xref>|null</entry>
+        
+              <entry colname="col3">
+                <p>Геометрия геообъекта.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IGeoObject.dita#field_detail/geometry" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>ICustomizable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IGeoObject.dita#field_detail/properties" type="section"><keyword>properties</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IDataManager.dita" type="topic"><keyword>IDataManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Данные геообъекта.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IGeoObject.dita#field_detail/properties" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IGeoObject.dita#field_detail/state" type="section"><keyword>state</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IDataManager.dita" type="topic"><keyword>IDataManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Состояние геообъекта.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IGeoObject.dita#field_detail/state" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObjectCollection.dita#event_detail/event_detail/event-add"><keyword>add</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Добавлен (вставлен) дочерний геообъект. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>index: Integer - индекс добавленного геообъекта;</li>
+    <li>child: <xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref> - ссылка на добавленный геообъект.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeoObjectCollection.dita#event_detail/event_detail/event-add"><keyword>IGeoObjectCollection</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObjectCollection.dita#event_detail/event_detail/event-boundschange"><keyword>boundschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение координат географической области, охватывающей коллекцию и все ее дочерние геообъекты. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-click"><keyword>click</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Однократное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-click"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-contextmenu"><keyword>contextmenu</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Вызов контекстного меню на элементе. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-contextmenu"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-dblclick"><keyword>dblclick</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Двойное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-dblclick"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#event_detail/event_detail/event-geometrychange"><keyword>geometrychange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение геометрии геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>originalEvent: <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref> - оригинальное событие геометрии.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeoObject.dita#event_detail/event_detail/event-geometrychange"><keyword>IGeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IParentOnMap.dita#event_detail/event_detail/event-mapchange"><keyword>mapchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменилась карта. Поля данных:<ul>
+    <li>oldMap - старая карта;</li>
+    <li>newMap - новая карта.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IParentOnMap.dita#event_detail/event_detail/event-mapchange"><keyword>IParentOnMap</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousedown"><keyword>mousedown</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Нажатие кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousedown"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseenter"><keyword>mouseenter</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Наведение курсора на объект. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseenter"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseleave"><keyword>mouseleave</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Вывод курсора за пределы объекта. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseleave"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousemove"><keyword>mousemove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Перемещение курсора над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousemove"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseup"><keyword>mouseup</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Отпускание кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseup"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchend"><keyword>multitouchend</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Окончание мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchend"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchmove"><keyword>multitouchmove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Повторящееся событие при мультисенсорном управлении. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Определяет свойство touches, которое содержит список прикосновений. Каждое прикосновение описано объектом, которое содержит поля:<ul>
+  <li>clientX - координата касания X относительно видимой области браузера;</li>
+  <li>clientY - координата касания Y относительно видимой области браузера;</li>
+  <li>pageX - координата касания X касания относительно начала документа;</li>
+  <li>pageY - координата касания Y касания относительно начала документа.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchmove"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchstart"><keyword>multitouchstart</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Начало мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Определяет свойство touches, которое содержит список прикосновений. Каждое прикосновение описано объектом, которое содержит поля:<ul>
+  <li>clientX - координата касания X относительно видимой области браузера;</li>
+  <li>clientY - координата касания Y относительно видимой области браузера;</li>
+  <li>pageX - координата касания X касания относительно начала документа;</li>
+  <li>pageY - координата касания Y касания относительно начала документа.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchstart"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#event_detail/event_detail/event-overlaychange"><keyword>overlaychange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение оверлея геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>overlay: <xref href="IOverlay.dita" type="topic"><keyword>IOverlay</keyword></xref>|null - ссылка на оверлей;</li>
+    <li>oldOverlay: <xref href="IOverlay.dita" type="topic"><keyword>IOverlay</keyword></xref>|null - предыдущий оверлей геообъекта.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeoObject.dita#event_detail/event_detail/event-overlaychange"><keyword>IGeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>parentchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменился родительский объект.</p><p>Поля данных:</p>
+<ul>
+    <li>oldParent - старый родитель;</li>
+    <li>newParent - новый родитель.</li>
+</ul>
+                            
+                                <p translate="no">Унаследовано от <xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>IChild</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObjectCollection.dita#event_detail/event_detail/event-pixelboundschange"><keyword>pixelboundschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение пиксельных координат области, охватывающей коллекцию и все ее дочерние геообъекты. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#event_detail/event_detail/event-propertieschange"><keyword>propertieschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение данных геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>originalEvent: <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref> - оригинальное событие менеджера данных.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeoObject.dita#event_detail/event_detail/event-propertieschange"><keyword>IGeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObjectCollection.dita#event_detail/event_detail/event-remove"><keyword>remove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Удален дочерний геообъект. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>index: Integer — индекс удаленного геообъекта;</li>
+    <li>child: <xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref> — ссылка на удаленный геообъект.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeoObjectCollection.dita#event_detail/event_detail/event-remove"><keyword>IGeoObjectCollection</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObjectCollection.dita#event_detail/event_detail/event-set"><keyword>set</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>В коллекцию записан новый дочерний геообъект. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>index: Integer - индекс геообъекта;</li>
+    <li>child:<xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref> - ссылка на новый геообъект;</li>
+    <li>prevChild: <xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref> — ссылка на предыдущее значение для данного индекса.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeoObjectCollection.dita#event_detail/event_detail/event-set"><keyword>IGeoObjectCollection</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-wheel"><keyword>wheel</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Скролл мышкой. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-wheel"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObjectCollection.dita#method_detail/add" type="section"><keyword>add</keyword></xref>(<xref href="GeoObjectCollection.dita#method_detail/add-param-child" translate="no" type="row">child</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет геообъект в коллекцию.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObjectCollection.dita#method_detail/each" type="section"><keyword>each</keyword></xref>(<xref href="GeoObjectCollection.dita#method_detail/each-param-callback" translate="no" type="row">callback</xref>[, <xref href="GeoObjectCollection.dita#method_detail/each-param-context" translate="no" type="row">context</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Перебирает все элементы коллекции, вызывая для каждого функцию-обработчик.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObjectCollection.dita#method_detail/get" type="section"><keyword>get</keyword></xref>(<xref href="IGeoObjectCollection.dita#method_detail/get-param-index" translate="no" type="row">index</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает дочерний геообъект с заданным индексом.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IGeoObjectCollection.dita#method_detail/get" type="section"><keyword>IGeoObjectCollection</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObjectCollection.dita#method_detail/getBounds" type="section"><keyword>getBounds</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает географические координаты области, охватывающей коллекцию и все ее дочерние геообъекты.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObjectCollection.dita#method_detail/getIterator" type="section"><keyword>getIterator</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IIterator.dita" type="topic"><keyword>IIterator</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает итератор по коллекции.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObjectCollection.dita#method_detail/getLength" type="section"><keyword>getLength</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Integer</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает количество геообъектов в коллекции.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IParentOnMap.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на карту.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IParentOnMap.dita#method_detail/getMap" type="section"><keyword>IParentOnMap</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#method_detail/getOverlay" type="section"><keyword>getOverlay</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект-обещание, который подтверждается объектом оверлея в момент его фактического создания, либо отклоняется с передачей соответствующей ошибки.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IGeoObject.dita#method_detail/getOverlay" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#method_detail/getOverlaySync" type="section"><keyword>getOverlaySync</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IOverlay.dita" type="topic"><keyword>IOverlay</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Метод предоставляет синхронный доступ к оверлею.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IGeoObject.dita#method_detail/getOverlaySync" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChildOnMap.dita#method_detail/getParent" type="section"><keyword>getParent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IParentOnMap.dita" type="topic"><keyword>IParentOnMap</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на родительский объект или null, если родительский элемент не был установлен.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IChildOnMap.dita#method_detail/getParent" type="section"><keyword>IChildOnMap</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObjectCollection.dita#method_detail/getPixelBounds" type="section"><keyword>getPixelBounds</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает глобальные пиксельные координаты области, охватывающей коллекцию и ее дочерние геообъекты.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObjectCollection.dita#method_detail/indexOf" type="section"><keyword>indexOf</keyword></xref>(<xref href="IGeoObjectCollection.dita#method_detail/indexOf-param-object" translate="no" type="row">object</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Integer</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает индекс дочернего геообъекта. Если геообъект в коллекции не найден, возвращается -1.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IGeoObjectCollection.dita#method_detail/indexOf" type="section"><keyword>IGeoObjectCollection</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObjectCollection.dita#method_detail/remove" type="section"><keyword>remove</keyword></xref>(<xref href="GeoObjectCollection.dita#method_detail/remove-param-child" translate="no" type="row">child</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет геообъект из коллекции.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObjectCollection.dita#method_detail/removeAll" type="section"><keyword>removeAll</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет из коллекции все геообъекты.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObjectCollection.dita#method_detail/set" type="section"><keyword>set</keyword></xref>(<xref href="GeoObjectCollection.dita#method_detail/set-param-index" translate="no" type="row">index</xref>, <xref href="GeoObjectCollection.dita#method_detail/set-param-child" translate="no" type="row">child</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Записывает в коллекцию новый дочерний геообъект.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChildOnMap.dita#method_detail/setParent" type="section"><keyword>setParent</keyword></xref>(<xref href="IChildOnMap.dita#method_detail/setParent-param-parent" translate="no" type="row">parent</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IChildOnMap.dita" type="topic"><keyword>IChildOnMap</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает родительский объект. Если передать значение null, то элемент управления будет только удален из текущего родительского объекта.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IChildOnMap.dita#method_detail/setParent" type="section"><keyword>IChildOnMap</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObjectCollection.dita#method_detail/splice" type="section"><keyword>splice</keyword></xref>(<xref href="GeoObjectCollection.dita#method_detail/splice-param-index" translate="no" type="row">index</xref>, <xref href="GeoObjectCollection.dita#method_detail/splice-param-number" translate="no" type="row">number</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет геообъекты из коллекции. Если необходимо, вставляет на их место другие. Объекты, которые будут вставлены вместо удаляемых, передаются как дополнительные параметры (после параметра number).</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObjectCollection.dita#method_detail/toArray" type="section"><keyword>toArray</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает массив, содержащий все геообъекты коллекции на момент вызова.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-boundschange">
+            <title translate="no">boundschange</title>
+            
+             <p>Изменение координат географической области, охватывающей коллекцию и все ее дочерние геообъекты. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-pixelboundschange">
+            <title translate="no">pixelboundschange</title>
+            
+             <p>Изменение пиксельных координат области, охватывающей коллекцию и все ее дочерние геообъекты. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="add">
+        <title translate="no">add</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref>} add(<xref href="GeoObjectCollection.dita#method_detail/add-param-child" translate="no" type="row">child</xref>)</codeblock></p>
+
+         <p>Добавляет геообъект в коллекцию.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>ссылку на коллекцию.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="add-param-child">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/add-param-child" type="row"><parmname>child</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref></p>
+                    <p/>
+                   <p>Дочерний геообъект.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="add_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="each">
+        <title translate="no">each</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} each(<xref href="GeoObjectCollection.dita#method_detail/each-param-callback" translate="no" type="row">callback</xref>[, <xref href="GeoObjectCollection.dita#method_detail/each-param-context" translate="no" type="row">context</xref>])</codeblock></p>
+
+         <p>Перебирает все элементы коллекции, вызывая для каждого функцию-обработчик.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="each-param-callback">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/each-param-callback" type="row"><parmname>callback</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция-обработчик.</p>
+                </entry>
+
+            </row>
+            
+            <row id="each-param-context">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/each-param-context" type="row"><parmname>context</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Контекст исполнения функции.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="each_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getBounds">
+        <title translate="no">getBounds</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]|null} getBounds()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>географические координаты области, охватывающей коллекцию и все ее дочерние геообъекты.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Устанавливаем центр и масштаб карты так, чтобы отобразить всю коллекцию целиком.
+myMap.setBounds(myCollection.getBounds());</codeblock>
+        
+
+    </section>
+    
+        <section id="getIterator">
+        <title translate="no">getIterator</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IIterator.dita" type="topic"><keyword>IIterator</keyword></xref>} getIterator()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> итератор по коллекции.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Найдем в коллекции геообъект с геометрией "Ломаная линия".
+var iterator = myGroup.getIterator(),
+    object;
+while ((object = iterator.getNext()) != iterator.STOP_ITERATION) {
+    if (object.geometry.getType() == "LineString") {
+        break;
+    }
+}</codeblock>
+        
+
+    </section>
+    
+        <section id="getLength">
+        <title translate="no">getLength</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Integer} getLength()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>количество геообъектов в коллекции.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getPixelBounds">
+        <title translate="no">getPixelBounds</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]|null} getPixelBounds()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> глобальные пиксельные координаты области, охватывающей коллекцию и ее дочерние геообъекты.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="remove">
+        <title translate="no">remove</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref>} remove(<xref href="GeoObjectCollection.dita#method_detail/remove-param-child" translate="no" type="row">child</xref>)</codeblock></p>
+
+         <p>Удаляет геообъект из коллекции.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>ссылку на коллекцию.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="remove-param-child">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/remove-param-child" type="row"><parmname>child</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref></p>
+                    <p/>
+                   <p>Дочерний геообъект.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="remove_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="removeAll">
+        <title translate="no">removeAll</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref>} removeAll()</codeblock></p>
+
+         <p>Удаляет из коллекции все геообъекты.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>ссылку на коллекцию.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="set">
+        <title translate="no">set</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref>} set(<xref href="GeoObjectCollection.dita#method_detail/set-param-index" translate="no" type="row">index</xref>, <xref href="GeoObjectCollection.dita#method_detail/set-param-child" translate="no" type="row">child</xref>)</codeblock></p>
+
+         <p>Записывает в коллекцию новый дочерний геообъект.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="set-param-index">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/set-param-index" type="row"><parmname>index</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Индекс.</p>
+                </entry>
+
+            </row>
+            
+            <row id="set-param-child">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/set-param-child" type="row"><parmname>child</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref></p>
+                    <p/>
+                   <p>Дочерний геообъект.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="set_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="splice">
+        <title translate="no">splice</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref>} splice(<xref href="GeoObjectCollection.dita#method_detail/splice-param-index" translate="no" type="row">index</xref>, <xref href="GeoObjectCollection.dita#method_detail/splice-param-number" translate="no" type="row">number</xref>)</codeblock></p>
+
+         <p>Удаляет геообъекты из коллекции. Если необходимо, вставляет на их место другие. Объекты, которые будут вставлены вместо удаляемых, передаются как дополнительные параметры (после параметра number).</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> коллекцию удаленных геообъектов.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="splice-param-index">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/splice-param-index" type="row"><parmname>index</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Индекс геообъекта, с которого начинается удаление.</p>
+                </entry>
+
+            </row>
+            
+            <row id="splice-param-number">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/splice-param-number" type="row"><parmname>number</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Количество удаляемых геообъектов.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="splice_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Удаляет второй объект.
+myGeoObjects.splice(1, 1);
+// Вставляет новый объект obj во вторую позицию.
+myGeoObjects.splice(1, 0, obj);
+// Заменяет второй объект на новый объект obj.
+myGeoObjects.splice(1, 1, obj);</codeblock>
+        
+
+    </section>
+    
+        <section id="toArray">
+        <title translate="no">toArray</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>[]} toArray()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>массив, содержащий все геообъекты коллекции на момент вызова.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_ZjQ2Njk0_CACHING --></topic>

@@ -1,0 +1,1580 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="ILinearRingGeometryAccess" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">ILinearRingGeometryAccess</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>ILinearRingGeometryAccess</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IFreezable.dita" type="topic"><keyword>IFreezable</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Интерфейс доступа к геометрии "Замкнутый контур".</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#ILinearRingGeometryAccess/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#ILinearRingGeometryAccess/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#ILinearRingGeometryAccess/events-summary" translate="no" type="section">События </xref> | <xref href="#ILinearRingGeometryAccess/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">ILinearRingGeometryAccess()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IFreezable.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий объекта.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IFreezable.dita#field_detail/events" type="section"><keyword>IFreezable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILinearRingGeometryAccess.dita#event_detail/event_detail/event-change"><keyword>change</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение координат. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>oldCoordinates — старые координаты;</li>
+    <li>newCoordinates - новые координаты;</li>
+    <li>oldFillRule - старый алгоритм заливки;</li>
+    <li>newFillRule - новые алгоритм заливки.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILinearRingGeometryAccess.dita#method_detail/contains" type="section"><keyword>contains</keyword></xref>(<xref href="ILinearRingGeometryAccess.dita#method_detail/contains-param-position" translate="no" type="row">position</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Проверяет, лежит ли переданная точка внутри контура.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IFreezable.dita#method_detail/freeze" type="section"><keyword>freeze</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IFreezable.dita" type="topic"><keyword>IFreezable</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Переводит объект в "замороженный" режим.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IFreezable.dita#method_detail/freeze" type="section"><keyword>IFreezable</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILinearRingGeometryAccess.dita#method_detail/get" type="section"><keyword>get</keyword></xref>(<xref href="ILinearRingGeometryAccess.dita#method_detail/get-param-index" translate="no" type="row">index</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает координаты точки с заданным индексом.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILinearRingGeometryAccess.dita#method_detail/getChildGeometry" type="section"><keyword>getChildGeometry</keyword></xref>(<xref href="ILinearRingGeometryAccess.dita#method_detail/getChildGeometry-param-index" translate="no" type="row">index</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPointGeometryAccess.dita" type="topic"><keyword>IPointGeometryAccess</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Создает и возвращает объект <xref href="IPointGeometryAccess.dita" type="topic"><keyword>IPointGeometryAccess</keyword></xref> для заданной вершины ломаной линии.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILinearRingGeometryAccess.dita#method_detail/getClosest" type="section"><keyword>getClosest</keyword></xref>(<xref href="ILinearRingGeometryAccess.dita#method_detail/getClosest-param-anchorPosition" translate="no" type="row">anchorPosition</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Ищет на контуре точку, ближайшую к anchorPosition.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILinearRingGeometryAccess.dita#method_detail/getCoordinates" type="section"><keyword>getCoordinates</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает массив координат геометрии.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILinearRingGeometryAccess.dita#method_detail/getFillRule" type="section"><keyword>getFillRule</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает идентификатор алгоритма заливки.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILinearRingGeometryAccess.dita#method_detail/getLength" type="section"><keyword>getLength</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Integer</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает количество точек в геометрии.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILinearRingGeometryAccess.dita#method_detail/insert" type="section"><keyword>insert</keyword></xref>(<xref href="ILinearRingGeometryAccess.dita#method_detail/insert-param-index" translate="no" type="row">index</xref>, <xref href="ILinearRingGeometryAccess.dita#method_detail/insert-param-coordinates" translate="no" type="row">coordinates</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="ILinearRingGeometryAccess.dita" type="topic"><keyword>ILinearRingGeometryAccess</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет новую точку с заданным индексом.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IFreezable.dita#method_detail/isFrozen" type="section"><keyword>isFrozen</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true, если объект находится в "замороженном" режиме, иначе false.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IFreezable.dita#method_detail/isFrozen" type="section"><keyword>IFreezable</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILinearRingGeometryAccess.dita#method_detail/remove" type="section"><keyword>remove</keyword></xref>(<xref href="ILinearRingGeometryAccess.dita#method_detail/remove-param-index" translate="no" type="row">index</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет точку с заданным индексом.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILinearRingGeometryAccess.dita#method_detail/set" type="section"><keyword>set</keyword></xref>(<xref href="ILinearRingGeometryAccess.dita#method_detail/set-param-index" translate="no" type="row">index</xref>, <xref href="ILinearRingGeometryAccess.dita#method_detail/set-param-coordinates" translate="no" type="row">coordinates</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="ILinearRingGeometryAccess.dita" type="topic"><keyword>ILinearRingGeometryAccess</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает координаты точки c заданным индексом.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILinearRingGeometryAccess.dita#method_detail/setCoordinates" type="section"><keyword>setCoordinates</keyword></xref>(<xref href="ILinearRingGeometryAccess.dita#method_detail/setCoordinates-param-coordinates" translate="no" type="row">coordinates</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="ILinearRingGeometryAccess.dita" type="topic"><keyword>ILinearRingGeometryAccess</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает массив координат геометрии.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILinearRingGeometryAccess.dita#method_detail/setFillRule" type="section"><keyword>setFillRule</keyword></xref>(<xref href="ILinearRingGeometryAccess.dita#method_detail/setFillRule-param-fillRule" translate="no" type="row">fillRule</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="ILinearRingGeometryAccess.dita" type="topic"><keyword>ILinearRingGeometryAccess</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает алгоритм заливки контура.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILinearRingGeometryAccess.dita#method_detail/splice" type="section"><keyword>splice</keyword></xref>(<xref href="ILinearRingGeometryAccess.dita#method_detail/splice-param-index" translate="no" type="row">index</xref>, <xref href="ILinearRingGeometryAccess.dita#method_detail/splice-param-number" translate="no" type="row">number</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет определенное число точек начиная с заданного индекса. При этом на место удаляемых точек могут быть добавлены новые. Координаты новых точек можно передавать дополнительными аргументами после параметра number.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IFreezable.dita#method_detail/unfreeze" type="section"><keyword>unfreeze</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IFreezable.dita" type="topic"><keyword>IFreezable</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Переводит объект в активный режим.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IFreezable.dita#method_detail/unfreeze" type="section"><keyword>IFreezable</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-change">
+            <title translate="no">change</title>
+            
+             <p>Изменение координат. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>oldCoordinates — старые координаты;</li>
+    <li>newCoordinates - новые координаты;</li>
+    <li>oldFillRule - старый алгоритм заливки;</li>
+    <li>newFillRule - новые алгоритм заливки.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="contains">
+        <title translate="no">contains</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Boolean} contains(<xref href="ILinearRingGeometryAccess.dita#method_detail/contains-param-position" translate="no" type="row">position</xref>)</codeblock></p>
+
+         <p>Проверяет, лежит ли переданная точка внутри контура.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>признак принадлежности точки контуру.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="contains-param-position">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/contains-param-position" type="row"><parmname>position</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Координаты точки.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="contains_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="get">
+        <title translate="no">get</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[]} get(<xref href="ILinearRingGeometryAccess.dita#method_detail/get-param-index" translate="no" type="row">index</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> координаты точки с заданным индексом.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="get-param-index">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/get-param-index" type="row"><parmname>index</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Индекс точки.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="get_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getChildGeometry">
+        <title translate="no">getChildGeometry</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IPointGeometryAccess.dita" type="topic"><keyword>IPointGeometryAccess</keyword></xref>} getChildGeometry(<xref href="ILinearRingGeometryAccess.dita#method_detail/getChildGeometry-param-index" translate="no" type="row">index</xref>)</codeblock></p>
+
+         <p>Создает и возвращает объект <xref href="IPointGeometryAccess.dita" type="topic"><keyword>IPointGeometryAccess</keyword></xref> для заданной вершины ломаной линии.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>объект геометрии "Точка", соответствующий заданной вершине.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getChildGeometry-param-index">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getChildGeometry-param-index" type="row"><parmname>index</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Индекс вершины контура.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getChildGeometry_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getClosest">
+        <title translate="no">getClosest</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} getClosest(<xref href="ILinearRingGeometryAccess.dita#method_detail/getClosest-param-anchorPosition" translate="no" type="row">anchorPosition</xref>)</codeblock></p>
+
+         <p>Ищет на контуре точку, ближайшую к anchorPosition.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект со следующими полями:<ul>
+    <li>position - точка на контуре ближайшая к anchorPosition;</li>
+    <li>distance - расстояние от anchorPosition до position;</li>
+    <li>closestPointIndex - индекс вершины, ближайшей к position;</li>
+    <li>nextPointIndex - индекс вершины, следующей за position;</li>
+    <li>prevPointIndex - индекс вершины, предшествующей position.</li>
+</ul>Поля nextPointIndex, prevPointIndex могут отсутствовать, если position совпадает с одной из вершин контура.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getClosest-param-anchorPosition">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getClosest-param-anchorPosition" type="row"><parmname>anchorPosition</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Координаты точки, для которой расчитывается ближайшая точка на контуре.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getClosest_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getCoordinates">
+        <title translate="no">getCoordinates</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]} getCoordinates()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>массив координат геометрии.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getFillRule">
+        <title translate="no">getFillRule</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getFillRule()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> идентификатор алгоритма заливки.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getLength">
+        <title translate="no">getLength</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Integer} getLength()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>количество точек в геометрии.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="insert">
+        <title translate="no">insert</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="ILinearRingGeometryAccess.dita" type="topic"><keyword>ILinearRingGeometryAccess</keyword></xref>} insert(<xref href="ILinearRingGeometryAccess.dita#method_detail/insert-param-index" translate="no" type="row">index</xref>, <xref href="ILinearRingGeometryAccess.dita#method_detail/insert-param-coordinates" translate="no" type="row">coordinates</xref>)</codeblock></p>
+
+         <p>Добавляет новую точку с заданным индексом.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="insert-param-index">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/insert-param-index" type="row"><parmname>index</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Индекс точки.</p>
+                </entry>
+
+            </row>
+            
+            <row id="insert-param-coordinates">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/insert-param-coordinates" type="row"><parmname>coordinates</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Координаты точки.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="insert_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="remove">
+        <title translate="no">remove</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[]} remove(<xref href="ILinearRingGeometryAccess.dita#method_detail/remove-param-index" translate="no" type="row">index</xref>)</codeblock></p>
+
+         <p>Удаляет точку с заданным индексом.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> координаты удаленной точки.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="remove-param-index">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/remove-param-index" type="row"><parmname>index</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Индекс точки.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="remove_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="set">
+        <title translate="no">set</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="ILinearRingGeometryAccess.dita" type="topic"><keyword>ILinearRingGeometryAccess</keyword></xref>} set(<xref href="ILinearRingGeometryAccess.dita#method_detail/set-param-index" translate="no" type="row">index</xref>, <xref href="ILinearRingGeometryAccess.dita#method_detail/set-param-coordinates" translate="no" type="row">coordinates</xref>)</codeblock></p>
+
+         <p>Задает координаты точки c заданным индексом.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="set-param-index">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/set-param-index" type="row"><parmname>index</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Индекс точки.</p>
+                </entry>
+
+            </row>
+            
+            <row id="set-param-coordinates">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/set-param-coordinates" type="row"><parmname>coordinates</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Координаты точки.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="set_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="setCoordinates">
+        <title translate="no">setCoordinates</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="ILinearRingGeometryAccess.dita" type="topic"><keyword>ILinearRingGeometryAccess</keyword></xref>} setCoordinates(<xref href="ILinearRingGeometryAccess.dita#method_detail/setCoordinates-param-coordinates" translate="no" type="row">coordinates</xref>)</codeblock></p>
+
+         <p>Задает массив координат геометрии.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setCoordinates-param-coordinates">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setCoordinates-param-coordinates" type="row"><parmname>coordinates</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][]</p>
+                    <p/>
+                   <p>Координаты геометрии.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setCoordinates_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="setFillRule">
+        <title translate="no">setFillRule</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="ILinearRingGeometryAccess.dita" type="topic"><keyword>ILinearRingGeometryAccess</keyword></xref>} setFillRule(<xref href="ILinearRingGeometryAccess.dita#method_detail/setFillRule-param-fillRule" translate="no" type="row">fillRule</xref>)</codeblock></p>
+
+         <p>Задает алгоритм заливки контура.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setFillRule-param-fillRule">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setFillRule-param-fillRule" type="row"><parmname>fillRule</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Идентификатор алгоритма заливки.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setFillRule_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="splice">
+        <title translate="no">splice</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]} splice(<xref href="ILinearRingGeometryAccess.dita#method_detail/splice-param-index" translate="no" type="row">index</xref>, <xref href="ILinearRingGeometryAccess.dita#method_detail/splice-param-number" translate="no" type="row">number</xref>)</codeblock></p>
+
+         <p>Удаляет определенное число точек начиная с заданного индекса. При этом на место удаляемых точек могут быть добавлены новые. Координаты новых точек можно передавать дополнительными аргументами после параметра number.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>массив координат удаленных точек.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="splice-param-index">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/splice-param-index" type="row"><parmname>index</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Индекс, начиная с которого производится удаление и добавление точек.</p>
+                </entry>
+
+            </row>
+            
+            <row id="splice-param-number">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/splice-param-number" type="row"><parmname>number</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Количество удаляемых точек.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="splice_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_MmU0NDcz_CACHING --></topic>

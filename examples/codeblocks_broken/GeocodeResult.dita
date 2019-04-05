@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="GeocodeResult" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">GeocodeResult</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>GeocodeResult</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Результат геокодирования.</p>
+    
+
+
+
+    <p translate="no"><b>См.: </b><xref href="Placemark.dita" type="topic"><keyword>Placemark</keyword></xref> <xref href="geocode.dita" type="topic"><keyword>geocode</keyword></xref> <xref href="geolocation.dita" type="topic"><keyword>geolocation</keyword></xref> <xref href="control.SearchControl.dita" type="topic"><keyword>control.SearchControl</keyword></xref> </p>
+
+
+
+
+
+    <p translate="no"><xref href="#GeocodeResult/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#GeocodeResult/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#GeocodeResult/events-summary" translate="no" type="section">События </xref> | <xref href="#GeocodeResult/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">GeocodeResult()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IDomEventEmitter.dita#field_detail/events" type="section"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IGeoObject.dita#field_detail/geometry" type="section"><keyword>geometry</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IGeometry.dita" type="topic"><keyword>IGeometry</keyword></xref>|null</entry>
+        
+              <entry colname="col3">
+                <p>Геометрия геообъекта.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IGeoObject.dita#field_detail/geometry" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>ICustomizable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IGeoObject.dita#field_detail/properties" type="section"><keyword>properties</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IDataManager.dita" type="topic"><keyword>IDataManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Данные геообъекта.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IGeoObject.dita#field_detail/properties" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IGeoObject.dita#field_detail/state" type="section"><keyword>state</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IDataManager.dita" type="topic"><keyword>IDataManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Состояние геообъекта.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IGeoObject.dita#field_detail/state" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-click"><keyword>click</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Однократное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-click"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-contextmenu"><keyword>contextmenu</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Вызов контекстного меню на элементе. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-contextmenu"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-dblclick"><keyword>dblclick</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Двойное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-dblclick"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#event_detail/event_detail/event-geometrychange"><keyword>geometrychange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение геометрии геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>originalEvent: <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref> - оригинальное событие геометрии.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeoObject.dita#event_detail/event_detail/event-geometrychange"><keyword>IGeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IParentOnMap.dita#event_detail/event_detail/event-mapchange"><keyword>mapchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменилась карта. Поля данных:<ul>
+    <li>oldMap - старая карта;</li>
+    <li>newMap - новая карта.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IParentOnMap.dita#event_detail/event_detail/event-mapchange"><keyword>IParentOnMap</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousedown"><keyword>mousedown</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Нажатие кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousedown"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseenter"><keyword>mouseenter</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Наведение курсора на объект. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseenter"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseleave"><keyword>mouseleave</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Вывод курсора за пределы объекта. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseleave"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousemove"><keyword>mousemove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Перемещение курсора над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousemove"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseup"><keyword>mouseup</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Отпускание кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseup"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchend"><keyword>multitouchend</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Окончание мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchend"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchmove"><keyword>multitouchmove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Повторящееся событие при мультисенсорном управлении. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Определяет свойство touches, которое содержит список прикосновений. Каждое прикосновение описано объектом, которое содержит поля:<ul>
+  <li>clientX - координата касания X относительно видимой области браузера;</li>
+  <li>clientY - координата касания Y относительно видимой области браузера;</li>
+  <li>pageX - координата касания X касания относительно начала документа;</li>
+  <li>pageY - координата касания Y касания относительно начала документа.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchmove"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchstart"><keyword>multitouchstart</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Начало мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Определяет свойство touches, которое содержит список прикосновений. Каждое прикосновение описано объектом, которое содержит поля:<ul>
+  <li>clientX - координата касания X относительно видимой области браузера;</li>
+  <li>clientY - координата касания Y относительно видимой области браузера;</li>
+  <li>pageX - координата касания X касания относительно начала документа;</li>
+  <li>pageY - координата касания Y касания относительно начала документа.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchstart"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#event_detail/event_detail/event-overlaychange"><keyword>overlaychange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение оверлея геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>overlay: <xref href="IOverlay.dita" type="topic"><keyword>IOverlay</keyword></xref>|null - ссылка на оверлей;</li>
+    <li>oldOverlay: <xref href="IOverlay.dita" type="topic"><keyword>IOverlay</keyword></xref>|null - предыдущий оверлей геообъекта.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeoObject.dita#event_detail/event_detail/event-overlaychange"><keyword>IGeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>parentchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменился родительский объект.</p><p>Поля данных:</p>
+<ul>
+    <li>oldParent - старый родитель;</li>
+    <li>newParent - новый родитель.</li>
+</ul>
+                            
+                                <p translate="no">Унаследовано от <xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>IChild</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#event_detail/event_detail/event-propertieschange"><keyword>propertieschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение данных геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>originalEvent: <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref> - оригинальное событие менеджера данных.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeoObject.dita#event_detail/event_detail/event-propertieschange"><keyword>IGeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-wheel"><keyword>wheel</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Скролл мышкой. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-wheel"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeocodeResult.dita#method_detail/getAddressLine" type="section"><keyword>getAddressLine</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает строку с адресом объекта.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeocodeResult.dita#method_detail/getAdministrativeAreas" type="section"><keyword>getAdministrativeAreas</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает административно-территориальные образования, в которые входит объект (федеральный округ, регион, район), не больше двух.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeocodeResult.dita#method_detail/getCountry" type="section"><keyword>getCountry</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает государство, которому принадлежит топоним (если применимо).</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeocodeResult.dita#method_detail/getCountryCode" type="section"><keyword>getCountryCode</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает код государства, которому принадлежит топоним (если применимо), в виде двухбуквенного кода ISO 3166.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeocodeResult.dita#method_detail/getLocalities" type="section"><keyword>getLocalities</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает населённый пункт и, опционально, образование внутри населённого пункта, которым принадлежит топоним.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IParentOnMap.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на карту.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IParentOnMap.dita#method_detail/getMap" type="section"><keyword>IParentOnMap</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#method_detail/getOverlay" type="section"><keyword>getOverlay</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект-обещание, который подтверждается объектом оверлея в момент его фактического создания, либо отклоняется с передачей соответствующей ошибки.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IGeoObject.dita#method_detail/getOverlay" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#method_detail/getOverlaySync" type="section"><keyword>getOverlaySync</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IOverlay.dita" type="topic"><keyword>IOverlay</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Метод предоставляет синхронный доступ к оверлею.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IGeoObject.dita#method_detail/getOverlaySync" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChildOnMap.dita#method_detail/getParent" type="section"><keyword>getParent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IParentOnMap.dita" type="topic"><keyword>IParentOnMap</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на родительский объект или null, если родительский элемент не был установлен.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IChildOnMap.dita#method_detail/getParent" type="section"><keyword>IChildOnMap</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeocodeResult.dita#method_detail/getPremise" type="section"><keyword>getPremise</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает наименование здания, если оно есть (например, название терминала аэропорта).</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeocodeResult.dita#method_detail/getPremiseNumber" type="section"><keyword>getPremiseNumber</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает номер здания (включая корпус, владение и прочие дополнительные признаки).</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeocodeResult.dita#method_detail/getThoroughfare" type="section"><keyword>getThoroughfare</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает путь сообщения (улица, шоссе, проезд и т.д.), которому принадлежит топоним (если применимо).</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChildOnMap.dita#method_detail/setParent" type="section"><keyword>setParent</keyword></xref>(<xref href="IChildOnMap.dita#method_detail/setParent-param-parent" translate="no" type="row">parent</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IChildOnMap.dita" type="topic"><keyword>IChildOnMap</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает родительский объект. Если передать значение null, то элемент управления будет только удален из текущего родительского объекта.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IChildOnMap.dita#method_detail/setParent" type="section"><keyword>IChildOnMap</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getAddressLine">
+        <title translate="no">getAddressLine</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getAddressLine()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> строку с адресом объекта.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getAdministrativeAreas">
+        <title translate="no">getAdministrativeAreas</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String[]} getAdministrativeAreas()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> административно-территориальные образования, в которые входит объект (федеральный округ, регион, район), не больше двух.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getCountry">
+        <title translate="no">getCountry</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String|null} getCountry()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>государство, которому принадлежит топоним (если применимо).</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getCountryCode">
+        <title translate="no">getCountryCode</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String|null} getCountryCode()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>код государства, которому принадлежит топоним (если применимо), в виде двухбуквенного кода ISO 3166.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getLocalities">
+        <title translate="no">getLocalities</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String[]} getLocalities()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>населённый пункт и, опционально, образование внутри населённого пункта, которым принадлежит топоним.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getPremise">
+        <title translate="no">getPremise</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String|null} getPremise()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>наименование здания, если оно есть (например, название терминала аэропорта).</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getPremiseNumber">
+        <title translate="no">getPremiseNumber</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String|null} getPremiseNumber()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>номер здания (включая корпус, владение и прочие дополнительные признаки).</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getThoroughfare">
+        <title translate="no">getThoroughfare</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String|null} getThoroughfare()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>путь сообщения (улица, шоссе, проезд и т.д.), которому принадлежит топоним (если применимо).</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_OWVmZjlh_CACHING --></topic>

@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="IEventController" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IEventController</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IEventController</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Интерфейс контроллера событий. Позволяет контролировать подписки и отписки от событий на определённом менеджере событий.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IEventController/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#IEventController/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IEventController()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEventController.dita#method_detail/onStartListening" type="section"><keyword>onStartListening</keyword></xref>(<xref href="IEventController.dita#method_detail/onStartListening-param-events" translate="no" type="row">events</xref>, <xref href="IEventController.dita#method_detail/onStartListening-param-type" translate="no" type="row">type</xref>)</entry>
+                        
+                        
+                        <entry colname="col2">
+                            
+                            
+                                <p>Вызывается при первой подписке на указанный тип событий через указанный менеджер событий. Этот метод является опциональным.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEventController.dita#method_detail/onStopListening" type="section"><keyword>onStopListening</keyword></xref>(<xref href="IEventController.dita#method_detail/onStopListening-param-events" translate="no" type="row">events</xref>, <xref href="IEventController.dita#method_detail/onStopListening-param-type" translate="no" type="row">type</xref>)</entry>
+                        
+                        
+                        <entry colname="col2">
+                            
+                            
+                                <p>Вызывается, когда определённый тип событий перестаёт слушаться на указанном менеджере событий (удалена последняя подписка). Этот метод является опциональным.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="onStartListening">
+        <title translate="no">onStartListening</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} onStartListening(<xref href="IEventController.dita#method_detail/onStartListening-param-events" translate="no" type="row">events</xref>, <xref href="IEventController.dita#method_detail/onStartListening-param-type" translate="no" type="row">type</xref>)</codeblock></p>
+
+         <p>Вызывается при первой подписке на указанный тип событий через указанный менеджер событий. Этот метод является опциональным.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="onStartListening-param-events">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/onStartListening-param-events" type="row"><parmname>events</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></p>
+                    <p/>
+                   <p>Менеджер событий.</p>
+                </entry>
+
+            </row>
+            
+            <row id="onStartListening-param-type">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/onStartListening-param-type" type="row"><parmname>type</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Тип события.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="onStartListening_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="onStopListening">
+        <title translate="no">onStopListening</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} onStopListening(<xref href="IEventController.dita#method_detail/onStopListening-param-events" translate="no" type="row">events</xref>, <xref href="IEventController.dita#method_detail/onStopListening-param-type" translate="no" type="row">type</xref>)</codeblock></p>
+
+         <p>Вызывается, когда определённый тип событий перестаёт слушаться на указанном менеджере событий (удалена последняя подписка). Этот метод является опциональным.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="onStopListening-param-events">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/onStopListening-param-events" type="row"><parmname>events</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></p>
+                    <p/>
+                   <p>Менеджер событий.</p>
+                </entry>
+
+            </row>
+            
+            <row id="onStopListening-param-type">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/onStopListening-param-type" type="row"><parmname>type</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Тип события.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="onStopListening_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_OTczNTZm_CACHING --></topic>

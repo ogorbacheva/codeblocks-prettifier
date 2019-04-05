@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="Template" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">Template</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>Template</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Шаблонизатор. В API Яндекс.Карт поддерживается базовый синтаксис языков шаблонов Twig/Django Templates. Поддерживаются следующие операции:</p><ul>
+    <li>Подстановка значения — <codeph><b>{{ <i>имя_поля</i> }}</b></codeph>.</li>
+    <li>Если запрашиваемое поле данных отсутствует или имеет пустое значение, то можно предусмотреть стандартное значение — <codeph><b>{{ <i>имя_поля</i>|default:<i>значение_по_умолчанию</i> }}</b></codeph>. Значением по умолчанию может быть число, строка (записывается в кавычках) или другое поле данных.</li>
+    <li>По умолчанию значение обрабатывается функцией escape для предотвращения XSS уязвимости. Для отмены поведения необходимо добавить фильтр <b>"raw"</b> — <codeph><b>{{ <i>имя_поля</i>|default:<i>значение_по_умолчанию</i>|raw }}</b></codeph>.</li>
+    <li>С помощью <xref href="template.filtersStorage.dita" type="topic"><keyword>template.filtersStorage</keyword></xref> можно создавать свои фильтры и использовать их аналогично описанным выше.</li>
+    <li>Для вставки подмакета необходимо использовать конструкцию <codeph><b>{% include <i>имя_поля_или_ключ</i> %}</b></codeph>. Шаблонизатор, встретив такую конструкцию, попытается использовать значение в поле как ключ вложенного макета.</li>
+    <li>Условие записывается в виде:<p><codeph><b>{% if <i>условие</i> %} ... {% else %} ... {% endif %}</b></codeph> или Блок <b>else</b> или <b>elseif</b> можно опустить. Внутри блоков <b>if</b>, <b>else</b> и <b>elseif</b> можно использовать любые конструкции языка шаблонов.</p></li>
+    <li>Для выполнения итерации по массиву или по объекту нужно использовать конструкцию <b>for</b>.<p><codeph><b>{% for <i>значение</i> in <i>массив_или_хеш</i> %} ... {% endfor %}</b></codeph>. Внутри блока <b>for</b> можно использовать любые конструкции языка шаблонов.</p></li>
+    <li>Для получения номера итерации в массиве или имени поля в хеше нужно использовать конструкцию:<p><codeph><b>{% for key, value in <i>массив_или_хеш</i> %} ... {% endfor %}</b></codeph>.</p></li>
+</ul>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#Template/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#Template/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">Template(<xref href="#Template/param-text" translate="no" type="entry">text</xref>)</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-text" translate="no">
+                    
+                        <xref href="#Template/param-text" type="entry"><parmname>text</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Строка-шаблон.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+            <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Получим имя пользователя из менеджера данных <xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>.
+// Если имя не задано, то в результате получится строка «Незарегистрированный пользователь».
+var data = new ymaps.data.Manager({
+         user: {
+             name: "Виктор",
+             age: 25
+         },
+         home: [55.72725771214265, 37.640390506634006]
+     }),
+    template = new ymaps.Template('{{ user.name |default: "Незарегистрированный пользователь"}}');
+
+var result = template.build(data);
+console.log(result.text); // Выведет в консоль «Виктор».</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Предположим, что у нас есть 3 группы пользователей и в зависимости от группы нужно вывести одно из приветствий.
+var data = new ymaps.data.Manager({
+         groups: {
+             administrator: {
+                 id: 1,
+                 name: "администратор"
+             },
+             moderator: {
+                 id: 2,
+                 name: "модератор"
+             },
+             user: {
+                 id: 3,
+                 name: "пользователь"
+             }
+         },
+         userGroupId: 2
+     }),
+     template = new ymaps.Template('Привет, \
+         {% if (userGroupId == 1) %}{{ groups.administrator.name }}\
+         {% elseif (userGroupId == 2) %}{{ groups.moderator.name }}\
+         {% elseif (userGroupId == 3) %}{{ groups.user.name }}\
+         {% else %}guest{% endif %}!'
+    );var result = template.build(data);console.log(result.text); // Выведет «Привет, модератор!» в консоль.</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Template.dita#method_detail/build" type="section"><keyword>build</keyword></xref>(<xref href="Template.dita#method_detail/build-param-data" translate="no" type="row">data</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект со следующими полями:<ul>
+    <li>{String} text — результат выполнения шаблонизации;</li>
+    <li>{Object[]} renderedValues — массив c использованными данными из менеджера.</li>
+</ul></p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="build">
+        <title translate="no">build</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} build(<xref href="Template.dita#method_detail/build-param-data" translate="no" type="row">data</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект, содержащий следующие поля:<ul>
+    <li>{String} text — результат выполнения шаблонизации;</li>
+    <li>{Object[]} renderedValues — массив c использованными данными из менеджера.</li>
+</ul></p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="build-param-data">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/build-param-data" type="row"><parmname>data</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IDataManager.dita" type="topic"><keyword>IDataManager</keyword></xref></p>
+                    <p/>
+                   <p>Менеджер данных.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="build_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Получим адрес дома из имеющихся координат и выведем по шаблону
+// всех его жильцов в формате: «имя: возраст».
+var data = new ymaps.data.Manager({
+         users: [
+             {name: "Виталий", age: 40},
+             {name: "Георгий", age: 20}
+         ],
+         home: {
+             coords: [55.736652, 37.620589],
+             address: null
+         }
+     }),
+     template = new ymaps.Template('{{home.address}}: &lt;ul>{% for user in users %}&lt;li>{{user.name}}: {{user.age}}&lt;/li>{% endfor %}&lt;/ul>');
+
+// Сделаем обратное геокодирование с помощью <xref href="geocode.dita" type="topic"><keyword>geocode</keyword></xref>.
+ymaps.geocode(data.get('home.coords')).then(function (res) {
+     var address = res.geoObjects.get(0).properties.get('name');
+     // Установим в менеджер полученный адрес.
+     data.set('home.address', address);
+
+      // Соберём шаблон из имеющихся данных.
+     var result = template.build(data);
+      // Выведем результат в консоль.
+     console.log(result.text);
+});</codeblock>
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_MzZhMGJm_CACHING --></topic>

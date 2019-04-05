@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="util.requireCenterAndZoom" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">util.requireCenterAndZoom</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>util.requireCenterAndZoom</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статическая функция.</p>
+    
+    
+        
+            <p>Вычисляет оптимальный центр и уровень масштабирования карты для отображения переданной области на указанном типе карты. Уровень масштаба будет в рамках доступного диапозона масштабов.</p>
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+       <p><b>Возвращает</b> Promise объект, который будет подтвержден объектом с полями center и zoom или будет отклонен с ошибкой.</p>
+       
+    
+
+    
+
+    
+        
+         
+              <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{ <xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref> } util.requireCenterAndZoom(<xref href="#util.requireCenterAndZoom/param-mapType" translate="no" type="row">mapType</xref>, <xref href="#util.requireCenterAndZoom/param-bounds" translate="no" type="row">bounds</xref>, <xref href="#util.requireCenterAndZoom/param-containerSize" translate="no" type="row">containerSize</xref>[, <xref href="#util.requireCenterAndZoom/param-params" translate="no" type="row">params</xref>])</codeblock></p>
+         
+     
+
+    
+        <p translate="no"><b>Параметры:</b></p>
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+
+        <table>
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Параметр</entry>
+              <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+        
+        <row id="param-mapType">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#util.requireCenterAndZoom/param-mapType" type="row"><parmname>mapType</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: String|<xref href="MapType.dita" type="topic"><keyword>MapType</keyword></xref>|<xref href="map.ZoomRange.dita" type="topic"><keyword>map.ZoomRange</keyword></xref></p>
+                <p/>
+                <p>Тип карты. Cтрока-ключ из <xref href="mapType.storage.dita" type="topic"><keyword>mapType.storage</keyword></xref>, либо экземпляр класса <xref href="MapType.dita" type="topic"><keyword>MapType</keyword></xref>. Или менеджер коэффициентов масштабирования карты конкретной карты.</p>
+            </entry>
+        </row>
+        
+        <row id="param-bounds">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#util.requireCenterAndZoom/param-bounds" type="row"><parmname>bounds</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Number[][]</p>
+                <p/>
+                <p>Область, заданная в географических координатах. Первая точка содержит минимальные значения широты и долготы, вторая точка - максимальные.</p>
+            </entry>
+        </row>
+        
+        <row id="param-containerSize">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#util.requireCenterAndZoom/param-containerSize" type="row"><parmname>containerSize</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Number[]</p>
+                <p/>
+                <p>Размер контейнера карты.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params">
+            <entry colname="col1" translate="no">
+                <xref href="#util.requireCenterAndZoom/param-params" type="row"><parmname>params</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Object</p>
+                <p/>
+                <p>Параметры.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.inscribe">
+            <entry colname="col1" translate="no">
+                <xref href="#util.requireCenterAndZoom/param-params.inscribe" type="row"><parmname>params.inscribe</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  true
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Boolean</p>
+                <p/>
+                <p>true - вписывать область в карту, false — вписывать карту в область.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.margin">
+            <entry colname="col1" translate="no">
+                <xref href="#util.requireCenterAndZoom/param-params.margin" type="row"><parmname>params.margin</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  0
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Number|Number[]</p>
+                <p/>
+                <p>Отступы от границ видимой области карты. Если задано одно число - оно применяется ко всем сторонам. Если задано два - то это горизонтальные и вертикальные отступы соответственно. Если задан массив из 4х чисел, то это отступы top, right, bottom, left.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.preciseZoom">
+            <entry colname="col1" translate="no">
+                <xref href="#util.requireCenterAndZoom/param-params.preciseZoom" type="row"><parmname>params.preciseZoom</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  false
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Boolean</p>
+                <p/>
+                <p>При значении false уровень масштабирования будет округлен в меньшую сторону.</p>
+            </entry>
+        </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+    
+    
+
+
+
+    
+        <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Находим оптимальный центр и уровень масштабирования карты.
+ymaps.util.requireCenterAndZoom(myMap.getType(), [[50.531219, 31.278264], [
+        50.966841, 31.964909]], myMap.container.getSize())
+    .then(function (result) {
+        // Устанавливаем карте оптимальный центр и зум.
+        myMap.setCenter(result.center, result.zoom);
+    });</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_MjA4MGM3_CACHING --></topic>

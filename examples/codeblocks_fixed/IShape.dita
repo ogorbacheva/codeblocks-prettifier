@@ -1,0 +1,743 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="IShape" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IShape</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IShape</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Интерфейс фигуры. Фигура представляет совокупность пиксельной геометрии, а также математических и логических параметров ее отображения (таких как наличие контура и его ширина, наличие заливки).</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IShape/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#IShape/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IShape()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IShape.dita#method_detail/contains" type="section"><keyword>contains</keyword></xref>(<xref href="IShape.dita#method_detail/contains-param-position" translate="no" type="row">position</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Проверяет лежит ли переданная точка внутри фигуры.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IShape.dita#method_detail/equals" type="section"><keyword>equals</keyword></xref>(<xref href="IShape.dita#method_detail/equals-param-shape" translate="no" type="row">shape</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true, если переданная фигура эквивалентна данной.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IShape.dita#method_detail/getBounds" type="section"><keyword>getBounds</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает координаты двух противоположных углов области, охватывающей фигуру. Первый элемент массива - угол с наименьшими значениями координат относительно остальных точек области; второй элемент - угол с наибольшими значениями координат.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IShape.dita#method_detail/getGeometry" type="section"><keyword>getGeometry</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPixelGeometry.dita" type="topic"><keyword>IPixelGeometry</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает пиксельную геометрию фигуры.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IShape.dita#method_detail/getType" type="section"><keyword>getType</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает идентификатор типа геометрии.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IShape.dita#method_detail/scale" type="section"><keyword>scale</keyword></xref>(<xref href="IShape.dita#method_detail/scale-param-factor" translate="no" type="row">factor</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IShape.dita" type="topic"><keyword>IShape</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Создает отмасштабированную копию фигуры.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IShape.dita#method_detail/shift" type="section"><keyword>shift</keyword></xref>(<xref href="IShape.dita#method_detail/shift-param-offset" translate="no" type="row">offset</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IShape.dita" type="topic"><keyword>IShape</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Создает копию фигуры сдвинутую на заданную величину.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="contains">
+        <title translate="no">contains</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Boolean} contains(<xref href="IShape.dita#method_detail/contains-param-position" translate="no" type="row">position</xref>)</codeblock></p>
+
+         <p>Проверяет лежит ли переданная точка внутри фигуры.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>true, если переданная точка лежит внутри фигуры.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="contains-param-position">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/contains-param-position" type="row"><parmname>position</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Координаты точки.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="contains_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="equals">
+        <title translate="no">equals</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Boolean} equals(<xref href="IShape.dita#method_detail/equals-param-shape" translate="no" type="row">shape</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>true, если переданная фигура эквивалентна данной.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="equals-param-shape">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/equals-param-shape" type="row"><parmname>shape</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IShape.dita" type="topic"><keyword>IShape</keyword></xref></p>
+                    <p/>
+                   <p>Фигура, с которой производится сравнение.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="equals_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getBounds">
+        <title translate="no">getBounds</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]|null} getBounds()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>координаты двух противоположных углов области, охватывающей фигуру. Первый элемент массива - угол с наименьшими значениями координат относительно остальных точек области; второй элемент - угол с наибольшими значениями координат.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getGeometry">
+        <title translate="no">getGeometry</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IPixelGeometry.dita" type="topic"><keyword>IPixelGeometry</keyword></xref>} getGeometry()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> пиксельную геометрию фигуры.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getType">
+        <title translate="no">getType</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getType()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> идентификатор типа геометрии.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="scale">
+        <title translate="no">scale</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IShape.dita" type="topic"><keyword>IShape</keyword></xref>} scale(<xref href="IShape.dita#method_detail/scale-param-factor" translate="no" type="row">factor</xref>)</codeblock></p>
+
+         <p>Создает отмасштабированную копию фигуры.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> отмасштабированную копию фигуры.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="scale-param-factor">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/scale-param-factor" type="row"><parmname>factor</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Масштабный коэффициент.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="scale_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="shift">
+        <title translate="no">shift</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IShape.dita" type="topic"><keyword>IShape</keyword></xref>} shift(<xref href="IShape.dita#method_detail/shift-param-offset" translate="no" type="row">offset</xref>)</codeblock></p>
+
+         <p>Создает копию фигуры сдвинутую на заданную величину.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>сдвинутую копию фигуры.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="shift-param-offset">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/shift-param-offset" type="row"><parmname>offset</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Величина сдвига по осям.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="shift_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_MTY4NjJi_CACHING --></topic>

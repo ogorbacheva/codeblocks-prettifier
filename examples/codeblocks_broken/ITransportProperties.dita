@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="ITransportProperties" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">ITransportProperties</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>ITransportProperties</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Данный класс не имеет конструктора и предназначен для описания объекта данных транспортного средства в транспортном сегменте маршрута общественного транспорта.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#ITransportProperties/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#ITransportProperties/properties-summary" translate="no" type="section">Поля </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">ITransportProperties()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ITransportProperties.dita#field_detail/id" type="section"><keyword>id</keyword></xref></entry>
+              <entry colname="col2" translate="no">String</entry>
+        
+              <entry colname="col3">
+                <p>Идентификатор транспортного средства.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ITransportProperties.dita#field_detail/name" type="section"><keyword>name</keyword></xref></entry>
+              <entry colname="col2" translate="no">String</entry>
+        
+              <entry colname="col3">
+                <p>Название маршрута транспортного средства.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ITransportProperties.dita#field_detail/type" type="section"><keyword>type</keyword></xref></entry>
+              <entry colname="col2" translate="no">String</entry>
+        
+              <entry colname="col3">
+                <p>Идентификатор вида транспортного средства. Может принимать одно из следующих строковых значений:<ul>
+    <li>"bus" – автобус;</li>
+    <li>"trolleybus" – троллейбус;</li>
+    <li>"tramway" – трамвай;</li>
+    <li>"minibus" – маршрутное такси;</li>
+    <li>"underground" – метро;</li>
+    <li>"suburban" – электричка.</li>
+</ul></p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="id">
+            <title translate="no">id</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} id</codeblock></p>
+
+            <p>Идентификатор транспортного средства.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="name">
+            <title translate="no">name</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} name</codeblock></p>
+
+            <p>Название маршрута транспортного средства.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="type">
+            <title translate="no">type</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} type</codeblock></p>
+
+            <p>Идентификатор вида транспортного средства. Может принимать одно из следующих строковых значений:<ul>
+    <li>"bus" – автобус;</li>
+    <li>"trolleybus" – троллейбус;</li>
+    <li>"tramway" – трамвай;</li>
+    <li>"minibus" – маршрутное такси;</li>
+    <li>"underground" – метро;</li>
+    <li>"suburban" – электричка.</li>
+</ul></p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic><!-- XLIFF_FARM_YTJmMWE0_CACHING --></topic>

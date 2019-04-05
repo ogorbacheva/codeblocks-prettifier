@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="IPanoramaMarkerIcon" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IPanoramaMarkerIcon</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IPanoramaMarkerIcon</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Интерфейс, описывающий иконку маркера.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IPanoramaMarkerIcon/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#IPanoramaMarkerIcon/properties-summary" translate="no" type="section">Поля </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IPanoramaMarkerIcon()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IPanoramaMarkerIcon.dita#field_detail/image" type="section"><keyword>image</keyword></xref></entry>
+              <entry colname="col2" translate="no">HTMLCanvasElement|HTMLImageElement</entry>
+        
+              <entry colname="col3">
+                <p>Изображение иконки.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IPanoramaMarkerIcon.dita#field_detail/offset" type="section"><keyword>offset</keyword></xref></entry>
+              <entry colname="col2" translate="no">Number[]</entry>
+        
+              <entry colname="col3">
+                <p>Смещение верхнего левого угла иконки в пикселах относительно проекции точки, к которой привязан маркер.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="image">
+            <title translate="no">image</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{HTMLCanvasElement|HTMLImageElement} image</codeblock></p>
+
+            <p>Изображение иконки.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="offset">
+            <title translate="no">offset</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[]} offset</codeblock></p>
+
+            <p>Смещение верхнего левого угла иконки в пикселах относительно проекции точки, к которой привязан маркер.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic><!-- XLIFF_FARM_OTQ1ZjYy_CACHING --></topic>

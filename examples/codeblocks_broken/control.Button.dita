@@ -1,0 +1,1195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="control.Button" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">control.Button</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>control.Button</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="ICustomizable.dita" type="topic"><keyword>ICustomizable</keyword></xref>, <xref href="ISelectableControl.dita" type="topic"><keyword>ISelectableControl</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Элемент управления "Кнопка". Стандартный макет кнопки изменяет свой внешний вид в зависимости от размеров карты. Если карта имеет большую ширину, то кнопка принимает вид "картинка + текст". Если карта среднего размера, кнопка принимает вид "текст". Если карта небольшого размера, то в макете кнопки отображается только иконка. Если для кнопки не задана иконка, то во всех состояниях будет отображаться текст и наоборот.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#control.Button/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#control.Button/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#control.Button/events-summary" translate="no" type="section">События </xref> | <xref href="#control.Button/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">control.Button([<xref href="#control.Button/param-parameters" translate="no" type="entry">parameters</xref>])</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-parameters" translate="no">
+                    <xref href="#control.Button/param-parameters" type="entry"><parmname>parameters</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object|String</p>
+                    <p/>
+                    <p>Параметры кнопки или строка - содержимое кнопки в виде HTML.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.data" translate="no">
+                    <xref href="#control.Button/param-parameters.data" type="entry"><parmname>parameters.data</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Данные кнопки.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.data.content" translate="no">
+                    <xref href="#control.Button/param-parameters.data.content" type="entry"><parmname>parameters.data.content</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Содержимое кнопки в виде HTML.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.data.image" translate="no">
+                    <xref href="#control.Button/param-parameters.data.image" type="entry"><parmname>parameters.data.image</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>URL иконки кнопки. Стандартный макет кнопки рассчитан на иконку размером 16x16 пикселей.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.data.title" translate="no">
+                    <xref href="#control.Button/param-parameters.data.title" type="entry"><parmname>parameters.data.title</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Текст всплывающей подсказки, которая появляется при наведении на кнопку курсора мыши.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options" translate="no">
+                    <xref href="#control.Button/param-parameters.options" type="entry"><parmname>parameters.options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции кнопки.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.adjustMapMargin" translate="no">
+                    <xref href="#control.Button/param-parameters.options.adjustMapMargin" type="entry"><parmname>parameters.options.adjustMapMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Регистрирует ли кнопка свои размеры в менеджере отступов карты <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.float" translate="no">
+                    <xref href="#control.Button/param-parameters.options.float" type="entry"><parmname>parameters.options.float</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     "right"
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Сторона, по которой нужно выравнивать элемент управления. Может принимать три значения: "left", "right" или "none". При значении "left" или "right" элементы управления выстраиваются друг за другом, начиная от левого или правого края карты соответственно. При значении "none" элементы управления позиционируется только по значениям опций left, right, bottom, top относительно границ карты. Также смотрите описание опции position.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.floatIndex" translate="no">
+                    <xref href="#control.Button/param-parameters.options.floatIndex" type="entry"><parmname>parameters.options.floatIndex</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     0
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Приоритет расположения элемента управления. Элемент с максимальным приоритетом находится ближе к указанному в свойстве float краю карты. Не работает при float = "none".</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.layout" translate="no">
+                    <xref href="#control.Button/param-parameters.options.layout" type="entry"><parmname>parameters.options.layout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="ISelectableControlLayout.dita" type="topic"><keyword>ISelectableControlLayout</keyword></xref>|String</p>
+                    <p/>
+                    <p>Конструктор макета элемента управления, реализующий интерфейс <xref href="ISelectableControlLayout.dita" type="topic"><keyword>ISelectableControlLayout</keyword></xref> или ключ макета в хранилище <xref href="layout.storage.dita" type="topic"><keyword>layout.storage</keyword></xref>. В конструктор макета передается объект, содержащий поля:<ul>
+    <li>control - ссылка на элемент управления;</li>
+    <li>options - менеджер опций элемента управления control.Button.options;</li>
+    <li>data - менеджер данных элемента управления <xref href="control.Button.dita#field_detail/data" type="section"><keyword>control.Button.data</keyword></xref>;</li>
+    <li>state - менеджер состояния элемента управления <xref href="control.Button.dita#field_detail/state" type="section"><keyword>control.Button.state</keyword></xref>.</li>
+</ul>Макет меняет свой внешний вид на основе данных, состояния и опций элемента управления. Элемент управления, в свою очередь, реагирует на интерфейсные события макета и меняет значения полей <xref href="control.Button.dita#field_detail/state" type="section"><keyword>control.Button.state</keyword></xref> в зависимости от полученных команд.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.maxWidth" translate="no">
+                    <xref href="#control.Button/param-parameters.options.maxWidth" type="entry"><parmname>parameters.options.maxWidth</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     90
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|Number[]</p>
+                    <p/>
+                    <p>Максимальная ширина кнопки в различных состояниях. Если задано число, то считается, что кнопка имеет одинаковые максимальные размеры во всех состояниях. Если задан массив, то он будет трактоваться как максимальная ширина кнопки в различных состояниях - от меньшего к большему. Количество доступных состояний задается в экземпляре класса <xref href="control.Manager.dita" type="topic"><keyword>control.Manager</keyword></xref> через опцию states. Этот класс обычно является полем <xref href="Map.dita#field_detail/controls" type="section"><keyword>Map.controls</keyword></xref>. По умолчанию у элементов управления есть три состояния - ['small', 'medium', 'large'].</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position" translate="no">
+                    <xref href="#control.Button/param-parameters.options.position" type="entry"><parmname>parameters.options.position</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Объект, описывающий позицию элемента управления. При указании опции position значение опции float автоматически трактуется как "none".</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position.bottom" translate="no">
+                    <xref href="#control.Button/param-parameters.options.position.bottom" type="entry"><parmname>parameters.options.position.bottom</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                    <p>Положение относительно нижнего края карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position.left" translate="no">
+                    <xref href="#control.Button/param-parameters.options.position.left" type="entry"><parmname>parameters.options.position.left</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                    <p>Положение относительно левого края карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position.right" translate="no">
+                    <xref href="#control.Button/param-parameters.options.position.right" type="entry"><parmname>parameters.options.position.right</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                    <p>Положение относительно правого края карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position.top" translate="no">
+                    <xref href="#control.Button/param-parameters.options.position.top" type="entry"><parmname>parameters.options.position.top</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                    <p>Положение относительно верхнего края карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.selectOnClick" translate="no">
+                    <xref href="#control.Button/param-parameters.options.selectOnClick" type="entry"><parmname>parameters.options.selectOnClick</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Опция, описывающая поведение кнопки.<ul>
+  <li>true — кнопка становится "нажатой" после клика, то есть меняется ее внешний вид и значение поля <xref href="control.Button.dita#field_detail/state" type="section"><keyword>control.Button.state</keyword></xref> устанавливается в 'selected';</li>
+  <li>false - кнопка не меняет свой внешний вид и состояние после клика на нее.</li>
+</ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.size" translate="no">
+                    <xref href="#control.Button/param-parameters.options.size" type="entry"><parmname>parameters.options.size</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Параметр, отвечающий за внешний вид стандартного макета кнопки. Может принимать значения:<ul>
+    <li>'auto' - стандартный макет кнопки автоматически изменяет свой внешний вид в зависимости от размеров карты и от количества добавленных элементов управления;</li>
+    <li>'small' - в макете кнопки отображается иконка, независимо от размера карты;</li>
+    <li>'medium' - в макете кнопки отображается только текст, независимо от размера карты;</li>
+    <li>'large' - в макете кнопки всегда отображается иконка и текст, независимо от размера карты.</li>
+</ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.visible" translate="no">
+                    <xref href="#control.Button/param-parameters.options.visible" type="entry"><parmname>parameters.options.visible</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Признак того, что элемент управления отображается.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.state" translate="no">
+                    <xref href="#control.Button/param-parameters.state" type="entry"><parmname>parameters.state</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Объект, описывающий состояние кнопки.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.state.enabled" translate="no">
+                    <xref href="#control.Button/param-parameters.state.enabled" type="entry"><parmname>parameters.state.enabled</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Признак, активна ли кнопка.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.state.selected" translate="no">
+                    <xref href="#control.Button/param-parameters.state.selected" type="entry"><parmname>parameters.state.selected</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Признак, нажата ли кнопка.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+        
+      
+        
+            <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Пример 1.
+// Создадим кнопку и добавим ее на карту.
+var button = new ymaps.control.Button({
+         data: {
+             // Зададим иконку для кнопки.
+             image: 'images/button.jpg',
+             // Текст на кнопке.
+             content: 'Save',
+             // Текст всплывающей подсказки.
+             title: 'Click to save the route'
+         },
+         options: {
+             // Зададим опции кнопки.
+             selectOnClick: false,
+             // У кнопки будет три состояния: иконка, текст и текст + иконка.
+             // Зададим три значения ширины кнопки для всех состояний.
+             maxWidth: [30, 100, 150]
+         }});
+map.controls.add(button, { float: 'right', floatIndex: 100 });</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Пример 2
+// Создание кнопки с пользовательским макетом.
+var button = new ymaps.control.Button({
+        data: {
+            content: 'Красная кнопка',
+            title: 'Нажмите кнопку'
+        },
+        options: {
+            layout: ymaps.templateLayoutFactory.createClass(
+                // Если кнопка не нажата, к ней применится css-стиль 'myButton'.
+               // Если кнопка нажата, к ней применятся css-стили 'myButton' и 'myButtonSelected'.
+                "&lt;div class='myButton {% if state.selected %}myButtonSelected{% endif %}' title='{{ data.title }}'>" +
+                "{{ data.content }}" +
+                "&lt;/div>"
+            ),
+             // Чтобы другие элементы управления корректно позиционировались по горизонтали,
+            // нужно обязательно задать максимальную ширину для макета.
+            maxWidth: 150
+        }});
+map.controls.add(button, { float: 'left', floatIndex: 0 });
+
+// Можно задать позиционирование относительно краев карты. В этом случае
+// значение опции maxWidth не влияет на позиционирование
+// элементов управления.
+map.controls.add(button, { float: 'none', position: {left: '5px', top: '5px'} });</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="control.Button.dita#field_detail/data" type="section"><keyword>data</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Данные кнопки. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>image - иконка кнопки, если есть;</li>
+    <li>content - cодержимое кнопки в виде HTML;</li>
+    <li>title - текст всплывающей подсказки, которая появляется при наведении на кнопку курсора мыши.</li>
+</ul></p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IControl.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IControl.dita#field_detail/options" type="section"><keyword>IControl</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="control.Button.dita#field_detail/press" type="section"><keyword>press</keyword></xref></entry>
+              <entry colname="col2" translate="no"/>
+        
+              <entry colname="col3">
+                <p>Событие, сигнализирующее о том, что кнопка была нажата. В отличии от click генерируется только если состояние isEnabled == true. Экземпляр класса Event.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="control.Button.dita#field_detail/state" type="section"><keyword>state</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Состояние кнопки. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>selected - признак, нажата ли кнопка;</li>
+    <li>enabled - признак, активна ли кнопка;</li>
+    <li>size - размер, который в данный момент выставлен кнопке;</li>
+</ul></p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.Button.dita#event_detail/event_detail/event-click"><keyword>click</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Нажатие на кнопку. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#event_detail/event_detail/event-deselect"><keyword>deselect</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Элемент управления не выбран.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ISelectableControl.dita#event_detail/event_detail/event-deselect"><keyword>ISelectableControl</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#event_detail/event_detail/event-disable"><keyword>disable</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Элемент управления стал недоступным.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ISelectableControl.dita#event_detail/event_detail/event-disable"><keyword>ISelectableControl</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#event_detail/event_detail/event-enable"><keyword>enable</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Элемент управления стал доступным.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ISelectableControl.dita#event_detail/event_detail/event-enable"><keyword>ISelectableControl</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>parentchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменился родительский объект.</p><p>Поля данных:</p>
+<ul>
+    <li>oldParent - старый родитель;</li>
+    <li>newParent - новый родитель.</li>
+</ul>
+                            
+                                <p translate="no">Унаследовано от <xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>IChild</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#event_detail/event_detail/event-select"><keyword>select</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Элемент управления выбран.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ISelectableControl.dita#event_detail/event_detail/event-select"><keyword>ISelectableControl</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#method_detail/deselect" type="section"><keyword>deselect</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Отменяет выбор элемента управления (выключает).</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ISelectableControl.dita#method_detail/deselect" type="section"><keyword>ISelectableControl</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#method_detail/disable" type="section"><keyword>disable</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Делает элемент управления недоступным (запрещены пользовательские действия).</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ISelectableControl.dita#method_detail/disable" type="section"><keyword>ISelectableControl</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#method_detail/enable" type="section"><keyword>enable</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Делает элемент управления доступным (разрешены пользовательские действия).</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ISelectableControl.dita#method_detail/enable" type="section"><keyword>ISelectableControl</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.Button.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на карту.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IControl.dita#method_detail/getParent" type="section"><keyword>getParent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IControlParent.dita" type="topic"><keyword>IControlParent</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на родительский объект или null, если родительский элемент не был установлен.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IControl.dita#method_detail/getParent" type="section"><keyword>IControl</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#method_detail/isEnabled" type="section"><keyword>isEnabled</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true - элемент управления доступен, false - недоступен.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="ISelectableControl.dita#method_detail/isEnabled" type="section"><keyword>ISelectableControl</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#method_detail/isSelected" type="section"><keyword>isSelected</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true - элемент управления выбран, false - не выбран.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="ISelectableControl.dita#method_detail/isSelected" type="section"><keyword>ISelectableControl</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#method_detail/select" type="section"><keyword>select</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Выбирает (включает) элемент управления.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ISelectableControl.dita#method_detail/select" type="section"><keyword>ISelectableControl</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IControl.dita#method_detail/setParent" type="section"><keyword>setParent</keyword></xref>(<xref href="IControl.dita#method_detail/setParent-param-parent" translate="no" type="row">parent</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IChildOnMap.dita" type="topic"><keyword>IChildOnMap</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает родительский объект. Если передать значение null, то элемент управления будет только удален из текущего родительского объекта.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IControl.dita#method_detail/setParent" type="section"><keyword>IControl</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="data">
+            <title translate="no">data</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>} data</codeblock></p>
+
+            <p>Данные кнопки. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>image - иконка кнопки, если есть;</li>
+    <li>content - cодержимое кнопки в виде HTML;</li>
+    <li>title - текст всплывающей подсказки, которая появляется при наведении на кнопку курсора мыши.</li>
+</ul></p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="press">
+            <title translate="no">press</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">press</codeblock></p>
+
+            <p>Событие, сигнализирующее о том, что кнопка была нажата. В отличии от click генерируется только если состояние isEnabled == true. Экземпляр класса Event.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="state">
+            <title translate="no">state</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>} state</codeblock></p>
+
+            <p>Состояние кнопки. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>selected - признак, нажата ли кнопка;</li>
+    <li>enabled - признак, активна ли кнопка;</li>
+    <li>size - размер, который в данный момент выставлен кнопке;</li>
+</ul></p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">var button = new ymaps.control.Button('Редактировать');
+// Зададим состояние кнопки "нажата" -
+// аналогично вызову метода button.select();
+button.state.set('selected', true);</codeblock>
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-click">
+            <title translate="no">click</title>
+            
+             <p>Нажатие на кнопку. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getMap">
+        <title translate="no">getMap</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="Map.dita" type="topic"><keyword>Map</keyword></xref>} getMap()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на карту.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_OWQyZDgw_CACHING --></topic>

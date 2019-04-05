@@ -1,0 +1,875 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="router.Editor" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">router.Editor</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>router.Editor</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+    
+    <p translate="no"><note>Конструктор класса router.Editor скрыт, так как данный класс не предназначен для самостоятельной инициализации.</note></p>
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="ICustomizable.dita" type="topic"><keyword>ICustomizable</keyword></xref>, <xref href="IEventEmitter.dita" type="topic"><keyword>IEventEmitter</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Редактор маршрутов. Конструктор недоступен в package.full (стандартный набор модулей). Данный модуль загружается по требованию.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#router.Editor/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#router.Editor/events-summary" translate="no" type="section">События </xref> | <xref href="#router.Editor/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>ICustomizable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="router.Editor.dita#field_detail/state" type="section"><keyword>state</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IDataManager.dita" type="topic"><keyword>IDataManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер состояния редактора маршрута.</p><p>Поля данных, доступные посредством методов get и set:</p>
+<ul>
+    <li>routeloading: Boolean - признак того, что в данный момент идет загрузка данных из сервиса маршрутизации.</li>
+    <li>waypointsdrag: Boolean - признак того, что в данный момент происходит перетаскивание путевой точки.</li>
+    <li>viapointsdrag: Boolean - признак того, что в данный момент происходит перетаскивание транзитной точки.</li>
+</ul>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Editor.dita#event_detail/event_detail/event-routeupdate"><keyword>routeupdate</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Обновление маршрута. Через значение флага e.get('rough') можно определить событие бросилось после завершения редактирования или во время. Если вы хотите в своем приложении обновлять информацию, связанную с маршрутом, то нужно делать проверку e.get('rough') == false, чтобы избежать частой обработки этого события.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Editor.dita#event_detail/event_detail/event-start"><keyword>start</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Включение редактора.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Editor.dita#event_detail/event_detail/event-stop"><keyword>stop</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Выключение редактора.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Editor.dita#event_detail/event_detail/event-viapointadd"><keyword>viapointadd</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Добавление транзитной точки. Добавляемую транзитную точку можно получить через e.get('viaPoint')</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Editor.dita#event_detail/event_detail/event-viapointdragend"><keyword>viapointdragend</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Завершение перетаскивания транзитной точки. Путевую точку можно получить через e.get('viaPoint')</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Editor.dita#event_detail/event_detail/event-viapointdragstart"><keyword>viapointdragstart</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Начало перетаскивания транзитной точки. Путевую точку можно получить через e.get('viaPoint')</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Editor.dita#event_detail/event_detail/event-viapointremove"><keyword>viapointremove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Удаление транзитной точки. Удаляемую транзитную точку можно получить через e.get('viaPoint')</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Editor.dita#event_detail/event_detail/event-waypointadd"><keyword>waypointadd</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Добавление путевой точки. Добавляемую путевую точку можно получить через e.get('wayPoint')</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Editor.dita#event_detail/event_detail/event-waypointdragend"><keyword>waypointdragend</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Завершение перетаскивания путевой точки. Путевую точку можно получить через e.get('wayPoint')</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Editor.dita#event_detail/event_detail/event-waypointdragstart"><keyword>waypointdragstart</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Начало перетаскивания путевой точки. Путевую точку можно получить через e.get('wayPoint')</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Editor.dita#event_detail/event_detail/event-waypointremove"><keyword>waypointremove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Удаление путевой точки. Удаляемую путевую точку можно получить через e.get('wayPoint')</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Editor.dita#method_detail/start" type="section"><keyword>start</keyword></xref>([<xref href="router.Editor.dita#method_detail/start-param-options" translate="no" type="row">options</xref>])</entry>
+                        
+                        
+                        <entry colname="col2">
+                            
+                            
+                                <p>Включает редактор маршрута.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="router.Editor.dita#method_detail/stop" type="section"><keyword>stop</keyword></xref>()</entry>
+                        
+                        
+                        <entry colname="col2">
+                            
+                            
+                                <p>Выключает редактор маршрута.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="state">
+            <title translate="no">state</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IDataManager.dita" type="topic"><keyword>IDataManager</keyword></xref>} state</codeblock></p>
+
+            <p>Менеджер состояния редактора маршрута.</p><p>Поля данных, доступные посредством методов get и set:</p>
+<ul>
+    <li>routeloading: Boolean - признак того, что в данный момент идет загрузка данных из сервиса маршрутизации.</li>
+    <li>waypointsdrag: Boolean - признак того, что в данный момент происходит перетаскивание путевой точки.</li>
+    <li>viapointsdrag: Boolean - признак того, что в данный момент происходит перетаскивание транзитной точки.</li>
+</ul>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-routeupdate">
+            <title translate="no">routeupdate</title>
+            
+             <p>Обновление маршрута. Через значение флага e.get('rough') можно определить событие бросилось после завершения редактирования или во время. Если вы хотите в своем приложении обновлять информацию, связанную с маршрутом, то нужно делать проверку e.get('rough') == false, чтобы избежать частой обработки этого события.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-start">
+            <title translate="no">start</title>
+            
+             <p>Включение редактора.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-stop">
+            <title translate="no">stop</title>
+            
+             <p>Выключение редактора.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-viapointadd">
+            <title translate="no">viapointadd</title>
+            
+             <p>Добавление транзитной точки. Добавляемую транзитную точку можно получить через e.get('viaPoint')</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-viapointdragend">
+            <title translate="no">viapointdragend</title>
+            
+             <p>Завершение перетаскивания транзитной точки. Путевую точку можно получить через e.get('viaPoint')</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-viapointdragstart">
+            <title translate="no">viapointdragstart</title>
+            
+             <p>Начало перетаскивания транзитной точки. Путевую точку можно получить через e.get('viaPoint')</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-viapointremove">
+            <title translate="no">viapointremove</title>
+            
+             <p>Удаление транзитной точки. Удаляемую транзитную точку можно получить через e.get('viaPoint')</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-waypointadd">
+            <title translate="no">waypointadd</title>
+            
+             <p>Добавление путевой точки. Добавляемую путевую точку можно получить через e.get('wayPoint')</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-waypointdragend">
+            <title translate="no">waypointdragend</title>
+            
+             <p>Завершение перетаскивания путевой точки. Путевую точку можно получить через e.get('wayPoint')</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-waypointdragstart">
+            <title translate="no">waypointdragstart</title>
+            
+             <p>Начало перетаскивания путевой точки. Путевую точку можно получить через e.get('wayPoint')</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-waypointremove">
+            <title translate="no">waypointremove</title>
+            
+             <p>Удаление путевой точки. Удаляемую путевую точку можно получить через e.get('wayPoint')</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="start">
+        <title translate="no">start</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} start([<xref href="router.Editor.dita#method_detail/start-param-options" translate="no" type="row">options</xref>])</codeblock></p>
+
+         <p>Включает редактор маршрута.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="start-param-options">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/start-param-options" type="row"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Опции.</p>
+                </entry>
+
+            </row>
+            
+            <row id="start-param-options.addViaPoints">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/start-param-options.addViaPoints" type="row"><parmname>options.addViaPoints</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> true
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>true - добавление транзитных точек разрешено, false - запрещено.</p>
+                </entry>
+
+            </row>
+            
+            <row id="start-param-options.addWayPoints">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/start-param-options.addWayPoints" type="row"><parmname>options.addWayPoints</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>true - добавление путевых точек при клике на карте разрешено, false - запрещено.</p>
+                </entry>
+
+            </row>
+            
+            <row id="start-param-options.editViaPoints">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/start-param-options.editViaPoints" type="row"><parmname>options.editViaPoints</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> true
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>true - редактирование (перемещение) транзитных точек разрешено, false - запрещено.</p>
+                </entry>
+
+            </row>
+            
+            <row id="start-param-options.editWayPoints">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/start-param-options.editWayPoints" type="row"><parmname>options.editWayPoints</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> true
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>true - редактирование (перемещение) путевых точек разрешено, false - запрещено.</p>
+                </entry>
+
+            </row>
+            
+            <row id="start-param-options.removeViaPoints">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/start-param-options.removeViaPoints" type="row"><parmname>options.removeViaPoints</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> true
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>true - удаление транзитных точек двойным кликом разрешено, false - запрещено.</p>
+                </entry>
+
+            </row>
+            
+            <row id="start-param-options.removeWayPoints">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/start-param-options.removeWayPoints" type="row"><parmname>options.removeWayPoints</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>true - удаление путевых точек двойным кликом разрешено, false - запрещено.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="stop">
+        <title translate="no">stop</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} stop()</codeblock></p>
+
+         <p>Выключает редактор маршрута.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_YzhmMDUz_CACHING --></topic>

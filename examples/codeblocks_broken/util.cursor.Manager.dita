@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="util.cursor.Manager" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">util.cursor.Manager</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>util.cursor.Manager</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Менеджер курсоров.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#util.cursor.Manager/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#util.cursor.Manager/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#util.cursor.Manager/events-summary" translate="no" type="section">События </xref> | <xref href="#util.cursor.Manager/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">util.cursor.Manager(<xref href="#util.cursor.Manager/param-element" translate="no" type="entry">element</xref>)</codeblock></p>
+    
+       
+            
+                <p>Менеджер курсоров над DOM-элементом. Используется прямое присваивание через style.cursor.</p>
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-element" translate="no">
+                    
+                        <xref href="#util.cursor.Manager/param-element" type="entry"><parmname>element</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: HTMLElement</p>
+                    <p/>
+                    <p>DOM-элемент, для которого выполняется установка курсоров.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Поставим курсор "стрелка" над картой.
+var cursor = map.cursors.push('arrow');
+setTimeout(function () {
+    // Через 5 секунд установим курсору другой ключ.
+    cursor.setKey('grabbing');
+    setTimeout(function () {
+        // Еще через 5 секунд удалим этот курсор с карты.
+        cursor.remove();
+    }, 5000);
+}, 5000);</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="util.cursor.Manager.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="event.Manager.dita" type="topic"><keyword>event.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий менеджера курсоров.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.cursor.Manager.dita#event_detail/event_detail/event-change"><keyword>change</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение курсора.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.cursor.Manager.dita#method_detail/push" type="section"><keyword>push</keyword></xref>(<xref href="util.cursor.Manager.dita#method_detail/push-param-key" translate="no" type="row">key</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="util.cursor.Accessor.dita" type="topic"><keyword>util.cursor.Accessor</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает новый курсор и дописывает его в стэк курсоров объекта.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="events">
+            <title translate="no">events</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="event.Manager.dita" type="topic"><keyword>event.Manager</keyword></xref>} events</codeblock></p>
+
+            <p>Менеджер событий менеджера курсоров.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-change">
+            <title translate="no">change</title>
+            
+             <p>Изменение курсора.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="push">
+        <title translate="no">push</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="util.cursor.Accessor.dita" type="topic"><keyword>util.cursor.Accessor</keyword></xref>} push(<xref href="util.cursor.Manager.dita#method_detail/push-param-key" translate="no" type="row">key</xref>)</codeblock></p>
+
+         <p>Устанавливает новый курсор и дописывает его в стэк курсоров объекта.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект, предоставляющий доступ к добавленному на карту курсору.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="push-param-key">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/push-param-key" type="row"><parmname>key</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Курсор. Допустимые значения:<ul>
+    <li>"arrow" - стрелка;</li>
+    <li>"crosshair" - перекрестье;</li>
+    <li>"grab" - "рука";</li>
+    <li>"grabbing" - сжатая "рука"</li>
+    <li>"help" - стрелка со знаком вопроса;</li>
+    <li>"zoom" - лупа;</li>
+    <li>"move" - курсор в виде четырех стрелок;</li>
+    <li>"pointer" - "палец";</li>
+    <li>"inherit" - унаследовать курсор от родителя.</li>
+</ul></p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="push_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_ZjYyZDVi_CACHING --></topic>

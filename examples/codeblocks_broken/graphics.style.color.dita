@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="graphics.style.color" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">graphics.style.color</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>graphics.style.color</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статический объект.</p>
+    
+    
+        
+            <p>Задает цвет графической фигуры в форматах #RGB,#RGBA,#RRGGBB,#RRGGBBAA,rgb(r,b,a),rgba(r,g,b,a)</p>
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+    
+
+    
+
+    
+
+
+
+    
+        <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">strokeColor: '#F00';
+strokeColor: '#FF0000';
+strokeColor: '#FF0000AA';
+strokeColor: 'rgba(255,0,0,1)'.</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_MDdlZDZh_CACHING --></topic>

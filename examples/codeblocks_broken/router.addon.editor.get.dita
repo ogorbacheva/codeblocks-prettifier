@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="router.addon.editor.get" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">router.addon.editor.get</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>router.addon.editor.get</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статическая функция.</p>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+       <p><b>Возвращает</b> редактор маршрутов.</p>
+       
+    
+
+    
+
+    
+        
+         
+              <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{ <xref href="router.Route.dita" type="topic"><keyword>router.Route</keyword></xref> } router.addon.editor.get()</codeblock></p>
+         
+     
+
+    
+    
+
+
+
+    
+        <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">ymaps.router.addon.editor.get(myMap)</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_MzkyM2M3_CACHING --></topic>

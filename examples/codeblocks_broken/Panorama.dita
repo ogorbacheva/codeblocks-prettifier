@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="Panorama" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">Panorama</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>Panorama</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+    
+    <p translate="no"><note>Конструктор класса Panorama скрыт, так как данный класс не предназначен для самостоятельной инициализации.</note></p>
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IPanorama.dita" type="topic"><keyword>IPanorama</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Объект, описывающий панораму.</p>
+    
+
+
+
+    <p translate="no"><b>См.: </b><xref href="panorama.locate.dita" type="topic"><keyword>panorama.locate</keyword></xref> </p>
+
+
+
+
+
+    <p translate="no"><xref href="#Panorama/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Panorama.dita#method_detail/createPlayer" type="section"><keyword>createPlayer</keyword></xref>(<xref href="Panorama.dita#method_detail/createPlayer-param-element" translate="no" type="row">element</xref>[, <xref href="Panorama.dita#method_detail/createPlayer-param-options" translate="no" type="row">options</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Создает новый экземпляр класса <xref href="panorama.Player.dita" type="topic"><keyword>panorama.Player</keyword></xref> и открывает в нем панораму.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPanorama.dita#method_detail/getAngularBBox" type="section"><keyword>getAngularBBox</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает сферические координаты, которые задают на панорамной сфере область, занимаемую изображением. Координаты указываются в формате <codeph>[thetaTop, phiRight, thetaBottom, phiLeft]</codeph> (аналогично CSS).</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPanorama.dita#method_detail/getAngularBBox" type="section"><keyword>IPanorama</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPanorama.dita#method_detail/getConnectionArrows" type="section"><keyword>getConnectionArrows</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPanoramaConnectionArrow.dita" type="topic"><keyword>IPanoramaConnectionArrow</keyword></xref>[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает массив связей панорамы.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPanorama.dita#method_detail/getConnectionArrows" type="section"><keyword>IPanorama</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPanorama.dita#method_detail/getConnectionMarkers" type="section"><keyword>getConnectionMarkers</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPanoramaConnectionMarker.dita" type="topic"><keyword>IPanoramaConnectionMarker</keyword></xref>[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает массив маркеров-переходов на панораме.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPanorama.dita#method_detail/getConnectionMarkers" type="section"><keyword>IPanorama</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPanorama.dita#method_detail/getCoordSystem" type="section"><keyword>getCoordSystem</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="ICoordSystem.dita" type="topic"><keyword>ICoordSystem</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает систему координат, в которой заданы позиции панорамы и всех её маркеров и связей.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPanorama.dita#method_detail/getCoordSystem" type="section"><keyword>IPanorama</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPanorama.dita#method_detail/getDefaultDirection" type="section"><keyword>getDefaultDirection</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает направление взгляда по умолчанию. Будет использовано плеером при открытии панорамы.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPanorama.dita#method_detail/getDefaultDirection" type="section"><keyword>IPanorama</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPanorama.dita#method_detail/getDefaultSpan" type="section"><keyword>getDefaultSpan</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает размер области обзора по умолчанию. Будет использовано плеером при открытии панорамы.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPanorama.dita#method_detail/getDefaultSpan" type="section"><keyword>IPanorama</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPanorama.dita#method_detail/getGraph" type="section"><keyword>getGraph</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPanoramaGraph.dita" type="topic"><keyword>IPanoramaGraph</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает граф панорам, связанных с текущей панорамой, для осуществления быстрых переходов.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPanorama.dita#method_detail/getGraph" type="section"><keyword>IPanorama</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Panorama.dita#method_detail/getLayer" type="section"><keyword>getLayer</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает слой, которому принадлежит панорама.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPanorama.dita#method_detail/getMarkers" type="section"><keyword>getMarkers</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPanoramaMarker.dita" type="topic"><keyword>IPanoramaMarker</keyword></xref>[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает массив маркеров на панораме.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPanorama.dita#method_detail/getMarkers" type="section"><keyword>IPanorama</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPanorama.dita#method_detail/getName" type="section"><keyword>getName</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает название панорамы, отображаемое плеером в интерфейсе.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPanorama.dita#method_detail/getName" type="section"><keyword>IPanorama</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPanorama.dita#method_detail/getPosition" type="section"><keyword>getPosition</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает положение панорамы в указанной в опциях системе координат. Задается в формате <codeph>[lon, lat, height]</codeph>, <codeph>[lat, lon, height]</codeph> или <codeph>[x, y, height]</codeph> в зависимости от системы и порядка координат. <codeph>height</codeph> – высота панорамы, заданная относительно некоторого уровня (не обязательно уровня моря).</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPanorama.dita#method_detail/getPosition" type="section"><keyword>IPanorama</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPanorama.dita#method_detail/getTileLevels" type="section"><keyword>getTileLevels</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPanoramaTileLevel.dita" type="topic"><keyword>IPanoramaTileLevel</keyword></xref>[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает массив уровней масштабирования панорамного изображения.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPanorama.dita#method_detail/getTileLevels" type="section"><keyword>IPanorama</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPanorama.dita#method_detail/getTileSize" type="section"><keyword>getTileSize</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает размер тайлов, на которые нарезано панорамное изображение.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPanorama.dita#method_detail/getTileSize" type="section"><keyword>IPanorama</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="createPlayer">
+        <title translate="no">createPlayer</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} createPlayer(<xref href="Panorama.dita#method_detail/createPlayer-param-element" translate="no" type="row">element</xref>[, <xref href="Panorama.dita#method_detail/createPlayer-param-options" translate="no" type="row">options</xref>])</codeblock></p>
+
+         <p>Создает новый экземпляр класса <xref href="panorama.Player.dita" type="topic"><keyword>panorama.Player</keyword></xref> и открывает в нем панораму.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> Promise объект, который будет разрешен экземпляром класса <xref href="panorama.Player.dita" type="topic"><keyword>panorama.Player</keyword></xref> с открытой текущей панорамой.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="createPlayer-param-element">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/createPlayer-param-element" type="row"><parmname>element</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: HTMLElement|String</p>
+                    <p/>
+                   <p>Ссылка на HTML-элемент, в котором будет размещен плеер, или идентификатор этого HTML-элемента.</p>
+                </entry>
+
+            </row>
+            
+            <row id="createPlayer-param-options">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/createPlayer-param-options" type="row"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Опции.</p>
+                </entry>
+
+            </row>
+            
+            <row id="createPlayer-param-options.direction">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/createPlayer-param-options.direction" type="row"><parmname>options.direction</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> 'auto'
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]|String</p>
+                    <p/>
+                   <p>Направление взгляда в формате <codeph>[bearing, pitch]</codeph>, где <codeph>bearing</codeph> – азимут направления в градусах, <codeph>pitch</codeph> – угол подъема над линией горизонта в градусах. Специальное строковое значение <codeph>auto</codeph> означает, что после открытия панорамы будет применено направление, указанное в метаданных панорамы.</p>
+                </entry>
+
+            </row>
+            
+            <row id="createPlayer-param-options.span">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/createPlayer-param-options.span" type="row"><parmname>options.span</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> 'auto'
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]|String</p>
+                    <p/>
+                   <p>Угловые размеры поля обзора в формате <codeph>[horizontalSpan, verticalSpan]</codeph>, где <codeph>horizontalSpan</codeph> — горизонтальный размер поля, <codeph>verticalSpan</codeph> — вертикальный.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="createPlayer_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getLayer">
+        <title translate="no">getLayer</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getLayer()</codeblock></p>
+
+         
+
+        
+            <p translate="no"><b>См.: </b><xref href="panorama.locate.dita" type="topic"><keyword>panorama.locate</keyword></xref> </p>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> слой, которому принадлежит панорама.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_ODZmNTI5_CACHING --></topic>

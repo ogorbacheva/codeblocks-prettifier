@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="geometry.json.lineString" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">geometry.json.lineString</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>geometry.json.lineString</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IGeometryJson.dita" type="topic"><keyword>IGeometryJson</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Объект, описывающий JSON-представление геометрии "Ломаная линия".</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#geometry.json.lineString/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#geometry.json.lineString/properties-summary" translate="no" type="section">Поля </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">geometry.json.lineString()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">var geometryJson = {
+    type: "LineString",
+    coordinates: [[1, 2], [3, 5], [7, 11]]
+};</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="geometry.json.lineString.dita#field_detail/coordinates" type="section"><keyword>coordinates</keyword></xref></entry>
+              <entry colname="col2" translate="no">Number[][]</entry>
+        
+              <entry colname="col3">
+                <p>Координаты ломаной линии.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="geometry.json.lineString.dita#field_detail/type" type="section"><keyword>type</keyword></xref></entry>
+              <entry colname="col2" translate="no">String</entry>
+        
+              <entry colname="col3">
+                <p>Идентификатор типа геометрии "Ломаная линия". Всегда должен принимать значение "LineString".</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="coordinates">
+            <title translate="no">coordinates</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]} coordinates</codeblock></p>
+
+            <p>Координаты ломаной линии.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="type">
+            <title translate="no">type</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} type</codeblock></p>
+
+            <p>Идентификатор типа геометрии "Ломаная линия". Всегда должен принимать значение "LineString".</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic><!-- XLIFF_FARM_MzU2MjFh_CACHING --></topic>

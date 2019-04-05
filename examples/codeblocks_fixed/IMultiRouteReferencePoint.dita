@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="IMultiRouteReferencePoint" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IMultiRouteReferencePoint</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IMultiRouteReferencePoint</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Интерфейс объекта, описывающего формат задания опорной точки мультимаршрута.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IMultiRouteReferencePoint/constructor-summary" translate="no" type="section">Конструктор</xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IMultiRouteReferencePoint()</codeblock></p>
+    
+       
+            
+                <p>Опорная точка может быть задана одним из следующих способов:<ul>
+    <li>строка, содержащая почтовый адрес опорной точки;</li>
+    <li>массив, содержащий широту и долготу опорной точки;</li>
+    <li>геометрия geometry.Point, описывающая опорную точку.</li>
+</ul>Опорные точки мультимаршрута могут подразделяться на путевые и транзитные. Путевые точки подразумевают остановку и делят маршрут на т. н. пути. Транзитные точки остановку не подразумевают. Таким образом, при прохождении через транзитную точку, сегмент пути маршрута не прерывается.</p>
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_ZmM2YWE2_CACHING --></topic>

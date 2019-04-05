@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="control.ListBoxItem" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">control.ListBoxItem</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>control.ListBoxItem</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="ICustomizable.dita" type="topic"><keyword>ICustomizable</keyword></xref>, <xref href="ISelectableControl.dita" type="topic"><keyword>ISelectableControl</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Элемент раскрывающегося списка.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#control.ListBoxItem/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#control.ListBoxItem/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#control.ListBoxItem/events-summary" translate="no" type="section">События </xref> | <xref href="#control.ListBoxItem/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">control.ListBoxItem([<xref href="#control.ListBoxItem/param-parameters" translate="no" type="entry">parameters</xref>])</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-parameters" translate="no">
+                    <xref href="#control.ListBoxItem/param-parameters" type="entry"><parmname>parameters</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object|String</p>
+                    <p/>
+                    <p>Параметры элемента либо строка - HTML-содержимое элемента.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.data" translate="no">
+                    <xref href="#control.ListBoxItem/param-parameters.data" type="entry"><parmname>parameters.data</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Данные элемента.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.data.content" translate="no">
+                    <xref href="#control.ListBoxItem/param-parameters.data.content" type="entry"><parmname>parameters.data.content</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Содержимое элемента.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options" translate="no">
+                    <xref href="#control.ListBoxItem/param-parameters.options" type="entry"><parmname>parameters.options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции элемента управления.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.layout" translate="no">
+                    <xref href="#control.ListBoxItem/param-parameters.options.layout" type="entry"><parmname>parameters.options.layout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'islands#listBoxItemLayout'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function|String</p>
+                    <p/>
+                    <p>Конструктор макета элемента управления, реализующий интерфейс <xref href="ISelectableControlLayout.dita" type="topic"><keyword>ISelectableControlLayout</keyword></xref> или ключ макета в хранилище <xref href="layout.storage.dita" type="topic"><keyword>layout.storage</keyword></xref>. Это базовый макет, который в зависимости от значения опции type выбирает, какой из подмакетов отобразить - options.selectableLayout или options.separatorLayout. В конструктор макета передается объект, содержащий поля:<ul>
+    <li>control - ссылка на элемент управления;</li>
+    <li>options - менеджер опций элемента управления control.ListBoxItem.options;</li>
+    <li>data - менеджер данных элемента управления <xref href="control.ListBoxItem.dita#field_detail/data" type="section"><keyword>control.ListBoxItem.data</keyword></xref>;</li>
+    <li>state - менеджер состояния элемента управления <xref href="control.ListBoxItem.dita#field_detail/state" type="section"><keyword>control.ListBoxItem.state</keyword></xref>.</li>
+</ul>Макет меняет свой внешний вид на основе данных, состояния и опций элемента управления. Элемент управления, в свою очередь, реагирует на интерфейсные события макета и меняет значения полей <xref href="control.ListBoxItem.dita#field_detail/state" type="section"><keyword>control.ListBoxItem.state</keyword></xref> в зависимости от полученных команд.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.selectableLayout" translate="no">
+                    <xref href="#control.ListBoxItem/param-parameters.options.selectableLayout" type="entry"><parmname>parameters.options.selectableLayout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'islands#listBoxItemSelectableLayout'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function|String</p>
+                    <p/>
+                    <p>Конструктор макета элемента списка, реализующий интерфейс <xref href="ISelectableControlLayout.dita" type="topic"><keyword>ISelectableControlLayout</keyword></xref> или ключ макета в хранилище <xref href="layout.storage.dita" type="topic"><keyword>layout.storage</keyword></xref>. Применяется к элементам с опцией type='item'. Опция стандартной реализации макета элемента списка.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.selectOnClick" translate="no">
+                    <xref href="#control.ListBoxItem/param-parameters.options.selectOnClick" type="entry"><parmname>parameters.options.selectOnClick</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Флаг, разрешающий автоматическое выделение элемента списка по клику.<ul>
+  <li>true — элемент списка выделяется после клика и меняет значение поля <xref href="control.ListBoxItem.dita#field_detail/state" type="section"><keyword>control.ListBoxItem.state</keyword></xref> на 'selected';</li>
+  <li>false — элемент списка не меняет свой внешний вид и состояние после клика.</li>
+</ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.separatorLayout" translate="no">
+                    <xref href="#control.ListBoxItem/param-parameters.options.separatorLayout" type="entry"><parmname>parameters.options.separatorLayout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'islands#listBoxItemSeparatorLayout'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function|String</p>
+                    <p/>
+                    <p>Конструктор макета разделителя элементов списка, реализующий интерфейс IControlLayout или ключ макета в хранилище <xref href="layout.storage.dita" type="topic"><keyword>layout.storage</keyword></xref>. Применяется к элементам с опцией type='separator'. Опция стандартной реализации макета элемента списка.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.type" translate="no">
+                    <xref href="#control.ListBoxItem/param-parameters.options.type" type="entry"><parmname>parameters.options.type</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'selectable'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Тип пункта меню. В зависимости от значения этой опции макет элемента списка инстанцирует один из подмакетов - options.selectableLayout или options.separatorLayout. Возможные значения:<ul>
+    <li>'selectable' - элемент списка, выделяется галочкой справа от содержимого;</li>
+    <li>'separator' - разделитель.</li>
+</ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.visible" translate="no">
+                    <xref href="#control.ListBoxItem/param-parameters.options.visible" type="entry"><parmname>parameters.options.visible</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Признак того, что элемент управления отображается.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.state" translate="no">
+                    <xref href="#control.ListBoxItem/param-parameters.state" type="entry"><parmname>parameters.state</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Объект, описывающий состояние пункта меню.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.state.selected" translate="no">
+                    <xref href="#control.ListBoxItem/param-parameters.state.selected" type="entry"><parmname>parameters.state.selected</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Признак, выбран ли пункт.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="control.ListBoxItem.dita#field_detail/data" type="section"><keyword>data</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Данные элемента списка. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>content - cодержимое элемента списка в виде HTML;</li>
+    <li>title - текст всплывающей подсказки.</li>
+</ul></p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>ICustomizable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="control.ListBoxItem.dita#field_detail/state" type="section"><keyword>state</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Состояние элемента списка. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>selected - признак, выбран ли элемент списка;</li>
+    <li>enabled - признак, активен ли элемент списка.</li>
+</ul></p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.ListBoxItem.dita#event_detail/event_detail/event-click"><keyword>click</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Выбор элемента списка.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#event_detail/event_detail/event-deselect"><keyword>deselect</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Элемент управления не выбран.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ISelectableControl.dita#event_detail/event_detail/event-deselect"><keyword>ISelectableControl</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#event_detail/event_detail/event-disable"><keyword>disable</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Элемент управления стал недоступным.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ISelectableControl.dita#event_detail/event_detail/event-disable"><keyword>ISelectableControl</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#event_detail/event_detail/event-enable"><keyword>enable</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Элемент управления стал доступным.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ISelectableControl.dita#event_detail/event_detail/event-enable"><keyword>ISelectableControl</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>parentchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменился родительский объект.</p><p>Поля данных:</p>
+<ul>
+    <li>oldParent - старый родитель;</li>
+    <li>newParent - новый родитель.</li>
+</ul>
+                            
+                                <p translate="no">Унаследовано от <xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>IChild</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#event_detail/event_detail/event-select"><keyword>select</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Элемент управления выбран.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ISelectableControl.dita#event_detail/event_detail/event-select"><keyword>ISelectableControl</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#method_detail/deselect" type="section"><keyword>deselect</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Отменяет выбор элемента управления (выключает).</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ISelectableControl.dita#method_detail/deselect" type="section"><keyword>ISelectableControl</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#method_detail/disable" type="section"><keyword>disable</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Делает элемент управления недоступным (запрещены пользовательские действия).</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ISelectableControl.dita#method_detail/disable" type="section"><keyword>ISelectableControl</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#method_detail/enable" type="section"><keyword>enable</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Делает элемент управления доступным (разрешены пользовательские действия).</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ISelectableControl.dita#method_detail/enable" type="section"><keyword>ISelectableControl</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.ListBoxItem.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на карту.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IControl.dita#method_detail/getParent" type="section"><keyword>getParent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IControlParent.dita" type="topic"><keyword>IControlParent</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на родительский объект или null, если родительский элемент не был установлен.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IControl.dita#method_detail/getParent" type="section"><keyword>IControl</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#method_detail/isEnabled" type="section"><keyword>isEnabled</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true - элемент управления доступен, false - недоступен.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="ISelectableControl.dita#method_detail/isEnabled" type="section"><keyword>ISelectableControl</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#method_detail/isSelected" type="section"><keyword>isSelected</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true - элемент управления выбран, false - не выбран.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="ISelectableControl.dita#method_detail/isSelected" type="section"><keyword>ISelectableControl</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#method_detail/select" type="section"><keyword>select</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Выбирает (включает) элемент управления.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ISelectableControl.dita#method_detail/select" type="section"><keyword>ISelectableControl</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IControl.dita#method_detail/setParent" type="section"><keyword>setParent</keyword></xref>(<xref href="IControl.dita#method_detail/setParent-param-parent" translate="no" type="row">parent</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IChildOnMap.dita" type="topic"><keyword>IChildOnMap</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает родительский объект. Если передать значение null, то элемент управления будет только удален из текущего родительского объекта.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IControl.dita#method_detail/setParent" type="section"><keyword>IControl</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="data">
+            <title translate="no">data</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>} data</codeblock></p>
+
+            <p>Данные элемента списка. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>content - cодержимое элемента списка в виде HTML;</li>
+    <li>title - текст всплывающей подсказки.</li>
+</ul></p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="state">
+            <title translate="no">state</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>} state</codeblock></p>
+
+            <p>Состояние элемента списка. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>selected - признак, выбран ли элемент списка;</li>
+    <li>enabled - признак, активен ли элемент списка.</li>
+</ul></p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-click">
+            <title translate="no">click</title>
+            
+             <p>Выбор элемента списка.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getMap">
+        <title translate="no">getMap</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="Map.dita" type="topic"><keyword>Map</keyword></xref>} getMap()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на карту.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_NGU0NTYw_CACHING --></topic>

@@ -1,0 +1,833 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="map.pane.Manager" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">map.pane.Manager</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>map.pane.Manager</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Менеджер пейна карты. У каждой карты уже есть свой менеджер пейнов, доступный как map.panes. Не создавайте экземпляры этого класса без необходимости. Список ключей доступных по умолчанию пейнов карты и их zIndex'ы:<ul>
+    <li>'ground': <xref href="pane.MovablePane.dita" type="topic"><keyword>pane.MovablePane</keyword></xref> (zIndex: 100) — самый нижний пейн, предназначенный для размещения подложки карты;</li>
+    <li>'areas': <xref href="pane.MovablePane.dita" type="topic"><keyword>pane.MovablePane</keyword></xref> (zIndex: 200) - панель для объектов с площадью, таких как многоугольники.</li>
+    <li>'shadows': <xref href="pane.MovablePane.dita" type="topic"><keyword>pane.MovablePane</keyword></xref> (zIndex: 300) — пейн теней объектов карты, находящихся выше;</li>
+    <li>'places': <xref href="pane.MovablePane.dita" type="topic"><keyword>pane.MovablePane</keyword></xref> (zIndex: 400) — пейн точечных объектов, таких как метки;</li>
+    <li>'events': <xref href="pane.EventsPane.dita" type="topic"><keyword>pane.EventsPane</keyword></xref> (zIndex: 500) — пейн, предназначенный для слушания событий карты;</li>
+    <li>'overlaps': <xref href="pane.MovablePane.dita" type="topic"><keyword>pane.MovablePane</keyword></xref> (zIndex: 600) — пейн для объектов, не требующих использования активных областей для реализации своей интерактивности;</li>
+    <li>'balloon': <xref href="pane.MovablePane.dita" type="topic"><keyword>pane.MovablePane</keyword></xref> (zIndex: 700) — пейн балуна;</li>
+    <li>'outerBalloon': <xref href="pane.MovablePane.dita" type="topic"><keyword>pane.MovablePane</keyword></xref> (zIndex: 800) — внешний пейн балуна;</li>
+    <li>'controls': <xref href="pane.StaticPane.dita" type="topic"><keyword>pane.StaticPane</keyword></xref> (zIndex: 900) — пейн элементов управления карты;</li>
+    <li>'hint': <xref href="pane.StaticPane.dita" type="topic"><keyword>pane.StaticPane</keyword></xref> (zIndex: 1100) — пейн всплывающей подсказки;</li>
+    <li>'outerHint': <xref href="pane.StaticPane.dita" type="topic"><keyword>pane.StaticPane</keyword></xref> (zIndex: 1200) — внешний пейн всплывающей подсказки;</li>
+</ul></p>
+    
+
+
+
+    <p translate="no"><b>См.: </b><xref href="Map.dita#field_detail/panes" type="section"><keyword>Map.panes</keyword></xref> </p>
+
+
+
+
+
+    <p translate="no"><xref href="#map.pane.Manager/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#map.pane.Manager/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">map.pane.Manager(<xref href="#map.pane.Manager/param-map" translate="no" type="entry">map</xref>)</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-map" translate="no">
+                    
+                        <xref href="#map.pane.Manager/param-map" type="entry"><parmname>map</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p>
+                    <p/>
+                    <p>Карта.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Добавим водяной знак над контейнером карты.
+// Для этого изменим background у контейнера событий.
+map.panes.get('events')
+    .getElement()
+    .style.backgroundImage = 'my/background/image';</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.pane.Manager.dita#method_detail/append" type="section"><keyword>append</keyword></xref>(<xref href="map.pane.Manager.dita#method_detail/append-param-key" translate="no" type="row">key</xref>, <xref href="map.pane.Manager.dita#method_detail/append-param-pane" translate="no" type="row">pane</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет новый пейн в карту. Ключ добавляемого пейна должен быть уникальным в рамках текущего набора ключей пейнов карты.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.pane.Manager.dita#method_detail/destroy" type="section"><keyword>destroy</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Деструктор.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.pane.Manager.dita#method_detail/get" type="section"><keyword>get</keyword></xref>(<xref href="map.pane.Manager.dita#method_detail/get-param-key" translate="no" type="row">key</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPane.dita" type="topic"><keyword>IPane</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает пейн карты с заданным ключом, либо null, если такой пейн в данной карте отсутствует.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.pane.Manager.dita#method_detail/getLower" type="section"><keyword>getLower</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Принимает в качестве аргументов ключи пейнов карты и возвращает ключ самого нижнего пейна из переданного набора. Если ключи на заданы, поиск выполняется по всем пейнам карты.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.pane.Manager.dita#method_detail/getUpper" type="section"><keyword>getUpper</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Принимает в качестве аргументов ключи пейнов карты и возвращает ключ самого верхнего пейна из переданного набора. Если ключи на заданы, поиск выполняется по всем пейнам карты.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.pane.Manager.dita#method_detail/insertBefore" type="section"><keyword>insertBefore</keyword></xref>(<xref href="map.pane.Manager.dita#method_detail/insertBefore-param-key" translate="no" type="row">key</xref>, <xref href="map.pane.Manager.dita#method_detail/insertBefore-param-pane" translate="no" type="row">pane</xref>, <xref href="map.pane.Manager.dita#method_detail/insertBefore-param-referenceKey" translate="no" type="row">referenceKey</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Вставляет новый пейн перед другим пейном карты. Ключ добавляемого пейна должен быть уникальным в рамках текущего набора ключей пейнов карты.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.pane.Manager.dita#method_detail/remove" type="section"><keyword>remove</keyword></xref>(<xref href="map.pane.Manager.dita#method_detail/remove-param-pane" translate="no" type="row">pane</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет пейн из карты.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="append">
+        <title translate="no">append</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} append(<xref href="map.pane.Manager.dita#method_detail/append-param-key" translate="no" type="row">key</xref>, <xref href="map.pane.Manager.dita#method_detail/append-param-pane" translate="no" type="row">pane</xref>)</codeblock></p>
+
+         <p>Добавляет новый пейн в карту. Ключ добавляемого пейна должен быть уникальным в рамках текущего набора ключей пейнов карты.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="append-param-key">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/append-param-key" type="row"><parmname>key</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Ключ добавляемого пейна.</p>
+                </entry>
+
+            </row>
+            
+            <row id="append-param-pane">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/append-param-pane" type="row"><parmname>pane</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IPane.dita" type="topic"><keyword>IPane</keyword></xref></p>
+                    <p/>
+                   <p>Добавляемый пейн.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="append_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="destroy">
+        <title translate="no">destroy</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} destroy()</codeblock></p>
+
+         <p>Деструктор.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="get">
+        <title translate="no">get</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IPane.dita" type="topic"><keyword>IPane</keyword></xref>|null} get(<xref href="map.pane.Manager.dita#method_detail/get-param-key" translate="no" type="row">key</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>пейн карты с заданным ключом, либо null, если такой пейн в данной карте отсутствует.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="get-param-key">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/get-param-key" type="row"><parmname>key</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Ключ пейна.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="get_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getLower">
+        <title translate="no">getLower</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getLower()</codeblock></p>
+
+         <p>Принимает в качестве аргументов ключи пейнов карты и возвращает ключ самого нижнего пейна из переданного набора. Если ключи на заданы, поиск выполняется по всем пейнам карты.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ключ самого нижнего пейна карты.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getUpper">
+        <title translate="no">getUpper</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getUpper()</codeblock></p>
+
+         <p>Принимает в качестве аргументов ключи пейнов карты и возвращает ключ самого верхнего пейна из переданного набора. Если ключи на заданы, поиск выполняется по всем пейнам карты.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ключ самого верхнего пейна карты.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="insertBefore">
+        <title translate="no">insertBefore</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} insertBefore(<xref href="map.pane.Manager.dita#method_detail/insertBefore-param-key" translate="no" type="row">key</xref>, <xref href="map.pane.Manager.dita#method_detail/insertBefore-param-pane" translate="no" type="row">pane</xref>, <xref href="map.pane.Manager.dita#method_detail/insertBefore-param-referenceKey" translate="no" type="row">referenceKey</xref>)</codeblock></p>
+
+         <p>Вставляет новый пейн перед другим пейном карты. Ключ добавляемого пейна должен быть уникальным в рамках текущего набора ключей пейнов карты.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="insertBefore-param-key">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/insertBefore-param-key" type="row"><parmname>key</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Ключ добавляемого пейна.</p>
+                </entry>
+
+            </row>
+            
+            <row id="insertBefore-param-pane">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/insertBefore-param-pane" type="row"><parmname>pane</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IPane.dita" type="topic"><keyword>IPane</keyword></xref></p>
+                    <p/>
+                   <p>Добавляемый пейн.</p>
+                </entry>
+
+            </row>
+            
+            <row id="insertBefore-param-referenceKey">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/insertBefore-param-referenceKey" type="row"><parmname>referenceKey</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Ключ пейна, перед которым нужно добавить новый пейн.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="insertBefore_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="remove">
+        <title translate="no">remove</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} remove(<xref href="map.pane.Manager.dita#method_detail/remove-param-pane" translate="no" type="row">pane</xref>)</codeblock></p>
+
+         <p>Удаляет пейн из карты.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="remove-param-pane">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/remove-param-pane" type="row"><parmname>pane</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IPane.dita" type="topic"><keyword>IPane</keyword></xref></p>
+                    <p/>
+                   <p>Удаляемый пейн.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="remove_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_MGMwMTc5_CACHING --></topic>

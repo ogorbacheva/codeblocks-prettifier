@@ -1,0 +1,653 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="pane.MovablePane" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">pane.MovablePane</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>pane.MovablePane</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IContainerPane.dita" type="topic"><keyword>IContainerPane</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Двигающийся пейн карты.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#pane.MovablePane/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#pane.MovablePane/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#pane.MovablePane/events-summary" translate="no" type="section">События </xref> | <xref href="#pane.MovablePane/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">pane.MovablePane(<xref href="#pane.MovablePane/param-map" translate="no" type="entry">map</xref>, <xref href="#pane.MovablePane/param-params" translate="no" type="entry">params</xref>)</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-map" translate="no">
+                    
+                        <xref href="#pane.MovablePane/param-map" type="entry"><parmname>map</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p>
+                    <p/>
+                    <p>Карта.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-params" translate="no">
+                    
+                        <xref href="#pane.MovablePane/param-params" type="entry"><parmname>params</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Параметры.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-params.css" translate="no">
+                    <xref href="#pane.MovablePane/param-params.css" type="entry"><parmname>params.css</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>CSS стили DOM-элемента пейна.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-params.margin" translate="no">
+                    <xref href="#pane.MovablePane/param-params.margin" type="entry"><parmname>params.margin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      0
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Дополнительный отступ от границ контейнера карты, расширяющий область отображения пейна.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-params.overflow" translate="no">
+                    <xref href="#pane.MovablePane/param-params.overflow" type="entry"><parmname>params.overflow</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      "hidden"
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Параметр определяющий видимость содержимого пейна при выходе за пределы контейнера карты. Данный параметр может принимать одно из следующих строковых значений:<ul>
+    <li>"visible" - при выходе за пределы контейнера карты содержимое пейна остается видимым;</li>
+    <li>"hidden" - область отображения содержимого пейна ограничена контейнером карты.</li>
+</ul>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-params.zIndex" translate="no">
+                    <xref href="#pane.MovablePane/param-params.zIndex" type="entry"><parmname>params.zIndex</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      0
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>zIndex пейна.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IContainerPane.dita#event_detail/event_detail/event-actionbegin"><keyword>actionbegin</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Начало движения пейна. Экземпляр <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IContainerPane.dita#event_detail/event_detail/event-actionbegin"><keyword>IContainerPane</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IContainerPane.dita#event_detail/event_detail/event-actionend"><keyword>actionend</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Окончание движения пейна. Экземпляр <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IContainerPane.dita#event_detail/event_detail/event-actionend"><keyword>IContainerPane</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IContainerPane.dita#event_detail/event_detail/event-clientpixelschange"><keyword>clientpixelschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменилась координатная система клиентских пикселей.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IContainerPane.dita#event_detail/event_detail/event-clientpixelschange"><keyword>IContainerPane</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPane.dita#event_detail/event_detail/event-overflowchange"><keyword>overflowchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение параметра "overflow", определяющего видимость содержимого пейна при выходе за пределы контейнера карты. Экземпляр <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IPane.dita#event_detail/event_detail/event-overflowchange"><keyword>IPane</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IContainerPane.dita#event_detail/event_detail/event-viewportchange"><keyword>viewportchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение области показа пейна. Экземпляр <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IContainerPane.dita#event_detail/event_detail/event-viewportchange"><keyword>IContainerPane</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPane.dita#event_detail/event_detail/event-zindexchange"><keyword>zindexchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение значения zIndex пейна. Экземпляр <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IPane.dita#event_detail/event_detail/event-zindexchange"><keyword>IPane</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPane.dita#method_detail/destroy" type="section"><keyword>destroy</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Уничтожает пейн.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPane.dita#method_detail/destroy" type="section"><keyword>IPane</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPositioningContext.dita#method_detail/fromClientPixels" type="section"><keyword>fromClientPixels</keyword></xref>(<xref href="IPositioningContext.dita#method_detail/fromClientPixels-param-clientPixelPoint" translate="no" type="row">clientPixelPoint</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Преобразует клиентские пиксельные координаты в глобальные.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPositioningContext.dita#method_detail/fromClientPixels" type="section"><keyword>IPositioningContext</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPane.dita#method_detail/getElement" type="section"><keyword>getElement</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>HTMLElement</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на DOM-контейнер пейна.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPane.dita#method_detail/getElement" type="section"><keyword>IPane</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPane.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает карту, которой принадлежит пейн.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPane.dita#method_detail/getMap" type="section"><keyword>IPane</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPane.dita#method_detail/getOverflow" type="section"><keyword>getOverflow</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает значение параметра "overflow", определяющего видимость содержимого пейна при выходе за пределы контейнера карты. Данный параметр может принимать одно из следующих строковых значений:<ul>
+    <li>"visible" - при выходе за пределы контейнера карты содержимое пейна остается видимым;</li>
+    <li>"hidden" - область отображения содержимого пейна ограничена контейнером карты.</li>
+</ul></p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPane.dita#method_detail/getOverflow" type="section"><keyword>IPane</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IContainerPane.dita#method_detail/getViewport" type="section"><keyword>getViewport</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает область показа пейна в клиентских координатах.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IContainerPane.dita#method_detail/getViewport" type="section"><keyword>IContainerPane</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPane.dita#method_detail/getZIndex" type="section"><keyword>getZIndex</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает zIndex пейна.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPane.dita#method_detail/getZIndex" type="section"><keyword>IPane</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPositioningContext.dita#method_detail/getZoom" type="section"><keyword>getZoom</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает текущий уровень масштабирования, в котором работает контекст позиционирования.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPositioningContext.dita#method_detail/getZoom" type="section"><keyword>IPositioningContext</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPositioningContext.dita#method_detail/toClientPixels" type="section"><keyword>toClientPixels</keyword></xref>(<xref href="IPositioningContext.dita#method_detail/toClientPixels-param-globalPixelPoint" translate="no" type="row">globalPixelPoint</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Преобразует глобальные пиксельные координаты в клиентские.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPositioningContext.dita#method_detail/toClientPixels" type="section"><keyword>IPositioningContext</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body><!-- XLIFF_FARM_ZmFmYzMw_CACHING --></topic>

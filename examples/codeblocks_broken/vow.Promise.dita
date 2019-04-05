@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="vow.Promise" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">vow.Promise</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>vow.Promise</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Класс, описывающий объекты-promise.</p><p><xref href="https://github.com/promises-aplus/promises-spec" scope="external">Спецификация Promise/A+</xref>.</p><p>
+</p><p><note>Данный класс является частью библиотеки <xref href="https://github.com/dfilatov/vow/" scope="external">Vow</xref>. Ниже описаны только некоторые методы. Полный список методов доступен здесь: <xref href="http://dfilatov.github.io/vow/" scope="external">http://dfilatov.github.io/vow/</xref>. Copyright (c) 2012-2013 Filatov Dmitry (<xref href="mailto:dfilatov@yandex-team.ru" scope="external">dfilatov@yandex-team.ru</xref>). Dual licensed under the <xref href="http://www.opensource.org/licenses/mit-license.php" scope="external">MIT</xref> and <xref href="http://www.gnu.org/licenses/gpl.html" scope="external">GPL</xref> licenses.</note></p><p>
+</p><p><note>Не является отдельным модулем: доступен после подключения модуля <xref href="vow.dita" type="topic"><keyword>vow</keyword></xref>.</note></p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#vow.Promise/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#vow.Promise/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">vow.Promise([<xref href="#vow.Promise/param-resolver" translate="no" type="entry">resolver</xref>])</codeblock></p>
+    
+       
+            
+                <p>Создаёт объект-promise.</p>
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-resolver" translate="no">
+                    <xref href="#vow.Promise/param-resolver" type="entry"><parmname>resolver</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                    <p>Функция, которая принимает в качестве параметров методы resolve и reject для установки состояния и значения создаваемому объекту-promise.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">function someAsyncMethod () {
+    return new ymaps.vow.Promise(function (resolve, reject) {
+        doSomeAsyncStuff(function (err, value) {
+            if (err) {
+                reject(err);
+                return;
+            }
+
+            resolve(value);
+        });
+    });
+}
+
+someAsyncMethod().then(function (value) {
+    console.log('Результат работы метода: ' + value);
+}, function (err) {
+    console.log('Ошибка: ' + err);
+});</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="vow.Promise.dita#method_detail/done" type="section"><keyword>done</keyword></xref>([<xref href="vow.Promise.dita#method_detail/done-param-onFulfilled" translate="no" type="row">onFulfilled</xref>[, <xref href="vow.Promise.dita#method_detail/done-param-onRejected" translate="no" type="row">onRejected</xref>[, <xref href="vow.Promise.dita#method_detail/done-param-onProgress" translate="no" type="row">onProgress</xref>[, <xref href="vow.Promise.dita#method_detail/done-param-ctx" translate="no" type="row">ctx</xref>]]]])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Аналог метода <xref href="vow.Promise.dita#method_detail/then" type="section"><keyword>vow.Promise.then</keyword></xref>, завершающий цепочку промисов. Кидает исключение в случае отклонения объекта-promise.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="vow.Promise.dita#method_detail/spread" type="section"><keyword>spread</keyword></xref>([<xref href="vow.Promise.dita#method_detail/spread-param-onFulfilled" translate="no" type="row">onFulfilled</xref>[, <xref href="vow.Promise.dita#method_detail/spread-param-onRejected" translate="no" type="row">onRejected</xref>[, <xref href="vow.Promise.dita#method_detail/spread-param-ctx" translate="no" type="row">ctx</xref>]]])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Аналог метода <xref href="vow.Promise.dita#method_detail/then" type="section"><keyword>vow.Promise.then</keyword></xref>, вызывающий функции обратного вызова с набором аргументов, соответствующим массиву, которым будет разрешён/отклонён объект-promise. Обычно используется в сочетании с методами типа <xref href="vow.dita#method_detail/all" type="section"><keyword>vow.all</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="vow.Promise.dita#method_detail/then" type="section"><keyword>then</keyword></xref>([<xref href="vow.Promise.dita#method_detail/then-param-onFulfilled" translate="no" type="row">onFulfilled</xref>[, <xref href="vow.Promise.dita#method_detail/then-param-onRejected" translate="no" type="row">onRejected</xref>[, <xref href="vow.Promise.dita#method_detail/then-param-onProgress" translate="no" type="row">onProgress</xref>[, <xref href="vow.Promise.dita#method_detail/then-param-ctx" translate="no" type="row">ctx</xref>]]]])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задаёт функцию-обработчик для объекта-promise.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="vow.Promise.dita#method_detail/valueOf" type="section"><keyword>valueOf</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает значение для разрешённого объекта-promise или причину отклонения для отклонённого.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="done">
+        <title translate="no">done</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} done([<xref href="vow.Promise.dita#method_detail/done-param-onFulfilled" translate="no" type="row">onFulfilled</xref>[, <xref href="vow.Promise.dita#method_detail/done-param-onRejected" translate="no" type="row">onRejected</xref>[, <xref href="vow.Promise.dita#method_detail/done-param-onProgress" translate="no" type="row">onProgress</xref>[, <xref href="vow.Promise.dita#method_detail/done-param-ctx" translate="no" type="row">ctx</xref>]]]])</codeblock></p>
+
+         <p>Аналог метода <xref href="vow.Promise.dita#method_detail/then" type="section"><keyword>vow.Promise.then</keyword></xref>, завершающий цепочку промисов. Кидает исключение в случае отклонения объекта-promise.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="done-param-onFulfilled">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/done-param-onFulfilled" type="row"><parmname>onFulfilled</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция обратного вызова, которая будет вызвана в случае если объект-promise будет разрешён.</p>
+                </entry>
+
+            </row>
+            
+            <row id="done-param-onRejected">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/done-param-onRejected" type="row"><parmname>onRejected</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция обратного вызова, которая будет вызвана в случае если объект-promise будет отклонён.</p>
+                </entry>
+
+            </row>
+            
+            <row id="done-param-onProgress">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/done-param-onProgress" type="row"><parmname>onProgress</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция обратного вызова, которая будет вызвана при "оповещении" объекта-promise.</p>
+                </entry>
+
+            </row>
+            
+            <row id="done-param-ctx">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/done-param-ctx" type="row"><parmname>ctx</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Контекст выполнения функций обратного вызова.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">var deferred = ymaps.vow.defer();
+deferred.reject(Error('Internal error'));
+deferred.promise().done(); // Будет брошено исключение.</codeblock>
+        
+
+    </section>
+    
+        <section id="spread">
+        <title translate="no">spread</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} spread([<xref href="vow.Promise.dita#method_detail/spread-param-onFulfilled" translate="no" type="row">onFulfilled</xref>[, <xref href="vow.Promise.dita#method_detail/spread-param-onRejected" translate="no" type="row">onRejected</xref>[, <xref href="vow.Promise.dita#method_detail/spread-param-ctx" translate="no" type="row">ctx</xref>]]])</codeblock></p>
+
+         <p>Аналог метода <xref href="vow.Promise.dita#method_detail/then" type="section"><keyword>vow.Promise.then</keyword></xref>, вызывающий функции обратного вызова с набором аргументов, соответствующим массиву, которым будет разрешён/отклонён объект-promise. Обычно используется в сочетании с методами типа <xref href="vow.dita#method_detail/all" type="section"><keyword>vow.all</keyword></xref>.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>новый объект-promise.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="spread-param-onFulfilled">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/spread-param-onFulfilled" type="row"><parmname>onFulfilled</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция обратного вызова, которая будет вызвана в случае если объект-promise будет разрешён.</p>
+                </entry>
+
+            </row>
+            
+            <row id="spread-param-onRejected">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/spread-param-onRejected" type="row"><parmname>onRejected</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция обратного вызова, которая будет вызвана в случае если объект-promise будет отклонён.</p>
+                </entry>
+
+            </row>
+            
+            <row id="spread-param-ctx">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/spread-param-ctx" type="row"><parmname>ctx</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Контекст выполнения функций обратного вызова.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">var deferred1 = ymaps.vow.defer(),
+    deferedr2 = ymaps.vow.defer();
+
+ymaps.vow.all([deferred1.promise(), deferred2.promise()]).spread(function(arg1, arg2) {
+    // arg1 => 1, arg2 => 'two'
+});
+
+deferred1.resolve(1);
+deferred2.resolve('two');</codeblock>
+        
+
+    </section>
+    
+        <section id="then">
+        <title translate="no">then</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} then([<xref href="vow.Promise.dita#method_detail/then-param-onFulfilled" translate="no" type="row">onFulfilled</xref>[, <xref href="vow.Promise.dita#method_detail/then-param-onRejected" translate="no" type="row">onRejected</xref>[, <xref href="vow.Promise.dita#method_detail/then-param-onProgress" translate="no" type="row">onProgress</xref>[, <xref href="vow.Promise.dita#method_detail/then-param-ctx" translate="no" type="row">ctx</xref>]]]])</codeblock></p>
+
+         <p>Задаёт функцию-обработчик для объекта-promise.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>новый объект-promise. См. <xref href="https://github.com/promises-aplus/promises-spec" scope="external">Спецификацию Promise/A+</xref>.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="then-param-onFulfilled">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/then-param-onFulfilled" type="row"><parmname>onFulfilled</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция обратного вызова, которая будет вызвана в случае если объект-promise будет разрешён.</p>
+                </entry>
+
+            </row>
+            
+            <row id="then-param-onRejected">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/then-param-onRejected" type="row"><parmname>onRejected</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция обратного вызова, которая будет вызвана в случае если объект-promise будет отклонён.</p>
+                </entry>
+
+            </row>
+            
+            <row id="then-param-onProgress">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/then-param-onProgress" type="row"><parmname>onProgress</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция обратного вызова, которая будет вызвана при "оповещении" объекта-promise.</p>
+                </entry>
+
+            </row>
+            
+            <row id="then-param-ctx">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/then-param-ctx" type="row"><parmname>ctx</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Контекст выполнения функций обратного вызова.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="valueOf">
+        <title translate="no">valueOf</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} valueOf()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>значение для разрешённого объекта-promise или причину отклонения для отклонённого.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_YjgwYzYy_CACHING --></topic>

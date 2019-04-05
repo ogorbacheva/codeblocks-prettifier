@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="util.defineClass" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">util.defineClass</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>util.defineClass</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статическая функция.</p>
+    
+    
+        
+            <p/><p>Базовая функция, реализующая объявление классов в API Яндекс.Карт. При помощи этой функции можно объявить новый класс, указать у этого класса набор методов и произвести наследование от другого класса.</p><p>
+</p><p>К дочернему классу приписывается поле superclass, указывающее на прототип родительского класса. Через поле 'constructor' объекта 'superclass' можно обратится к конструктору родительского класса.</p>
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+       <p><b>Возвращает</b> класс.</p>
+       
+    
+
+    
+
+    
+        
+         
+              <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{ Object } util.defineClass(<xref href="#util.defineClass/param-constructor" translate="no" type="row">constructor</xref>[, <xref href="#util.defineClass/param-parentClass" translate="no" type="row">parentClass</xref>[, <xref href="#util.defineClass/param-override" translate="no" type="row">override</xref>]])</codeblock></p>
+         
+     
+
+    
+        <p translate="no"><b>Параметры:</b></p>
+        
+        
+            
+        
+            
+        
+            
+        
+
+        <table>
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Параметр</entry>
+              <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+        
+        <row id="param-constructor">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#util.defineClass/param-constructor" type="row"><parmname>constructor</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Function</p>
+                <p/>
+                <p>Конструктор класса.</p>
+            </entry>
+        </row>
+        
+        <row id="param-parentClass">
+            <entry colname="col1" translate="no">
+                <xref href="#util.defineClass/param-parentClass" type="row"><parmname>parentClass</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Function</p>
+                <p/>
+                <p>Родительский класс, от которого необходимо произвести наследование. Этот аргумент может быть пропущен.</p>
+            </entry>
+        </row>
+        
+        <row id="param-override">
+            <entry colname="col1" translate="no">
+                <xref href="#util.defineClass/param-override" type="row"><parmname>override</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Object</p>
+                <p/>
+                <p>Набор дополнительных полей и функций, которые будут приписаны к прототипу класса. Источников может быть несколько (функция может иметь произвольное число параметров), данные копируются справа налево (последний аргумент имеет наивысший приоритет при копировании).</p>
+            </entry>
+        </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+    
+    
+
+
+
+    
+        <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Объявление класса с методами.
+var MyClass = ymaps.util.defineClass(function () {
+   this.field = 'fieldValue';
+    }, {
+   doSomethingAwesome: function () {
+  return 'methodResult';
+   },
+   stop: function () {
+  
+   }
+    }),
+    object = new MyClass();
+    console.log(object.field); // 'fieldValue'
+  console.log(object.doSomethingAwesome()); // 'methodResult'</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Реализуем собственный класс кнопки на основе наследования от базового класса кнопки.
+// Кнопка по нажатию переключает тип тайлов карты.
+var CustomControl = ymaps.util.defineClass(function () {
+    // Задаем жесткий набор опций без возможности установки извне.
+    var data = {
+   data: { content: 'Изменить тип карты' },
+   options: {
+  selectOnClick: false,
+  maxWidth: 150
+   }
+    };
+    CustomControl.superclass.constructor.call(this, data);
+}, ymaps.control.Button, {
+    // Определим список методов класса.
+
+    // Переопределяем методы кнопки enable и disable. 
+    enable: function () {
+        // Нужно обязательно вызывать методы базового класса,
+        // чтобы не нарушить логику работы кнопки.
+   CustomControl.superclass.enable.call(this);
+        // Включаем и выключаем поведение кнопки.
+        this.events.add('click', this.switchType, this);
+    },
+
+    disable: function () {
+        this.events.remove('click', this.switchType, this);
+        CustomControl.superclass.disable.call(this);
+    },
+
+    // Реализуем собственные методы.
+    switchType: function () {
+        var map = this.getMap();
+         if (map) {
+            if (map.getType() == 'yandex#map') {
+                this.setSatelliteMapType();
+            } else {
+                this.setSchemeMapType();
+            }
+        }
+    },
+
+    setSchemeMapType: function () {
+        var map = this.getMap();
+        if (map) {
+            map.setType('yandex#map');
+        }
+    },
+
+    setSatelliteMapType: function () {
+        var map = this.getMap();
+            if (map) {
+                map.setType('yandex#satellite');
+            }
+    }
+});
+// Создаем экземпляр нового класса и добавляем его на карту.
+var typeSwitcherButton = new CustomControl();
+// Код создания карты в данном примере был опущен.
+myMap.controls.add(typeSwitcherButton);
+// Вызываем метод экземпляра класса.
+typeSwitcherButton.setSatelliteMapType();</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_Yzk0NTNm_CACHING --></topic>

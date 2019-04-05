@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="ICoordSystem" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">ICoordSystem</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>ICoordSystem</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Интерфейс координатной системы карты. Этот интерфейс необходимо реализовать в случае использования нестандартных (например, цилиндрических) координат. Для решения задач поиска траектории движения по земной поверхности, используйте <xref href="coordSystem.geo.dita" type="topic"><keyword>coordSystem.geo</keyword></xref>, по декартовой плоскости — <xref href="coordSystem.cartesian.dita" type="topic"><keyword>coordSystem.cartesian</keyword></xref>.</p>
+    
+
+
+
+    <p translate="no"><b>См.: </b><xref href="coordSystem.geo.dita" type="topic"><keyword>coordSystem.geo</keyword></xref> <xref href="coordSystem.cartesian.dita" type="topic"><keyword>coordSystem.cartesian</keyword></xref> </p>
+
+
+
+
+
+    <p translate="no"><xref href="#ICoordSystem/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#ICoordSystem/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">ICoordSystem()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICoordSystem.dita#method_detail/getDistance" type="section"><keyword>getDistance</keyword></xref>(<xref href="ICoordSystem.dita#method_detail/getDistance-param-point1" translate="no" type="row">point1</xref>, <xref href="ICoordSystem.dita#method_detail/getDistance-param-point2" translate="no" type="row">point2</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает кратчайшее (вдоль геодезической линии) расстояние между двумя заданными точками (в метрах).</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICoordSystem.dita#method_detail/solveDirectProblem" type="section"><keyword>solveDirectProblem</keyword></xref>(<xref href="ICoordSystem.dita#method_detail/solveDirectProblem-param-startPoint" translate="no" type="row">startPoint</xref>, <xref href="ICoordSystem.dita#method_detail/solveDirectProblem-param-direction" translate="no" type="row">direction</xref>, <xref href="ICoordSystem.dita#method_detail/solveDirectProblem-param-distance" translate="no" type="row">distance</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Решает так называемую первую (прямую) <xref href="http://en.wikipedia.org/wiki/Geodesy#Geodetic_problems" scope="external">геодезическую задачу</xref>: где мы окажемся, если выйдем из указанной точки в указанном направлении и пройдём, не сворачивая, указанное расстояние. Решением прямой геодезической задачи являются следующие данные:<ul>
+<li>конечная точка,</li>
+<li>конечное направление,</li>
+<li>функция пути,</li>
+<li>функция, позволяющая для произвольного момента времени указать, в какой точке мы будем находиться и в каком направлении двигаться.</li>
+</ul></p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICoordSystem.dita#method_detail/solveInverseProblem" type="section"><keyword>solveInverseProblem</keyword></xref>(<xref href="ICoordSystem.dita#method_detail/solveInverseProblem-param-startPoint" translate="no" type="row">startPoint</xref>, <xref href="ICoordSystem.dita#method_detail/solveInverseProblem-param-endPoint" translate="no" type="row">endPoint</xref>[, <xref href="ICoordSystem.dita#method_detail/solveInverseProblem-param-reverseDirection" translate="no" type="row">reverseDirection</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Решает так называемую вторую (обратную) <xref href="http://en.wikipedia.org/wiki/Geodesy#Geodetic_problems" scope="external">геодезическую задачу</xref>: построить кратчайший маршрут между двумя точками на картографируемой поверхности и определелить расстояние и направление движения. Обратите внимание: на карте земной поверхности кратчайшие маршруты изображаются кривыми линиями. Для геообъектов в API можно включить режим отображения кратчайших расстояний между точками с помощью опции geodesic.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getDistance">
+        <title translate="no">getDistance</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number} getDistance(<xref href="ICoordSystem.dita#method_detail/getDistance-param-point1" translate="no" type="row">point1</xref>, <xref href="ICoordSystem.dita#method_detail/getDistance-param-point2" translate="no" type="row">point2</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>кратчайшее (вдоль геодезической линии) расстояние между двумя заданными точками (в метрах).</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getDistance-param-point1">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getDistance-param-point1" type="row"><parmname>point1</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Первая точка.</p>
+                </entry>
+
+            </row>
+            
+            <row id="getDistance-param-point2">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getDistance-param-point2" type="row"><parmname>point2</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Вторая точка.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getDistance_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Рассчитаем расстояние между Москвой и Нью-Йорком
+// Координаты Москвы
+ymaps.geocode('Москва').then(function (res) {
+    var moscowCoords = res.geoObjects.get(0).geometry.getCoordinates();
+    // Координаты Нью-Йорка
+    ymaps.geocode('Нью-Йорк').then(function (res) {
+        var newYorkCoords = res.geoObjects.get(0).geometry.getCoordinates();
+        // Расстояние
+        alert(ymaps.formatter.distance(
+            ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)
+        ));
+    });
+});</codeblock>
+        
+
+    </section>
+    
+        <section id="solveDirectProblem">
+        <title translate="no">solveDirectProblem</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} solveDirectProblem(<xref href="ICoordSystem.dita#method_detail/solveDirectProblem-param-startPoint" translate="no" type="row">startPoint</xref>, <xref href="ICoordSystem.dita#method_detail/solveDirectProblem-param-direction" translate="no" type="row">direction</xref>, <xref href="ICoordSystem.dita#method_detail/solveDirectProblem-param-distance" translate="no" type="row">distance</xref>)</codeblock></p>
+
+         <p>Решает так называемую первую (прямую) <xref href="http://en.wikipedia.org/wiki/Geodesy#Geodetic_problems" scope="external">геодезическую задачу</xref>: где мы окажемся, если выйдем из указанной точки в указанном направлении и пройдём, не сворачивая, указанное расстояние. Решением прямой геодезической задачи являются следующие данные:<ul>
+<li>конечная точка,</li>
+<li>конечное направление,</li>
+<li>функция пути,</li>
+<li>функция, позволяющая для произвольного момента времени указать, в какой точке мы будем находиться и в каком направлении двигаться.</li>
+</ul></p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект, содержащий следующие поля:<ul>
+<li>startPoint - начальная точка в геокоординатах,</li>
+<li>startDirection - начальное направление движения,</li>
+<li>endPoint - конечная точка в геокоординатах,</li>
+<li>endDirection - конечное направление движения,</li>
+<li>distance - расстояние в метрах,</li>
+<li>pathFunction — функция, принимающая число от 0 до 1 (доля пройденного пути) и возвращающая структуру с полями point и direction.</li>
+</ul></p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="solveDirectProblem-param-startPoint">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/solveDirectProblem-param-startPoint" type="row"><parmname>startPoint</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Точка отправления.</p>
+                </entry>
+
+            </row>
+            
+            <row id="solveDirectProblem-param-direction">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/solveDirectProblem-param-direction" type="row"><parmname>direction</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Направление. Задаётся в виде вектора (приращение координат) [dlat, dlon] либо [dlon, dlat], в завивимости от параметра coordorder. Для того чтобы получить из заданного таким образом направления азимут (угол между направлением движения и направлением на север), необходимо вычислить арктангенс величины dlon/dlat (в JavaScript — стандартная функция Math.atan2(dlon, dlat)). Для того чтобы по известному азимуту "a" вычислить направление движения, нужно положить dlat = cos(a), dlon = sin(a).</p>
+                </entry>
+
+            </row>
+            
+            <row id="solveDirectProblem-param-distance">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/solveDirectProblem-param-distance" type="row"><parmname>distance</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Пройденное расстояние в метрах.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="solveDirectProblem_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Допустим, мы вылетели из аэропорта Домодедово на северо-восток и
+// пролетели 200 километров по прямой. // Изобразим наш путь с помощью меток на карте.
+
+// Найдём с помощью геокодирования координаты начальной точки.
+ymaps.geocode('Domodedovo airport').then(function (res) {
+    var startPoint = res.geoObjects.get(0).geometry.getCoordinates(),
+    // Движемся на северо-восток, азимут 45 градусов
+    // или pi/4 радиан.
+        azimuth = Math.PI / 4,
+      // Направление движения.
+        direction = [Math.cos(azimuth), Math.sin(azimuth)],
+    // Путевая функция.
+        path = ymaps.coordSystem.geo
+            .solveDirectProblem(startPoint, direction, 2e5).pathFunction;
+
+    // Изобразим путь на карте с помощью меток,
+   // проставленных через каждые 10 км.
+    for (var i = 0; i &lt;= 20; i++) {
+        map.geoObjects.add(new ymaps.Placemark(path(i/20).point));
+    }
+});</codeblock>
+        
+
+    </section>
+    
+        <section id="solveInverseProblem">
+        <title translate="no">solveInverseProblem</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} solveInverseProblem(<xref href="ICoordSystem.dita#method_detail/solveInverseProblem-param-startPoint" translate="no" type="row">startPoint</xref>, <xref href="ICoordSystem.dita#method_detail/solveInverseProblem-param-endPoint" translate="no" type="row">endPoint</xref>[, <xref href="ICoordSystem.dita#method_detail/solveInverseProblem-param-reverseDirection" translate="no" type="row">reverseDirection</xref>])</codeblock></p>
+
+         <p>Решает так называемую вторую (обратную) <xref href="http://en.wikipedia.org/wiki/Geodesy#Geodetic_problems" scope="external">геодезическую задачу</xref>: построить кратчайший маршрут между двумя точками на картографируемой поверхности и определелить расстояние и направление движения. Обратите внимание: на карте земной поверхности кратчайшие маршруты изображаются кривыми линиями. Для геообъектов в API можно включить режим отображения кратчайших расстояний между точками с помощью опции geodesic.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект, содержащий следующие поля:<ul>
+<li>startPoint - начальная точка в геокоординатах,</li>
+<li>startDirection - начальное направление движения,</li>
+<li>endPoint - конечная точка в геокоординатах,</li>
+<li>endDirection - конечное направление движения,</li>
+<li>distance - расстояние в метрах,</li>
+<li>pathFunction - функция пути, принимающая число от 0 до 1 (доля пройденного пути) и возвращающая структуру с полями point и direction.</li>
+</ul></p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="solveInverseProblem-param-startPoint">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/solveInverseProblem-param-startPoint" type="row"><parmname>startPoint</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Точка отправления.</p>
+                </entry>
+
+            </row>
+            
+            <row id="solveInverseProblem-param-endPoint">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/solveInverseProblem-param-endPoint" type="row"><parmname>endPoint</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Точка прибытия.</p>
+                </entry>
+
+            </row>
+            
+            <row id="solveInverseProblem-param-reverseDirection">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/solveInverseProblem-param-reverseDirection" type="row"><parmname>reverseDirection</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Направление движения. false - выбрать кратчайшую дугу, true - выбрать обратную кратчайшей.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="solveInverseProblem_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Построим кратчайший маршрут от Калининграда до Владивостока.
+// Найдём координаты Калининграда
+ymaps.geocode('Калининград').then(function (res) {
+    var startPoint = res.geoObjects.get(0).geometry.getCoordinates();
+    // Найдём координаты Владивостока.
+    ymaps.geocode('Владивосток').then(function (res) {
+        var endPoint = res.geoObjects.get(0).geometry.getCoordinates(),
+        // Найдём функцию пути между двумя точками.
+        path = ymaps.coordSystem.geo
+            .solveInverseProblem(startPoint, endPoint).pathFunction;
+        // Изобразим путь 20-ю точками.
+        for (var i = 0; i &lt;= 20; i++) {
+            // Находим промежуточную точку.
+            var position = path(i/20).point;
+            // Добавим в промежуточную точку метку.
+            map.geoObjects.add(new ymaps.Placemark(
+                position, {
+                    // Покажем в контенте метки пройденное расстояние.
+                    iconContent: ymaps.formatter.distance(
+                        ymaps.coordSystem.geo.getDistance(startPoint, position)
+                    )
+                }, {
+                    preset: 'islands#redStretchyIcon'
+                }
+            ));
+        }
+    });
+});</codeblock>
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_ZmU2NTdl_CACHING --></topic>

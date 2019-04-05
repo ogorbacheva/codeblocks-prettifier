@@ -1,0 +1,463 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="IEventWorkflowController" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IEventWorkflowController</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IEventWorkflowController</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IEventController.dita" type="topic"><keyword>IEventController</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Интерфейс контроллера событий, позволяющего влиять на распространение событий по дереву.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IEventWorkflowController/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#IEventWorkflowController/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IEventWorkflowController()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEventWorkflowController.dita#method_detail/onAfterEventFiring" type="section"><keyword>onAfterEventFiring</keyword></xref>(<xref href="IEventWorkflowController.dita#method_detail/onAfterEventFiring-param-events" translate="no" type="row">events</xref>, <xref href="IEventWorkflowController.dita#method_detail/onAfterEventFiring-param-type" translate="no" type="row">type</xref>[, <xref href="IEventWorkflowController.dita#method_detail/onAfterEventFiring-param-event" translate="no" type="row">event</xref>])</entry>
+                        
+                        
+                        <entry colname="col2">
+                            
+                            
+                                <p>Функция, вызываемая после окончания обработки события менеджером событий. Этот метод является опциональным.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEventWorkflowController.dita#method_detail/onBeforeEventFiring" type="section"><keyword>onBeforeEventFiring</keyword></xref>(<xref href="IEventWorkflowController.dita#method_detail/onBeforeEventFiring-param-events" translate="no" type="row">events</xref>, <xref href="IEventWorkflowController.dita#method_detail/onBeforeEventFiring-param-type" translate="no" type="row">type</xref>[, <xref href="IEventWorkflowController.dita#method_detail/onBeforeEventFiring-param-event" translate="no" type="row">event</xref>])</entry>
+                        
+                        
+                        <entry colname="col2">
+                            
+                            
+                                <p>Функция, вызываемая до начала обработки события менеджером событий. Этот метод является опциональным.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEventController.dita#method_detail/onStartListening" type="section"><keyword>onStartListening</keyword></xref>(<xref href="IEventController.dita#method_detail/onStartListening-param-events" translate="no" type="row">events</xref>, <xref href="IEventController.dita#method_detail/onStartListening-param-type" translate="no" type="row">type</xref>)</entry>
+                        
+                        
+                        <entry colname="col2">
+                            
+                            
+                                <p>Вызывается при первой подписке на указанный тип событий через указанный менеджер событий. Этот метод является опциональным.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IEventController.dita#method_detail/onStartListening" type="section"><keyword>IEventController</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEventController.dita#method_detail/onStopListening" type="section"><keyword>onStopListening</keyword></xref>(<xref href="IEventController.dita#method_detail/onStopListening-param-events" translate="no" type="row">events</xref>, <xref href="IEventController.dita#method_detail/onStopListening-param-type" translate="no" type="row">type</xref>)</entry>
+                        
+                        
+                        <entry colname="col2">
+                            
+                            
+                                <p>Вызывается, когда определённый тип событий перестаёт слушаться на указанном менеджере событий (удалена последняя подписка). Этот метод является опциональным.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IEventController.dita#method_detail/onStopListening" type="section"><keyword>IEventController</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="onAfterEventFiring">
+        <title translate="no">onAfterEventFiring</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} onAfterEventFiring(<xref href="IEventWorkflowController.dita#method_detail/onAfterEventFiring-param-events" translate="no" type="row">events</xref>, <xref href="IEventWorkflowController.dita#method_detail/onAfterEventFiring-param-type" translate="no" type="row">type</xref>[, <xref href="IEventWorkflowController.dita#method_detail/onAfterEventFiring-param-event" translate="no" type="row">event</xref>])</codeblock></p>
+
+         <p>Функция, вызываемая после окончания обработки события менеджером событий. Этот метод является опциональным.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="onAfterEventFiring-param-events">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/onAfterEventFiring-param-events" type="row"><parmname>events</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></p>
+                    <p/>
+                   <p>Менеджер событий.</p>
+                </entry>
+
+            </row>
+            
+            <row id="onAfterEventFiring-param-type">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/onAfterEventFiring-param-type" type="row"><parmname>type</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Тип события.</p>
+                </entry>
+
+            </row>
+            
+            <row id="onAfterEventFiring-param-event">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/onAfterEventFiring-param-event" type="row"><parmname>event</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref></p>
+                    <p/>
+                   <p>Событие.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="onAfterEventFiring_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="onBeforeEventFiring">
+        <title translate="no">onBeforeEventFiring</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} onBeforeEventFiring(<xref href="IEventWorkflowController.dita#method_detail/onBeforeEventFiring-param-events" translate="no" type="row">events</xref>, <xref href="IEventWorkflowController.dita#method_detail/onBeforeEventFiring-param-type" translate="no" type="row">type</xref>[, <xref href="IEventWorkflowController.dita#method_detail/onBeforeEventFiring-param-event" translate="no" type="row">event</xref>])</codeblock></p>
+
+         <p>Функция, вызываемая до начала обработки события менеджером событий. Этот метод является опциональным.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="onBeforeEventFiring-param-events">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/onBeforeEventFiring-param-events" type="row"><parmname>events</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></p>
+                    <p/>
+                   <p>Менеджер событий.</p>
+                </entry>
+
+            </row>
+            
+            <row id="onBeforeEventFiring-param-type">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/onBeforeEventFiring-param-type" type="row"><parmname>type</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Тип события.</p>
+                </entry>
+
+            </row>
+            
+            <row id="onBeforeEventFiring-param-event">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/onBeforeEventFiring-param-event" type="row"><parmname>event</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref></p>
+                    <p/>
+                   <p>Событие.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="onBeforeEventFiring_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_ZjM1OWI5_CACHING --></topic>

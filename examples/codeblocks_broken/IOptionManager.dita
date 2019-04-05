@@ -1,0 +1,1069 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="IOptionManager" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IOptionManager</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IOptionManager</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IChild.dita" type="topic"><keyword>IChild</keyword></xref>, <xref href="IEventEmitter.dita" type="topic"><keyword>IEventEmitter</keyword></xref>, <xref href="IFreezable.dita" type="topic"><keyword>IFreezable</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Интерфейс менеджера опций. Менеджер опций позволяет задавать значения опций, строить иерархию наследования опций, а также разрешать значения опций в контексте существующей иерархии наследования.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IOptionManager/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#IOptionManager/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#IOptionManager/events-summary" translate="no" type="section">События </xref> | <xref href="#IOptionManager/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IOptionManager()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IFreezable.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий объекта.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IFreezable.dita#field_detail/events" type="section"><keyword>IFreezable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOptionManager.dita#event_detail/event_detail/event-change"><keyword>change</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение опций.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>parentchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменился родительский объект.</p><p>Поля данных:</p>
+<ul>
+    <li>oldParent - старый родитель;</li>
+    <li>newParent - новый родитель.</li>
+</ul>
+                            
+                                <p translate="no">Унаследовано от <xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>IChild</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IFreezable.dita#method_detail/freeze" type="section"><keyword>freeze</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IFreezable.dita" type="topic"><keyword>IFreezable</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Переводит объект в "замороженный" режим.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IFreezable.dita#method_detail/freeze" type="section"><keyword>IFreezable</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOptionManager.dita#method_detail/get" type="section"><keyword>get</keyword></xref>(<xref href="IOptionManager.dita#method_detail/get-param-key" translate="no" type="row">key</xref>[, <xref href="IOptionManager.dita#method_detail/get-param-defaultValue" translate="no" type="row">defaultValue</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает значение заданной опции в контексте существующей иерархии наследования опций. При вызове данного метода сначала происходит поиск значения в текущем менеджере опций, а затем, если значение не определено, поиск продолжается в иерархии родительских менеджеров.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOptionManager.dita#method_detail/getAll" type="section"><keyword>getAll</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на внутренний хэш хранящий значения опций.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOptionManager.dita#method_detail/getName" type="section"><keyword>getName</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает имя менеджера опций.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOptionManager.dita#method_detail/getNative" type="section"><keyword>getNative</keyword></xref>(<xref href="IOptionManager.dita#method_detail/getNative-param-key" translate="no" type="row">key</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает значение заданной опции, определенное на данном уровне иерархии опций, т.е. в данном менеджере.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOptionManager.dita#method_detail/getParent" type="section"><keyword>getParent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает родительский менеджер опций.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IFreezable.dita#method_detail/isFrozen" type="section"><keyword>isFrozen</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true, если объект находится в "замороженном" режиме, иначе false.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IFreezable.dita#method_detail/isFrozen" type="section"><keyword>IFreezable</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOptionManager.dita#method_detail/resolve" type="section"><keyword>resolve</keyword></xref>(<xref href="IOptionManager.dita#method_detail/resolve-param-key" translate="no" type="row">key</xref>[, <xref href="IOptionManager.dita#method_detail/resolve-param-name" translate="no" type="row">name</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Метод, предназначенный для вызова дочерними менеджерами опций.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOptionManager.dita#method_detail/setName" type="section"><keyword>setName</keyword></xref>(<xref href="IOptionManager.dita#method_detail/setName-param-name" translate="no" type="row">name</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает имя менеджера опций.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOptionManager.dita#method_detail/setParent" type="section"><keyword>setParent</keyword></xref>(<xref href="IOptionManager.dita#method_detail/setParent-param-parent" translate="no" type="row">parent</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IChild.dita" type="topic"><keyword>IChild</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает родительский менеджер опций.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IFreezable.dita#method_detail/unfreeze" type="section"><keyword>unfreeze</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IFreezable.dita" type="topic"><keyword>IFreezable</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Переводит объект в активный режим.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IFreezable.dita#method_detail/unfreeze" type="section"><keyword>IFreezable</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-change">
+            <title translate="no">change</title>
+            
+             <p>Изменение опций.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="get">
+        <title translate="no">get</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} get(<xref href="IOptionManager.dita#method_detail/get-param-key" translate="no" type="row">key</xref>[, <xref href="IOptionManager.dita#method_detail/get-param-defaultValue" translate="no" type="row">defaultValue</xref>])</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> значение заданной опции в контексте существующей иерархии наследования опций. При вызове данного метода сначала происходит поиск значения в текущем менеджере опций, а затем, если значение не определено, поиск продолжается в иерархии родительских менеджеров.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="get-param-key">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/get-param-key" type="row"><parmname>key</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Имя опции.</p>
+                </entry>
+
+            </row>
+            
+            <row id="get-param-defaultValue">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/get-param-defaultValue" type="row"><parmname>defaultValue</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Значение по умолчанию.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="get_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getAll">
+        <title translate="no">getAll</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} getAll()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>ссылку на внутренний хэш хранящий значения опций.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getName">
+        <title translate="no">getName</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getName()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> имя менеджера опций.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getNative">
+        <title translate="no">getNative</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} getNative(<xref href="IOptionManager.dita#method_detail/getNative-param-key" translate="no" type="row">key</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>значение заданной опции, определенное на данном уровне иерархии опций, т.е. в данном менеджере.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getNative-param-key">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getNative-param-key" type="row"><parmname>key</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Имя опции.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getNative_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getParent">
+        <title translate="no">getParent</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref>|null} getParent()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> родительский менеджер опций.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="resolve">
+        <title translate="no">resolve</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} resolve(<xref href="IOptionManager.dita#method_detail/resolve-param-key" translate="no" type="row">key</xref>[, <xref href="IOptionManager.dita#method_detail/resolve-param-name" translate="no" type="row">name</xref>])</codeblock></p>
+
+         <p>Метод, предназначенный для вызова дочерними менеджерами опций.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>значение опции в родительском контексте.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="resolve-param-key">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/resolve-param-key" type="row"><parmname>key</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Имя опции.</p>
+                </entry>
+
+            </row>
+            
+            <row id="resolve-param-name">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/resolve-param-name" type="row"><parmname>name</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Имя дочернего менеджера опций.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="resolve_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="setName">
+        <title translate="no">setName</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} setName(<xref href="IOptionManager.dita#method_detail/setName-param-name" translate="no" type="row">name</xref>)</codeblock></p>
+
+         <p>Задает имя менеджера опций.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setName-param-name">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setName-param-name" type="row"><parmname>name</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Имя менеджера опций.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setName_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="setParent">
+        <title translate="no">setParent</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IChild.dita" type="topic"><keyword>IChild</keyword></xref>} setParent(<xref href="IOptionManager.dita#method_detail/setParent-param-parent" translate="no" type="row">parent</xref>)</codeblock></p>
+
+         <p>Задает родительский менеджер опций.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setParent-param-parent">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setParent-param-parent" type="row"><parmname>parent</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref>|null</p>
+                    <p/>
+                   <p>Родительский менеджер опций.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setParent_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_ZTEwYmYy_CACHING --></topic>

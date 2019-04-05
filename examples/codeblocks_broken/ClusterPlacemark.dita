@@ -1,0 +1,1344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="ClusterPlacemark" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">ClusterPlacemark</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>ClusterPlacemark</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>, <xref href="collection.Item.dita" type="topic"><keyword>collection.Item</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Кластер геообъектов. Используется по умолчанию в <xref href="Clusterer.dita" type="topic"><keyword>Clusterer</keyword></xref>.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#ClusterPlacemark/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#ClusterPlacemark/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#ClusterPlacemark/events-summary" translate="no" type="section">События </xref> | <xref href="#ClusterPlacemark/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">ClusterPlacemark(<xref href="#ClusterPlacemark/param-geometry" translate="no" type="entry">geometry</xref>, <xref href="#ClusterPlacemark/param-properties" translate="no" type="entry">properties</xref>[, <xref href="#ClusterPlacemark/param-options" translate="no" type="entry">options</xref>])</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-geometry" translate="no">
+                    
+                        <xref href="#ClusterPlacemark/param-geometry" type="entry"><parmname>geometry</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]|Object|<xref href="IPointGeometry.dita" type="topic"><keyword>IPointGeometry</keyword></xref></p>
+                    <p/>
+                    <p>Координаты метки или хэш с описанием геометрии, или ссылка на объект точечной геометрии.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-properties" translate="no">
+                    
+                        <xref href="#ClusterPlacemark/param-properties" type="entry"><parmname>properties</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IDataManager.dita" type="topic"><keyword>IDataManager</keyword></xref></p>
+                    <p/>
+                    <p>Данные кластера.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-properties.geoObjects" translate="no">
+                    
+                        <xref href="#ClusterPlacemark/param-properties.geoObjects" type="entry"><parmname>properties.geoObjects</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>[]</p>
+                    <p/>
+                    <p>Массив геообъектов, которые находятся в данном кластере.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options" translate="no">
+                    <xref href="#ClusterPlacemark/param-options" type="entry"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции кластера. Помимо частных опций, балун кластера поддерживает те же опции, что и <xref href="Balloon.dita" type="topic"><keyword>Balloon</keyword></xref>. Опции для балуна кластера указываются с префикcом 'balloon'.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.balloonContentLayout" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.balloonContentLayout" type="entry"><parmname>options.balloonContentLayout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'cluster#balloonTwoColumns'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function|String</p>
+                    <p/>
+                    <p>Макет балуна кластера в обычном режиме. Можно передать конструктор объекта с интерфейсом <xref href="ILayout.dita" type="topic"><keyword>ILayout</keyword></xref> или ключ одного из стандартных макетов. Каждый стандартный макет имеет некоторые собственные опции. В стандартных макетах по умолчанию используются поля данных геообъектов: clusterCaption, balloonContentHeader, balloonContent и balloonContentFooter (см. <xref href="Placemark.dita" type="topic"><keyword>Placemark</keyword></xref>).<ul>
+   <li>'cluster#balloonTwoColumns' - Макет с двумя колонками. В левой колонке находится список названий меток (поле данных метки clusterCaption или balloonContentHeader, если предыдущее поле не определено). В правой колонке располагается вся информация о геообъекте. Опции макета:<ul>
+           <li>balloonLeftColumnWidth — ширина поля со списком объектов в балуне кластера в пикселях. Значение по умолчанию: 125</li>
+       </ul>
+   </li>
+   <li>'cluster#balloonCarousel' - Информация о геообъекте располагается в центре. По бокам размещаются кнопки перехода к предыдущему и следующему геообъекту. В нижней части балуна находится меню быстрой навигации. Опции макета:<ul>
+           <li>balloonCycling — цикличность списка при навигации боковыми стрелками. Значение по умолчанию: true</li>
+           <li>balloonPagerSize — количество элементов навигации в нижней панели. Значение по умолчанию зависит от типа устройства. Для мобильных телефонов — это 4, а для планшетов и персональных компьютеров — 9.</li>
+           <li>balloonPagerType — тип нижней панели навигации. Может принимать значения 'numeric' и 'marker'.<ul>
+                       <li>numeric — отображение номера геообъекта в списке;</li>
+                       <li>marker — отображение маркеров без номеров. Рекомендуется использовать при количестве элементов в кластере меньшем или равном значению options.balloonPagerSize.</li>
+                   </ul>Значение по умолчанию: numeric.</li>
+           <li>balloonPagerVisible — отображать ли панель навигации. Значение по умолчанию: true</li>
+       </ul>
+   </li>
+   <li>'cluster#balloonAccordion' - Информация о геообъектах отображается в виде списка. Каждый элемент списка - это маленькая иконка и название метки (поле данных метки clusterCaption или balloonContentHeader, если предыдущее поле не определено). Цвет иконок соответствует цвету метки. Цвет метки определяется опцией "iconColor" <xref href="Placemark.dita" type="topic"><keyword>Placemark</keyword></xref>. В браузере Internet Explorer ниже 9й версии иконки не отображаются всегда. После клика по элементу списка под ним разворачивается информация о геообъекте. Опции макета:<ul>
+           <li>balloonAccordionShowIcons — опция, которая определяет, отображать ли иконку геообъекта в макете 'cluster#balloonAccordionItemTitle'. В браузере Internet Explorer ниже 9й версии опция не используется. Значение по умолчанию: true</li>
+       </ul>
+   </li>
+</ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.balloonContentLayoutHeight" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.balloonContentLayoutHeight" type="entry"><parmname>options.balloonContentLayoutHeight</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Высота макета контента балуна кластера. По умолчанию опция балуна balloonMaxHeight для кластера не установлена, так как все стандартные макеты балунов кластеров имеют определенные размеры. Стандартное значение зависит от макета.<ul>
+   <li>'cluster#balloonTwoColumns' - 210 пикселей</li>
+   <li>'cluster#balloonCarousel' - 177 пикселей</li>
+   <li>'cluster#balloonAccordion' - 283 пикселей</li>
+</ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.balloonContentLayoutWidth" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.balloonContentLayoutWidth" type="entry"><parmname>options.balloonContentLayoutWidth</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Ширина макета контента балуна кластера. По умолчанию опция балуна balloonMaxWidth для кластера не установлена, так как все стандартные макеты балунов кластеров имеют определенные размеры. Стандартное значение зависит от макета.<ul>
+   <li>'cluster#balloonTwoColumns' - 475 пикселей</li>
+   <li>'cluster#balloonCarousel' - 308 пикселей</li>
+   <li>'cluster#balloonAccordion' - 305 пикселей</li>
+</ul>Опция не используется в режиме панели.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.balloonItemContentLayout" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.balloonItemContentLayout" type="entry"><parmname>options.balloonItemContentLayout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="ILayout.dita" type="topic"><keyword>ILayout</keyword></xref>|String</p>
+                    <p/>
+                    <p>Макет с информацией о геообъекте. Стандартное значение зависит от макета.<ul>
+   <li>В макете 'cluster#balloonTwoColumns' отображается справа от списка. Стандартноe значение 'cluster#balloonTwoColumnsItemContent'.</li>
+   <li>В макете 'cluster#balloonCarousel' отображается в центре. Стандартно значение 'cluster#balloonCarouselItemContent'.</li>
+   <li>В макете 'cluster#balloonAccordion' отображает после клика по элементу списка. Стандартно значение 'cluster#balloonAccordionItemContent'.</li>
+</ul><b> Набор полей, которые поступают в данный макет, отличаются от родительского и соответствует полям, которые поступают в обычный макет балуна геообъекта. Еще были добавлены поля ownerProperties, ownerOptions и ownerState для доступа к данным кластера. </b></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.balloonPanelContentLayout" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.balloonPanelContentLayout" type="entry"><parmname>options.balloonPanelContentLayout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     null
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function|String</p>
+                    <p/>
+                    <p>Макет балуна кластера в режиме "панель". Можно передать конструктор объекта с интерфейсом <xref href="ILayout.dita" type="topic"><keyword>ILayout</keyword></xref>. Доступные значения такие же, как и у опции 'balloonContentLayout'. Если значение равно null, то применяется значение опции 'balloonContentLayout'.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.cursor" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.cursor" type="entry"><parmname>options.cursor</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'pointer'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Курсор над меткой кластера.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.disableClickZoom" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.disableClickZoom" type="entry"><parmname>options.disableClickZoom</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Флаг, запрещающий увеличение коэффициента масштабирования карты при клике на кластер.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.hideIconOnBalloonOpen" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.hideIconOnBalloonOpen" type="entry"><parmname>options.hideIconOnBalloonOpen</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Скрывать иконку при открытии балуна.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.iconColor" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.iconColor" type="entry"><parmname>options.iconColor</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Цвет иконки кластера. Эта опция применяется для стандартных иконок в браузерах, поддерживающих SVG.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.iconContentLayout" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.iconContentLayout" type="entry"><parmname>options.iconContentLayout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'cluster#iconContent'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function|String</p>
+                    <p/>
+                    <p>Макет содержимого метки кластера. (Тип: конструктор объекта с интерфейсом <xref href="ILayout.dita" type="topic"><keyword>ILayout</keyword></xref> или ключ макета). Если у метки не нужно отображать содержимое, значение опции нужно выставить в null.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.iconLayout" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.iconLayout" type="entry"><parmname>options.iconLayout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'cluster#icon'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function|String</p>
+                    <p/>
+                    <p>Макет метки кластера (Тип: конструктор объекта с интерфейсом <xref href="ILayout.dita" type="topic"><keyword>ILayout</keyword></xref> или ключ макета).</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.icons" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.icons" type="entry"><parmname>options.icons</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object[]</p>
+                    <p/>
+                    <p>Массив, описывающий иконки для стандартной реализации кластера. Описание иконки представляет из себя объект с полями<ul>
+    <li>href - ссылка на картинку;</li>
+    <li>size - массив из двух чисел - размер иконки в пикселях;</li>
+    <li>offset - смещение иконки относительно точки привязки объекта;</li>
+    <li>shape - необязательное поле. Объект, реализующий интерфейс <xref href="IShape.dita" type="topic"><keyword>IShape</keyword></xref> или JSON-описание геометрии. Позволяет задавать описание геометрии иконки. Если параметр отсутствует, то активной для событий (наведение мыши, клик) будет считаться прямоугольная область вокруг иконки.</li>
+</ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.iconShape" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.iconShape" type="entry"><parmname>options.iconShape</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IGeometryJson.dita" type="topic"><keyword>IGeometryJson</keyword></xref>|null</p>
+                    <p/>
+                    <p>Фигура активной области метки кластера. Задается в виде JSON-описания пиксельной геометрии иконки. Эту опцию нужно использовать при создании своих HTML макетов. Координаты геометрии фигуры отсчитываются от точки привязки.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.interactivityModel" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.interactivityModel" type="entry"><parmname>options.interactivityModel</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'default#geoObject'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Модель интерактивности кластера. Доступные ключи и их значения перечислены в описании <xref href="interactivityModel.storage.dita" type="topic"><keyword>interactivityModel.storage</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.numbers" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.numbers" type="entry"><parmname>options.numbers</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     [10, 100]
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                    <p>Массив, описывающий граничные значения для размеров кластеров. Количество иконок, описанных в опции "icons", должно быть на 1 больше, чем чисел в данном массиве.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.openBalloonOnClick" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.openBalloonOnClick" type="entry"><parmname>options.openBalloonOnClick</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Опция, позволяющая запретить открытие балуна при клике на кластере. По умолчанию открытие балуна разрешено;</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.openEmptyHint" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.openEmptyHint" type="entry"><parmname>options.openEmptyHint</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Опция, включающая показ пустых всплывающих подсказок. По умолчанию пустые хинты кластера не показываются.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.openHintOnHover" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.openHintOnHover" type="entry"><parmname>options.openHintOnHover</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Опция, позволяющая запретить показ всплывающей подсказки при наведении на кластер. По умолчанию показ хинтов разрешен.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.zIndexHover" translate="no">
+                    <xref href="#ClusterPlacemark/param-options.zIndexHover" type="entry"><parmname>options.zIndexHover</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Значение zIndex, которое выставляется метке кластера при наведении.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+            <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">     // Переменная с описанием двух видов иконок кластеров.
+       var clusterIcons = [
+       {
+         href: 'small.png',
+         size: [40, 40],
+       // Отступ, чтобы центр картинки совпадал с центром кластера.
+       offset: [-20, -20]
+       },
+       {
+         href: 'big.png',
+         size: [60, 60],
+         offset: [-30, -30],
+         // Можно задать геометрию активной области метки.&#13;
+         // Если геометрия не задана, активной областью будет
+// прямоугольник.
+         shape: {
+            type: 'Circle',
+            coordinates: [0, 0],
+          radius: 30
+       }
+     }],
+     // При размере кластера до 100 будет использована 'small.png'.
+     // При размере кластера больше 100 будет использована 'big.png'.
+     clusterNumbers = [100],
+       // Сделаем макет содержимого иконки кластера,
+      // в котором цифры будут раскрашены в белый цвет.
+     MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+       '&lt;div style="color: #FFFFFF; font-weight: bold;">{{ properties.geoObjects.length }}&lt;/div>'),
+       var clusterer = new ymaps.Clusterer({
+                 // Если опции для кластеров задаются через кластеризатор,
+                 // необходимо указывать их с префиксами "cluster".
+                 clusterIcons: clusterIcons,
+                 clusterNumbers: clusterNumbers,
+                 clusterIconContentLayout: MyIconContentLayout
+            });</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Создание кластеризатора с макетом-каруселью.
+var clusterer = new ymaps.Clusterer({
+          clusterDisableClickZoom: true,
+          // Используем макет "карусель"
+          clusterBalloonContentLayout: "cluster#balloonCarousel",
+          // Запрещаем зацикливание списка при постраничной навигации.
+         clusterBalloonCycling: false,
+         // Настройка внешнего вида панели навигации.
+    // Элементами панели навигации будут маркеры.
+    clusterBalloonPagerType: "marker",
+    // Количество элементов в панели.
+    clusterBalloonPagerSize: 6
+ });</codeblock><p translate="no"><b>3.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Создание кластеризатора с макетом-аккордеоном
+var clusterer = new ymaps.Clusterer({
+        clusterDisableClickZoom: true,
+        // Используем макет "аккордеон"
+        clusterBalloonContentLayout: "cluster#balloonAccordion"
+    });</codeblock><p translate="no"><b>4.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Создание кластеризатора с произвольным HTML-макетом иконки кластера.
+var clusterer = new ymaps.Clusterer({
+    // Зададим макет метки кластера.
+    clusterIconLayout: ymaps.templateLayoutFactory.createClass('&lt;div class="clusterIcon">{{ properties.geoObjects.length }}&lt;/div>'),
+    // Чтобы метка была кликабельной, переопределим ее активную область.
+    clusterIconShape: {
+        type: 'Rectangle',
+        coordinates: [[0, 0], [20, 20]]
+    }
+});</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IDomEventEmitter.dita#field_detail/events" type="section"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IGeoObject.dita#field_detail/geometry" type="section"><keyword>geometry</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IGeometry.dita" type="topic"><keyword>IGeometry</keyword></xref>|null</entry>
+        
+              <entry colname="col3">
+                <p>Геометрия геообъекта.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IGeoObject.dita#field_detail/geometry" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>ICustomizable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IGeoObject.dita#field_detail/properties" type="section"><keyword>properties</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IDataManager.dita" type="topic"><keyword>IDataManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Данные геообъекта.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IGeoObject.dita#field_detail/properties" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ClusterPlacemark.dita#field_detail/state" type="section"><keyword>state</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Состояние кластера. Определяется следующими полями:<ul>
+    <li>activeObject - Cсылка на активный объект кластера. Активным объектом является тот, который в данный момент выбран в балуне кластера.</li>
+</ul></p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-click"><keyword>click</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Однократное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-click"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-contextmenu"><keyword>contextmenu</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Вызов контекстного меню на элементе. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-contextmenu"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-dblclick"><keyword>dblclick</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Двойное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-dblclick"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#event_detail/event_detail/event-geometrychange"><keyword>geometrychange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение геометрии геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>originalEvent: <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref> - оригинальное событие геометрии.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeoObject.dita#event_detail/event_detail/event-geometrychange"><keyword>IGeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IParentOnMap.dita#event_detail/event_detail/event-mapchange"><keyword>mapchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменилась карта. Поля данных:<ul>
+    <li>oldMap - старая карта;</li>
+    <li>newMap - новая карта.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IParentOnMap.dita#event_detail/event_detail/event-mapchange"><keyword>IParentOnMap</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousedown"><keyword>mousedown</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Нажатие кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousedown"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseenter"><keyword>mouseenter</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Наведение курсора на объект. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseenter"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseleave"><keyword>mouseleave</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Вывод курсора за пределы объекта. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseleave"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousemove"><keyword>mousemove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Перемещение курсора над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousemove"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseup"><keyword>mouseup</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Отпускание кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseup"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchend"><keyword>multitouchend</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Окончание мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchend"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchmove"><keyword>multitouchmove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Повторящееся событие при мультисенсорном управлении. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Определяет свойство touches, которое содержит список прикосновений. Каждое прикосновение описано объектом, которое содержит поля:<ul>
+  <li>clientX - координата касания X относительно видимой области браузера;</li>
+  <li>clientY - координата касания Y относительно видимой области браузера;</li>
+  <li>pageX - координата касания X касания относительно начала документа;</li>
+  <li>pageY - координата касания Y касания относительно начала документа.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchmove"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchstart"><keyword>multitouchstart</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Начало мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Определяет свойство touches, которое содержит список прикосновений. Каждое прикосновение описано объектом, которое содержит поля:<ul>
+  <li>clientX - координата касания X относительно видимой области браузера;</li>
+  <li>clientY - координата касания Y относительно видимой области браузера;</li>
+  <li>pageX - координата касания X касания относительно начала документа;</li>
+  <li>pageY - координата касания Y касания относительно начала документа.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchstart"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#event_detail/event_detail/event-overlaychange"><keyword>overlaychange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение оверлея геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>overlay: <xref href="IOverlay.dita" type="topic"><keyword>IOverlay</keyword></xref>|null - ссылка на оверлей;</li>
+    <li>oldOverlay: <xref href="IOverlay.dita" type="topic"><keyword>IOverlay</keyword></xref>|null - предыдущий оверлей геообъекта.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeoObject.dita#event_detail/event_detail/event-overlaychange"><keyword>IGeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>parentchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменился родительский объект.</p><p>Поля данных:</p>
+<ul>
+    <li>oldParent - старый родитель;</li>
+    <li>newParent - новый родитель.</li>
+</ul>
+                            
+                                <p translate="no">Унаследовано от <xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>IChild</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#event_detail/event_detail/event-propertieschange"><keyword>propertieschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение данных геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>originalEvent: <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref> - оригинальное событие менеджера данных.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeoObject.dita#event_detail/event_detail/event-propertieschange"><keyword>IGeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-wheel"><keyword>wheel</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Скролл мышкой. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-wheel"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ClusterPlacemark.dita#method_detail/getBounds" type="section"><keyword>getBounds</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает географические координаты прямоугольной области, охватывающей все элементы кластера.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ClusterPlacemark.dita#method_detail/getGeoObjects" type="section"><keyword>getGeoObjects</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Метод является упрощенным вызовом cluster.properties.get('geoObjects');</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IParentOnMap.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на карту.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IParentOnMap.dita#method_detail/getMap" type="section"><keyword>IParentOnMap</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#method_detail/getOverlay" type="section"><keyword>getOverlay</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект-обещание, который подтверждается объектом оверлея в момент его фактического создания, либо отклоняется с передачей соответствующей ошибки.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IGeoObject.dita#method_detail/getOverlay" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#method_detail/getOverlaySync" type="section"><keyword>getOverlaySync</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IOverlay.dita" type="topic"><keyword>IOverlay</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Метод предоставляет синхронный доступ к оверлею.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IGeoObject.dita#method_detail/getOverlaySync" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChildOnMap.dita#method_detail/getParent" type="section"><keyword>getParent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IParentOnMap.dita" type="topic"><keyword>IParentOnMap</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на родительский объект или null, если родительский элемент не был установлен.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IChildOnMap.dita#method_detail/getParent" type="section"><keyword>IChildOnMap</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="collection.Item.dita#method_detail/onAddToMap" type="section"><keyword>onAddToMap</keyword></xref>(<xref href="collection.Item.dita#method_detail/onAddToMap-param-map" translate="no" type="row">map</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Функция, которая вызывается при добавлении элемента на карту. Для выполнения дополнительных действий при добавлении объекта на карту переопределите эту функцию.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="collection.Item.dita#method_detail/onAddToMap" type="section"><keyword>collection.Item</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="collection.Item.dita#method_detail/onRemoveFromMap" type="section"><keyword>onRemoveFromMap</keyword></xref>(<xref href="collection.Item.dita#method_detail/onRemoveFromMap-param-oldMap" translate="no" type="row">oldMap</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Функция, которая вызывается при удалении элемента с карты. Для выполнения дополнительных действий при удалении объекта с карты переопределите эту функцию.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="collection.Item.dita#method_detail/onRemoveFromMap" type="section"><keyword>collection.Item</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChildOnMap.dita#method_detail/setParent" type="section"><keyword>setParent</keyword></xref>(<xref href="IChildOnMap.dita#method_detail/setParent-param-parent" translate="no" type="row">parent</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IChildOnMap.dita" type="topic"><keyword>IChildOnMap</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает родительский объект. Если передать значение null, то элемент управления будет только удален из текущего родительского объекта.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IChildOnMap.dita#method_detail/setParent" type="section"><keyword>IChildOnMap</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="state">
+            <title translate="no">state</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>} state</codeblock></p>
+
+            <p>Состояние кластера. Определяется следующими полями:<ul>
+    <li>activeObject - Cсылка на активный объект кластера. Активным объектом является тот, который в данный момент выбран в балуне кластера.</li>
+</ul></p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">var geoObjects = cluster.properties.get('geoObjects');
+// При открытии балуна кластера будет выбран третий объект в списке.
+cluster.state.set('activeObject', geoObjects[2]);</codeblock>
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getBounds">
+        <title translate="no">getBounds</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]|null} getBounds()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>географические координаты прямоугольной области, охватывающей все элементы кластера.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getGeoObjects">
+        <title translate="no">getGeoObjects</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>[]} getGeoObjects()</codeblock></p>
+
+         <p>Метод является упрощенным вызовом cluster.properties.get('geoObjects');</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>массив геообъектов, образующих кластер.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_ZTMzM2Nm_CACHING --></topic>

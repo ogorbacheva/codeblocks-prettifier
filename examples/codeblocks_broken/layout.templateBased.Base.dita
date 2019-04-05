@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="layout.templateBased.Base" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">layout.templateBased.Base</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>layout.templateBased.Base</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="ILayout.dita" type="topic"><keyword>ILayout</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Базовый класс макета на основе шаблонов. Этот класс используется фабрикой макетов как базовый для создания пользовательских макетов.</p>
+    
+
+
+
+    <p translate="no"><b>См.: </b><xref href="templateLayoutFactory.dita" type="topic"><keyword>templateLayoutFactory</keyword></xref> </p>
+
+
+
+
+
+    <p translate="no"><xref href="#layout.templateBased.Base/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#layout.templateBased.Base/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#layout.templateBased.Base/events-summary" translate="no" type="section">События </xref> | <xref href="#layout.templateBased.Base/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">layout.templateBased.Base(<xref href="#layout.templateBased.Base/param-data" translate="no" type="entry">data</xref>)</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-data" translate="no">
+                    
+                        <xref href="#layout.templateBased.Base/param-data" type="entry"><parmname>data</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Набор разнородных данных, на основе которых строится макет.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IDomEventEmitter.dita#field_detail/events" type="section"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-click"><keyword>click</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Однократное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-click"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-contextmenu"><keyword>contextmenu</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Вызов контекстного меню на элементе. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-contextmenu"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-dblclick"><keyword>dblclick</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Двойное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-dblclick"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayout.dita#event_detail/event_detail/event-emptinesschange"><keyword>emptinesschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение признака пустоты макета. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ILayout.dita#event_detail/event_detail/event-emptinesschange"><keyword>ILayout</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousedown"><keyword>mousedown</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Нажатие кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousedown"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseenter"><keyword>mouseenter</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Наведение курсора на объект. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseenter"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseleave"><keyword>mouseleave</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Вывод курсора за пределы объекта. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseleave"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousemove"><keyword>mousemove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Перемещение курсора над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousemove"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseup"><keyword>mouseup</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Отпускание кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseup"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchend"><keyword>multitouchend</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Окончание мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchend"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchmove"><keyword>multitouchmove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Повторящееся событие при мультисенсорном управлении. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Определяет свойство touches, которое содержит список прикосновений. Каждое прикосновение описано объектом, которое содержит поля:<ul>
+  <li>clientX - координата касания X относительно видимой области браузера;</li>
+  <li>clientY - координата касания Y относительно видимой области браузера;</li>
+  <li>pageX - координата касания X касания относительно начала документа;</li>
+  <li>pageY - координата касания Y касания относительно начала документа.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchmove"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchstart"><keyword>multitouchstart</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Начало мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Определяет свойство touches, которое содержит список прикосновений. Каждое прикосновение описано объектом, которое содержит поля:<ul>
+  <li>clientX - координата касания X относительно видимой области браузера;</li>
+  <li>clientY - координата касания Y относительно видимой области браузера;</li>
+  <li>pageX - координата касания X касания относительно начала документа;</li>
+  <li>pageY - координата касания Y касания относительно начала документа.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchstart"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayout.dita#event_detail/event_detail/event-parentelementchange"><keyword>parentelementchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение родительского элемента. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ILayout.dita#event_detail/event_detail/event-parentelementchange"><keyword>ILayout</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayout.dita#event_detail/event_detail/event-shapechange"><keyword>shapechange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение фигуры области охватывающей макет. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ILayout.dita#event_detail/event_detail/event-shapechange"><keyword>ILayout</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-wheel"><keyword>wheel</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Скролл мышкой. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-wheel"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="layout.templateBased.Base.dita#method_detail/build" type="section"><keyword>build</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Строит экземпляр макета на основе шаблона и добавляет его в родительский HTML-элемент.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="layout.templateBased.Base.dita#method_detail/clear" type="section"><keyword>clear</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет содержимое макета из DOM.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayout.dita#method_detail/destroy" type="section"><keyword>destroy</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Деструктор. Вызывается при завершении работы с макетом.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ILayout.dita#method_detail/destroy" type="section"><keyword>ILayout</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayout.dita#method_detail/getData" type="section"><keyword>getData</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект данных макета.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="ILayout.dita#method_detail/getData" type="section"><keyword>ILayout</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayout.dita#method_detail/getParentElement" type="section"><keyword>getParentElement</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>HTMLElement</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает родительский HTML-элемент.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="ILayout.dita#method_detail/getParentElement" type="section"><keyword>ILayout</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="layout.templateBased.Base.dita#method_detail/getShape" type="section"><keyword>getShape</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IShape.dita" type="topic"><keyword>IShape</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает фигуру, описывающую форму области, охватывающей макет, либо null, если нет возможности рассчитать данную фигуру. По умолчанию пытается построить фигуру через опцию shape - this.getData().options.get('shape'). В опции можно задать как инстанцию класса, реализующего интерфейс IShape, так и JSON-описание пиксельной геометрии фигуры. Координаты геометрии фигуры должны отсчитываться от точки привязки родительского элемента макета.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayout.dita#method_detail/isEmpty" type="section"><keyword>isEmpty</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true, если макет пуст, т.е. не имеет содержимого. Данный признак используется для сокрытия пустых объектов, таких как хинт, балун и другие.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="ILayout.dita#method_detail/isEmpty" type="section"><keyword>ILayout</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="layout.templateBased.Base.dita#method_detail/onSublayoutSizeChange" type="section"><keyword>onSublayoutSizeChange</keyword></xref>(<xref href="layout.templateBased.Base.dita#method_detail/onSublayoutSizeChange-param-sublayoutInfo" translate="no" type="row">sublayoutInfo</xref>, <xref href="layout.templateBased.Base.dita#method_detail/onSublayoutSizeChange-param-nodeSizeByContent" translate="no" type="row">nodeSizeByContent</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Автоматически вызывается при изменении размеров вложенного макета, добавленного с параметром 'observeSize'. Используется для переопределения в конкретных классах макетов для реакции на изменение размеров содержимого.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="layout.templateBased.Base.dita#method_detail/rebuild" type="section"><keyword>rebuild</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Перестраивает макет.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayout.dita#method_detail/setData" type="section"><keyword>setData</keyword></xref>(<xref href="ILayout.dita#method_detail/setData-param-data" translate="no" type="row">data</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает данные макета.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ILayout.dita#method_detail/setData" type="section"><keyword>ILayout</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayout.dita#method_detail/setParentElement" type="section"><keyword>setParentElement</keyword></xref>(<xref href="ILayout.dita#method_detail/setParentElement-param-parent" translate="no" type="row">parent</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет макет в DOM-дерево.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ILayout.dita#method_detail/setParentElement" type="section"><keyword>ILayout</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="build">
+        <title translate="no">build</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} build()</codeblock></p>
+
+         <p>Строит экземпляр макета на основе шаблона и добавляет его в родительский HTML-элемент.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="clear">
+        <title translate="no">clear</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} clear()</codeblock></p>
+
+         <p>Удаляет содержимое макета из DOM.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getShape">
+        <title translate="no">getShape</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IShape.dita" type="topic"><keyword>IShape</keyword></xref>|null} getShape()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>фигуру, описывающую форму области, охватывающей макет, либо null, если нет возможности рассчитать данную фигуру. По умолчанию пытается построить фигуру через опцию shape - this.getData().options.get('shape'). В опции можно задать как инстанцию класса, реализующего интерфейс IShape, так и JSON-описание пиксельной геометрии фигуры. Координаты геометрии фигуры должны отсчитываться от точки привязки родительского элемента макета.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Создадим метку и зададим ей круглую интерактивную область.
+var MyLayoutClass = ymaps.templateLayoutFactory.createClass('&lt;div class="imageIcon">{{name}}&lt;/div>'),
+    myPlacemark = new ymaps.Placemark([22, 34], {name: 'Кафе Маяк'}, {
+        iconLayout: MyLayoutClass,
+       iconShape: {type: 'Circle', coordinates: [0, 0], radius: 20}
+   });</codeblock>
+        
+
+    </section>
+    
+        <section id="onSublayoutSizeChange">
+        <title translate="no">onSublayoutSizeChange</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} onSublayoutSizeChange(<xref href="layout.templateBased.Base.dita#method_detail/onSublayoutSizeChange-param-sublayoutInfo" translate="no" type="row">sublayoutInfo</xref>, <xref href="layout.templateBased.Base.dita#method_detail/onSublayoutSizeChange-param-nodeSizeByContent" translate="no" type="row">nodeSizeByContent</xref>)</codeblock></p>
+
+         <p>Автоматически вызывается при изменении размеров вложенного макета, добавленного с параметром 'observeSize'. Используется для переопределения в конкретных классах макетов для реакции на изменение размеров содержимого.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="onSublayoutSizeChange-param-sublayoutInfo">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/onSublayoutSizeChange-param-sublayoutInfo" type="row"><parmname>sublayoutInfo</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Информация о вложенном макете.</p>
+                </entry>
+
+            </row>
+            
+            <row id="onSublayoutSizeChange-param-nodeSizeByContent">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/onSublayoutSizeChange-param-nodeSizeByContent" type="row"><parmname>nodeSizeByContent</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Новые размеры элемента с учётом его содержимого. Доступные поля: 'width', 'height', 'scrollX', 'scrollY'.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="onSublayoutSizeChange_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="rebuild">
+        <title translate="no">rebuild</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} rebuild()</codeblock></p>
+
+         <p>Перестраивает макет.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_MjViNTY3_CACHING --></topic>

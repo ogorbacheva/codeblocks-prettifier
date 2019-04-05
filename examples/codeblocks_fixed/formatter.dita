@@ -1,0 +1,415 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="formatter" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">formatter</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>formatter</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section id="constructor">
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статический объект.</p>
+    
+    
+
+
+
+
+
+   
+        <p>Статический класс, содержащий методы форматирования единиц измерения с учётом текущего языка.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#formatter/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+    
+
+    
+
+    
+
+
+
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="formatter.dita#method_detail/distance" type="section"><keyword>distance</keyword></xref>(<xref href="formatter.dita#method_detail/distance-param-value" translate="no" type="row">value</xref>[, <xref href="formatter.dita#method_detail/distance-param-significantDigits" translate="no" type="row">significantDigits</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает строковое представление расстояния, отформатированное согласно локальным правилам и переведённое в нужную систему единиц измерения (например, для локали en_US расстояние будет представлено в милях).</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="formatter.dita#method_detail/duration" type="section"><keyword>duration</keyword></xref>(<xref href="formatter.dita#method_detail/duration-param-value" translate="no" type="row">value</xref>[, <xref href="formatter.dita#method_detail/duration-param-significantDigits" translate="no" type="row">significantDigits</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает строковое представление интервала времени.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="distance">
+        <title translate="no">distance</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} distance(<xref href="formatter.dita#method_detail/distance-param-value" translate="no" type="row">value</xref>[, <xref href="formatter.dita#method_detail/distance-param-significantDigits" translate="no" type="row">significantDigits</xref>])</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> строковое представление расстояния, отформатированное согласно локальным правилам и переведённое в нужную систему единиц измерения (например, для локали en_US расстояние будет представлено в милях).</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="distance-param-value">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/distance-param-value" type="row"><parmname>value</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Длина в метрах.</p>
+                </entry>
+
+            </row>
+            
+            <row id="distance-param-significantDigits">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/distance-param-significantDigits" type="row"><parmname>significantDigits</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">2
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Число значащих цифр в ответе.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="distance_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="duration">
+        <title translate="no">duration</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} duration(<xref href="formatter.dita#method_detail/duration-param-value" translate="no" type="row">value</xref>[, <xref href="formatter.dita#method_detail/duration-param-significantDigits" translate="no" type="row">significantDigits</xref>])</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> строковое представление интервала времени.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="duration-param-value">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/duration-param-value" type="row"><parmname>value</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Интервал времени в секундах.</p>
+                </entry>
+
+            </row>
+            
+            <row id="duration-param-significantDigits">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/duration-param-significantDigits" type="row"><parmname>significantDigits</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">2
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Число значащих цифр в ответе.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="duration_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_MDVkOGEy_CACHING --></topic>

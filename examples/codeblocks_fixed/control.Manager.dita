@@ -1,0 +1,1320 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="control.Manager" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">control.Manager</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>control.Manager</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Менеджер элементов управления.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#control.Manager/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#control.Manager/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#control.Manager/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">control.Manager(<xref href="#control.Manager/param-map" translate="no" type="entry">map</xref>[, <xref href="#control.Manager/param-controls" translate="no" type="entry">controls</xref>[, <xref href="#control.Manager/param-options" translate="no" type="entry">options</xref>]])</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-map" translate="no">
+                    
+                        <xref href="#control.Manager/param-map" type="entry"><parmname>map</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p>
+                    <p/>
+                    <p>Экземпляр карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-controls" translate="no">
+                    <xref href="#control.Manager/param-controls" type="entry"><parmname>controls</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String[]|<xref href="IControl.dita" type="topic"><keyword>IControl</keyword></xref>[]</p>
+                    <p/>
+                    <p>Элементы управления, которые требуется разместить на карте изначально.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options" translate="no">
+                    <xref href="#control.Manager/param-options" type="entry"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции менеджера.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.margin" translate="no">
+                    <xref href="#control.Manager/param-options.margin" type="entry"><parmname>options.margin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     10
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Отступ элементов управления друг от друга и от краёв карты. Задаётся в пикселях.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.pane" translate="no">
+                    <xref href="#control.Manager/param-options.pane" type="entry"><parmname>options.pane</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IPane.dita" type="topic"><keyword>IPane</keyword></xref></p>
+                    <p/>
+                    <p>Контейнер для всех элементов управления.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.states" translate="no">
+                    <xref href="#control.Manager/param-options.states" type="entry"><parmname>options.states</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     ['small', 'medium', 'large']
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String[]</p>
+                    <p/>
+                    <p>Массив размеров, начиная от наименьшего к наибольшему.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="control.Manager.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="event.Manager.dita" type="topic"><keyword>event.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="control.Manager.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="option.Manager.dita" type="topic"><keyword>option.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Опции менеджера.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="control.Manager.dita#field_detail/state" type="section"><keyword>state</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Состояние менеджера. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>size - состояние в котором находятся элементы управления.</li>
+</ul></p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.Manager.dita#method_detail/add" type="section"><keyword>add</keyword></xref>(<xref href="control.Manager.dita#method_detail/add-param-control" translate="no" type="row">control</xref>[, <xref href="control.Manager.dita#method_detail/add-param-options" translate="no" type="row">options</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="control.Manager.dita" type="topic"><keyword>control.Manager</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет элемент управления в менеджер.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.Manager.dita#method_detail/each" type="section"><keyword>each</keyword></xref>(<xref href="control.Manager.dita#method_detail/each-param-callback" translate="no" type="row">callback</xref>, <xref href="control.Manager.dita#method_detail/each-param-context" translate="no" type="row">context</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="control.Manager.dita" type="topic"><keyword>control.Manager</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Вызывает функцию-обработчик для всех элементов управления.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.Manager.dita#method_detail/get" type="section"><keyword>get</keyword></xref>(<xref href="control.Manager.dita#method_detail/get-param-index" translate="no" type="row">index</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IControl.dita" type="topic"><keyword>IControl</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает элемент управления или null, если элемент не найден.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.Manager.dita#method_detail/getChildElement" type="section"><keyword>getChildElement</keyword></xref>(<xref href="control.Manager.dita#method_detail/getChildElement-param-control" translate="no" type="row">control</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект-обещание, который подтверждается HTML-элементом, в который должен разместиться дочерний элемент.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.Manager.dita#method_detail/getContainer" type="section"><keyword>getContainer</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>HTMLElement</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает контейнер, в который будут добавлены элементы контрола.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.Manager.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на карту.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.Manager.dita#method_detail/indexOf" type="section"><keyword>indexOf</keyword></xref>(<xref href="control.Manager.dita#method_detail/indexOf-param-childToFind" translate="no" type="row">childToFind</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Integer</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает -1, если элемент управления не найден, либо индекс элемента в менеджере.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.Manager.dita#method_detail/remove" type="section"><keyword>remove</keyword></xref>(<xref href="control.Manager.dita#method_detail/remove-param-control" translate="no" type="row">control</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="control.Manager.dita" type="topic"><keyword>control.Manager</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаление элемента управления из менеджера.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="events">
+            <title translate="no">events</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="event.Manager.dita" type="topic"><keyword>event.Manager</keyword></xref>} events</codeblock></p>
+
+            <p>Менеджер событий.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="options">
+            <title translate="no">options</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="option.Manager.dita" type="topic"><keyword>option.Manager</keyword></xref>} options</codeblock></p>
+
+            <p>Опции менеджера.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="state">
+            <title translate="no">state</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>} state</codeblock></p>
+
+            <p>Состояние менеджера. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>size - состояние в котором находятся элементы управления.</li>
+</ul></p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="add">
+        <title translate="no">add</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="control.Manager.dita" type="topic"><keyword>control.Manager</keyword></xref>} add(<xref href="control.Manager.dita#method_detail/add-param-control" translate="no" type="row">control</xref>[, <xref href="control.Manager.dita#method_detail/add-param-options" translate="no" type="row">options</xref>])</codeblock></p>
+
+         <p>Добавляет элемент управления в менеджер.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="add-param-control">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/add-param-control" type="row"><parmname>control</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IControl.dita" type="topic"><keyword>IControl</keyword></xref>|String</p>
+                    <p/>
+                   <p>Элементы управления, заданные экземплярами классов, реализующих интерфейс <xref href="IControl.dita" type="topic"><keyword>IControl</keyword></xref> либо ключами.</p><p>Возможные значения ключей:</p>
+<ul>
+    <li>"fullscreenControl" — кнопка разворачивания карты на весь экран <xref href="control.FullscreenControl.dita" type="topic"><keyword>control.FullscreenControl</keyword></xref>;</li>
+    <li>"geolocationControl" — кнопка определения местоположения пользователя <xref href="control.GeolocationControl.dita" type="topic"><keyword>control.GeolocationControl</keyword></xref>;</li>
+    <li>"routeEditor" — кнопка включения и отключения поведения "редактор маршрута" <xref href="control.RouteEditor.dita" type="topic"><keyword>control.RouteEditor</keyword></xref>;</li>
+    <li>"rulerControl" — кнопка включения и отключения поведения "линейка" <xref href="control.RulerControl.dita" type="topic"><keyword>control.RulerControl</keyword></xref>;</li>
+    <li>"searchControl" — поисковая строка <xref href="control.SearchControl.dita" type="topic"><keyword>control.SearchControl</keyword></xref>.</li>
+    <li>"trafficControl" — панель пробок <xref href="control.TrafficControl.dita" type="topic"><keyword>control.TrafficControl</keyword></xref>;</li>
+    <li>"typeSelector" — панель переключения типа карты <xref href="control.TypeSelector.dita" type="topic"><keyword>control.TypeSelector</keyword></xref>;</li>
+    <li>"zoomControl" — ползунок масштаба <xref href="control.ZoomControl.dita" type="topic"><keyword>control.ZoomControl</keyword></xref>;</li>
+</ul><p>
+</p><p>Кроме того, вы можете задавать один из предустановленных наборов элементов управления с помощью специальных ключей:</p>
+<ul>
+    <li>"smallMapDefaultSet" - базовый набор элементов управления, оптимизированный для карт небольшого размера и экранов телефонов. Состоит из элементов управления "zoomControl", "searchControl", "typeSelector", "geolocationControl" и "fullscreenControl". В этом наборе все элементы управления минимизированы до кнопок с пиктограммами.</li>
+    <li>"mediumMapDefaultSet" - набор элементов управления, оптимизированный для карт среднего размера и экранов планшетов. Помимо базового набора элементов управления (см. выше), добавляет дополнительно элементы управления "rulerControl" и "trafficControl".</li>
+    <li>"largeMapDefaultSet" - набор элементов управления, оптимизированный для карт большого размера и экранов десктопных компьютеров. Отличается от набора "mediumMapDefaultSet" наличием элемента управления "routeEditor" и отсутствием элемента управления "fullScreen";</li>
+    <li>"default" - набор элементов управления по умолчанию; синоним для набора "mediumMapDefaultSet".</li>
+</ul>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-options">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/add-param-options" type="row"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Опции элемента управления.</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-options.float">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/add-param-options.float" type="row"><parmname>options.float</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">"right"
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Сторона, по которой нужно выравнивать элемент управления. Может принимать три значения: "left", "right" или "none". При значении "left" или "right" элементы управления выстраиваются друг за другом, начиная от левого или правого края карты соответственно. При значении "none" элементы управления позиционируется только по значениям опций left, right, bottom, top относительно границ карты.</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-options.floatIndex">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/add-param-options.floatIndex" type="row"><parmname>options.floatIndex</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">0
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Приоритет расположения элемента управления. Элемент с максимальным приоритетом находится ближе к указанному в свойстве float краю карты. Не работает при float = "none".</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-options.position">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/add-param-options.position" type="row"><parmname>options.position</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Объект, описывающий позицию элемента управления. При указании опции position значение опции float автоматически трактуется как "none".</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-options.position.bottom">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/add-param-options.position.bottom" type="row"><parmname>options.position.bottom</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">'auto'
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                   <p>Положение относительно нижнего края карты. Работает только при float = none.</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-options.position.left">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/add-param-options.position.left" type="row"><parmname>options.position.left</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">'auto'
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                   <p>Положение относительно левого края карты. Работает только при float = none.</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-options.position.right">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/add-param-options.position.right" type="row"><parmname>options.position.right</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">'auto'
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                   <p>Положение относительно правого края карты. Работает только при float = none.</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-options.position.top">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/add-param-options.position.top" type="row"><parmname>options.position.top</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">'auto'
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                   <p>Положение относительно верхнего края карты. Работает только при float = none.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="add_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">map.controls.add('zoomControl')
+    .add('typeSelector');</codeblock>
+        
+
+    </section>
+    
+        <section id="each">
+        <title translate="no">each</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="control.Manager.dita" type="topic"><keyword>control.Manager</keyword></xref>} each(<xref href="control.Manager.dita#method_detail/each-param-callback" translate="no" type="row">callback</xref>, <xref href="control.Manager.dita#method_detail/each-param-context" translate="no" type="row">context</xref>)</codeblock></p>
+
+         <p>Вызывает функцию-обработчик для всех элементов управления.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="each-param-callback">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/each-param-callback" type="row"><parmname>callback</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция-обработчик. На вход получает элемент коллекции. При возвращении функцией значения false перебор останавливается.</p>
+                </entry>
+
+            </row>
+            
+            <row id="each-param-context">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/each-param-context" type="row"><parmname>context</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Контекст вызываемой функции.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="each_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="get">
+        <title translate="no">get</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IControl.dita" type="topic"><keyword>IControl</keyword></xref>|null} get(<xref href="control.Manager.dita#method_detail/get-param-index" translate="no" type="row">index</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>элемент управления или null, если элемент не найден.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="get-param-index">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/get-param-index" type="row"><parmname>index</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                   <p>Индекс искомого элемента или его ключ.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="get_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getChildElement">
+        <title translate="no">getChildElement</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} getChildElement(<xref href="control.Manager.dita#method_detail/getChildElement-param-control" translate="no" type="row">control</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект-обещание, который подтверждается HTML-элементом, в который должен разместиться дочерний элемент.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getChildElement-param-control">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getChildElement-param-control" type="row"><parmname>control</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IControl.dita" type="topic"><keyword>IControl</keyword></xref></p>
+                    <p/>
+                   <p>Элемент управления.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getChildElement_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getContainer">
+        <title translate="no">getContainer</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{HTMLElement} getContainer()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> контейнер, в который добавляются элементы управления.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getMap">
+        <title translate="no">getMap</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="Map.dita" type="topic"><keyword>Map</keyword></xref>} getMap()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на карту.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="indexOf">
+        <title translate="no">indexOf</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Integer} indexOf(<xref href="control.Manager.dita#method_detail/indexOf-param-childToFind" translate="no" type="row">childToFind</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>-1, если элемент управления не найден, либо индекс элемента в менеджере.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="indexOf-param-childToFind">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/indexOf-param-childToFind" type="row"><parmname>childToFind</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|<xref href="IControl.dita" type="topic"><keyword>IControl</keyword></xref></p>
+                    <p/>
+                   <p>Элемент управления или его ключ.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="indexOf_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="remove">
+        <title translate="no">remove</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="control.Manager.dita" type="topic"><keyword>control.Manager</keyword></xref>} remove(<xref href="control.Manager.dita#method_detail/remove-param-control" translate="no" type="row">control</xref>)</codeblock></p>
+
+         <p>Удаление элемента управления из менеджера.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="remove-param-control">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/remove-param-control" type="row"><parmname>control</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IControl.dita" type="topic"><keyword>IControl</keyword></xref>|String</p>
+                    <p/>
+                   <p>Удаляемый элемент управления, либо его ключ.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="remove_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_YTcyODAw_CACHING --></topic>

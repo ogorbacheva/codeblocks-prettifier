@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="../index.xsl"?><topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="IPanoramaTransition" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3" xml:lang="ru">
+
+
+
+<!-- ============================== class title ============================ -->
+
+
+
+<title translate="no">IPanoramaTransition</title>
+<body>
+
+<!-- ============================== class summary ========================== -->
+
+
+
+    <section>
+
+    
+
+
+
+
+
+
+
+   
+        <p>Интерфейс, описывающий сущность на панораме, связывающую ее с другой
+     панорамой.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IPanoramaTransition/constructor-summary" translate="no">Конструктор</xref> | <xref href="#IPanoramaTransition/methods-summary" translate="no">Методы </xref></p>
+
+
+<!-- ============================== Static "class" (object) summary and detailed desc ========================== -->
+
+
+
+</section>
+
+<!-- ============================== Constructor summary ==================== -->
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript">IPanoramaTransition()</codeblock></p>
+        
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+<!-- ============================== Data Types Summary======================== -->
+ 
+
+
+
+
+
+<!-- ============================== Properties summary ===================== -->
+
+
+
+<!-- ============================== Constants summary ======================== -->
+
+
+
+<!-- ============================== Events summary ======================== -->
+
+
+
+<!-- ============================== Methods summary ======================== -->
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="method_name" colnum="1"/>
+          
+          
+          <colspec colname="method_returns" colnum="3"/>
+          
+          <colspec colname="method_description" colnum="3"/>
+          <thead>
+            <row>
+              <entry align="left" translate="no">Имя</entry>
+          
+          
+              <entry align="left" translate="no">Возвращает</entry>
+          
+              <entry align="left" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry translate="no"><xref href="IPanoramaTransition.dita#method_detail/getConnectedPanorama"><keyword>getConnectedPanorama</keyword></xref>()</entry>
+                        
+                        
+                        <entry translate="no"><xref href="vow.Promise.dita"><keyword>vow.Promise</keyword></xref></entry>
+                        
+                        <entry>
+                            
+                                
+                                    <p>Возвращает объект-обещание, который будет разрешен объектом
+     связанной панорамы или отклонен с ошибкой.</p>
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+<!-- ============================== Constructor details ==================== -->
+
+
+<!-- ============================== Field details ========================== -->
+
+
+
+<!-- ============================== Typedef details ========================== -->
+
+
+
+
+
+
+
+<!-- ============================== Event details ========================== -->
+
+
+
+<!-- ============================== Method details ========================= -->
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getConnectedPanorama">
+        <title translate="no">getConnectedPanorama</title>
+        <p translate="no"><codeblock code-lang="javascript">{<xref href="vow.Promise.dita"><keyword>vow.Promise</keyword></xref>} getConnectedPanorama()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+         
+            <p><b>Возвращает </b>объект-обещание, который будет разрешен объектом
+     связанной панорамы или отклонен с ошибкой.</p>
+            
+        
+
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic>
+
+
+
+</topic>

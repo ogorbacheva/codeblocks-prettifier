@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="regions.load" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">regions.load</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>regions.load</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+        <p><note type="attention">Данная функция является устаревшей. Используйте <xref href="borders.load.dita" type="topic"><keyword>borders.load</keyword></xref>.</note></p>
+    
+    
+
+
+
+
+    
+        <p translate="no">Статическая функция.</p>
+    
+    
+        
+            <p>Предоставляет доступ к геометрии различных регионов и стран мира.</p>
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+       <p><b>Возвращает</b> объект-promise.</p>
+       
+    
+
+    
+
+    
+        
+         
+              <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{ <xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref> } regions.load(<xref href="#regions.load/param-region" translate="no" type="row">region</xref>[, <xref href="#regions.load/param-options" translate="no" type="row">options</xref>])</codeblock></p>
+         
+     
+
+    
+        <p translate="no"><b>Параметры:</b></p>
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+
+        <table>
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Параметр</entry>
+              <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+        
+        <row id="param-region">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#regions.load/param-region" type="row"><parmname>region</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: String</p>
+                <p/>
+                <p>ISO_3166-1 код страны (RU, UA, BY, KZ) для загрузки административно-территориального деления, либо '001' для загрузки геометрии границ стран мира.</p>
+            </entry>
+        </row>
+        
+        <row id="param-options">
+            <entry colname="col1" translate="no">
+                <xref href="#regions.load/param-options" type="row"><parmname>options</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Object</p>
+                <p/>
+                <p>Опции отображения.</p>
+            </entry>
+        </row>
+        
+        <row id="param-options.disputedBorders">
+            <entry colname="col1" translate="no">
+                <xref href="#regions.load/param-options.disputedBorders" type="row"><parmname>options.disputedBorders</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: String</p>
+                <p/>
+                <p>Двухбуквенный код государства, официальная позиция которого будет использоваться для определения административного подчинения спорных территорий. Допустимые значения: 'RU', 'UA', 'BY', 'KZ'. По умолчанию совпадает с кодом страны, который указан при загрузке API. Неподдерживаемые коды стран приводятся к RU. Для региона '001' (границы стран мира) поддерживается код 'UN' — мировые границы согласно позиции ООН.</p>
+            </entry>
+        </row>
+        
+        <row id="param-options.lang">
+            <entry colname="col1" translate="no">
+                <xref href="#regions.load/param-options.lang" type="row"><parmname>options.lang</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: String</p>
+                <p/>
+                <p>Язык (ru, uk, en, be).</p>
+            </entry>
+        </row>
+        
+        <row id="param-options.quality">
+            <entry colname="col1" translate="no">
+                <xref href="#regions.load/param-options.quality" type="row"><parmname>options.quality</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">   1
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Number</p>
+                <p/>
+                <p>Уровень качества. Доступные значения:<ul>
+    <li>0 - минимальное качество;</li>
+    <li>1 - стандартное качество;</li>
+    <li>2 - повышенное качество;</li>
+    <li>3 - высокое качество.</li>
+</ul>Уровень качества влияет на точность представления кривых и обьем файла данных.</p>
+            </entry>
+        </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+    
+    
+
+
+
+    
+        <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">ymaps.regions.load('RU', {
+    lang: 'en'
+}).then(function (result) {
+    geoMap.geoObjects.add(result.geoObjects);
+});</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_ZDc4NGQx_CACHING --></topic>

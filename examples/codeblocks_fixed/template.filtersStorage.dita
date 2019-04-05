@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="template.filtersStorage" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">template.filtersStorage</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>template.filtersStorage</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section id="constructor">
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статический объект.</p>
+    
+    
+
+
+
+    
+        <p translate="no">
+            Экземпляр класса  <xref href="util.Storage.dita" type="topic"><keyword>util.Storage</keyword></xref>
+        </p>
+    
+
+
+
+   
+        <p>Хранилище фильтров для шаблонов. Фильтры из хранилища можно использовать во всех макетах, созданных с помощью <xref href="templateLayoutFactory.dita" type="topic"><keyword>templateLayoutFactory</keyword></xref>. По умолчанию в хранилище объявлены следующие ключи для фильтров:<ul>
+   <li>default — позволяет устанавливать значения по умолчанию. Например, так: <b>{{ <i>properties.header</i>|default:<i>"Название"</i> }}</b></li>
+</ul></p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#template.filtersStorage/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+    
+
+    
+
+    
+
+
+
+    
+        <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Напишем простой фильтр, который будет преобразовывать
+// дату в формате «dd.mm.yyyy» в формат «dd month yyyy».
+// Для этого создадим функцию-фильтр, которая будет возвращать новое значение.
+// При вызове фильтра в функцию будут переданы следующие аргументы:
+// менеджер данных шаблона <xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>, значение и значение, заданное фильтру.
+var dateFilter = function (data, dateString, filterValue) {
+    var months = [
+             'january', 'february', 'march', 'april',
+             'may', 'june', 'july', 'august',
+             'september', 'october', 'november', 'december'
+         ],
+        date = dateString.split('.');
+    date[1] = months[parseInt(date[1], 10)];
+    return date.join(' ');
+};
+ymaps.template.filtersStorage.add('date', dateFilter);
+// После можно использовать в шаблонах конструкции вида
+// {{ "21.10.2014"|date }} значение будет "21 october 2014".</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Напишем фильтр, который будет находить и заменять подстроки в тексте.
+// Формат значений для замены в фильтре «subString_newSubString».
+// Напишем фильтр, который будет находить и заменять подстроки в тексте.
+// Формат значений для замены в фильтре «subString_newSubString».
+// При вызове фильтра в функцию будут переданы следующие аргументы:
+// менеджер данных шаблона <xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>, текст и значение, заданное фильтру.
+var replaceFilter = function (data, text, replace) {
+    replace = replace.trim();
+    // Removing quotation marks.
+    replace = replace.slice(1, replace.length - 1);
+    // Будем находить в тексте часть, указанную до «_» и заменять её на то, что указано после.
+    var values = replace.split('_'),
+        from = new RegExp(values[0], 'g'),
+        to = values[1];
+    return text.replace(from, to);
+};
+// Теперь можно использовать в шаблонах конструкции вида
+// {{ значение будет "text replaced test replace".</codeblock><p translate="no"><b>3.</b></p><codeblock code-lang="javascript" xml:space="preserve">// В данном примере в макет добавляются значение опции "colorClass" и значение свойства "header".
+// Если для свойства "header "не задано значение, вставляется строка "Title".
+var LayoutClass = ymaps.templateLayoutFactory.createClass(
+    '&lt;h1 class="{{ options.colorClass }}"&gt;' +
+    '{{ properties.header|default:"Title" }}' +
+    '&lt;/h1&gt;'
+);</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.Storage.dita#method_detail/add" type="section"><keyword>add</keyword></xref>(<xref href="util.Storage.dita#method_detail/add-param-key" translate="no" type="row">key</xref>, <xref href="util.Storage.dita#method_detail/add-param-object" translate="no" type="row">object</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="util.Storage.dita" type="topic"><keyword>util.Storage</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет объект в хранилище.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.Storage.dita#method_detail/get" type="section"><keyword>get</keyword></xref>(<xref href="util.Storage.dita#method_detail/get-param-key" translate="no" type="row">key</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект, хранящийся под указанным ключом, или исходный key, в случае, если это не строка.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.Storage.dita#method_detail/remove" type="section"><keyword>remove</keyword></xref>(<xref href="util.Storage.dita#method_detail/remove-param-key" translate="no" type="row">key</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="util.Storage.dita" type="topic"><keyword>util.Storage</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет пару "ключ: значение" из хранилища.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body><!-- XLIFF_FARM_NWI1OWNj_CACHING --></topic>

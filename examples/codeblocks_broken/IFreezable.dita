@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="IFreezable" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IFreezable</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IFreezable</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Интерфейс объекта с отключаемым событием изменения состояния. Объект, реализующий <xref href="IFreezable.dita" type="topic"><keyword>IFreezable</keyword></xref>, может функционировать в одном из следующих режимов:<ul>
+    <li>1. Активный. В этом режиме каждое изменение внутреннего состояния объекта сопровождается генерацией события <xref href="IFreezable.dita#event_detail/event-change" type="section"><keyword>IFreezable.change</keyword></xref>.</li>
+    <li>2. Замороженный. В этом режиме изменения состояния объекта не сопровождаются событием <xref href="IFreezable.dita#event_detail/event-change" type="section"><keyword>IFreezable.change</keyword></xref>, но если изменения имели место, событие <xref href="IFreezable.dita#event_detail/event-change" type="section"><keyword>IFreezable.change</keyword></xref> будет сгенерировано один раз при переходе в активный режим.</li>
+</ul></p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IFreezable/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#IFreezable/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#IFreezable/events-summary" translate="no" type="section">События </xref> | <xref href="#IFreezable/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IFreezable()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IFreezable.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий объекта.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IFreezable.dita#event_detail/event_detail/event-change"><keyword>change</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение внутреннего состояния объекта.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IFreezable.dita#method_detail/freeze" type="section"><keyword>freeze</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IFreezable.dita" type="topic"><keyword>IFreezable</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Переводит объект в "замороженный" режим.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IFreezable.dita#method_detail/isFrozen" type="section"><keyword>isFrozen</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true, если объект находится в "замороженном" режиме, иначе false.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IFreezable.dita#method_detail/unfreeze" type="section"><keyword>unfreeze</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IFreezable.dita" type="topic"><keyword>IFreezable</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Переводит объект в активный режим.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="events">
+            <title translate="no">events</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref>} events</codeblock></p>
+
+            <p>Менеджер событий объекта.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-change">
+            <title translate="no">change</title>
+            
+             <p>Изменение внутреннего состояния объекта.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="freeze">
+        <title translate="no">freeze</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IFreezable.dita" type="topic"><keyword>IFreezable</keyword></xref>} freeze()</codeblock></p>
+
+         <p>Переводит объект в "замороженный" режим.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="isFrozen">
+        <title translate="no">isFrozen</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Boolean} isFrozen()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>true, если объект находится в "замороженном" режиме, иначе false.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="unfreeze">
+        <title translate="no">unfreeze</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IFreezable.dita" type="topic"><keyword>IFreezable</keyword></xref>} unfreeze()</codeblock></p>
+
+         <p>Переводит объект в активный режим.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_NTcyNjc4_CACHING --></topic>

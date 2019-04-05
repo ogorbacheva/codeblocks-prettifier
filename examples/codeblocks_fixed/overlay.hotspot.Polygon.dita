@@ -1,0 +1,932 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="overlay.hotspot.Polygon" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">overlay.hotspot.Polygon</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>overlay.hotspot.Polygon</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IOverlay.dita" type="topic"><keyword>IOverlay</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Оверлей активной области в форме многоугольника. По умолчанию оверлеи не добавлены в package.full (стандартного набора модулей). Для создания собственного экземпляра оверлея необходимо использовать <xref href="overlay.storage.dita" type="topic"><keyword>overlay.storage</keyword></xref>.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#overlay.hotspot.Polygon/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#overlay.hotspot.Polygon/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#overlay.hotspot.Polygon/events-summary" translate="no" type="section">События </xref> | <xref href="#overlay.hotspot.Polygon/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">overlay.hotspot.Polygon(<xref href="#overlay.hotspot.Polygon/param-geometry" translate="no" type="entry">geometry</xref>[, <xref href="#overlay.hotspot.Polygon/param-data" translate="no" type="entry">data</xref>[, <xref href="#overlay.hotspot.Polygon/param-options" translate="no" type="entry">options</xref>]])</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-geometry" translate="no">
+                    
+                        <xref href="#overlay.hotspot.Polygon/param-geometry" type="entry"><parmname>geometry</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IPixelPolygonGeometry.dita" type="topic"><keyword>IPixelPolygonGeometry</keyword></xref></p>
+                    <p/>
+                    <p>Геометрия фигуры.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-data" translate="no">
+                    <xref href="#overlay.hotspot.Polygon/param-data" type="entry"><parmname>data</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Данные.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options" translate="no">
+                    <xref href="#overlay.hotspot.Polygon/param-options" type="entry"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.fill" translate="no">
+                    <xref href="#overlay.hotspot.Polygon/param-options.fill" type="entry"><parmname>options.fill</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Наличие заливки.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.fillColor" translate="no">
+                    <xref href="#overlay.hotspot.Polygon/param-options.fillColor" type="entry"><parmname>options.fillColor</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Цвет заливки <xref href="graphics.style.color.dita" type="topic"><keyword>graphics.style.color</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.fillImageHref" translate="no">
+                    <xref href="#overlay.hotspot.Polygon/param-options.fillImageHref" type="entry"><parmname>options.fillImageHref</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Фоновое изображение. При включении данной опции значение fillColor игнорируется.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.fillMethod" translate="no">
+                    <xref href="#overlay.hotspot.Polygon/param-options.fillMethod" type="entry"><parmname>options.fillMethod</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'stretch'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Тип заливки фоном. Может принимать одно из двух значений:<ul>
+  <li>stretch - фоновое изображение растягивается по размеру оверлея.</li>
+  <li>tile - Фоновое изображение повторяется без изменений размера. Аналог background-repeat в css. Можно использовать для заливки фигуры неким шаблоном.</li>
+</ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.fillOpacity" translate="no">
+                    <xref href="#overlay.hotspot.Polygon/param-options.fillOpacity" type="entry"><parmname>options.fillOpacity</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Прозрачность заливки.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.interactive" translate="no">
+                    <xref href="#overlay.hotspot.Polygon/param-options.interactive" type="entry"><parmname>options.interactive</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Опция, позволяющая отключить реакцию объекта на dom-события.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.opacity" translate="no">
+                    <xref href="#overlay.hotspot.Polygon/param-options.opacity" type="entry"><parmname>options.opacity</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Общая прозрачность.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.outline" translate="no">
+                    <xref href="#overlay.hotspot.Polygon/param-options.outline" type="entry"><parmname>options.outline</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Наличие обводки.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.separateContainer" translate="no">
+                    <xref href="#overlay.hotspot.Polygon/param-options.separateContainer" type="entry"><parmname>options.separateContainer</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Производит отрисовку в отдельном слое.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.strokeColor" translate="no">
+                    <xref href="#overlay.hotspot.Polygon/param-options.strokeColor" type="entry"><parmname>options.strokeColor</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Цвет линии <xref href="graphics.style.color.dita" type="topic"><keyword>graphics.style.color</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.strokeOpacity" translate="no">
+                    <xref href="#overlay.hotspot.Polygon/param-options.strokeOpacity" type="entry"><parmname>options.strokeOpacity</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Прозрачность контура.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.strokeStyle" translate="no">
+                    <xref href="#overlay.hotspot.Polygon/param-options.strokeStyle" type="entry"><parmname>options.strokeStyle</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]|String</p>
+                    <p/>
+                    <p>Стиль контура <xref href="graphics.style.stroke.dita" type="topic"><keyword>graphics.style.stroke</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.strokeWidth" translate="no">
+                    <xref href="#overlay.hotspot.Polygon/param-options.strokeWidth" type="entry"><parmname>options.strokeWidth</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Ширина линии.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IDomEventEmitter.dita#field_detail/events" type="section"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>ICustomizable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-click"><keyword>click</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Однократное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-click"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-contextmenu"><keyword>contextmenu</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Вызов контекстного меню на элементе. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-contextmenu"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOverlay.dita#event_detail/event_detail/event-datachange"><keyword>datachange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение данных. Поля данных:<ul>
+    <li>oldData - старые данные;</li>
+    <li>newData - новые данные.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IOverlay.dita#event_detail/event_detail/event-datachange"><keyword>IOverlay</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-dblclick"><keyword>dblclick</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Двойное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-dblclick"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOverlay.dita#event_detail/event_detail/event-emptinesschange"><keyword>emptinesschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение признака пустоты оверлея. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IOverlay.dita#event_detail/event_detail/event-emptinesschange"><keyword>IOverlay</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOverlay.dita#event_detail/event_detail/event-geometrychange"><keyword>geometrychange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение геометрии. Поля данных:<ul>
+    <li>oldGeometry - старая пиксельная геометрия;</li>
+    <li>newGeometry - новая пиксельная геометрия.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IOverlay.dita#event_detail/event_detail/event-geometrychange"><keyword>IOverlay</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOverlay.dita#event_detail/event_detail/event-mapchange"><keyword>mapchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменилась карта. Поля данных:<ul>
+    <li>oldMap - старая карта;</li>
+    <li>newMap - новая карта.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IOverlay.dita#event_detail/event_detail/event-mapchange"><keyword>IOverlay</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousedown"><keyword>mousedown</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Нажатие кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousedown"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseenter"><keyword>mouseenter</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Наведение курсора на объект. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseenter"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseleave"><keyword>mouseleave</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Вывод курсора за пределы объекта. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseleave"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousemove"><keyword>mousemove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Перемещение курсора над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousemove"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseup"><keyword>mouseup</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Отпускание кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseup"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchend"><keyword>multitouchend</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Окончание мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchend"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchmove"><keyword>multitouchmove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Повторящееся событие при мультисенсорном управлении. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Определяет свойство touches, которое содержит список прикосновений. Каждое прикосновение описано объектом, которое содержит поля:<ul>
+  <li>clientX - координата касания X относительно видимой области браузера;</li>
+  <li>clientY - координата касания Y относительно видимой области браузера;</li>
+  <li>pageX - координата касания X касания относительно начала документа;</li>
+  <li>pageY - координата касания Y касания относительно начала документа.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchmove"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchstart"><keyword>multitouchstart</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Начало мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Определяет свойство touches, которое содержит список прикосновений. Каждое прикосновение описано объектом, которое содержит поля:<ul>
+  <li>clientX - координата касания X относительно видимой области браузера;</li>
+  <li>clientY - координата касания Y относительно видимой области браузера;</li>
+  <li>pageX - координата касания X касания относительно начала документа;</li>
+  <li>pageY - координата касания Y касания относительно начала документа.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchstart"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOverlay.dita#event_detail/event_detail/event-shapechange"><keyword>shapechange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение фигуры области охватывающей оверлей. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IOverlay.dita#event_detail/event_detail/event-shapechange"><keyword>IOverlay</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-wheel"><keyword>wheel</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Скролл мышкой. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-wheel"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOverlay.dita#method_detail/getData" type="section"><keyword>getData</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект данных оверлея.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IOverlay.dita#method_detail/getData" type="section"><keyword>IOverlay</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOverlay.dita#method_detail/getGeometry" type="section"><keyword>getGeometry</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPixelGeometry.dita" type="topic"><keyword>IPixelGeometry</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает текущую пиксельную геометрию.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IOverlay.dita#method_detail/getGeometry" type="section"><keyword>IOverlay</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOverlay.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на текущую карту.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IOverlay.dita#method_detail/getMap" type="section"><keyword>IOverlay</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOverlay.dita#method_detail/getShape" type="section"><keyword>getShape</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IShape.dita" type="topic"><keyword>IShape</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает фигуру, описывающую форму области, охватывающей оверлей в глобальных пиксельных координатах, либо null, если нет возможности рассчитать фигуру.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IOverlay.dita#method_detail/getShape" type="section"><keyword>IOverlay</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOverlay.dita#method_detail/isEmpty" type="section"><keyword>isEmpty</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true, если макет пуст, т.е. не имеет содержимого. Данный признак используется для сокрытия пустых объектов, таких как хинт, балун и другие.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IOverlay.dita#method_detail/isEmpty" type="section"><keyword>IOverlay</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOverlay.dita#method_detail/setData" type="section"><keyword>setData</keyword></xref>(<xref href="IOverlay.dita#method_detail/setData-param-data" translate="no" type="row">data</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает данные оверлея.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IOverlay.dita#method_detail/setData" type="section"><keyword>IOverlay</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOverlay.dita#method_detail/setGeometry" type="section"><keyword>setGeometry</keyword></xref>(<xref href="IOverlay.dita#method_detail/setGeometry-param-geometry" translate="no" type="row">geometry</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает пиксельную геометрию оверлея.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IOverlay.dita#method_detail/setGeometry" type="section"><keyword>IOverlay</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IOverlay.dita#method_detail/setMap" type="section"><keyword>setMap</keyword></xref>(<xref href="IOverlay.dita#method_detail/setMap-param-map" translate="no" type="row">map</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает карту, на которой должен отобразиться оверлей.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IOverlay.dita#method_detail/setMap" type="section"><keyword>IOverlay</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body><!-- XLIFF_FARM_NTBhNmMx_CACHING --></topic>

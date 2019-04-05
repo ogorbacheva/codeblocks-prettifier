@@ -1,0 +1,493 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="geometry.pixel.LineString" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">geometry.pixel.LineString</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>geometry.pixel.LineString</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IPixelLineStringGeometry.dita" type="topic"><keyword>IPixelLineStringGeometry</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Пиксельная геометрия "Ломаная линия".</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#geometry.pixel.LineString/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#geometry.pixel.LineString/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#geometry.pixel.LineString/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">geometry.pixel.LineString(<xref href="#geometry.pixel.LineString/param-coordinates" translate="no" type="entry">coordinates</xref>[, <xref href="#geometry.pixel.LineString/param-metaData" translate="no" type="entry">metaData</xref>])</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-coordinates" translate="no">
+                    
+                        <xref href="#geometry.pixel.LineString/param-coordinates" type="entry"><parmname>coordinates</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][]</p>
+                    <p/>
+                    <p>Координаты линии.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-metaData" translate="no">
+                    <xref href="#geometry.pixel.LineString/param-metaData" type="entry"><parmname>metaData</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Метаданные.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPixelGeometry.dita#method_detail/equals" type="section"><keyword>equals</keyword></xref>(<xref href="IPixelGeometry.dita#method_detail/equals-param-geometry" translate="no" type="row">geometry</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true, если переданная геометрия эквивалентна данной.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPixelGeometry.dita#method_detail/equals" type="section"><keyword>IPixelGeometry</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IBaseGeometry.dita#method_detail/getBounds" type="section"><keyword>getBounds</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает координаты двух противоположных углов области, охватывающей геометрию. Первый элемент массива - угол с наименьшими значениями координат относительно остальных точек области; второй элемент - угол с наибольшими значениями координат.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IBaseGeometry.dita#method_detail/getBounds" type="section"><keyword>IBaseGeometry</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPixelLineStringGeometry.dita#method_detail/getClosest" type="section"><keyword>getClosest</keyword></xref>(<xref href="IPixelLineStringGeometry.dita#method_detail/getClosest-param-anchorPosition" translate="no" type="row">anchorPosition</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Ищет на ломаной линии точку, ближайшую к anchorPosition.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPixelLineStringGeometry.dita#method_detail/getClosest" type="section"><keyword>IPixelLineStringGeometry</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPixelLineStringGeometry.dita#method_detail/getCoordinates" type="section"><keyword>getCoordinates</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает координаты линии.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPixelLineStringGeometry.dita#method_detail/getCoordinates" type="section"><keyword>IPixelLineStringGeometry</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPixelLineStringGeometry.dita#method_detail/getLength" type="section"><keyword>getLength</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Integer</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает количество точек в геометрии.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPixelLineStringGeometry.dita#method_detail/getLength" type="section"><keyword>IPixelLineStringGeometry</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPixelGeometry.dita#method_detail/getMetaData" type="section"><keyword>getMetaData</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает метаданные пиксельной геометрии.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPixelGeometry.dita#method_detail/getMetaData" type="section"><keyword>IPixelGeometry</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IBaseGeometry.dita#method_detail/getType" type="section"><keyword>getType</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает идентификатор типа геометрии.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IBaseGeometry.dita#method_detail/getType" type="section"><keyword>IBaseGeometry</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPixelGeometry.dita#method_detail/scale" type="section"><keyword>scale</keyword></xref>(<xref href="IPixelGeometry.dita#method_detail/scale-param-factor" translate="no" type="row">factor</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPixelGeometry.dita" type="topic"><keyword>IPixelGeometry</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Создает отмасштабированную копию геометрии.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPixelGeometry.dita#method_detail/scale" type="section"><keyword>IPixelGeometry</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPixelGeometry.dita#method_detail/shift" type="section"><keyword>shift</keyword></xref>(<xref href="IPixelGeometry.dita#method_detail/shift-param-offset" translate="no" type="row">offset</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPixelGeometry.dita" type="topic"><keyword>IPixelGeometry</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Создает копию геометрии сдвинутую на заданную величину.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPixelGeometry.dita#method_detail/shift" type="section"><keyword>IPixelGeometry</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body><!-- XLIFF_FARM_Y2RhOGIw_CACHING --></topic>

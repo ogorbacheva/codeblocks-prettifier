@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="coordSystem.geo" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">coordSystem.geo</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>coordSystem.geo</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section id="constructor">
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статический объект.</p>
+    
+    
+
+
+
+    
+        <p translate="no">
+            Экземпляр класса  <xref href="ICoordSystem.dita" type="topic"><keyword>ICoordSystem</keyword></xref>
+        </p>
+    
+
+
+
+   
+        <p>Объект, описывающий геометрию земной поверхности. Позволяет строить кратчайшие маршруты (геодезические линии) между точками земной поверхности и находить расстояния. Используется для отображения геообъектов с использованием геодезических линий.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#coordSystem.geo/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+    
+
+    
+
+    
+
+
+
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICoordSystem.dita#method_detail/getDistance" type="section"><keyword>getDistance</keyword></xref>(<xref href="ICoordSystem.dita#method_detail/getDistance-param-point1" translate="no" type="row">point1</xref>, <xref href="ICoordSystem.dita#method_detail/getDistance-param-point2" translate="no" type="row">point2</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает кратчайшее (вдоль геодезической линии) расстояние между двумя заданными точками (в метрах).</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICoordSystem.dita#method_detail/solveDirectProblem" type="section"><keyword>solveDirectProblem</keyword></xref>(<xref href="ICoordSystem.dita#method_detail/solveDirectProblem-param-startPoint" translate="no" type="row">startPoint</xref>, <xref href="ICoordSystem.dita#method_detail/solveDirectProblem-param-direction" translate="no" type="row">direction</xref>, <xref href="ICoordSystem.dita#method_detail/solveDirectProblem-param-distance" translate="no" type="row">distance</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Решает так называемую первую (прямую) <xref href="http://en.wikipedia.org/wiki/Geodesy#Geodetic_problems" scope="external">геодезическую задачу</xref>: где мы окажемся, если выйдем из указанной точки в указанном направлении и пройдём, не сворачивая, указанное расстояние. Решением прямой геодезической задачи являются следующие данные:<ul>
+<li>конечная точка,</li>
+<li>конечное направление,</li>
+<li>функция пути,</li>
+<li>функция, позволяющая для произвольного момента времени указать, в какой точке мы будем находиться и в каком направлении двигаться.</li>
+</ul></p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICoordSystem.dita#method_detail/solveInverseProblem" type="section"><keyword>solveInverseProblem</keyword></xref>(<xref href="ICoordSystem.dita#method_detail/solveInverseProblem-param-startPoint" translate="no" type="row">startPoint</xref>, <xref href="ICoordSystem.dita#method_detail/solveInverseProblem-param-endPoint" translate="no" type="row">endPoint</xref>[, <xref href="ICoordSystem.dita#method_detail/solveInverseProblem-param-reverseDirection" translate="no" type="row">reverseDirection</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Решает так называемую вторую (обратную) <xref href="http://en.wikipedia.org/wiki/Geodesy#Geodetic_problems" scope="external">геодезическую задачу</xref>: построить кратчайший маршрут между двумя точками на картографируемой поверхности и определелить расстояние и направление движения. Обратите внимание: на карте земной поверхности кратчайшие маршруты изображаются кривыми линиями. Для геообъектов в API можно включить режим отображения кратчайших расстояний между точками с помощью опции geodesic.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body><!-- XLIFF_FARM_MjgyYWU2_CACHING --></topic>

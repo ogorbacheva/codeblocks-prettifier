@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="geolocation" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">geolocation</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>geolocation</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section id="constructor">
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статический объект.</p>
+    
+    
+
+
+
+
+
+   
+        <p>Предоставляет информацию о местоположении пользователя.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#geolocation/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+    
+
+    
+
+    
+
+
+
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="geolocation.dita#method_detail/get" type="section"><keyword>get</keyword></xref>([<xref href="geolocation.dita#method_detail/get-param-options" translate="no" type="row">options</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Пытается определить местоположение пользователя. Возвращает объект-promise, который будет либо подтверждён объектом с полем geoObjects, либо отклонён с сообщением об ошибке. Поле geoObjects является экземпляром <xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref>. В коллекцию будет добавлен объект, обозначающий текущее местоположение пользователя.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="get">
+        <title translate="no">get</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} get([<xref href="geolocation.dita#method_detail/get-param-options" translate="no" type="row">options</xref>])</codeblock></p>
+
+         <p>Пытается определить местоположение пользователя. Возвращает объект-promise, который будет либо подтверждён объектом с полем geoObjects, либо отклонён с сообщением об ошибке. Поле geoObjects является экземпляром <xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref>. В коллекцию будет добавлен объект, обозначающий текущее местоположение пользователя.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект-promise.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="get-param-options">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/get-param-options" type="row"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: </p>
+                    <p/>
+                   
+                </entry>
+
+            </row>
+            
+            <row id="get-param-options.autoReverseGeocode">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/get-param-options.autoReverseGeocode" type="row"><parmname>options.autoReverseGeocode</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> true
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: </p>
+                    <p/>
+                   <p>true - автоматически прогеокодировать положение пользователя, false - вернуть как есть. В случае автоматического геокодирования объект, обозначающий текущее местоположение пользователя, будет иметь структуру, аналогичную результату выполнения <xref href="geocode.dita" type="topic"><keyword>geocode</keyword></xref>.</p>
+                </entry>
+
+            </row>
+            
+            <row id="get-param-options.mapStateAutoApply">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/get-param-options.mapStateAutoApply" type="row"><parmname>options.mapStateAutoApply</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: </p>
+                    <p/>
+                   <p>true - при добавлении на карту автоматически выставить центр и уровень масштабрования карты так, чтобы показать текущее местоположение пользователя, false - ничего не делать.</p>
+                </entry>
+
+            </row>
+            
+            <row id="get-param-options.provider">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/get-param-options.provider" type="row"><parmname>options.provider</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> 'auto'
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: </p>
+                    <p/>
+                   <p>Провайдер геолокации. Допустимые значения: 'yandex' - геолокация по данным Яндекса на основе ip пользователя, 'browser' - встроенная браузерная геолокация, 'auto' - провести геолокацию всеми доступными способами и выбрать лучшее значение.</p>
+                </entry>
+
+            </row>
+            
+            <row id="get-param-options.timeout">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/get-param-options.timeout" type="row"><parmname>options.timeout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> 30000
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: </p>
+                    <p/>
+                   <p>Время ожидания ответа в мс.</p>
+                </entry>
+
+            </row>
+            
+            <row id="get-param-options.useMapMargin">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/get-param-options.useMapMargin" type="row"><parmname>options.useMapMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">true
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Нужно ли учитывать отступы карты <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref> при автоматическом выставлении центра и уровня масштаба карте.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+        
+
+        
+            <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">ymaps.geolocation.get({
+    // Выставляем опцию для определения положения по ip    provider: 'yandex',
+    // Карта автоматически отцентрируется по положению пользователя.
+    mapStateAutoApply: true}).then(function (result) {
+    myMap.geoObjects.add(result.geoObjects);
+});</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">ymaps.geolocation.get({
+    // Зададим способ определения геолокации
+    // на основе ip пользователя.
+    provider: 'yandex',
+    // Включим автоматическое геокодирование результата.
+    autoReverseGeocode: true
+}).then(function (result) {
+    // Выведем результат геокодирования.
+    console.log(result.geoObjects.get(0).properties.get('metaDataProperty'));
+});</codeblock>
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_YjFjZWZm_CACHING --></topic>

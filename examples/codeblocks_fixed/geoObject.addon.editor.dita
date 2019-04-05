@@ -1,0 +1,381 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="geoObject.addon.editor" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">geoObject.addon.editor</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>geoObject.addon.editor</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section id="constructor">
+
+    
+    
+    
+    <p translate="no"><note>Конструктор класса geoObject.addon.editor скрыт, так как данный класс не предназначен для самостоятельной инициализации.</note></p>
+    
+    
+
+
+
+
+    
+        <p translate="no">Статический объект.</p>
+    
+    
+        
+            <p>Модуль, который предоставляет возможность использовать редактор у геообъекта. Добавляет поле GeoObject#editor в <xref href="GeoObject.dita" type="topic"><keyword>GeoObject</keyword></xref>. При подключении package.full (стандартный набор модулей) доступен по умолчанию. Если <xref href="GeoObject.dita" type="topic"><keyword>GeoObject</keyword></xref> подключается отдельно, то необходимо явно указать этот модуль в загрузчике. Если <xref href="geoObject.addon.editor.dita" type="topic"><keyword>geoObject.addon.editor</keyword></xref> подключается отдельно после создания <xref href="GeoObject.dita" type="topic"><keyword>GeoObject</keyword></xref>, то поле GeoObject#editor не будет добавлено. Тогда для редактора нужно будет использовать метод geoObject.addon.editor#get.</p>
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#geoObject.addon.editor/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+    
+
+    
+
+    
+
+
+
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="geoObject.addon.editor.dita#method_detail/create" type="section"><keyword>create</keyword></xref>(<xref href="geoObject.addon.editor.dita#method_detail/create-param-geoObject" translate="no" type="row">geoObject</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Функция, создающая у переданного геообъекта поле editor.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="geoObject.addon.editor.dita#method_detail/get" type="section"><keyword>get</keyword></xref>(<xref href="geoObject.addon.editor.dita#method_detail/get-param-geoObject" translate="no" type="row">geoObject</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IGeometryEditor.dita" type="topic"><keyword>IGeometryEditor</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает редактор геообъекта.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="create">
+        <title translate="no">create</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} create(<xref href="geoObject.addon.editor.dita#method_detail/create-param-geoObject" translate="no" type="row">geoObject</xref>)</codeblock></p>
+
+         <p>Функция, создающая у переданного геообъекта поле editor.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="create-param-geoObject">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/create-param-geoObject" type="row"><parmname>geoObject</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref></p>
+                    <p/>
+                   <p>Геообъект.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="create_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="get">
+        <title translate="no">get</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IGeometryEditor.dita" type="topic"><keyword>IGeometryEditor</keyword></xref>} get(<xref href="geoObject.addon.editor.dita#method_detail/get-param-geoObject" translate="no" type="row">geoObject</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> редактор геообъекта.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="get-param-geoObject">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/get-param-geoObject" type="row"><parmname>geoObject</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref></p>
+                    <p/>
+                   <p>Геообъект</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="get_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">ymaps.geoObject.addon.editor.get(geoObject)</codeblock>
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_ZThmMTdi_CACHING --></topic>

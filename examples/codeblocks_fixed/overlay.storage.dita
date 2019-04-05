@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="overlay.storage" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">overlay.storage</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>overlay.storage</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section id="constructor">
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статический объект.</p>
+    
+    
+
+
+
+    
+        <p translate="no">
+            Экземпляр класса  <xref href="util.AsyncStorage.dita" type="topic"><keyword>util.AsyncStorage</keyword></xref>
+        </p>
+    
+
+
+
+   
+        <p>Хранилище оверлеев. По умолчанию оверлеи не добавлены в package.full (стандартного набора модулей). При добавлении геообъекта на карту происходит загрузка необходимого оверлея. Для получения класса оверлея необходимо использовать метод <xref href="util.AsyncStorage.dita#method_detail/require" type="section">require</xref> данного хранилища. По умолчанию в хранилище объявлены следующие ключи для асинхронного доступа:<ul>
+   <li>'default#placemark' — оверлей метки-изображения <xref href="overlay.Placemark.dita" type="topic"><keyword>overlay.Placemark</keyword></xref>;</li>
+   <li>'default#pin' — оверлей метки в виде круга <xref href="overlay.Pin.dita" type="topic"><keyword>overlay.Pin</keyword></xref>;</li>
+   <li>'default#circle' — оверлей круга <xref href="overlay.Circle.dita" type="topic"><keyword>overlay.Circle</keyword></xref>;</li>
+   <li>'default#rectangle' — оверлей прямоугольника <xref href="overlay.Rectangle.dita" type="topic"><keyword>overlay.Rectangle</keyword></xref>;</li>
+   <li>'default#polyline' — оверлей линии <xref href="overlay.Polyline.dita" type="topic"><keyword>overlay.Polyline</keyword></xref>;</li>
+   <li>'default#polygon' — оверлей многоугольника <xref href="overlay.Polygon.dita" type="topic"><keyword>overlay.Polygon</keyword></xref>;</li>
+   <li>'hotspot#placemark' — хотспотный оверлей точки <xref href="overlay.hotspot.Placemark.dita" type="topic"><keyword>overlay.hotspot.Placemark</keyword></xref>;</li>
+   <li>'hotspot#circle' — хотспотный оверлей круга <xref href="overlay.hotspot.Circle.dita" type="topic"><keyword>overlay.hotspot.Circle</keyword></xref>;</li>
+   <li>'hotspot#rectangle' — хотспотный оверлей прямоугольника <xref href="overlay.hotspot.Rectangle.dita" type="topic"><keyword>overlay.hotspot.Rectangle</keyword></xref>;</li>
+   <li>'hotspot#polyline' — хотспотный оверлей линии <xref href="overlay.hotspot.Polyline.dita" type="topic"><keyword>overlay.hotspot.Polyline</keyword></xref>;</li>
+   <li>'hotspot#polygon' — хотспотный оверлей многоугольника <xref href="overlay.hotspot.Polygon.dita" type="topic"><keyword>overlay.hotspot.Polygon</keyword></xref>;</li>
+   <li>'html#balloon' — HTML-оверлей балуна <xref href="overlay.html.Balloon.dita" type="topic"><keyword>overlay.html.Balloon</keyword></xref>;</li>
+   <li>'html#hint' — HTML-оверлей высплывающей подсказки <xref href="overlay.html.Hint.dita" type="topic"><keyword>overlay.html.Hint</keyword></xref>;</li>
+   <li>'html#placemark' — HTML-оверлей метки <xref href="overlay.html.Placemark.dita" type="topic"><keyword>overlay.html.Placemark</keyword></xref>;</li>
+   <li>'html#rectangle' — HTML-оверлей прямоугольника <xref href="overlay.html.Rectangle.dita" type="topic"><keyword>overlay.html.Rectangle</keyword></xref>.</li>
+</ul></p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#overlay.storage/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+    
+
+    
+
+    
+
+
+
+    
+        <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">ymaps.overlay.storage.require(['hotspot#circle'], function (
+HotspotOverlayClass) {
+    // Создаем экзепляр полученного класса.
+    var overlay = new HotspotOverlayClass(new ymaps.geometry.Circle([30,
+        50], 10), {}, {});
+});</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.Storage.dita#method_detail/add" type="section"><keyword>add</keyword></xref>(<xref href="util.Storage.dita#method_detail/add-param-key" translate="no" type="row">key</xref>, <xref href="util.Storage.dita#method_detail/add-param-object" translate="no" type="row">object</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="util.Storage.dita" type="topic"><keyword>util.Storage</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет объект в хранилище.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.AsyncStorage.dita#method_detail/define" type="section"><keyword>define</keyword></xref>(<xref href="util.AsyncStorage.dita#method_detail/define-param-key" translate="no" type="row">key</xref>[, <xref href="util.AsyncStorage.dita#method_detail/define-param-depends" translate="no" type="row">depends</xref>, <xref href="util.AsyncStorage.dita#method_detail/define-param-resolveCallback" translate="no" type="row">resolveCallback</xref>[, <xref href="util.AsyncStorage.dita#method_detail/define-param-context" translate="no" type="row">context</xref>]])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="util.AsyncStorage.dita" type="topic"><keyword>util.AsyncStorage</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Определяет в хранилище асинхронное значение.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.Storage.dita#method_detail/get" type="section"><keyword>get</keyword></xref>(<xref href="util.Storage.dita#method_detail/get-param-key" translate="no" type="row">key</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект, хранящийся под указанным ключом, или исходный key, в случае, если это не строка.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.AsyncStorage.dita#method_detail/isDefined" type="section"><keyword>isDefined</keyword></xref>(<xref href="util.AsyncStorage.dita#method_detail/isDefined-param-key" translate="no" type="row">key</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Проверка доступности ключа в хранилище.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.Storage.dita#method_detail/remove" type="section"><keyword>remove</keyword></xref>(<xref href="util.Storage.dita#method_detail/remove-param-key" translate="no" type="row">key</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="util.Storage.dita" type="topic"><keyword>util.Storage</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет пару "ключ: значение" из хранилища.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.AsyncStorage.dita#method_detail/require" type="section"><keyword>require</keyword></xref>(<xref href="util.AsyncStorage.dita#method_detail/require-param-keys" translate="no" type="row">keys</xref>[, <xref href="util.AsyncStorage.dita#method_detail/require-param-successCallback" translate="no" type="row">successCallback</xref>[, <xref href="util.AsyncStorage.dita#method_detail/require-param-errorCallback" translate="no" type="row">errorCallback</xref>[, <xref href="util.AsyncStorage.dita#method_detail/require-param-context" translate="no" type="row">context</xref>]]])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Асинхронный запрос на получение значений из хранилища.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body><!-- XLIFF_FARM_Mzg1ZTNh_CACHING --></topic>

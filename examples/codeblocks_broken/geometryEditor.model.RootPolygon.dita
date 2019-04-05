@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="geometryEditor.model.RootPolygon" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">geometryEditor.model.RootPolygon</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>geometryEditor.model.RootPolygon</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+    
+    <p translate="no"><note>Конструктор класса geometryEditor.model.RootPolygon скрыт, так как данный класс не предназначен для самостоятельной инициализации.</note></p>
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IGeometryEditorRootModel.dita" type="topic"><keyword>IGeometryEditorRootModel</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Модель корневого полигона. Конструктор недоступен в package.full (стандартный набор модулей). Данный модуль загружается по требованию.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#geometryEditor.model.RootPolygon/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#geometryEditor.model.RootPolygon/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeometryEditorModel.dita#method_detail/destroy" type="section"><keyword>destroy</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Деструктор.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IGeometryEditorModel.dita#method_detail/destroy" type="section"><keyword>IGeometryEditorModel</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="geometryEditor.model.RootPolygon.dita#method_detail/getAllVerticesNumber" type="section"><keyword>getAllVerticesNumber</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Integer</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает суммарное количество вершин редактируемой геометрии.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="geometryEditor.model.RootPolygon.dita#method_detail/getPathModels" type="section"><keyword>getPathModels</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="geometryEditor.model.ChildLinearRing.dita" type="topic"><keyword>geometryEditor.model.ChildLinearRing</keyword></xref>[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает массив моделей дочерних контуров.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeometryEditorModel.dita#method_detail/getPixels" type="section"><keyword>getPixels</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает пиксельные данные модели.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IGeometryEditorModel.dita#method_detail/getPixels" type="section"><keyword>IGeometryEditorModel</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="geometryEditor.model.RootPolygon.dita#method_detail/splicePaths" type="section"><keyword>splicePaths</keyword></xref>(<xref href="geometryEditor.model.RootPolygon.dita#method_detail/splicePaths-param-start" translate="no" type="row">start</xref>, <xref href="geometryEditor.model.RootPolygon.dita#method_detail/splicePaths-param-deleteCount" translate="no" type="row">deleteCount</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет определенное число контуров многоугольника начиная с заданного индекса. При этом на место удаляемых контуров могут быть добавлены новые. Координаты новых контуров в глобальных пикселях можно передавать дополнительными аргументами после параметра deleteCount.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getAllVerticesNumber">
+        <title translate="no">getAllVerticesNumber</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Integer} getAllVerticesNumber()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>суммарное количество вершин редактируемой геометрии.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getPathModels">
+        <title translate="no">getPathModels</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="geometryEditor.model.ChildLinearRing.dita" type="topic"><keyword>geometryEditor.model.ChildLinearRing</keyword></xref>[]} getPathModels()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>массив моделей дочерних контуров.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="splicePaths">
+        <title translate="no">splicePaths</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]} splicePaths(<xref href="geometryEditor.model.RootPolygon.dita#method_detail/splicePaths-param-start" translate="no" type="row">start</xref>, <xref href="geometryEditor.model.RootPolygon.dita#method_detail/splicePaths-param-deleteCount" translate="no" type="row">deleteCount</xref>)</codeblock></p>
+
+         <p>Удаляет определенное число контуров многоугольника начиная с заданного индекса. При этом на место удаляемых контуров могут быть добавлены новые. Координаты новых контуров в глобальных пикселях можно передавать дополнительными аргументами после параметра deleteCount.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>массив координат удаленных контуров.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="splicePaths-param-start">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/splicePaths-param-start" type="row"><parmname>start</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Индекс, начиная с которого производится удаление и добавление контуров.</p>
+                </entry>
+
+            </row>
+            
+            <row id="splicePaths-param-deleteCount">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/splicePaths-param-deleteCount" type="row"><parmname>deleteCount</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Количество удаляемых контуров.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="splicePaths_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_MmEzY2Nh_CACHING --></topic>

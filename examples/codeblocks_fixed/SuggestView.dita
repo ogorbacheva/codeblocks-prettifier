@@ -1,0 +1,623 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SuggestView" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">SuggestView</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>SuggestView</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="ICustomizable.dita" type="topic"><keyword>ICustomizable</keyword></xref>, <xref href="IEventEmitter.dita" type="topic"><keyword>IEventEmitter</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Создаёт выпадающую панель с поисковыми подсказками и прикрепляет к HTML-элементу &lt;input type="text"&gt;.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#SuggestView/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#SuggestView/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#SuggestView/events-summary" translate="no" type="section">События </xref> | <xref href="#SuggestView/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">SuggestView(<xref href="#SuggestView/param-element" translate="no" type="entry">element</xref>[, <xref href="#SuggestView/param-options" translate="no" type="entry">options</xref>])</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-element" translate="no">
+                    
+                        <xref href="#SuggestView/param-element" type="entry"><parmname>element</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: HTMLElement|String</p>
+                    <p/>
+                    <p>HTML-элемент или его id.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options" translate="no">
+                    <xref href="#SuggestView/param-options" type="entry"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.boundedBy" translate="no">
+                    <xref href="#SuggestView/param-options.boundedBy" type="entry"><parmname>options.boundedBy</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][]</p>
+                    <p/>
+                    <p>Прямоугольная область на карте, где предположительно находится искомый объект. Должна быть задана как массив, например [[30, 40], [50, 50]].</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.container" translate="no">
+                    <xref href="#SuggestView/param-options.container" type="entry"><parmname>options.container</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: HTMLElement</p>
+                    <p/>
+                    <p>HTML-элемент для размещения верстки панели подсказок. Если не задан, панель подсказок добавляется в родителя HTML-элемента input, для которого создаётся.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.layout" translate="no">
+                    <xref href="#SuggestView/param-options.layout" type="entry"><parmname>options.layout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      'islands#suggestView'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|<xref href="ISuggestViewLayout.dita" type="topic"><keyword>ISuggestViewLayout</keyword></xref></p>
+                    <p/>
+                    <p>Макет панели.</p><p id="layout_input_description">В конструктор макета передается объект, содержащий поля:</p>
+<ul id="layout_input_data">
+    <li>suggestView — ссылка панель с поисковыми подсказками;</li>
+    <li>options — менеджер опций элемента управления (см. suggestView.options);</li>
+    <li>state — менеджер состояния элемента управления (см. suggestView.state).</li>
+</ul><p>Макет меняет свой внешний вид на основе состояния и опций элемента панели подсказок. Элемент управления, в свою очередь, реагирует на интерфейсные события макета и меняет значения полей suggestView.state в зависимости от полученных команд.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.offset" translate="no">
+                    <xref href="#SuggestView/param-options.offset" type="entry"><parmname>options.offset</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                    <p>Отступы панели подсказок от её положения по умолчанию (по умолчанию панель подсказок прикрепляется к нижней границе элемента input и имеет одинаковую с ним ширину). Задаётся в виде смещений по горизонтали и вертикали относительно левого нижнего угла элемента input.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.provider" translate="no">
+                    <xref href="#SuggestView/param-options.provider" type="entry"><parmname>options.provider</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     "yandex#map"
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|<xref href="ISuggestProvider.dita" type="topic"><keyword>ISuggestProvider</keyword></xref></p>
+                    <p/>
+                    <p>Провайдер поисковых подсказок. Может быть задан объектом, реализующим интерфейс <xref href="ISuggestProvider.dita" type="topic"><keyword>ISuggestProvider</keyword></xref>, либо стандартным значением "yandex#map".</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.results" translate="no">
+                    <xref href="#SuggestView/param-options.results" type="entry"><parmname>options.results</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      5
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Максимальное количество показываемых подсказок.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.width" translate="no">
+                    <xref href="#SuggestView/param-options.width" type="entry"><parmname>options.width</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Ширина панели подсказок. По умолчанию совпадает с шириной HTML-элемента input, к которому панель привязана.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.zIndex" translate="no">
+                    <xref href="#SuggestView/param-options.zIndex" type="entry"><parmname>options.zIndex</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      40000
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>z-index для dom-элемента панели подсказок.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+            <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">&lt; input type="text" id="suggest"/&gt; &lt;
+script src="//api-maps.yandex.ru/2.1/?lang=ru_RU&amp;load=SuggestView&amp;onload=onLoad" &
+    gt; &lt; script&gt; &lt; script &gt;
+function onLoad (ymaps) {
+    var suggestView = new ymaps.SuggestView('suggest');
+} &lt; script&gt;</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">&lt; input type="text" id="suggest"/&gt; &lt;
+script src="//api-maps.yandex.ru/2.1/?lang=ru_RU&amp;load=SuggestView&amp;onload=onLoad" &
+    gt; &lt; script&gt; &lt; script &gt;
+function onLoad (ymaps) {
+    var suggestView = new ymaps.SuggestView('suggest', {
+        results: 1,
+        offset: [20, 30]
+    });
+} &lt; script&gt;</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>ICustomizable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="SuggestView.dita#field_detail/state" type="section"><keyword>state</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Состояние панели поисковых подсказок. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>request: String — текущий активный запрос;</li>
+    <li>items: Object[] — массив поисковых подсказок (объектов с полями value и displayName);</li>
+    <li>activeIndex: Number|null — индекс текущей активной подсказки, выделенная пользователем путём наведения мыши или с клавиатуры, или null, если ни одна подсказка не активна;</li>
+    <li>panelClosed: Boolean — признак, была ли панель закрыта пользователем путём нажатия клавиши ESC или выбора одной из подсказок.</li>
+</ul></p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="SuggestView.dita#event_detail/event_detail/event-select"><keyword>select</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Пользователь выбрал одну из поисковых подсказок. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li><codeph>item</codeph> — поисковая подсказка, объект с полями displayName и value.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="SuggestView.dita#method_detail/destroy" type="section"><keyword>destroy</keyword></xref>()</entry>
+                        
+                        
+                        <entry colname="col2">
+                            
+                            
+                                <p>Уничтожает панель подсказок.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="state">
+            <title translate="no">state</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>} state</codeblock></p>
+
+            <p>Состояние панели поисковых подсказок. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>request: String — текущий активный запрос;</li>
+    <li>items: Object[] — массив поисковых подсказок (объектов с полями value и displayName);</li>
+    <li>activeIndex: Number|null — индекс текущей активной подсказки, выделенная пользователем путём наведения мыши или с клавиатуры, или null, если ни одна подсказка не активна;</li>
+    <li>panelClosed: Boolean — признак, была ли панель закрыта пользователем путём нажатия клавиши ESC или выбора одной из подсказок.</li>
+</ul></p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-select">
+            <title translate="no">select</title>
+            
+             <p>Пользователь выбрал одну из поисковых подсказок. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li><codeph>item</codeph> — поисковая подсказка, объект с полями displayName и value.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="destroy">
+        <title translate="no">destroy</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} destroy()</codeblock></p>
+
+         <p>Уничтожает панель подсказок.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_YmVhZjU1_CACHING --></topic>

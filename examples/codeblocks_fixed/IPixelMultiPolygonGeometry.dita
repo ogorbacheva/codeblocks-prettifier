@@ -1,0 +1,763 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="IPixelMultiPolygonGeometry" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IPixelMultiPolygonGeometry</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IPixelMultiPolygonGeometry</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IPixelGeometry.dita" type="topic"><keyword>IPixelGeometry</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Интерфейс пиксельной геометрии "Мультимногоугольник".</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IPixelMultiPolygonGeometry/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#IPixelMultiPolygonGeometry/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#IPixelMultiPolygonGeometry/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IPixelMultiPolygonGeometry()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPixelMultiPolygonGeometry.dita#method_detail/contains" type="section"><keyword>contains</keyword></xref>(<xref href="IPixelMultiPolygonGeometry.dita#method_detail/contains-param-position" translate="no" type="row">position</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Проверяет лежит ли переданная точка внутри мультимногоугольника.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPixelGeometry.dita#method_detail/equals" type="section"><keyword>equals</keyword></xref>(<xref href="IPixelGeometry.dita#method_detail/equals-param-geometry" translate="no" type="row">geometry</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true, если переданная геометрия эквивалентна данной.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPixelGeometry.dita#method_detail/equals" type="section"><keyword>IPixelGeometry</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IBaseGeometry.dita#method_detail/getBounds" type="section"><keyword>getBounds</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает координаты двух противоположных углов области, охватывающей геометрию. Первый элемент массива - угол с наименьшими значениями координат относительно остальных точек области; второй элемент - угол с наибольшими значениями координат.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IBaseGeometry.dita#method_detail/getBounds" type="section"><keyword>IBaseGeometry</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPixelMultiPolygonGeometry.dita#method_detail/getClosest" type="section"><keyword>getClosest</keyword></xref>(<xref href="IPixelMultiPolygonGeometry.dita#method_detail/getClosest-param-anchorPosition" translate="no" type="row">anchorPosition</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Ищет на контуре мультимногоугольника точку, ближайшую к anchorPosition.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPixelMultiPolygonGeometry.dita#method_detail/getCoordinates" type="section"><keyword>getCoordinates</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][][][]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает координаты мультимногоугольника.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPixelMultiPolygonGeometry.dita#method_detail/getFillRule" type="section"><keyword>getFillRule</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает строковый идентификатор, определяющий алгоритм заливки мультимногоугольника. Идентификатор может иметь одно из двух значений:<ul>
+    <li>evenOdd - алгоритм, определяющий, находится ли точка в области заполнения, путем рисования луча от этой точки до бесконечности в любом направлении и подсчета количества сегментов контура в пределах заданной фигуры, которые пересекает этот луч. Если это число нечетное, точка находится внутри; если четное, точка находится снаружи.</li>
+    <li>nonZero - алгоритм, определяющий, находится ли точка в области заполнения, путем рисования луча от этой точки до бесконечности в любом направлении и проверки точек, в которых сегмент фигуры пересекает этот луч. Начиная с нуля, добавляется единица каждый раз, когда сегмент пересекает луч слева направо, и вычитается единица каждый раз, когда сегмент пересекает луч справа налево. Если после подсчета пересечений результат равен нулю, точка находится снаружи контура. В противном случае она находится внутри.</li>
+</ul></p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPixelMultiPolygonGeometry.dita#method_detail/getLength" type="section"><keyword>getLength</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Integer</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает количество многоугольников в мультимногоугольнике.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPixelGeometry.dita#method_detail/getMetaData" type="section"><keyword>getMetaData</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает метаданные пиксельной геометрии.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPixelGeometry.dita#method_detail/getMetaData" type="section"><keyword>IPixelGeometry</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IBaseGeometry.dita#method_detail/getType" type="section"><keyword>getType</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает идентификатор типа геометрии.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IBaseGeometry.dita#method_detail/getType" type="section"><keyword>IBaseGeometry</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPixelGeometry.dita#method_detail/scale" type="section"><keyword>scale</keyword></xref>(<xref href="IPixelGeometry.dita#method_detail/scale-param-factor" translate="no" type="row">factor</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPixelGeometry.dita" type="topic"><keyword>IPixelGeometry</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Создает отмасштабированную копию геометрии.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPixelGeometry.dita#method_detail/scale" type="section"><keyword>IPixelGeometry</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPixelGeometry.dita#method_detail/shift" type="section"><keyword>shift</keyword></xref>(<xref href="IPixelGeometry.dita#method_detail/shift-param-offset" translate="no" type="row">offset</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPixelGeometry.dita" type="topic"><keyword>IPixelGeometry</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Создает копию геометрии сдвинутую на заданную величину.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPixelGeometry.dita#method_detail/shift" type="section"><keyword>IPixelGeometry</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="contains">
+        <title translate="no">contains</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Boolean} contains(<xref href="IPixelMultiPolygonGeometry.dita#method_detail/contains-param-position" translate="no" type="row">position</xref>)</codeblock></p>
+
+         <p>Проверяет лежит ли переданная точка внутри мультимногоугольника.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> признак принадлежности точки многоугольнику.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="contains-param-position">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/contains-param-position" type="row"><parmname>position</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Координаты точки.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="contains_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getClosest">
+        <title translate="no">getClosest</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} getClosest(<xref href="IPixelMultiPolygonGeometry.dita#method_detail/getClosest-param-anchorPosition" translate="no" type="row">anchorPosition</xref>)</codeblock></p>
+
+         <p>Ищет на контуре мультимногоугольника точку, ближайшую к anchorPosition.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект со следующими полями:<ul>
+    <li>position - точка на контуре мультимногоугольника ближайшая к anchorPosition;</li>
+    <li>distance - расстояние от anchorPosition до position;</li>
+    <li>closestPointIndex - индекс вершины мультимногоугольника, ближайшей к position;</li>
+    <li>nextPointIndex - индекс вершины мультимногоугольника, следующей за position;</li>
+    <li>prevPointIndex - индекс вершины мультимногоугольника, предшествующей position;</li>
+    <li>pathIndex - индекс контура мультимногоугольника, к которому относится найденная точка.</li>
+</ul>Поля nextPointIndex, prevPointIndex могут отсутствовать, если position совпадает с одной из вершин мультимногоугольника.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getClosest-param-anchorPosition">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getClosest-param-anchorPosition" type="row"><parmname>anchorPosition</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Координаты точки, для которой расчитывается ближайшая точка на контуре многоугольника.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getClosest_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getCoordinates">
+        <title translate="no">getCoordinates</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][][][]} getCoordinates()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> координаты мультимногоугольника.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getFillRule">
+        <title translate="no">getFillRule</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getFillRule()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>строковый идентификатор, определяющий алгоритм заливки мультимногоугольника. Идентификатор может иметь одно из двух значений:<ul>
+    <li>evenOdd - алгоритм, определяющий, находится ли точка в области заполнения, путем рисования луча от этой точки до бесконечности в любом направлении и подсчета количества сегментов контура в пределах заданной фигуры, которые пересекает этот луч. Если это число нечетное, точка находится внутри; если четное, точка находится снаружи.</li>
+    <li>nonZero - алгоритм, определяющий, находится ли точка в области заполнения, путем рисования луча от этой точки до бесконечности в любом направлении и проверки точек, в которых сегмент фигуры пересекает этот луч. Начиная с нуля, добавляется единица каждый раз, когда сегмент пересекает луч слева направо, и вычитается единица каждый раз, когда сегмент пересекает луч справа налево. Если после подсчета пересечений результат равен нулю, точка находится снаружи контура. В противном случае она находится внутри.</li>
+</ul></p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getLength">
+        <title translate="no">getLength</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Integer} getLength()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>количество многоугольников в мультимногоугольнике.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_NGExYTk1_CACHING --></topic>

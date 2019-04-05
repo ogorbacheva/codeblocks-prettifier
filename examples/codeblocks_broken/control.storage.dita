@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="control.storage" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">control.storage</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>control.storage</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section id="constructor">
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статический объект.</p>
+    
+    
+
+
+
+    
+        <p translate="no">
+            Экземпляр класса  <xref href="util.Storage.dita" type="topic"><keyword>util.Storage</keyword></xref>
+        </p>
+    
+
+
+
+   
+        <p/><p>Хранилище элементов управления карты. Содержит соответствие ключей элементов управления и их конструкторов.</p><p>
+</p><p>По умолчанию в хранилище добавлены следующие элементы управления:</p>
+<ul>
+    <li>"rulerControl" — линейка и масштабный отрезок <xref href="control.RulerControl.dita" type="topic"><keyword>control.RulerControl</keyword></xref>;</li>
+    <li>"searchControl" — поиск на карте <xref href="control.SearchControl.dita" type="topic"><keyword>control.SearchControl</keyword></xref>;</li>
+    <li>"trafficControl" — панель пробок <xref href="control.TrafficControl.dita" type="topic"><keyword>control.TrafficControl</keyword></xref>;</li>
+    <li>"typeSelector" — панель переключения типа карты <xref href="control.TypeSelector.dita" type="topic"><keyword>control.TypeSelector</keyword></xref>;</li>
+    <li>"zoomControl" — ползунок масштаба <xref href="control.ZoomControl.dita" type="topic"><keyword>control.ZoomControl</keyword></xref>;</li>
+    <li>"geolocationControl" — элемент управления геолокацией <xref href="control.GeolocationControl.dita" type="topic"><keyword>control.GeolocationControl</keyword></xref>;</li>
+    <li>"routeEditor" — редактор маршрутов <xref href="control.RouteEditor.dita" type="topic"><keyword>control.RouteEditor</keyword></xref>.</li>
+    <li>"fullscreenControl" — элемент управления «полноэкранным режимом» <xref href="control.FullscreenControl.dita" type="topic"><keyword>control.FullscreenControl</keyword></xref>.</li>
+    <li>"routeButtonControl" — панель для построения маршрутов <xref href="control.RouteButton.dita" type="topic"><keyword>control.RouteButton</keyword></xref>,</li>
+    <li>"routePanelControl" — панель маршрутизации <xref href="control.RoutePanel.dita" type="topic"><keyword>control.RoutePanel</keyword></xref>.</li>
+</ul>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#control.storage/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+    
+
+    
+
+    
+
+
+
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.Storage.dita#method_detail/add" type="section"><keyword>add</keyword></xref>(<xref href="util.Storage.dita#method_detail/add-param-key" translate="no" type="row">key</xref>, <xref href="util.Storage.dita#method_detail/add-param-object" translate="no" type="row">object</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="util.Storage.dita" type="topic"><keyword>util.Storage</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет объект в хранилище.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.Storage.dita#method_detail/get" type="section"><keyword>get</keyword></xref>(<xref href="util.Storage.dita#method_detail/get-param-key" translate="no" type="row">key</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект, хранящийся под указанным ключом, или исходный key, в случае, если это не строка.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.Storage.dita#method_detail/remove" type="section"><keyword>remove</keyword></xref>(<xref href="util.Storage.dita#method_detail/remove-param-key" translate="no" type="row">key</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="util.Storage.dita" type="topic"><keyword>util.Storage</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет пару "ключ: значение" из хранилища.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body><!-- XLIFF_FARM_ZDAxMGYx_CACHING --></topic>

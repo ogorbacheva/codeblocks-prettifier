@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="panorama.Base.getMarkerPositionFromDirection" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">panorama.Base.getMarkerPositionFromDirection</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>panorama.Base.getMarkerPositionFromDirection</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статическая функция.</p>
+    
+    
+        
+            <p>Рассчитывает координаты маркера на основе двух величин: по направлению взгляда на маркер и расстоянию до него. Координаты вычисляются в той системе координат, в которой задана панорама.</p>
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+       <p><b>Возвращает</b> положение панорамы в системе координат, заданной через опцию coordSystem. Задается в формате <codeph>[lon, lat, height]</codeph>, <codeph>[lat, lon, height]</codeph> или <codeph>[x, y, height]</codeph> в зависимости от системы и порядка координат. <codeph>height</codeph> — высота маркера в метрах, заданная относительно того же уровня, что и высота панорамы.</p>
+       
+    
+
+    
+
+    
+        
+         
+              <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{ Number[] } panorama.Base.getMarkerPositionFromDirection(<xref href="#panorama.Base.getMarkerPositionFromDirection/param-panorama" translate="no" type="row">panorama</xref>, <xref href="#panorama.Base.getMarkerPositionFromDirection/param-direction" translate="no" type="row">direction</xref>, <xref href="#panorama.Base.getMarkerPositionFromDirection/param-distance" translate="no" type="row">distance</xref>)</codeblock></p>
+         
+     
+
+    
+        <p translate="no"><b>Параметры:</b></p>
+        
+        
+            
+        
+            
+        
+            
+        
+
+        <table>
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Параметр</entry>
+              <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+        
+        <row id="param-panorama">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#panorama.Base.getMarkerPositionFromDirection/param-panorama" type="row"><parmname>panorama</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: <xref href="IPanorama.dita" type="topic"><keyword>IPanorama</keyword></xref></p>
+                <p/>
+                <p>Объект, описывающий панораму.</p>
+            </entry>
+        </row>
+        
+        <row id="param-direction">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#panorama.Base.getMarkerPositionFromDirection/param-direction" type="row"><parmname>direction</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Number[]</p>
+                <p/>
+                <p>Направление взгляда на маркер в формате <codeph>[bearing, pitch]</codeph>, где:<ul>
+             <li><codeph>bearing</codeph> — направление на маркер в горизонтальной плоскости, для географической системы координат это азимут в радианах, для декартовой — угол в радианах, отсчитываемый от оси X против часовой стрелки;</li>
+             <li><codeph>pitch</codeph> — угол подъема направления на маркер в радианах.</li>
+         </ul></p>
+            </entry>
+        </row>
+        
+        <row id="param-distance">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#panorama.Base.getMarkerPositionFromDirection/param-distance" type="row"><parmname>distance</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Number</p>
+                <p/>
+                <p>Расстояние до маркера.</p>
+            </entry>
+        </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+    
+    
+
+
+
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_ZjBiNDQ0_CACHING --></topic>

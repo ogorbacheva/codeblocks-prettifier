@@ -1,0 +1,1607 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="multiRouter.MultiRoute" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">multiRouter.MultiRoute</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>multiRouter.MultiRoute</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Мультимаршрут на карте. Позволяет отображать на карте маршрут и несколько альтернатив к нему. Предоставляет интерфейс выбора активного маршрута.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#multiRouter.MultiRoute/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#multiRouter.MultiRoute/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#multiRouter.MultiRoute/events-summary" translate="no" type="section">События </xref> | <xref href="#multiRouter.MultiRoute/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">multiRouter.MultiRoute(<xref href="#multiRouter.MultiRoute/param-model" translate="no" type="entry">model</xref>[, <xref href="#multiRouter.MultiRoute/param-options" translate="no" type="entry">options</xref>])</codeblock></p>
+    
+       
+            
+                <p>Создает мультимаршрут на карте.</p>
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-model" translate="no">
+                    
+                        <xref href="#multiRouter.MultiRoute/param-model" type="entry"><parmname>model</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="multiRouter.MultiRouteModel.dita" type="topic"><keyword>multiRouter.MultiRouteModel</keyword></xref>|<xref href="IMultiRouteModelJson.dita" type="topic"><keyword>IMultiRouteModelJson</keyword></xref></p>
+                    <p/>
+                    <p>Модель данных мультимаршрута, либо объект описания модели. В случае передачи объекта описания, модель на его основе создается автоматически.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options" translate="no">
+                    <xref href="#multiRouter.MultiRoute/param-options" type="entry"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции мультимаршрута. Для задания опций составных частей маршрутов доступны следующие префиксы:<ul>
+    <li><codeph>wayPoint</codeph> – опции путевых точек;</li>
+    <li><codeph>wayPointStart</codeph> – опции отображения начальной путевой точки;</li>
+    <li><codeph>wayPointFinish</codeph> – опции отображения конечной путевой точки;</li>
+    <li><codeph>viaPoint</codeph> – опции транзитных точек;</li>
+    <li><codeph>pin</codeph> - опции точечных маркеров на маршруте;</li>
+    <li><codeph>editor</codeph> – опции редактора мультимаршрута (см. <xref href="multiRouter.Editor.dita" type="topic"><keyword>multiRouter.Editor</keyword></xref>).</li>
+</ul>Для задания опций единичных маршрутов доступны следующие префиксы:<ul>
+    <li><codeph>route</codeph> – опции маршрутов, в том числе неактивных;</li>
+    <li><codeph>routeActive</codeph> – опции активного маршрута.</li>
+</ul>Причем опции заданные с префиксом "routeActive" более приоритетны по отношению к опциям с префиксом "route". Для задания опций составных частей маршрутов общественного транспорта доступны следующие префиксы.<ul>
+    <li><codeph>routeMarker</codeph> – опции меток сегментов маршрута;</li>
+    <li><codeph>routeWalkMarker</codeph> – опции меток пеших сегментов маршрута;</li>
+    <li><codeph>routeTransferMarker</codeph> – опции меток сегментов переходов;</li>
+    <li><codeph>routeTransportMarker</codeph> – опции меток транспортных сегментов маршрута;</li>
+    <li><codeph>routeWalkSegment</codeph> – опции линий пеших сегментов маршрута;</li>
+    <li><codeph>routeTransferMarker</codeph> – опции линий сегментов переходов;</li>
+    <li><codeph>routeTransportSegment</codeph> – опции линий транспортных сегментов маршрута;</li>
+    <li><codeph>routePedestrianSegment</codeph> – опции линий сегментов пешеходного маршрута.</li>
+</ul>Также данные префиксы доступны в "routeActive*" варианте.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.activeRouteAutoSelection" translate="no">
+                    <xref href="#multiRouter.MultiRoute/param-options.activeRouteAutoSelection" type="entry"><parmname>options.activeRouteAutoSelection</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>После обновления данных автоматически выбирать в качестве активного маршрут с минимальным временем проезда.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.boundsAutoApply" translate="no">
+                    <xref href="#multiRouter.MultiRoute/param-options.boundsAutoApply" type="entry"><parmname>options.boundsAutoApply</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>При добавлении мультимаршрута на карту позволяет автоматически установить центр и коэффициент масштабирования так, чтобы мультимаршрут был виден целиком.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.dragUpdateInterval" translate="no">
+                    <xref href="#multiRouter.MultiRoute/param-options.dragUpdateInterval" type="entry"><parmname>options.dragUpdateInterval</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|Number</p>
+                    <p/>
+                    <p>Величина временного интервала перестроения маршрута при перетаскивании опорных точек. Может быть задана в миллисекундах, либо оптимальное значение будет рассчитываться автоматически. Значение данной опции транслируется в параметр <xref href="IMultiRouteParams.dita#field_detail/requestSendInterval" type="section"><keyword>IMultiRouteParams.requestSendInterval</keyword></xref> модели мультимаршрута.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.preventDragUpdate" translate="no">
+                    <xref href="#multiRouter.MultiRoute/param-options.preventDragUpdate" type="entry"><parmname>options.preventDragUpdate</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Позволяет отключить обновление маршрута во время перетаскивания опорных точек.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.useMapMargin" translate="no">
+                    <xref href="#multiRouter.MultiRoute/param-options.useMapMargin" type="entry"><parmname>options.useMapMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Нужно ли учитывать отступы карты <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.zoomMargin" translate="no">
+                    <xref href="#multiRouter.MultiRoute/param-options.zoomMargin" type="entry"><parmname>options.zoomMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      0
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|Number[]</p>
+                    <p/>
+                    <p>Отступы от границ видимой области карты при изменении коэффициента масштабирования. Если задано одно число - оно применяется ко всем сторонам. Если задано два - то это горизонтальные и вертикальные отступы соответственно. Если задан массив из 4х чисел, то это отступы top, right, bottom, left. При включенной опции "useMapMargin" значение "zoomMargin" складывается со значениями, которые были рассчитаны в менеджере отступов <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+            <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Создадим мульти-маршрут и добавим его на карту.
+var multiRoute = new ymaps.multiRouter.MultiRoute({
+    referencePoints: [
+        'Москва, Ленинский проспект", "Москва, Кулаков переулок'],
+}, {
+    editorDrawOver: false,
+    wayPointDraggable: true,
+    viaPointDraggable: true,
+    // Зададим собственное оформление линий мультимаршрута.
+    routeStrokeColor: "000088",
+    routeActiveStrokeColor: "ff0000",
+    pinIconFillColor: "ff0000",
+    boundsAutoApply: true,
+    zoomMargin: 30
+});
+myMap.geoObjects.add(multiRoute);</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Создадим мультимаршрут и добавим его на карту.
+var multiRoute = new ymaps.multiRouter.MultiRoute({
+    referencePoints: ['Москва, Ленинский проспект',
+        'Москва, Кулаков переулок', 'Зеленоград'],
+});
+myMap.geoObjects.add(multiRoute);
+// Как только мультимаршрут загрузится..multiRoute.
+events.once('update', function () {
+    // Установим первый маршрут, у которого нет перекрытых    
+    // участков, в качестве активного.
+    // Откроем его балун.
+    var routes = multiRoute.getRoutes();
+    for (var i = 0, l = routes.getLength(); i &lt; l; i++) {
+        var route = routes.get(i);
+        if (!route.properties.get('blocked')) {
+            multiRoute.setActiveRoute(route);
+            route.balloon.open();
+            break;
+        }
+    }
+});</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="multiRouter.MultiRoute.dita#field_detail/editor" type="section"><keyword>editor</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="multiRouter.EditorAddon.dita" type="topic"><keyword>multiRouter.EditorAddon</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Редактор мультимаршрута.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IDomEventEmitter.dita#field_detail/events" type="section"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IGeoObject.dita#field_detail/geometry" type="section"><keyword>geometry</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IGeometry.dita" type="topic"><keyword>IGeometry</keyword></xref>|null</entry>
+        
+              <entry colname="col3">
+                <p>Геометрия геообъекта.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IGeoObject.dita#field_detail/geometry" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="multiRouter.MultiRoute.dita#field_detail/model" type="section"><keyword>model</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="multiRouter.MultiRouteModel.dita" type="topic"><keyword>multiRouter.MultiRouteModel</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Модель данных мультимаршрута.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>ICustomizable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IGeoObject.dita#field_detail/properties" type="section"><keyword>properties</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IDataManager.dita" type="topic"><keyword>IDataManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Данные геообъекта.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IGeoObject.dita#field_detail/properties" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IGeoObject.dita#field_detail/state" type="section"><keyword>state</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IDataManager.dita" type="topic"><keyword>IDataManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Состояние геообъекта.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IGeoObject.dita#field_detail/state" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRoute.dita#event_detail/event_detail/event-activeroutechange"><keyword>activeroutechange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение активного маршрута. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>oldActiveRoute: multiRouter.driving.Route|multiRouter.masstransit.Route|null - предыдущий активный маршрут.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRoute.dita#event_detail/event_detail/event-balloonclose"><keyword>balloonclose</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Закрытие балуна. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>originalTarget: multiRouter.pedestrian.Route|multiRouter.driving.Route|multiRouter.masstransit.Route|null - маршрут, балун которого был закрыт.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRoute.dita#event_detail/event_detail/event-balloonopen"><keyword>balloonopen</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Открытие балуна. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>originalTarget: multiRouter.pedestrian.Route|multiRouter.driving.Route|multiRouter.masstransit.Route|null - маршрут, на котором был открыт балун.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRoute.dita#event_detail/event_detail/event-boundsautoapply"><keyword>boundsautoapply</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие возникает в момент установки центра и коэффициента масштабирования карты для оптимального отображения мультимаршрута. Также смотрите описание опции boundsAutoApply. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRoute.dita#event_detail/event_detail/event-boundschange"><keyword>boundschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение координат географической области, охватывающей мультимаршрут. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-click"><keyword>click</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Однократное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-click"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-contextmenu"><keyword>contextmenu</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Вызов контекстного меню на элементе. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-contextmenu"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-dblclick"><keyword>dblclick</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Двойное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-dblclick"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#event_detail/event_detail/event-geometrychange"><keyword>geometrychange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение геометрии геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>originalEvent: <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref> - оригинальное событие геометрии.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeoObject.dita#event_detail/event_detail/event-geometrychange"><keyword>IGeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IParentOnMap.dita#event_detail/event_detail/event-mapchange"><keyword>mapchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменилась карта. Поля данных:<ul>
+    <li>oldMap - старая карта;</li>
+    <li>newMap - новая карта.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IParentOnMap.dita#event_detail/event_detail/event-mapchange"><keyword>IParentOnMap</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousedown"><keyword>mousedown</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Нажатие кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousedown"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseenter"><keyword>mouseenter</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Наведение курсора на объект. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseenter"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseleave"><keyword>mouseleave</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Вывод курсора за пределы объекта. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseleave"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousemove"><keyword>mousemove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Перемещение курсора над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousemove"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseup"><keyword>mouseup</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Отпускание кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseup"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchend"><keyword>multitouchend</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Окончание мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchend"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchmove"><keyword>multitouchmove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Повторящееся событие при мультисенсорном управлении. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Определяет свойство touches, которое содержит список прикосновений. Каждое прикосновение описано объектом, которое содержит поля:<ul>
+  <li>clientX - координата касания X относительно видимой области браузера;</li>
+  <li>clientY - координата касания Y относительно видимой области браузера;</li>
+  <li>pageX - координата касания X касания относительно начала документа;</li>
+  <li>pageY - координата касания Y касания относительно начала документа.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchmove"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchstart"><keyword>multitouchstart</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Начало мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Определяет свойство touches, которое содержит список прикосновений. Каждое прикосновение описано объектом, которое содержит поля:<ul>
+  <li>clientX - координата касания X относительно видимой области браузера;</li>
+  <li>clientY - координата касания Y относительно видимой области браузера;</li>
+  <li>pageX - координата касания X касания относительно начала документа;</li>
+  <li>pageY - координата касания Y касания относительно начала документа.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchstart"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#event_detail/event_detail/event-overlaychange"><keyword>overlaychange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение оверлея геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>overlay: <xref href="IOverlay.dita" type="topic"><keyword>IOverlay</keyword></xref>|null - ссылка на оверлей;</li>
+    <li>oldOverlay: <xref href="IOverlay.dita" type="topic"><keyword>IOverlay</keyword></xref>|null - предыдущий оверлей геообъекта.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeoObject.dita#event_detail/event_detail/event-overlaychange"><keyword>IGeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>parentchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменился родительский объект.</p><p>Поля данных:</p>
+<ul>
+    <li>oldParent - старый родитель;</li>
+    <li>newParent - новый родитель.</li>
+</ul>
+                            
+                                <p translate="no">Унаследовано от <xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>IChild</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRoute.dita#event_detail/event_detail/event-pixelboundschange"><keyword>pixelboundschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение пиксельных координат области, охватывающей мультимаршрут. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#event_detail/event_detail/event-propertieschange"><keyword>propertieschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение данных геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>originalEvent: <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref> - оригинальное событие менеджера данных.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeoObject.dita#event_detail/event_detail/event-propertieschange"><keyword>IGeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRoute.dita#event_detail/event_detail/event-update"><keyword>update</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Обновление мультимаршрута. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-wheel"><keyword>wheel</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Скролл мышкой. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-wheel"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRoute.dita#method_detail/getActiveRoute" type="section"><keyword>getActiveRoute</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="multiRouter.driving.Route.dita" type="topic"><keyword>multiRouter.driving.Route</keyword></xref>|<xref href="multiRouter.masstransit.Route.dita" type="topic"><keyword>multiRouter.masstransit.Route</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает активный маршрут.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRoute.dita#method_detail/getBounds" type="section"><keyword>getBounds</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает географические координаты области, охватывающей мультимаршрут.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IParentOnMap.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на карту.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IParentOnMap.dita#method_detail/getMap" type="section"><keyword>IParentOnMap</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#method_detail/getOverlay" type="section"><keyword>getOverlay</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект-обещание, который подтверждается объектом оверлея в момент его фактического создания, либо отклоняется с передачей соответствующей ошибки.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IGeoObject.dita#method_detail/getOverlay" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#method_detail/getOverlaySync" type="section"><keyword>getOverlaySync</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IOverlay.dita" type="topic"><keyword>IOverlay</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Метод предоставляет синхронный доступ к оверлею.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IGeoObject.dita#method_detail/getOverlaySync" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChildOnMap.dita#method_detail/getParent" type="section"><keyword>getParent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IParentOnMap.dita" type="topic"><keyword>IParentOnMap</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на родительский объект или null, если родительский элемент не был установлен.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IChildOnMap.dita#method_detail/getParent" type="section"><keyword>IChildOnMap</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRoute.dita#method_detail/getPixelBounds" type="section"><keyword>getPixelBounds</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает глобальные пиксельные координаты области, охватывающей мультимаршрут.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRoute.dita#method_detail/getRoutes" type="section"><keyword>getRoutes</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает дочернюю коллекцию единичных маршрутов мультимаршрута.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRoute.dita#method_detail/getViaPoints" type="section"><keyword>getViaPoints</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает дочернюю коллекцию транзитных точек мультимаршрута.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRoute.dita#method_detail/getWayPoints" type="section"><keyword>getWayPoints</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает дочернюю коллекцию путевых точек мультимаршрута.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRoute.dita#method_detail/setActiveRoute" type="section"><keyword>setActiveRoute</keyword></xref>(<xref href="multiRouter.MultiRoute.dita#method_detail/setActiveRoute-param-route" translate="no" type="row">route</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает активный маршрут. При этом предыдущий активный маршрут деактивируется, и генерируется событие <xref href="multiRouter.MultiRoute.dita#event_detail/event-activeroutechange" type="section"><keyword>multiRouter.MultiRoute.activeroutechange</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChildOnMap.dita#method_detail/setParent" type="section"><keyword>setParent</keyword></xref>(<xref href="IChildOnMap.dita#method_detail/setParent-param-parent" translate="no" type="row">parent</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IChildOnMap.dita" type="topic"><keyword>IChildOnMap</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает родительский объект. Если передать значение null, то элемент управления будет только удален из текущего родительского объекта.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IChildOnMap.dita#method_detail/setParent" type="section"><keyword>IChildOnMap</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="editor">
+            <title translate="no">editor</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="multiRouter.EditorAddon.dita" type="topic"><keyword>multiRouter.EditorAddon</keyword></xref>} editor</codeblock></p>
+
+            <p>Редактор мультимаршрута.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Начало редактирования маршрута.
+ymaps.route(['Москва', 'Питер'], {
+        multiRoute: true
+    })
+    .done(function (multiRoute) {
+        myMap.geoObjects.add(multiRoute);
+        multiRoute.editor.start({
+            addWayPoints: true,
+            removeWayPoints: true
+        });
+        // .....
+        // Завершение редактирования маршрута.
+        route.editor.stop();
+    });</codeblock>
+            
+
+            </section>
+        
+            <section id="model">
+            <title translate="no">model</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="multiRouter.MultiRouteModel.dita" type="topic"><keyword>multiRouter.MultiRouteModel</keyword></xref>} model</codeblock></p>
+
+            <p>Модель данных мультимаршрута.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-activeroutechange">
+            <title translate="no">activeroutechange</title>
+            
+             <p>Изменение активного маршрута. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>oldActiveRoute: multiRouter.driving.Route|multiRouter.masstransit.Route|null - предыдущий активный маршрут.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-balloonclose">
+            <title translate="no">balloonclose</title>
+            
+             <p>Закрытие балуна. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>originalTarget: multiRouter.pedestrian.Route|multiRouter.driving.Route|multiRouter.masstransit.Route|null - маршрут, балун которого был закрыт.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-balloonopen">
+            <title translate="no">balloonopen</title>
+            
+             <p>Открытие балуна. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>originalTarget: multiRouter.pedestrian.Route|multiRouter.driving.Route|multiRouter.masstransit.Route|null - маршрут, на котором был открыт балун.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-boundsautoapply">
+            <title translate="no">boundsautoapply</title>
+            
+             <p>Событие возникает в момент установки центра и коэффициента масштабирования карты для оптимального отображения мультимаршрута. Также смотрите описание опции boundsAutoApply. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-boundschange">
+            <title translate="no">boundschange</title>
+            
+             <p>Изменение координат географической области, охватывающей мультимаршрут. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-pixelboundschange">
+            <title translate="no">pixelboundschange</title>
+            
+             <p>Изменение пиксельных координат области, охватывающей мультимаршрут. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-update">
+            <title translate="no">update</title>
+            
+             <p>Обновление мультимаршрута. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getActiveRoute">
+        <title translate="no">getActiveRoute</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="multiRouter.driving.Route.dita" type="topic"><keyword>multiRouter.driving.Route</keyword></xref>|<xref href="multiRouter.masstransit.Route.dita" type="topic"><keyword>multiRouter.masstransit.Route</keyword></xref>|null} getActiveRoute()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> активный маршрут.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getBounds">
+        <title translate="no">getBounds</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]|null} getBounds()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> географические координаты области, охватывающей мультимаршрут.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getPixelBounds">
+        <title translate="no">getPixelBounds</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]|null} getPixelBounds()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> глобальные пиксельные координаты области, охватывающей мультимаршрут.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getRoutes">
+        <title translate="no">getRoutes</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref>} getRoutes()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> дочернюю коллекцию единичных маршрутов мультимаршрута.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getViaPoints">
+        <title translate="no">getViaPoints</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref>} getViaPoints()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> дочернюю коллекцию транзитных точек мультимаршрута.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getWayPoints">
+        <title translate="no">getWayPoints</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref>} getWayPoints()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> дочернюю коллекцию путевых точек мультимаршрута.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="setActiveRoute">
+        <title translate="no">setActiveRoute</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} setActiveRoute(<xref href="multiRouter.MultiRoute.dita#method_detail/setActiveRoute-param-route" translate="no" type="row">route</xref>)</codeblock></p>
+
+         <p>Устанавливает активный маршрут. При этом предыдущий активный маршрут деактивируется, и генерируется событие <xref href="multiRouter.MultiRoute.dita#event_detail/event-activeroutechange" type="section"><keyword>multiRouter.MultiRoute.activeroutechange</keyword></xref>.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setActiveRoute-param-route">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setActiveRoute-param-route" type="row"><parmname>route</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="multiRouter.driving.Route.dita" type="topic"><keyword>multiRouter.driving.Route</keyword></xref>|<xref href="multiRouter.masstransit.Route.dita" type="topic"><keyword>multiRouter.masstransit.Route</keyword></xref>|null</p>
+                    <p/>
+                   <p>Устанавливает активный маршрут.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setActiveRoute_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_MjhhOTc3_CACHING --></topic>

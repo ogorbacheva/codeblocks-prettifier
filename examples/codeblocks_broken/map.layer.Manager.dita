@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="map.layer.Manager" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">map.layer.Manager</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>map.layer.Manager</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="ILayer.dita" type="topic"><keyword>ILayer</keyword></xref>, <xref href="IMapObjectCollection.dita" type="topic"><keyword>IMapObjectCollection</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Менеджер слоев карты.</p>
+    
+
+
+
+    <p translate="no"><b>См.: </b><xref href="Map.dita#field_detail/layers" type="section"><keyword>Map.layers</keyword></xref> </p>
+
+
+
+
+
+    <p translate="no"><xref href="#map.layer.Manager/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#map.layer.Manager/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#map.layer.Manager/events-summary" translate="no" type="section">События </xref> | <xref href="#map.layer.Manager/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">map.layer.Manager(<xref href="#map.layer.Manager/param-map" translate="no" type="entry">map</xref>[, <xref href="#map.layer.Manager/param-options" translate="no" type="entry">options</xref>])</codeblock></p>
+    
+       
+            
+                <p>Создает экземпляр класса для работы со слоями карты. У любой карты уже есть свой менеджер слоёв, доступный как map.layers. Не инстанцируйте экземпляры этого класса без необходимости.</p>
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-map" translate="no">
+                    
+                        <xref href="#map.layer.Manager/param-map" type="entry"><parmname>map</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p>
+                    <p/>
+                    <p>Карта</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options" translate="no">
+                    <xref href="#map.layer.Manager/param-options" type="entry"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции слоев карты. Через опции map.layers можно задавать настройки слоев, добавленных на карту. Опции слоев хотспотов задаются с префиксом 'hotspotLayer'.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.trafficImageZIndex" translate="no">
+                    <xref href="#map.layer.Manager/param-options.trafficImageZIndex" type="entry"><parmname>options.trafficImageZIndex</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     201
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Z-index картиночного слоя пробок.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.trafficInfoZIndex" translate="no">
+                    <xref href="#map.layer.Manager/param-options.trafficInfoZIndex" type="entry"><parmname>options.trafficInfoZIndex</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     1
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Приоритет хотспотного слоя инфоточек.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.trafficJamZIndex" translate="no">
+                    <xref href="#map.layer.Manager/param-options.trafficJamZIndex" type="entry"><parmname>options.trafficJamZIndex</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     0
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Приоритет хотспотного слоя пробок.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>ICustomizable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICollection.dita#event_detail/event_detail/event-add"><keyword>add</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Произошло добавление дочернего объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICollection.dita#event_detail/event_detail/event-add"><keyword>ICollection</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayer.dita#event_detail/event_detail/event-brightnesschange"><keyword>brightnesschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие изменения яркости слоя.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ILayer.dita#event_detail/event_detail/event-brightnesschange"><keyword>ILayer</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayer.dita#event_detail/event_detail/event-copyrightschange"><keyword>copyrightschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие изменения доступной информации об авторских правах.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ILayer.dita#event_detail/event_detail/event-copyrightschange"><keyword>ILayer</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IParentOnMap.dita#event_detail/event_detail/event-mapchange"><keyword>mapchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменилась карта. Поля данных:<ul>
+    <li>oldMap - старая карта;</li>
+    <li>newMap - новая карта.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IParentOnMap.dita#event_detail/event_detail/event-mapchange"><keyword>IParentOnMap</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>parentchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменился родительский объект.</p><p>Поля данных:</p>
+<ul>
+    <li>oldParent - старый родитель;</li>
+    <li>newParent - новый родитель.</li>
+</ul>
+                            
+                                <p translate="no">Унаследовано от <xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>IChild</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICollection.dita#event_detail/event_detail/event-remove"><keyword>remove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Произошло удаление дочернего объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICollection.dita#event_detail/event_detail/event-remove"><keyword>ICollection</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayer.dita#event_detail/event_detail/event-tileloadchange"><keyword>tileloadchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие изменения состояния загрузки тайла. Поля данных:<ul>
+    <li>readyTileNumber-количество готовых тайлов. Тайл считается готовым, когда она загружен и отрисован. Тип: Number.</li>
+    <li>totalTileNumber-общее количество видимых тайлов. Тип: Number.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ILayer.dita#event_detail/event_detail/event-tileloadchange"><keyword>ILayer</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayer.dita#event_detail/event_detail/event-zoomrangechange"><keyword>zoomrangechange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие изменения доступной информации о диапазоне уровней масштабирования.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ILayer.dita#event_detail/event_detail/event-zoomrangechange"><keyword>ILayer</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICollection.dita#method_detail/add" type="section"><keyword>add</keyword></xref>(<xref href="ICollection.dita#method_detail/add-param-object" translate="no" type="row">object</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="ICollection.dita" type="topic"><keyword>ICollection</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет в коллекцию дочерний объект.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ICollection.dita#method_detail/add" type="section"><keyword>ICollection</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.layer.Manager.dita#method_detail/each" type="section"><keyword>each</keyword></xref>(<xref href="map.layer.Manager.dita#method_detail/each-param-callback" translate="no" type="row">callback</xref>[, <xref href="map.layer.Manager.dita#method_detail/each-param-context" translate="no" type="row">context</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Перебирает все элементы коллекции, вызывая для каждого функцию-обработчик.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayer.dita#method_detail/getBrightness" type="section"><keyword>getBrightness</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Необязательный метод.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ILayer.dita#method_detail/getBrightness" type="section"><keyword>ILayer</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayer.dita#method_detail/getCopyrights" type="section"><keyword>getCopyrights</keyword></xref>(<xref href="ILayer.dita#method_detail/getCopyrights-param-coords" translate="no" type="row">coords</xref>, <xref href="ILayer.dita#method_detail/getCopyrights-param-zoom" translate="no" type="row">zoom</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Необязательный метод. Запрашивает информацию об авторских правах в указанной точке с указанным коэффициентом масштабирования.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ILayer.dita#method_detail/getCopyrights" type="section"><keyword>ILayer</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICollection.dita#method_detail/getIterator" type="section"><keyword>getIterator</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IIterator.dita" type="topic"><keyword>IIterator</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает итератор по коллекции.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="ICollection.dita#method_detail/getIterator" type="section"><keyword>ICollection</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IParentOnMap.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на карту.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IParentOnMap.dita#method_detail/getMap" type="section"><keyword>IParentOnMap</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChildOnMap.dita#method_detail/getParent" type="section"><keyword>getParent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IParentOnMap.dita" type="topic"><keyword>IParentOnMap</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на родительский объект или null, если родительский элемент не был установлен.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IChildOnMap.dita#method_detail/getParent" type="section"><keyword>IChildOnMap</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayer.dita#method_detail/getZoomRange" type="section"><keyword>getZoomRange</keyword></xref>(<xref href="ILayer.dita#method_detail/getZoomRange-param-point" translate="no" type="row">point</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Необязательный метод. Определяет доступный в указанной точке диапазон уровней масштабирования. Если данные есть, то возвращенный объект-promise будет подтвержден и передаст в качестве результата массив из двух чисел - минимальный и максимальный доступный в точке уровень масштабирования. Если данных нет, то promise отклоняется с указанием ошибки.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ILayer.dita#method_detail/getZoomRange" type="section"><keyword>ILayer</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICollection.dita#method_detail/remove" type="section"><keyword>remove</keyword></xref>(<xref href="ICollection.dita#method_detail/remove-param-object" translate="no" type="row">object</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="ICollection.dita" type="topic"><keyword>ICollection</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет из коллекции дочерний объект.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ICollection.dita#method_detail/remove" type="section"><keyword>ICollection</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChildOnMap.dita#method_detail/setParent" type="section"><keyword>setParent</keyword></xref>(<xref href="IChildOnMap.dita#method_detail/setParent-param-parent" translate="no" type="row">parent</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IChildOnMap.dita" type="topic"><keyword>IChildOnMap</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает родительский объект. Если передать значение null, то элемент управления будет только удален из текущего родительского объекта.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IChildOnMap.dita#method_detail/setParent" type="section"><keyword>IChildOnMap</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="each">
+        <title translate="no">each</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} each(<xref href="map.layer.Manager.dita#method_detail/each-param-callback" translate="no" type="row">callback</xref>[, <xref href="map.layer.Manager.dita#method_detail/each-param-context" translate="no" type="row">context</xref>])</codeblock></p>
+
+         <p>Перебирает все элементы коллекции, вызывая для каждого функцию-обработчик.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="each-param-callback">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/each-param-callback" type="row"><parmname>callback</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция-обработчик.</p>
+                </entry>
+
+            </row>
+            
+            <row id="each-param-context">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/each-param-context" type="row"><parmname>context</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Контекст исполнения функции.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="each_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_NTkyZDQ0_CACHING --></topic>

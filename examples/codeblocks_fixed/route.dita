@@ -1,0 +1,416 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="route" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">route</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>route</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статическая функция.</p>
+    
+    
+        
+            <p>Прокладывает маршрут через заданные точки.</p>
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+       <p><b>Возвращает</b> Promise объект, который подтверждается объектом маршрута <xref href="router.Route.dita" type="topic"><keyword>router.Route</keyword></xref>, либо объектом мультимаршрута <xref href="multiRouter.MultiRoute.dita" type="topic"><keyword>multiRouter.MultiRoute</keyword></xref>, в зависимости от значения параметра multiRoute. Promise отклоняется при возникновении ошибки.</p>
+       
+    
+
+    
+
+    
+        
+         
+              <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{ <xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref> } route(<xref href="#route/param-points" translate="no" type="row">points</xref>[, <xref href="#route/param-params" translate="no" type="row">params</xref>])</codeblock></p>
+         
+     
+
+    
+        <p translate="no"><b>Параметры:</b></p>
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+
+        <table>
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Параметр</entry>
+              <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+        
+        <row id="param-points">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#route/param-points" type="row"><parmname>points</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Object[]</p>
+                <p/>
+                <p>Массив точек, через которые должен проходить маршрут. Каждая точка может быть задана строкой, содержащей адрес, массивом координат, и JSON-объектом со следующими полями:<ul>
+    <li>type: String - тип точки. Значение 'wayPoint' задает путевую точку маршрута. Значение 'viaPoint' задает транзитную точку, т.е. точку, через которую нужно проехать без остановки.</li>
+    <li>point: Number[]|String - массив координат точки, либо ее адрес в виде строки.</li>
+</ul></p>
+            </entry>
+        </row>
+        
+        <row id="param-params">
+            <entry colname="col1" translate="no">
+                <xref href="#route/param-params" type="row"><parmname>params</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Object</p>
+                <p/>
+                <p>Параметры маршрутизации.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.avoidTrafficJams">
+            <entry colname="col1" translate="no">
+                <xref href="#route/param-params.avoidTrafficJams" type="row"><parmname>params.avoidTrafficJams</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">   false
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Boolean</p>
+                <p/>
+                <p>Позволяет прокладывать мультимаршрут с учетом информации о пробках. При использовании опции учитывайте, что объезд пробок не всегда возможен.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.boundedBy">
+            <entry colname="col1" translate="no">
+                <xref href="#route/param-params.boundedBy" type="row"><parmname>params.boundedBy</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Number[][]</p>
+                <p/>
+                <p>Область на карте, где предположительно находятся искомые объекты. Используется, если точки маршрута заданы почтовым адресом, а не координатами.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.mapStateAutoApply">
+            <entry colname="col1" translate="no">
+                <xref href="#route/param-params.mapStateAutoApply" type="row"><parmname>params.mapStateAutoApply</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">   false
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Boolean</p>
+                <p/>
+                <p>Флаг, позволяющий автоматически установить центр и коэффициент масштабирования карты так, чтобы построенный маршрут был виден целиком.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.multiRoute">
+            <entry colname="col1" translate="no">
+                <xref href="#route/param-params.multiRoute" type="row"><parmname>params.multiRoute</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">   false
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Boolean</p>
+                <p/>
+                <p>Позволяет строить мультимаршруты.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.reverseGeocoding">
+            <entry colname="col1" translate="no">
+                <xref href="#route/param-params.reverseGeocoding" type="row"><parmname>params.reverseGeocoding</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  false
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Boolean</p>
+                <p/>
+                <p>Использовать ли обратное геокодирование для точек маршрута, заданных координатами.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.routingMode">
+            <entry colname="col1" translate="no">
+                <xref href="#route/param-params.routingMode" type="row"><parmname>params.routingMode</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">   "auto"
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: String</p>
+                <p/>
+                <p>Тип маршрутизации. Может принимать одно из трех строковых значений:<ul>
+    <li>"auto" — автомобильная маршрутизация;</li>
+    <li>"masstransit" — маршрутизация с использованием общественного транспорта. Доступна только для мультимаршрутов (опция multiRoute должна быть выставлена в true);</li>
+    <li>"pedestrian" — пешеходная маршрутизация. Доступна только для мультимаршрутов (опция multiRoute должна быть выставлена в true);</li>
+</ul></p>
+            </entry>
+        </row>
+        
+        <row id="param-params.searchCoordOrder">
+            <entry colname="col1" translate="no">
+                <xref href="#route/param-params.searchCoordOrder" type="row"><parmname>params.searchCoordOrder</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: String</p>
+                <p/>
+                <p>Определяет, каким образом нужно интрепретировать координаты в запросе. Используется, если точки маршрута заданы координатами, а не почтовым адресом.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.strictBounds">
+            <entry colname="col1" translate="no">
+                <xref href="#route/param-params.strictBounds" type="row"><parmname>params.strictBounds</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">   false
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Boolean</p>
+                <p/>
+                <p>Искать только внутри области, заданной опцией boundedBy.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.useMapMargin">
+            <entry colname="col1" translate="no">
+                <xref href="#route/param-params.useMapMargin" type="row"><parmname>params.useMapMargin</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  true
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Boolean</p>
+                <p/>
+                <p>Нужно ли учитывать отступы карты <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.viaIndexes">
+            <entry colname="col1" translate="no">
+                <xref href="#route/param-params.viaIndexes" type="row"><parmname>params.viaIndexes</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">   []
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Integer[]</p>
+                <p/>
+                <p>Индексы транзитных точек мультимаршрута.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.zoomMargin">
+            <entry colname="col1" translate="no">
+                <xref href="#route/param-params.zoomMargin" type="row"><parmname>params.zoomMargin</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  0
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Number|Number[]</p>
+                <p/>
+                <p>Отступы от границ видимой области карты при изменении коэффициента масштабирования. Если задано одно число - оно применяется ко всем сторонам. Если задано два - то это горизонтальные и вертикальные отступы соответственно. Если задан массив из 4х чисел, то это отступы top, right, bottom, left. При включенном параметре "useMapMargin" значение "zoomMargin" складывается со значениями, которые были рассчитаны в менеджере отступов <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+            </entry>
+        </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+    
+    
+
+
+
+    
+        <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Строим маршрут из Королева в Красногорск через Химки и Мытищи,
+// где Мытищи - транзитная точка. Устанавливаем координаты Красногорска.
+ymaps.route([
+    'Королёв',
+        {
+            type: 'viaPoint',
+            point: 'Мытищи'
+        },
+    'Химки',
+        {
+            type: 'wayPoint',
+            point: [55.811511, 37.312518]
+        }
+], {
+        mapStateAutoApply: true
+    })
+    .then(function (route) {
+        route.getPaths()
+            .options.set({
+                //  В балуне выводим только информацию о времени движения с учетом пробок.
+                balloonContentLayout: ymaps.templateLayoutFactory
+                    .createClass('{{ properties.humanJamsTime }}'),
+                // Можно выставить настройки графики маршруту.
+                strokeColor: '0000ffff',
+                opacity: 0.9
+            });
+        // Добавляем маршрут на карту.
+        map.geoObjects.add(route);
+    });</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Построим мультимаршрут и добавим его на карту с применением автомасштабирования.
+ymaps.route(['Южное Бутово', 'Москва, метро Парк Культуры'], {
+        multiRoute: true
+    })
+    .done(function (route) {
+        route.options.set("mapStateAutoApply", true);
+        myMap.geoObjects.add(route);
+    }, function (err) {
+        throw err;
+    }, this);</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_NGI5ZTMy_CACHING --></topic>

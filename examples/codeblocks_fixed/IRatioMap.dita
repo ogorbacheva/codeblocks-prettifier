@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="IRatioMap" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IRatioMap</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IRatioMap</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Интерфейс объекта, содержащего соотношение произвольных данных к devicePixelRatio. Используется в случаях, когда требуется поддержка экранов с отношением виртуальных пикселей к физическим более единицы. В качестве ключей в объекте должны использваться строки, состоящие из целого или дробного числа, обозначающего коэффициент плотности пикселей.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IRatioMap/constructor-summary" translate="no" type="section">Конструктор</xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IRatioMap()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Допустим, нам нужно правильно отобразить изображение.
+var images = {
+    // Для обычных экранов мы будем отображать нормальное изображение.
+    "1": "100x100.png",
+    // Для HTC Desire, Samsung Galaxy S II и других устройств с devicePixelRatio = 1.5.
+    "1.5": "150x150.png",
+    // Для Apple устройств с ретина-экраном, а также, например, Sony Xperia S, HTC One X и других.
+    "2": "200x100.png"
+}</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_Y2IxZmVj_CACHING --></topic>

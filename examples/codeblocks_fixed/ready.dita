@@ -1,0 +1,231 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="ready" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">ready</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>ready</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статическая функция.</p>
+    
+    
+        
+            <p>Выполняет переданную функцию, когда API и DOM готовы к использованию.</p>
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+       <p><b>Возвращает</b> Promise объект, который подтверждается пространством имен API, либо отклоняется, если при загрузке произошла ошибка.</p>
+       
+    
+
+    
+
+    
+        
+         
+              <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{ <xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref> } ready([<xref href="#ready/param-successCallback" translate="no" type="row">successCallback</xref>[, <xref href="#ready/param-errorCallback" translate="no" type="row">errorCallback</xref>[, <xref href="#ready/param-context" translate="no" type="row">context</xref>]]])</codeblock></p>
+         
+     
+
+    
+        <p translate="no"><b>Параметры:</b></p>
+        
+        
+            
+        
+            
+        
+            
+        
+
+        <table>
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Параметр</entry>
+              <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+        
+        <row id="param-successCallback">
+            <entry colname="col1" translate="no">
+                <xref href="#ready/param-successCallback" type="row"><parmname>successCallback</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Function|Object</p>
+                <p/>
+                <p>Функция, которая будет вызвана при успешной загрузке и инициализации API и DOM, или объект с параметрами, если используется расширенный синтаксис.</p><p>Доступный список параметров:</p>
+<ul>
+    <li>require - массив дополнительных модулей, которые должны быть загружены вместе с API;</li>
+    <li>successCallback — функция, которая будет вызвана при успешной загрузке API;</li>
+    <li>errorCallback — функция, которая будет вызвана в случае ошибки;</li>
+    <li>context — контекст исполнения функций.</li>
+</ul><p>
+</p><p>Все параметры являются необязательными.</p><p>
+</p><p>В successCallback будет передано пространство имен API.</p>
+            </entry>
+        </row>
+        
+        <row id="param-errorCallback">
+            <entry colname="col1" translate="no">
+                <xref href="#ready/param-errorCallback" type="row"><parmname>errorCallback</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Function</p>
+                <p/>
+                <p>Функция, которая будет вызвана если произошла ошибка при инициализации. В функцию будет передана ошибка.</p>
+            </entry>
+        </row>
+        
+        <row id="param-context">
+            <entry colname="col1" translate="no">
+                <xref href="#ready/param-context" type="row"><parmname>context</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Object</p>
+                <p/>
+                <p>Контекст исполнения функции.</p>
+            </entry>
+        </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        
+    
+    
+
+
+
+    
+        <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">&lt;
+!DOCTYPE html &gt; &lt; html &gt; &lt; head &gt; &lt; title &gt;
+Пример &lt; title&gt; &lt; meta http-equiv="Content-Type" content="text/html; charset=UTF-8" &gt; &lt;
+script src="http://api-maps.yandex.ru/2.1/?apikey=&lt;your API key&gt;&amp;lang=ru_RU"
+type = "text/javascript" &gt; &lt; script&gt; &lt; script type="text/javascript" &gt;
+ymaps.ready(function () {
+    var map = new ymaps.Map('map', {
+        center: [55.7, 37.6],
+        zoom: 10
+    });
+    // .....
+}); &lt; script&gt; &lt; head&gt; &lt; body &gt; &lt;
+div id = "map"
+style = "width: 500px; height: 500px;" &gt; &lt; div &gt; &lt; body&gt; &lt; html&gt;</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Пример использования расширенного синтаксиса функции ready.
+ymaps.ready({
+    // successCallback будет вызван, когда загрузятся API и модуль "myModule1".
+    require: ['myModule1'],
+    successCallback: function (ym) {
+        var map = new ymaps.Map('map', {
+            center: [55.7, 37.6],
+            zoom: 10
+        });
+        var obj = new ymaps.myModule1();
+        // .....
+    }
+})</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_N2RmMjBm_CACHING --></topic>

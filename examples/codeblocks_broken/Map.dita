@@ -1,0 +1,3674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="Map" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">Map</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>Карта</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IDomEventEmitter.dita" type="topic"><keyword>IDomEventEmitter</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Класс для создания и управления картой.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#Map/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#Map/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#Map/events-summary" translate="no" type="section">События </xref> | <xref href="#Map/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">Map(<xref href="#Map/param-parentElement" translate="no" type="entry">parentElement</xref>, <xref href="#Map/param-state" translate="no" type="entry">state</xref>[, <xref href="#Map/param-options" translate="no" type="entry">options</xref>])</codeblock></p>
+    
+       
+            
+                <p>Создает экземпляр карты.</p>
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-parentElement" translate="no">
+                    
+                        <xref href="#Map/param-parentElement" type="entry"><parmname>parentElement</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object|String</p>
+                    <p/>
+                    <p>Ссылка на HTML-элемент, в котором размещается карта, или идентификатор этого HTML-элемента.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-state" translate="no">
+                    
+                        <xref href="#Map/param-state" type="entry"><parmname>state</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Параметры карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-state.behaviors" translate="no">
+                    <xref href="#Map/param-state.behaviors" type="entry"><parmname>state.behaviors</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     ['default']
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String[]</p>
+                    <p/>
+                    <p>Включенные поведения карты. По умолчанию включаются: перетаскивание карты, масштабирование карты мультисенсорным касанием и двойным кликом на устройствах с сенсорным экраном; перетаскивание карты мышью, масштабирование двойным щелчком и выделением области правой кнопкой мыши на остальных устройствах. Можно указывать любые ключи, поддерживаемые behavior.Manager.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-state.bounds" translate="no">
+                    <xref href="#Map/param-state.bounds" type="entry"><parmname>state.bounds</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][]</p>
+                    <p/>
+                    <p>Геокоординаты начальной области показа карты. При инициализации карты может быть задана либо пара state.zoom-state.center, либо данная область. Если совместно со state.bounds будут заданы параметры state.zoom, state.center, они будут проигнорированы.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-state.center" translate="no">
+                    <xref href="#Map/param-state.center" type="entry"><parmname>state.center</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                    <p>Геокоординаты центра карты. Должны быть заданы совместно со state.zoom.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-state.controls" translate="no">
+                    <xref href="#Map/param-state.controls" type="entry"><parmname>state.controls</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     ['default']
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String[]</p>
+                    <p/>
+                    <p>Добавленные по умолчанию элементы управления карты. Можно указывать любые ключи, поддерживаемые <xref href="control.Manager.dita" type="topic"><keyword>control.Manager</keyword></xref>. Список доступных ключей и наборы элементов управления по умолчанию описаны в control.Manager.add.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-state.margin" translate="no">
+                    <xref href="#Map/param-state.margin" type="entry"><parmname>state.margin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|Number[]</p>
+                    <p/>
+                    <p>Отступы от краёв карты. Передаются в map.margin.Manager.setDefaultMargin.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-state.type" translate="no">
+                    <xref href="#Map/param-state.type" type="entry"><parmname>state.type</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'yandex#map'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|<xref href="MapType.dita" type="topic"><keyword>MapType</keyword></xref></p>
+                    <p/>
+                    <p>Тип карты. Может быть ключом или или экземпляром класса <xref href="MapType.dita" type="topic"><keyword>MapType</keyword></xref>. Список доступных ключей:<ul>
+    <li>'yandex#map' - тип карты "схема";</li>
+    <li>'yandex#satellite' - тип карты "спутник";</li>
+    <li>'yandex#hybrid' - тип карты "гибрид".</li>
+</ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-state.zoom" translate="no">
+                    <xref href="#Map/param-state.zoom" type="entry"><parmname>state.zoom</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Коэффициент масштабирования карты. Должен быть задан совместно с опцией state.center.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options" translate="no">
+                    <xref href="#Map/param-options" type="entry"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции карты. Через опции карты можно задавать настройки как самой карты, так и добавленных на неё объектов:<ul>
+    <li>опции <xref href="map.behavior.Manager.dita#map.behavior.Manager/constructor-summary" type="section">поведений карты</xref>;</li>
+    <li>опции <xref href="map.Balloon.dita#map.Balloon/constructor-summary" type="section">балуна карты</xref> с префиксом <codeph>balloon</codeph>;</li>
+    <li>опции <xref href="map.Hint.dita#map.Hint/constructor-summary" type="section">хинта карты</xref> с префиксом <codeph>hint</codeph>;</li>
+    <li>опции <xref href="GeoObject.dita#GeoObject/constructor-summary" type="section">геообъектов</xref> с префиксом <codeph>geoObject</codeph>;</li>
+    <li>опции <xref href="Layer.dita" type="topic">слоев</xref> с префиксом <codeph>layer</codeph>;</li>
+    <li>опции <xref href="hotspot.Layer.dita" type="topic">слоев активных областей</xref> с префиксом <codeph>hotspotLayer</codeph>;</li>
+</ul>Опции, которые трактует непосредственно сама карта, перечислены ниже.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.autoFitToViewport" translate="no">
+                    <xref href="#Map/param-options.autoFitToViewport" type="entry"><parmname>options.autoFitToViewport</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'ifNull'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Автоматическое слежение за контейнером карты. По умолчанию карта перестроится автоматически в случае, когда она инициализируется из скрытого контейнера, либо мы программно поменяли его размеры, иначе необходимо вызвать map.container.fitToViewport. Доступны следующие значения:<ul>
+    <li>'none' — не следить за изменением отображения контейнера при инициализации из скрытого контейнера или при программном изменении его размеров;</li>
+    <li>'ifNull' — как только контейнер получит CSS значение «display», отличное от «none», автоматически запустится map.container.fitToViewport, чтобы подстроить карту под него. После слежение будет остановлено;</li>
+    <li>'always' — постоянно следить за изменением состояния отображения контейнера карты.</li>
+</ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.avoidFractionalZoom" translate="no">
+                    <xref href="#Map/param-options.avoidFractionalZoom" type="entry"><parmname>options.avoidFractionalZoom</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>true - карта не будет останавливаться на дробных значениях коэффициента масштабирования, false - будет.<note>Для десктопных браузеров данная опция по умолчанию принимает значение true, для мобильных - false.</note></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.exitFullscreenByEsc" translate="no">
+                    <xref href="#Map/param-options.exitFullscreenByEsc" type="entry"><parmname>options.exitFullscreenByEsc</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Включение возможности выхода из «полноэкранного режима» с помощью нажатия на клавишу ESC. True — выходить из «полноэкранного режима» по нажатию на ESC, false — не выходить.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.fullscreenZIndex" translate="no">
+                    <xref href="#Map/param-options.fullscreenZIndex" type="entry"><parmname>options.fullscreenZIndex</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     10000
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Значение z-index контейнера карты в «полноэкранном режиме».</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.mapAutoFocus" translate="no">
+                    <xref href="#Map/param-options.mapAutoFocus" type="entry"><parmname>options.mapAutoFocus</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>true - при клике на карту будет убираться фокус с текущего активного dom-элемента, false - при клике на карту фокус будет оставаться в активном элементе.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.maxAnimationZoomDifference" translate="no">
+                    <xref href="#Map/param-options.maxAnimationZoomDifference" type="entry"><parmname>options.maxAnimationZoomDifference</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     5
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Максимальная разница между текущим и выставляемым коэффициентом масштабирования карты, при котором масштабирование будет происходить плавно.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.maxZoom" translate="no">
+                    <xref href="#Map/param-options.maxZoom" type="entry"><parmname>options.maxZoom</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      23
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Максимальный коэффициент масштабирования карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.minZoom" translate="no">
+                    <xref href="#Map/param-options.minZoom" type="entry"><parmname>options.minZoom</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      0
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Минимальный коэффициент масштабирования карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.nativeFullscreen" translate="no">
+                    <xref href="#Map/param-options.nativeFullscreen" type="entry"><parmname>options.nativeFullscreen</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Использовать нативный «полноэкранный режим», если возможно. При переходе в нативный «полноэкранный режим» браузер сначала запросит у пользователя подтверждение. В случае согласия пользователя браузер открывает карту на весь экран, скрывает свои управляющие элементы и позволяет выйти из него по нажатию на ESC. Опции fullscreenZIndex и exitFullscreenByEsc в нативном «полноэкранном режиме» ни на что не влиют.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.projection" translate="no">
+                    <xref href="#Map/param-options.projection" type="entry"><parmname>options.projection</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      ymaps.projection.wgs84Mercator
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IProjection.dita" type="topic"><keyword>IProjection</keyword></xref></p>
+                    <p/>
+                    <p>Проекция карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.restrictMapArea" translate="no">
+                    <xref href="#Map/param-options.restrictMapArea" type="entry"><parmname>options.restrictMapArea</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean|Number[][]</p>
+                    <p/>
+                    <p>Устанавливает область просмотра карты так, чтобы пользователь не мог выйти за пределы этой области. True — установить область в соответствии с текущей областью отображения, false — отключить опцию. Если необходимо ограничить область с известными координатами, нужно указать эту прямоугольную область.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.suppressMapOpenBlock" translate="no">
+                    <xref href="#Map/param-options.suppressMapOpenBlock" type="entry"><parmname>options.suppressMapOpenBlock</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Нужно ли скрывать предложение открыть текущую карту в Яндекс.Картах, максимально сохранив всю имеющуюся информацию о ней. True - скрывать, false - не скрывать. Ссылка на Яндекс.Карты отображается в левом нижнем углу карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.suppressObsoleteBrowserNotifier" translate="no">
+                    <xref href="#Map/param-options.suppressObsoleteBrowserNotifier" type="entry"><parmname>options.suppressObsoleteBrowserNotifier</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Нужно ли в устаревших версиях браузеров скрывать уведомление с предложением обновить браузер. True - скрывать, false - не скрывать. Уведомление отображается в левом нижнем углу карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.yandexMapAutoSwitch" translate="no">
+                    <xref href="#Map/param-options.yandexMapAutoSwitch" type="entry"><parmname>options.yandexMapAutoSwitch</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>true — включить автоматическое переключение на Народную Карту там, где схема недостаточно подробна, false — выключить. Эта опция работает только при значениях параметра lang=ru_RU и lang=uk_UA.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.yandexMapDisablePoiInteractivity" translate="no">
+                    <xref href="#Map/param-options.yandexMapDisablePoiInteractivity" type="entry"><parmname>options.yandexMapDisablePoiInteractivity</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: boolean</p>
+                    <p/>
+                    <p>True — отключить интерактивность POI (точек интереса) в подложке карты, false — включить.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+            <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Инициализация карты с заданными центром и уровнем масштабирования.
+var myMap = new ymaps.Map('map', {
+        center: [55.74954, 37.621587],
+         zoom: 10
+    });</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Инициализация карты по известной области просмотра
+// Полагаем, что на странице подключен jQuery.
+var $mapElement = $('#map'),
+    myMap = new ymaps.Map(
+        $mapElement[0],
+        ymaps.util.bounds.getCenterAndZoom(
+            [[55.7, 37.6], [55.8, 37.7]],
+            [$mapElement.width(), $mapElement.height()]
+        )
+    );</codeblock><p translate="no"><b>3.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Инициализация карты из результатов геокодирования.
+var myMap;
+ymaps.geocode('Moscow').then(function (res) {
+    myMap = new ymaps.Map('map', {
+        center: res.geoObjects.get(0).geometry.getCoordinates(),
+        zoom : 10
+    });
+});</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Map.dita#field_detail/action" type="section"><keyword>action</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="map.action.Manager.dita" type="topic"><keyword>map.action.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер действий карты.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Map.dita#field_detail/balloon" type="section"><keyword>balloon</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="map.Balloon.dita" type="topic"><keyword>map.Balloon</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Балун карты.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Map.dita#field_detail/behaviors" type="section"><keyword>behaviors</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="map.behavior.Manager.dita" type="topic"><keyword>map.behavior.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер поведений карты. Позволяет включать и выключать поведения, а также предоставляет доступ к их методам и свойствам.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Map.dita#field_detail/container" type="section"><keyword>container</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="map.Container.dita" type="topic"><keyword>map.Container</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Контейнер карты.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Map.dita#field_detail/controls" type="section"><keyword>controls</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="control.Manager.dita" type="topic"><keyword>control.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Элементы управления картой.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Map.dita#field_detail/converter" type="section"><keyword>converter</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="map.Converter.dita" type="topic"><keyword>map.Converter</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Преобразователь пиксельных точек карты из глобальных в локальные и наоборот.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Map.dita#field_detail/copyrights" type="section"><keyword>copyrights</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="map.Copyrights.dita" type="topic"><keyword>map.Copyrights</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер размещённой на карте информации об авторских правах.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Map.dita#field_detail/cursors" type="section"><keyword>cursors</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="util.cursor.Manager.dita" type="topic"><keyword>util.cursor.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер курсоров карты.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Map.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="event.Manager.dita" type="topic"><keyword>event.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий карты. Поддерживает подписку с приоритетами. Бросает события типа <xref href="MapEvent.dita" type="topic"><keyword>MapEvent</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Map.dita#field_detail/geoObjects" type="section"><keyword>geoObjects</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="map.GeoObjects.dita" type="topic"><keyword>map.GeoObjects</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер геообъектов карты.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Map.dita#field_detail/hint" type="section"><keyword>hint</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="map.Hint.dita" type="topic"><keyword>map.Hint</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Хинт карты.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Map.dita#field_detail/layers" type="section"><keyword>layers</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="map.layer.Manager.dita" type="topic"><keyword>map.layer.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер слоев карты.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Map.dita#field_detail/margin" type="section"><keyword>margin</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер отступов карты.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Map.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="option.Manager.dita" type="topic"><keyword>option.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Опции карты.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Map.dita#field_detail/panes" type="section"><keyword>panes</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="map.pane.Manager.dita" type="topic"><keyword>map.pane.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер контейнеров объектов карты.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Map.dita#field_detail/zoomRange" type="section"><keyword>zoomRange</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="map.ZoomRange.dita" type="topic"><keyword>map.ZoomRange</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Объект, предоставляющий доступ к информации о доступных в точке уровнях масштабирования.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#event_detail/event_detail/event-actionbegin"><keyword>actionbegin</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Началось новое плавное движение карты. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - запущенное действие.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#event_detail/event_detail/event-actionbreak"><keyword>actionbreak</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, возникающее при досрочном прекращении шага действия (например, из-за выполнения другого действия или нового шага того же действия). Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - действие.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#event_detail/event_detail/event-actionend"><keyword>actionend</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Окончание плавного движения карты. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - остановленное действие.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#event_detail/event_detail/event-actiontick"><keyword>actiontick</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Начало исполнения нового шага плавного движения (например, сдвиг карты пользователем или шаг анимации плавного масштабирования). Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - выполняемое в данный момент действие;</li>
+    <li>tick – описание шага действия в виде объекта с полями globalPixelCenter, zoom, duration и timingFunction.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#event_detail/event_detail/event-actiontickcomplete"><keyword>actiontickcomplete</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Окончание исполнения шага плавного движения. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - выполняемое в данный момент действие;</li>
+    <li>tick – описание шага действия в виде объекта с полями globalPixelCenter, zoom, duration и timingFunction.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#event_detail/event_detail/event-balloonclose"><keyword>balloonclose</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Закрытие балуна. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#event_detail/event_detail/event-balloonopen"><keyword>balloonopen</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Открытие балуна на карте. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#event_detail/event_detail/event-boundschange"><keyword>boundschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие изменения области просмотра карты (в результате изменения центра или уровня масштабирования). Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>oldCenter - предыдущий центр карты в геокоординатах;</li>
+    <li>newCenter - новый центр карты в геокоординатах;</li>
+    <li>oldZoom - предыдущий уровень машсштабирования;</li>
+    <li>newZoom - новый уровень масштабирования;</li>
+    <li>oldGlobalPixelCenter - предыдущий центр карты в глобальных пикселах;</li>
+    <li>newGlobalPixelCenter - новый центр карты в глобальных пикселах;</li>
+    <li>oldBounds - предыдущая область показа;</li>
+    <li>newBounds - новая область показа.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-click"><keyword>click</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Однократное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-click"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-contextmenu"><keyword>contextmenu</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Вызов контекстного меню на элементе. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-contextmenu"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-dblclick"><keyword>dblclick</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Двойное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-dblclick"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#event_detail/event_detail/event-destroy"><keyword>destroy</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Карта уничтожена.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#event_detail/event_detail/event-hintclose"><keyword>hintclose</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Закрытие хинта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#event_detail/event_detail/event-hintopen"><keyword>hintopen</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Открытие хинта на карте. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#event_detail/event_detail/event-marginchange"><keyword>marginchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменились отступы карты. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousedown"><keyword>mousedown</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Нажатие кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousedown"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseenter"><keyword>mouseenter</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Наведение курсора на объект. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseenter"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseleave"><keyword>mouseleave</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Вывод курсора за пределы объекта. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseleave"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousemove"><keyword>mousemove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Перемещение курсора над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousemove"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseup"><keyword>mouseup</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Отпускание кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseup"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchend"><keyword>multitouchend</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Окончание мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchend"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchmove"><keyword>multitouchmove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Повторящееся событие при мультисенсорном управлении. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Определяет свойство touches, которое содержит список прикосновений. Каждое прикосновение описано объектом, которое содержит поля:<ul>
+  <li>clientX - координата касания X относительно видимой области браузера;</li>
+  <li>clientY - координата касания Y относительно видимой области браузера;</li>
+  <li>pageX - координата касания X касания относительно начала документа;</li>
+  <li>pageY - координата касания Y касания относительно начала документа.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchmove"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchstart"><keyword>multitouchstart</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Начало мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Определяет свойство touches, которое содержит список прикосновений. Каждое прикосновение описано объектом, которое содержит поля:<ul>
+  <li>clientX - координата касания X относительно видимой области браузера;</li>
+  <li>clientY - координата касания Y относительно видимой области браузера;</li>
+  <li>pageX - координата касания X касания относительно начала документа;</li>
+  <li>pageY - координата касания Y касания относительно начала документа.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchstart"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменились опции карты.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#event_detail/event_detail/event-sizechange"><keyword>sizechange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменился размер карты. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>oldSize - предыдущий размер карты;</li>
+    <li>newSize - новый размер карты.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#event_detail/event_detail/event-typechange"><keyword>typechange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменился тип карты. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-wheel"><keyword>wheel</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Скролл мышкой. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-wheel"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#method_detail/destroy" type="section"><keyword>destroy</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Уничтожает карту.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#method_detail/getBounds" type="section"><keyword>getBounds</keyword></xref>([<xref href="Map.dita#method_detail/getBounds-param-options" translate="no" type="row">options</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает двумерный массив геокоординат левого нижнего и правого верхнего углов области показа карты.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#method_detail/getCenter" type="section"><keyword>getCenter</keyword></xref>([<xref href="Map.dita#method_detail/getCenter-param-options" translate="no" type="row">options</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает географические координаты текущего центра карты.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#method_detail/getGlobalPixelCenter" type="section"><keyword>getGlobalPixelCenter</keyword></xref>([<xref href="Map.dita#method_detail/getGlobalPixelCenter-param-options" translate="no" type="row">options</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает глобальные пиксельные координаты текущего центра карты.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#method_detail/getPanoramaManager" type="section"><keyword>getPanoramaManager</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>.&lt;<xref href="panorama.Manager.dita" type="topic"><keyword>panorama.Manager</keyword></xref>></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     <p>Возвращает <xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>, который будет разрешен менеджером панорамы карты. Promise отклоняется при возникновении ошибки.</p>
+                                 
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#method_detail/getType" type="section"><keyword>getType</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String|<xref href="MapType.dita" type="topic"><keyword>MapType</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает текущий тип карты.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#method_detail/getZoom" type="section"><keyword>getZoom</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает текущий коэффициент масштабирования карты.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#method_detail/panTo" type="section"><keyword>panTo</keyword></xref>(<xref href="Map.dita#method_detail/panTo-param-center" translate="no" type="row">center</xref>[, <xref href="Map.dita#method_detail/panTo-param-options" translate="no" type="row">options</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает центр карты. Если передан массив точек, то карта будет перемещаться от одной точки к другой.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#method_detail/setBounds" type="section"><keyword>setBounds</keyword></xref>(<xref href="Map.dita#method_detail/setBounds-param-bounds" translate="no" type="row">bounds</xref>[, <xref href="Map.dita#method_detail/setBounds-param-options" translate="no" type="row">options</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Позиционирует карту для показа переданного района.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#method_detail/setCenter" type="section"><keyword>setCenter</keyword></xref>(<xref href="Map.dita#method_detail/setCenter-param-center" translate="no" type="row">center</xref>[, <xref href="Map.dita#method_detail/setCenter-param-zoom" translate="no" type="row">zoom</xref>[, <xref href="Map.dita#method_detail/setCenter-param-options" translate="no" type="row">options</xref>]])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает центр и коэффициент масштабирования карты. Центр задается в географических координатах.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#method_detail/setGlobalPixelCenter" type="section"><keyword>setGlobalPixelCenter</keyword></xref>(<xref href="Map.dita#method_detail/setGlobalPixelCenter-param-globalPixelCenter" translate="no" type="row">globalPixelCenter</xref>[, <xref href="Map.dita#method_detail/setGlobalPixelCenter-param-zoom" translate="no" type="row">zoom</xref>[, <xref href="Map.dita#method_detail/setGlobalPixelCenter-param-options" translate="no" type="row">options</xref>]])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает центр и коэффициент масштабирования карты. Центр задается в глобальных пиксельных координатах.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#method_detail/setType" type="section"><keyword>setType</keyword></xref>(<xref href="Map.dita#method_detail/setType-param-type" translate="no" type="row">type</xref>[, <xref href="Map.dita#method_detail/setType-param-options" translate="no" type="row">options</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает тип карты.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Map.dita#method_detail/setZoom" type="section"><keyword>setZoom</keyword></xref>(<xref href="Map.dita#method_detail/setZoom-param-zoom" translate="no" type="row">zoom</xref>[, <xref href="Map.dita#method_detail/setZoom-param-options" translate="no" type="row">options</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает коэффициент масштабирования карты.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="action">
+            <title translate="no">action</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="map.action.Manager.dita" type="topic"><keyword>map.action.Manager</keyword></xref>} action</codeblock></p>
+
+            <p>Менеджер действий карты.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">var myAction = new ymaps.map.action.Single({
+          center: [0, 0],
+          zoom: 4,
+          duration: 1000,
+          timingFunction: "ease-in"
+    });
+
+myMap.action.execute(myAction);</codeblock>
+            
+
+            </section>
+        
+            <section id="balloon">
+            <title translate="no">balloon</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="map.Balloon.dita" type="topic"><keyword>map.Balloon</keyword></xref>} balloon</codeblock></p>
+
+            <p>Балун карты.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="behaviors">
+            <title translate="no">behaviors</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="map.behavior.Manager.dita" type="topic"><keyword>map.behavior.Manager</keyword></xref>} behaviors</codeblock></p>
+
+            <p>Менеджер поведений карты. Позволяет включать и выключать поведения, а также предоставляет доступ к их методам и свойствам.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Включим масштабирование колесом мыши
+myMap.behaviors.enable('scrollZoom');</codeblock>
+            
+
+            </section>
+        
+            <section id="container">
+            <title translate="no">container</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="map.Container.dita" type="topic"><keyword>map.Container</keyword></xref>} container</codeblock></p>
+
+            <p>Контейнер карты.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Подгоним размер карты под новый размер контейнера
+// (например, если изменилась верстка страницы или карта была инициализирована
+// в скрытом состоянии)
+map.container.fitToViewport();</codeblock>
+            
+
+            </section>
+        
+            <section id="controls">
+            <title translate="no">controls</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="control.Manager.dita" type="topic"><keyword>control.Manager</keyword></xref>} controls</codeblock></p>
+
+            <p>Элементы управления картой.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">myMap.controls.add('zoomControl', {
+    float: 'none',
+    position: {
+        right: 40,
+        top: 5
+    }
+});</codeblock>
+            
+
+            </section>
+        
+            <section id="converter">
+            <title translate="no">converter</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="map.Converter.dita" type="topic"><keyword>map.Converter</keyword></xref>} converter</codeblock></p>
+
+            <p>Преобразователь пиксельных точек карты из глобальных в локальные и наоборот.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Преобразуем координаты мыши в географические.
+var projection = map.options.get('projection');
+$('#map').bind('click', function (e) {
+    console.log(projection.fromGlobalPixels(
+        map.converter.pageToGlobal([e.pageX, e.pageY]), map.getZoom()
+    ));
+});</codeblock>
+            
+
+            </section>
+        
+            <section id="copyrights">
+            <title translate="no">copyrights</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="map.Copyrights.dita" type="topic"><keyword>map.Copyrights</keyword></xref>} copyrights</codeblock></p>
+
+            <p>Менеджер размещённой на карте информации об авторских правах.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Добавим информацию об авторе.
+map.copyrights.add('Вася Пупкин');</codeblock>
+            
+
+            </section>
+        
+            <section id="cursors">
+            <title translate="no">cursors</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="util.cursor.Manager.dita" type="topic"><keyword>util.cursor.Manager</keyword></xref>} cursors</codeblock></p>
+
+            <p>Менеджер курсоров карты.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Установим на карте курсор "знак вопроса".
+var accessor = map.cursors.push('help');
+// ...
+// Удалим курсор.
+accessor.remove();</codeblock>
+            
+
+            </section>
+        
+            <section id="events">
+            <title translate="no">events</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="event.Manager.dita" type="topic"><keyword>event.Manager</keyword></xref>} events</codeblock></p>
+
+            <p>Менеджер событий карты. Поддерживает подписку с приоритетами. Бросает события типа <xref href="MapEvent.dita" type="topic"><keyword>MapEvent</keyword></xref>.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Поставим метку по клику над картой.
+map.events.add('click', function (e) {
+    // Географические координаты точки клика можно узнать
+    // посредством вызова .get('coords').
+    var position = e.get('coords');
+    map.geoObjects.add(new ymaps.Placemark(position));
+});</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Будем отслеживать центр и зум карты при плавных перемещениях.
+map.events.add('actiontick', function () {
+    var state = map.action.getCurrentState();
+    console.log(state.zoom, state.globalPixelCenter);
+});</codeblock>
+            
+
+            </section>
+        
+            <section id="geoObjects">
+            <title translate="no">geoObjects</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="map.GeoObjects.dita" type="topic"><keyword>map.GeoObjects</keyword></xref>} geoObjects</codeblock></p>
+
+            <p>Менеджер геообъектов карты.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="hint">
+            <title translate="no">hint</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="map.Hint.dita" type="topic"><keyword>map.Hint</keyword></xref>} hint</codeblock></p>
+
+            <p>Хинт карты.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="layers">
+            <title translate="no">layers</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="map.layer.Manager.dita" type="topic"><keyword>map.layer.Manager</keyword></xref>} layers</codeblock></p>
+
+            <p>Менеджер слоев карты.</p>
+
+            
+                <p translate="no"><b>См.: </b><xref href="Layer.dita" type="topic"><keyword>Layer</keyword></xref> </p>
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Добавим слой пользовательских тайлов на карту.
+map.layers.add(new ymaps.Layer('http://some.server/tiles?&amp;c'));</codeblock>
+            
+
+            </section>
+        
+            <section id="margin">
+            <title translate="no">margin</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>} margin</codeblock></p>
+
+            <p>Менеджер отступов карты.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="options">
+            <title translate="no">options</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="option.Manager.dita" type="topic"><keyword>option.Manager</keyword></xref>} options</codeblock></p>
+
+            <p>Опции карты.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Запретим всем объектам на карте открывать балуны по щелчку мыши.
+map.options.set('openBalloonOnClick', false);</codeblock>
+            
+
+            </section>
+        
+            <section id="panes">
+            <title translate="no">panes</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="map.pane.Manager.dita" type="topic"><keyword>map.pane.Manager</keyword></xref>} panes</codeblock></p>
+
+            <p>Менеджер контейнеров объектов карты.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Добавим свой элемент в контейнер элементов управления карты.
+$('&lt;div>&lt;input type="button" value="Click!"/>&lt;/div>')
+    .css({ position: 'absolute', left: '5px', top: '50px'})
+    .appendTo(map.panes.get('controls').getElement());</codeblock>
+            
+
+            </section>
+        
+            <section id="zoomRange">
+            <title translate="no">zoomRange</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="map.ZoomRange.dita" type="topic"><keyword>map.ZoomRange</keyword></xref>} zoomRange</codeblock></p>
+
+            <p>Объект, предоставляющий доступ к информации о доступных в точке уровнях масштабирования.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Узнаем максимальный доступный в точке [20, 30] уровень
+// масштабирования карты.
+map.zoomRange.get([20, 30]).then(function (zoomRange) {
+    alert(zoomRange[1]);
+});</codeblock>
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-actionbegin">
+            <title translate="no">actionbegin</title>
+            
+             <p>Началось новое плавное движение карты. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - запущенное действие.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-actionbreak">
+            <title translate="no">actionbreak</title>
+            
+             <p>Событие, возникающее при досрочном прекращении шага действия (например, из-за выполнения другого действия или нового шага того же действия). Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - действие.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-actionend">
+            <title translate="no">actionend</title>
+            
+             <p>Окончание плавного движения карты. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - остановленное действие.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-actiontick">
+            <title translate="no">actiontick</title>
+            
+             <p>Начало исполнения нового шага плавного движения (например, сдвиг карты пользователем или шаг анимации плавного масштабирования). Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - выполняемое в данный момент действие;</li>
+    <li>tick – описание шага действия в виде объекта с полями globalPixelCenter, zoom, duration и timingFunction.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Отслеживает все перемещения карты, даже перетаскивание пользователем
+// и плавное масштабирование.
+map.events.add('actiontick', function (e) {
+    var tick = e.get('tick');
+    console.log('Сейчас карта переместится в точку (' +
+        map.options.get('projection').fromGlobalPixels(tick.globalPixelCenter, tick.zoom).join(',') +
+        ') в течение ' + e.get('tick').duration + ' миллисекунд');
+});</codeblock>
+            
+
+            </section>
+        
+            <section id="event-actiontickcomplete">
+            <title translate="no">actiontickcomplete</title>
+            
+             <p>Окончание исполнения шага плавного движения. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - выполняемое в данный момент действие;</li>
+    <li>tick – описание шага действия в виде объекта с полями globalPixelCenter, zoom, duration и timingFunction.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-balloonclose">
+            <title translate="no">balloonclose</title>
+            
+             <p>Закрытие балуна. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-balloonopen">
+            <title translate="no">balloonopen</title>
+            
+             <p>Открытие балуна на карте. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-boundschange">
+            <title translate="no">boundschange</title>
+            
+             <p>Событие изменения области просмотра карты (в результате изменения центра или уровня масштабирования). Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>oldCenter - предыдущий центр карты в геокоординатах;</li>
+    <li>newCenter - новый центр карты в геокоординатах;</li>
+    <li>oldZoom - предыдущий уровень машсштабирования;</li>
+    <li>newZoom - новый уровень масштабирования;</li>
+    <li>oldGlobalPixelCenter - предыдущий центр карты в глобальных пикселах;</li>
+    <li>newGlobalPixelCenter - новый центр карты в глобальных пикселах;</li>
+    <li>oldBounds - предыдущая область показа;</li>
+    <li>newBounds - новая область показа.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Будем отслеживать изменение уровня масштабирования карты.
+map.events.add('boundschange', function (event) {
+    if (event.get('newZoom') != event.get('oldZoom')) {
+        alert('Уровень масштабирования изменился.');
+    }
+});</codeblock>
+            
+
+            </section>
+        
+            <section id="event-destroy">
+            <title translate="no">destroy</title>
+            
+             <p>Карта уничтожена.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-hintclose">
+            <title translate="no">hintclose</title>
+            
+             <p>Закрытие хинта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-hintopen">
+            <title translate="no">hintopen</title>
+            
+             <p>Открытие хинта на карте. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-marginchange">
+            <title translate="no">marginchange</title>
+            
+             <p>Изменились отступы карты. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-optionschange">
+            <title translate="no">optionschange</title>
+            
+             <p>Изменились опции карты.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-sizechange">
+            <title translate="no">sizechange</title>
+            
+             <p>Изменился размер карты. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>oldSize - предыдущий размер карты;</li>
+    <li>newSize - новый размер карты.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-typechange">
+            <title translate="no">typechange</title>
+            
+             <p>Изменился тип карты. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="destroy">
+        <title translate="no">destroy</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} destroy()</codeblock></p>
+
+         <p>Уничтожает карту.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getBounds">
+        <title translate="no">getBounds</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]} getBounds([<xref href="Map.dita#method_detail/getBounds-param-options" translate="no" type="row">options</xref>])</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>двумерный массив геокоординат левого нижнего и правого верхнего углов области показа карты.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getBounds-param-options">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/getBounds-param-options" type="row"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Опции.</p>
+                </entry>
+
+            </row>
+            
+            <row id="getBounds-param-options.useMapMargin">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/getBounds-param-options.useMapMargin" type="row"><parmname>options.useMapMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Нужно ли учитывать отступы, которые были рассчитаны в менеджере отступов <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getCenter">
+        <title translate="no">getCenter</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[]} getCenter([<xref href="Map.dita#method_detail/getCenter-param-options" translate="no" type="row">options</xref>])</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> географические координаты текущего центра карты.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getCenter-param-options">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/getCenter-param-options" type="row"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Опции.</p>
+                </entry>
+
+            </row>
+            
+            <row id="getCenter-param-options.useMapMargin">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/getCenter-param-options.useMapMargin" type="row"><parmname>options.useMapMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Нужно ли учитывать отступы, которые были рассчитаны в менеджере отступов <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getGlobalPixelCenter">
+        <title translate="no">getGlobalPixelCenter</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[]} getGlobalPixelCenter([<xref href="Map.dita#method_detail/getGlobalPixelCenter-param-options" translate="no" type="row">options</xref>])</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>глобальные пиксельные координаты текущего центра карты.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getGlobalPixelCenter-param-options">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/getGlobalPixelCenter-param-options" type="row"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Опции.</p>
+                </entry>
+
+            </row>
+            
+            <row id="getGlobalPixelCenter-param-options.useMapMargin">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/getGlobalPixelCenter-param-options.useMapMargin" type="row"><parmname>options.useMapMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Нужно ли учитывать отступы, которые были рассчитаны в менеджере отступов <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Сдвинем карту на 10 пикселей влево.
+var position = map.getGlobalPixelCenter();
+map.setGlobalPixelCenter([ position[0] - 10, position[1] ]);</codeblock>
+        
+
+    </section>
+    
+        <section id="getPanoramaManager">
+        <title translate="no">getPanoramaManager</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>.&lt;<xref href="panorama.Manager.dita" type="topic"><keyword>panorama.Manager</keyword></xref>>} getPanoramaManager()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+            <p translate="yes">Возвращает <xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>, который:</p><ul>
+<li>будет <b>разрешен</b> объектом &lt;<xref href="panorama.Manager.dita" type="topic"><keyword>panorama.Manager</keyword></xref>> — менеджером панорамы карты;</li><li>либо <b>отклонен</b> с ошибкой.</li></ul>
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getType">
+        <title translate="no">getType</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String|<xref href="MapType.dita" type="topic"><keyword>MapType</keyword></xref>} getType()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>текущий тип карты.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getZoom">
+        <title translate="no">getZoom</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number} getZoom()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> текущий коэффициент масштабирования карты.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="panTo">
+        <title translate="no">panTo</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} panTo(<xref href="Map.dita#method_detail/panTo-param-center" translate="no" type="row">center</xref>[, <xref href="Map.dita#method_detail/panTo-param-options" translate="no" type="row">options</xref>])</codeblock></p>
+
+         <p>Устанавливает центр карты. Если передан массив точек, то карта будет перемещаться от одной точки к другой.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект-promise. В случае корректного выполнения действия будет возвращен resolve без значения. В случае ошибки будет возвращен reject с описанием ошибки.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="panTo-param-center">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/panTo-param-center" type="row"><parmname>center</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]|Object[]</p>
+                    <p/>
+                   <p>Центр карты или массив точек для последовательного обхода.</p>
+                </entry>
+
+            </row>
+            
+            <row id="panTo-param-options">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/panTo-param-options" type="row"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Опции.</p>
+                </entry>
+
+            </row>
+            
+            <row id="panTo-param-options.checkZoomRange">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/panTo-param-options.checkZoomRange" type="row"><parmname>options.checkZoomRange</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Проверка возможности установить текущий коэффициент масштабирования при изменении центра карты. Если значение опции равно true, метод вызывается асинхронно. Производится обращение к серверу, который возвращает интервал допустимых для данного центра значений коэффициентов масштабирования. После этого выставляется указанный центр и корректный зум.</p>
+                </entry>
+
+            </row>
+            
+            <row id="panTo-param-options.delay">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/panTo-param-options.delay" type="row"><parmname>options.delay</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">1000
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Время задержки между перемещениями в миллисекундах.</p>
+                </entry>
+
+            </row>
+            
+            <row id="panTo-param-options.duration">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/panTo-param-options.duration" type="row"><parmname>options.duration</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> 500
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Время анимации в миллисекундах.</p>
+                </entry>
+
+            </row>
+            
+            <row id="panTo-param-options.flying">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/panTo-param-options.flying" type="row"><parmname>options.flying</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">true
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Разрешить уменьшать и затем увеличивать зум карты при перемещении между точками. Если расстояние между точками не превышает двух размеров контейнера карты, то карта плавно переместит центр в указанную точку без изменения масштаба. Если расстояние больше, то карта выставит себе меньший коэффициент масштабирования, затем сместится к конечной точке и выставит требуемый коэффициент масштабирования (эмуляция полета над картой).</p>
+                </entry>
+
+            </row>
+            
+            <row id="panTo-param-options.safe">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/panTo-param-options.safe" type="row"><parmname>options.safe</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">true
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Безопасное смещение карты. Используется при значении опции flying равной false. Если расстояние между точками не превышает двух размеров контейнера карты, то карта плавно переместит центр в указанную точку. Если расстояние больше, то произойдет мгновенный переход в выбранную точку. При помощи этого режима удобно перемещать карту без отображения незагруженных тайлов.</p>
+                </entry>
+
+            </row>
+            
+            <row id="panTo-param-options.timingFunction">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/panTo-param-options.timingFunction" type="row"><parmname>options.timingFunction</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">'ease-in-out'
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Тайминг-функция. Аналогично значению CSS свойства transition-timing-function. Полный список значений: <xref href="http://www.w3.org/TR/css3-transitions/#transition-timing-function_tag" scope="external">http://www.w3.org/TR/css3-transitions/#transition-timing-function_tag</xref></p>
+                </entry>
+
+            </row>
+            
+            <row id="panTo-param-options.useMapMargin">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/panTo-param-options.useMapMargin" type="row"><parmname>options.useMapMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Нужно ли учитывать отступы, которые были рассчитаны в менеджере отступов <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="panTo_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Перелет из Калининграда во Владивосток через Москву.
+map.setCenter([54.704815, 20.466380], 10);
+map.panTo([
+    [55.751574, 37.573856],
+    [43.134091, 131.928478]
+]).then(function () {
+   alert('Прилетели!');
+}, function (err) {
+   alert('Произошла ошибка ' + err);
+}, this);</codeblock>
+        
+
+    </section>
+    
+        <section id="setBounds">
+        <title translate="no">setBounds</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} setBounds(<xref href="Map.dita#method_detail/setBounds-param-bounds" translate="no" type="row">bounds</xref>[, <xref href="Map.dita#method_detail/setBounds-param-options" translate="no" type="row">options</xref>])</codeblock></p>
+
+         <p>Позиционирует карту для показа переданного района.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект-promise. В случае корректного выполнения действия будет возвращен resolve без значения. В случае ошибки будет возвращен reject с описанием ошибки.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setBounds-param-bounds">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setBounds-param-bounds" type="row"><parmname>bounds</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][]</p>
+                    <p/>
+                   <p>Границы области показа.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setBounds-param-options">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setBounds-param-options" type="row"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Опции.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setBounds-param-options.checkZoomRange">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setBounds-param-options.checkZoomRange" type="row"><parmname>options.checkZoomRange</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Проверка возможности установить указанный коэффициент масштабирования. Если значение опции равно true, метод вызывается асинхронно. Производится обращение к серверу, который возвращает интервал допустимых для данного центра значений коэффициентов масштабирования. После этого выставляется указанный центр и корректный зум.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setBounds-param-options.duration">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setBounds-param-options.duration" type="row"><parmname>options.duration</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">0
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Время анимации в миллисекундах.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setBounds-param-options.preciseZoom">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setBounds-param-options.preciseZoom" type="row"><parmname>options.preciseZoom</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Возможность использования дробных коэффициентов масштабирования.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setBounds-param-options.timingFunction">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setBounds-param-options.timingFunction" type="row"><parmname>options.timingFunction</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">'linear'
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Тайминг-функция. Аналогично значению CSS свойства transition-timing-function. Полный список значений: <xref href="http://www.w3.org/TR/css3-transitions/#transition-timing-function_tag" scope="external">http://www.w3.org/TR/css3-transitions/#transition-timing-function_tag</xref></p>
+                </entry>
+
+            </row>
+            
+            <row id="setBounds-param-options.useMapMargin">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setBounds-param-options.useMapMargin" type="row"><parmname>options.useMapMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Нужно ли учитывать отступы, которые были рассчитаны в менеджере отступов <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setBounds-param-options.zoomMargin">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setBounds-param-options.zoomMargin" type="row"><parmname>options.zoomMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">0
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|Number[]</p>
+                    <p/>
+                   <p>Отступы от границ видимой области карты. Если задано одно число - оно применяется ко всем сторонам. Если задано два - то это горизонтальные и вертикальные отступы соответственно. Если задан массив из 4х чисел, то это отступы top, right, bottom, left. При включенной опции "useMapMargin" значение "zoomMargin" складывается со значениями, которые были рассчитаны в менеджере отступов <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setBounds_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Устанавливает центр и коэффициент масштабирования карты.
+// Если текущий zoomRange не совпадает с zoomRange для нового центра карты,
+// могут быть отображены серые тайлы в случае, если область показа очень мала.
+// Чтобы избежать этой проблемы, используйте опцию checkZoomRange.
+map.setBounds([[60,-40], [20,60]], {
+   checkZoomRange: true,
+}).then(function () {
+       // Действие было успешно завершено.
+   }, function (err) {
+      // Не удалось показать заданный регион.
+      // ...
+   }, this);</codeblock>
+        
+
+    </section>
+    
+        <section id="setCenter">
+        <title translate="no">setCenter</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} setCenter(<xref href="Map.dita#method_detail/setCenter-param-center" translate="no" type="row">center</xref>[, <xref href="Map.dita#method_detail/setCenter-param-zoom" translate="no" type="row">zoom</xref>[, <xref href="Map.dita#method_detail/setCenter-param-options" translate="no" type="row">options</xref>]])</codeblock></p>
+
+         <p>Устанавливает центр и коэффициент масштабирования карты. Центр задается в географических координатах.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект-promise. В случае корректного выполнения действия будет возвращен resolve без значения. В случае ошибки будет возвращен reject с описанием ошибки.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setCenter-param-center">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setCenter-param-center" type="row"><parmname>center</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Геокоординаты центра карты.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setCenter-param-zoom">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setCenter-param-zoom" type="row"><parmname>zoom</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Коэффициент масштабирования карты.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setCenter-param-options">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setCenter-param-options" type="row"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Опции.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setCenter-param-options.checkZoomRange">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setCenter-param-options.checkZoomRange" type="row"><parmname>options.checkZoomRange</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Проверка возможности установить указанный коэффициент масштабирования. Если значение опции равно true, метод вызывается асинхронно. Производится обращение к серверу, который возвращает интервал допустимых для данного центра значений коэффициентов масштабирования. После этого выставляется указанный центр и корректный зум.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setCenter-param-options.duration">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setCenter-param-options.duration" type="row"><parmname>options.duration</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">0
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Время анимации в миллисекундах.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setCenter-param-options.timingFunction">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setCenter-param-options.timingFunction" type="row"><parmname>options.timingFunction</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">'linear'
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Тайминг-функция. Аналогично значению CSS свойства transition-timing-function. Полный список значений: <xref href="http://www.w3.org/TR/css3-transitions/#transition-timing-function_tag" scope="external">http://www.w3.org/TR/css3-transitions/#transition-timing-function_tag</xref></p>
+                </entry>
+
+            </row>
+            
+            <row id="setCenter-param-options.useMapMargin">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setCenter-param-options.useMapMargin" type="row"><parmname>options.useMapMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Нужно ли учитывать отступы, которые были рассчитаны в менеджере отступов <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setCenter_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">myMap.setCenter([40, 50], 3, {
+    checkZoomRange: true
+});</codeblock>
+        
+
+    </section>
+    
+        <section id="setGlobalPixelCenter">
+        <title translate="no">setGlobalPixelCenter</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} setGlobalPixelCenter(<xref href="Map.dita#method_detail/setGlobalPixelCenter-param-globalPixelCenter" translate="no" type="row">globalPixelCenter</xref>[, <xref href="Map.dita#method_detail/setGlobalPixelCenter-param-zoom" translate="no" type="row">zoom</xref>[, <xref href="Map.dita#method_detail/setGlobalPixelCenter-param-options" translate="no" type="row">options</xref>]])</codeblock></p>
+
+         <p>Устанавливает центр и коэффициент масштабирования карты. Центр задается в глобальных пиксельных координатах.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект-promise. В случае корректного выполнения действия будет возвращен resolve без значения. В случае ошибки будет возвращен reject с описанием ошибки.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setGlobalPixelCenter-param-globalPixelCenter">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setGlobalPixelCenter-param-globalPixelCenter" type="row"><parmname>globalPixelCenter</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Пиксельные координаты нового центра карты.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setGlobalPixelCenter-param-zoom">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setGlobalPixelCenter-param-zoom" type="row"><parmname>zoom</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Коэффициент масштабирования карты.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setGlobalPixelCenter-param-options">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setGlobalPixelCenter-param-options" type="row"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Опции.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setGlobalPixelCenter-param-options.checkZoomRange">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setGlobalPixelCenter-param-options.checkZoomRange" type="row"><parmname>options.checkZoomRange</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Проверка возможности установить указанный коэффициент масштабирования. Если значение опции равно true, метод вызывается асинхронно. Производится обращение к серверу, который возвращает интервал допустимых для данного центра значений коэффициентов масштабирования. После этого выставляется указанный центр и корректный зум.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setGlobalPixelCenter-param-options.duration">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setGlobalPixelCenter-param-options.duration" type="row"><parmname>options.duration</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">0
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Время анимации в миллисекундах.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setGlobalPixelCenter-param-options.timingFunction">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setGlobalPixelCenter-param-options.timingFunction" type="row"><parmname>options.timingFunction</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">'linear'
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Тайминг-функция. Аналогично значению CSS свойства transition-timing-function. Полный список значений: <xref href="http://www.w3.org/TR/css3-transitions/#transition-timing-function_tag" scope="external">http://www.w3.org/TR/css3-transitions/#transition-timing-function_tag</xref></p>
+                </entry>
+
+            </row>
+            
+            <row id="setGlobalPixelCenter-param-options.useMapMargin">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setGlobalPixelCenter-param-options.useMapMargin" type="row"><parmname>options.useMapMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Нужно ли учитывать отступы, которые были рассчитаны в менеджере отступов <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setGlobalPixelCenter_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Сдвинем карту на 10 пикселей влево.
+var position = map.getGlobalPixelCenter();
+map.setGlobalPixelCenter([ position[0] - 10, position[1] ]);</codeblock>
+        
+
+    </section>
+    
+        <section id="setType">
+        <title translate="no">setType</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} setType(<xref href="Map.dita#method_detail/setType-param-type" translate="no" type="row">type</xref>[, <xref href="Map.dita#method_detail/setType-param-options" translate="no" type="row">options</xref>])</codeblock></p>
+
+         <p>Устанавливает тип карты.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект-promise. В случае корректного выполнения действия будет возвращен resolve без значения. В случае ошибки будет возвращен reject с описанием ошибки.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setType-param-type">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setType-param-type" type="row"><parmname>type</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|<xref href="MapType.dita" type="topic"><keyword>MapType</keyword></xref></p>
+                    <p/>
+                   <p>Тип карты. Может быть ключом или или экземпляром класса <xref href="MapType.dita" type="topic"><keyword>MapType</keyword></xref>. Список доступных ключей:<ul>
+    <li>'yandex#map' - тип карты "схема";</li>
+    <li>'yandex#satellite' - тип карты "спутник";</li>
+    <li>'yandex#hybrid' - тип карты "гибрид".</li>
+</ul></p>
+                </entry>
+
+            </row>
+            
+            <row id="setType-param-options">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setType-param-options" type="row"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Опции карты.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setType-param-options.checkZoomRange">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setType-param-options.checkZoomRange" type="row"><parmname>options.checkZoomRange</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Проверка возможности установить указанный тип карты при данном уровне масштабирования. При значении true производится обращение к серверу, который возвращает интервал допустимых для данного типа карты значений коэффициентов масштабирования. После этого выставляется указанный центр и корректный зум.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setType_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">map.setType('yandex#hybrid', {
+  checkZoomRange: true
+}).then(function () {
+  // Тип карты был установен с допустимым уровнем масштабирования.
+}, this);</codeblock>
+        
+
+    </section>
+    
+        <section id="setZoom">
+        <title translate="no">setZoom</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} setZoom(<xref href="Map.dita#method_detail/setZoom-param-zoom" translate="no" type="row">zoom</xref>[, <xref href="Map.dita#method_detail/setZoom-param-options" translate="no" type="row">options</xref>])</codeblock></p>
+
+         <p>Устанавливает коэффициент масштабирования карты.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект-promise. В случае корректного выполнения действия будет возвращен resolve без значения. В случае ошибки будет возвращен reject с описанием ошибки.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setZoom-param-zoom">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setZoom-param-zoom" type="row"><parmname>zoom</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Коэффициент масштабирования карты.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setZoom-param-options">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setZoom-param-options" type="row"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Опции.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setZoom-param-options.checkZoomRange">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setZoom-param-options.checkZoomRange" type="row"><parmname>options.checkZoomRange</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Проверка возможности установить указанный коэффициент масштабирования.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setZoom-param-options.duration">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setZoom-param-options.duration" type="row"><parmname>options.duration</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">0
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Время анимации в миллисекундах.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setZoom-param-options.useMapMargin">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setZoom-param-options.useMapMargin" type="row"><parmname>options.useMapMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Нужно ли учитывать отступы, которые были рассчитаны в менеджере отступов <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setZoom_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">myMap.setZoom(4, {duration: 1000});</codeblock>
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_MzI4ZGQ2_CACHING --></topic>

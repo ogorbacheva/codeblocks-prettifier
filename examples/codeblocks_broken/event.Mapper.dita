@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="event.Mapper" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">event.Mapper</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>event.Mapper</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IEventTrigger.dita" type="topic"><keyword>IEventTrigger</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Маппер событий. Позволяет управлять распространением событий по иерархии менеджеров событий.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#event.Mapper/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#event.Mapper/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">event.Mapper(<xref href="#event.Mapper/param-targetEventManager" translate="no" type="entry">targetEventManager</xref>, <xref href="#event.Mapper/param-mappingTable" translate="no" type="entry">mappingTable</xref>)</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-targetEventManager" translate="no">
+                    
+                        <xref href="#event.Mapper/param-targetEventManager" type="entry"><parmname>targetEventManager</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></p>
+                    <p/>
+                    <p>Менеджер событий, на который маппер распространяет инициируемые на нем события.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-mappingTable" translate="no">
+                    
+                        <xref href="#event.Mapper/param-mappingTable" type="entry"><parmname>mappingTable</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Таблица правил маппинга. Представляет собой хэш, ключами которого являются типы событий, а значениями - соответствующие функции маппинга, либо Boolean значения. Функция маппинга для конкретного типа событий получает на вход экземпляр события, инициированного на маппере, а возвращать должна экземпляр события для распространения далее по иерархии, либо null, если распространение необходимо запретить. Boolean значения трактуются следующим образом:<ul>
+    <li>true - события данного типа распространяются по иерархии в неизменном виде;</li>
+    <li>false - события данного типа по иерархии не распространяются.</li>
+</ul>Дополнительно в таблице доступен ключ "*" для правила обработки по умолчанию.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Создаем и устанавливаем маппер событий, который преобразует событие "click" корневой
+// коллекции геообъектов в событие "geoobjectclick" самой карты.
+var mapper = new ymaps.event.Mapper(myMap.events, {
+    "*": false,
+    "click": function (event) {
+        return new ymaps.Event({
+             type: "geoobjectclick",
+             target: map,
+             originalTarget: event.get("target")
+        }, event);
+    }
+});
+
+myMap.geoObjects.events.setParent(mapper);</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEventTrigger.dita#method_detail/fire" type="section"><keyword>fire</keyword></xref>(<xref href="IEventTrigger.dita#method_detail/fire-param-type" translate="no" type="row">type</xref>[, <xref href="IEventTrigger.dita#method_detail/fire-param-eventObject" translate="no" type="row">eventObject</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IEventTrigger.dita" type="topic"><keyword>IEventTrigger</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Инициирует событие.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IEventTrigger.dita#method_detail/fire" type="section"><keyword>IEventTrigger</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body><!-- XLIFF_FARM_MTg4MmUw_CACHING --></topic>

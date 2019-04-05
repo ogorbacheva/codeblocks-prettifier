@@ -1,0 +1,2045 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="control.SearchControl" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">control.SearchControl</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>control.SearchControl</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IControl.dita" type="topic"><keyword>IControl</keyword></xref>, <xref href="ICustomizable.dita" type="topic"><keyword>ICustomizable</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Элемент управления "Поиск по карте". Позволяет обрабатывать поисковый запрос пользователя и отображать результат в панели и на карте.</p><p>Каждый результат поиска представляется в панели элемента управления в виде двухстрочного блока. Для формирования блока используются поля name и description объекта-результата геокодирования.</p>Ключ элемента управления в хранилище <xref href="control.storage.dita" type="topic"><keyword>control.storage</keyword></xref> — "searchControl".<p translate="no"><xref href="#control.SearchControl/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#control.SearchControl/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#control.SearchControl/events-summary" translate="no" type="section">События </xref> | <xref href="#control.SearchControl/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">control.SearchControl([<xref href="#control.SearchControl/param-parameters" translate="no" type="entry">parameters</xref>])</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-parameters" translate="no">
+                    <xref href="#control.SearchControl/param-parameters" type="entry"><parmname>parameters</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Параметры элемента управления.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.data" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.data" type="entry"><parmname>parameters.data</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Объект, описывающий данные элемента управления.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options" type="entry"><parmname>parameters.options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции элемента управления.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.adjustMapMargin" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.adjustMapMargin" type="entry"><parmname>parameters.options.adjustMapMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Регистрирует ли элемент управления свои размеры в менеджере отступов карты <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.boundedBy" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.boundedBy" type="entry"><parmname>parameters.options.boundedBy</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][]</p>
+                    <p/>
+                    <p>Прямоугольная область на карте, где предположительно находится искомый объект. При ранжировании объекты, находящиеся внутри указанной области, будут получать больший приоритет.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.fitMaxWidth" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.fitMaxWidth" type="entry"><parmname>parameters.options.fitMaxWidth</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Растягивать ли поисковую строку до максимального размера.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.float" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.float" type="entry"><parmname>parameters.options.float</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     "right"
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Сторона, по которой нужно выравнивать элемент управления. Может принимать три значения: "left", "right" или "none". При значении "left" или "right" элементы управления выстраиваются друг за другом, начиная от левого или правого края карты соответственно. При значении "none" элементы управления позиционируется только по значениям опций left, right, bottom, top относительно границ карты. Также смотрите описание опции position.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.floatIndex" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.floatIndex" type="entry"><parmname>parameters.options.floatIndex</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     200
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Приоритет расположения элемента управления. Элемент с максимальным приоритетом находится ближе к указанному в свойстве float краю карты. Не работает при float = "none".</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.formLayout" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.formLayout" type="entry"><parmname>parameters.options.formLayout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      'islands#searchControlFormLayout'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="ILayout.dita" type="topic"><keyword>ILayout</keyword></xref>|String</p>
+                    <p/>
+                    <p>Конструктор макета формы для реализации поиска в макете элемента управления по умолчанию или ключ в хранилище <xref href="layout.storage.dita" type="topic"><keyword>layout.storage</keyword></xref>.</p><p>В конструктор макета передается объект, содержащий поля:</p>
+<ul>
+    <li>control - ссылка на элемент управления;</li>
+    <li>options - менеджер опций элемента управления control.SearchControl.options;</li>
+    <li>data - менеджер данных элемента управления control.SearchControl.data;</li>
+    <li>state - менеджер состояния элемента управления <xref href="control.SearchControl.dita#field_detail/state" type="section"><keyword>control.SearchControl.state</keyword></xref>.</li>
+</ul>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.kind" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.kind" type="entry"><parmname>parameters.options.kind</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'house'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Вид топонима (только для обратного геокодирования). Список возможных значений:<ul>
+    <li>house - дом;</li>
+    <li>street - улица;</li>
+    <li>metro - станция метро;</li>
+    <li>district - район города;</li>
+    <li>locality - населенный пункт (город/поселок/деревня/село/...).</li>
+</ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.layout" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.layout" type="entry"><parmname>parameters.options.layout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      'islands#searchControlLayout'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="ISearchControlLayout.dita" type="topic"><keyword>ISearchControlLayout</keyword></xref>|String</p>
+                    <p/>
+                    <p>Макет элемента управления.</p><p id="layout_input_description">В конструктор макета передается объект, содержащий поля:</p>
+<ul id="layout_input_data">
+    <li>control - ссылка на элемент управления;</li>
+    <li>options - менеджер опций элемента управления control.SearchControl.options;</li>
+    <li>data - менеджер данных элемента управления control.SearchControl.data;</li>
+    <li>state - менеджер состояния элемента управления <xref href="control.SearchControl.dita#field_detail/state" type="section"><keyword>control.SearchControl.state</keyword></xref>.</li>
+</ul><p>Макет меняет свой внешний вид на основе данных, состояния и опций элемента управления. Элемент управления, в свою очередь, реагирует на интерфейсные события макета и меняет значения полей <xref href="control.SearchControl.dita#field_detail/state" type="section"><keyword>control.SearchControl.state</keyword></xref> в зависимости от полученных команд.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.maxWidth" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.maxWidth" type="entry"><parmname>parameters.options.maxWidth</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     [30, 72, 315]
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|Number[]</p>
+                    <p/>
+                    <p>Максимальная ширина элемента управления в различных состояниях. Если задано число, то считается, что элемент управления имеет одинаковые максимальные размеры во всех состояниях. Если задан массив, то он будет трактоваться как максимальная ширина в различных состояниях - от меньшего к большему. Количество доступных состояний задается в экземпляре класса <xref href="control.Manager.dita" type="topic"><keyword>control.Manager</keyword></xref> через опцию states. Этот класс обычно является полем <xref href="Map.dita#field_detail/controls" type="section"><keyword>Map.controls</keyword></xref>. Для состояния 'large' ширина может быть в пределах от 280 до 660 пикселей. По умолчанию у элементов управления есть три состояния - ['small', 'medium', 'large'].</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.noCentering" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.noCentering" type="entry"><parmname>parameters.options.noCentering</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>false - автоматически располагать центр карты так, чтобы объект был виден целиком. Значение true - не изменять центр карты при показе найденного объекта. Если указать noCentering = true и noPlacemark = true, то при щелчке по результату поиска никаких видимых изменений на карте не произойдет.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.noPlacemark" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.noPlacemark" type="entry"><parmname>parameters.options.noPlacemark</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>false - автоматически добавлять в центр найденного объекта метку с открытым балуном, true - не добавлять. Если указать noCentering = true и noPlacemark = true, то при щелчке по результату поиска никаких видимых изменений на карте не произойдет. Опция не работает с провайдером yandex#search.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.noPopup" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.noPopup" type="entry"><parmname>parameters.options.noPopup</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>true - не показывать выпадающий список результатов, false - показывать.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.noSelect" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.noSelect" type="entry"><parmname>parameters.options.noSelect</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>При значении false будет автоматически показываться результат поиска, если он является единственным найденным объектом, true — результат не будет выбираться.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.noSuggestPanel" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.noSuggestPanel" type="entry"><parmname>parameters.options.noSuggestPanel</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>true - не показывать панель с поисковыми подсказками, false - показывать.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.placeholderContent" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.placeholderContent" type="entry"><parmname>parameters.options.placeholderContent</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Текст-подсказка, показываемый в поле ввода элемента управления.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.popupItemLayout" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.popupItemLayout" type="entry"><parmname>parameters.options.popupItemLayout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      'islands#searchControlPopupItemLayout'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="ILayout.dita" type="topic"><keyword>ILayout</keyword></xref>|String</p>
+                    <p/>
+                    <p>Конструктор макета результата поиска в выпадающем списке в макете элемента управления по умолчанию или ключ в хранилище <xref href="layout.storage.dita" type="topic"><keyword>layout.storage</keyword></xref>.</p><p>В конструктор макета передается объект, содержащий поля:</p>
+<ul>
+    <li>control - ссылка на элемент управления;</li>
+    <li>options - менеджер опций элемента управления control.SearchControl.options;</li>
+    <li>data - менеджер данных элемента управления control.SearchControl.data;</li>
+    <li>state - менеджер состояния элемента управления <xref href="control.SearchControl.dita#field_detail/state" type="section"><keyword>control.SearchControl.state</keyword></xref>.</li>
+</ul>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.popupLayout" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.popupLayout" type="entry"><parmname>parameters.options.popupLayout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      'islands#searchControlPopupLayout'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="ILayout.dita" type="topic"><keyword>ILayout</keyword></xref>|String</p>
+                    <p/>
+                    <p>Конструктор макета выпадающего списка с результатами поиска в макете элемента управления по умолчанию или ключ в хранилище <xref href="layout.storage.dita" type="topic"><keyword>layout.storage</keyword></xref>.</p><p>В конструктор макета передается объект, содержащий поля:</p>
+<ul>
+    <li>control - ссылка на элемент управления;</li>
+    <li>options - менеджер опций элемента управления control.SearchControl.options;</li>
+    <li>data - менеджер данных элемента управления control.SearchControl.data;</li>
+    <li>state - менеджер состояния элемента управления <xref href="control.SearchControl.dita#field_detail/state" type="section"><keyword>control.SearchControl.state</keyword></xref>.</li>
+</ul>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.position" type="entry"><parmname>parameters.options.position</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Объект, описывающий позицию элемента управления. При указании опции position значение опции float автоматически трактуется как "none".</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position.bottom" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.position.bottom" type="entry"><parmname>parameters.options.position.bottom</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                    <p>Положение относительно нижнего края карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position.left" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.position.left" type="entry"><parmname>parameters.options.position.left</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                    <p>Положение относительно левого края карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position.right" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.position.right" type="entry"><parmname>parameters.options.position.right</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                    <p>Положение относительно правого края карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position.top" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.position.top" type="entry"><parmname>parameters.options.position.top</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                    <p>Положение относительно верхнего края карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.provider" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.provider" type="entry"><parmname>parameters.options.provider</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      'yandex#map'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IGeocodeProvider.dita" type="topic"><keyword>IGeocodeProvider</keyword></xref>|String</p>
+                    <p/>
+                    <p>Провайдер геокодирования. Можно воспользоваться одним из стандартных провайдеров:<ul>
+    <li>'yandex#map' - поиск топонимов на карте карте;</li>
+    <li>'yandex#search' - поиск по топонимам и организациям. Для поиска по организациям не работают следующие опции: «noPlacemark», «noCentering», «noSelect», «strictBounds», «kind». Кроме того, по умолчанию на карте показываются 20 объектов, если не указана опция «results» для элемента управления.</li>
+</ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.searchCoordOrder" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.searchCoordOrder" type="entry"><parmname>parameters.options.searchCoordOrder</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      'latlong'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Определяет каким образом нужно интерпретировать координаты в запросе. По умолчанию координаты будут обрабатываться как широта-долгота. Опция не работает с провайдером yandex#search.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.size" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.size" type="entry"><parmname>parameters.options.size</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Параметр, отвечающий за внешний вид элемента управления. Может принимать значения:<ul>
+    <li>'small' — всегда показывать кнопку с иконкой;</li>
+    <li>'medium' — всегда показывать кнопку с текстом;</li>
+    <li>'large' — всегда показывать полную поисковую форму;</li>
+    <li>'auto' — производить автоматический выбор размера элемента управления в зависимости от наличия свободного пространства в тулбаре.</li>
+</ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.strictBounds" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.strictBounds" type="entry"><parmname>parameters.options.strictBounds</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Искать только внутри области, заданной опцией boundedBy. Объекты вне указанной области попадать в выдачу не будут.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.suppressYandexSearch" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.suppressYandexSearch" type="entry"><parmname>parameters.options.suppressYandexSearch</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Скрывать ли сообщение с предложением произвести поиск на портале Яндекса, если результаты не были найдены.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.useMapBounds" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.useMapBounds" type="entry"><parmname>parameters.options.useMapBounds</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Флаг, позволяющий учитывать при поиске границы видимой области карты. При значении true рассчитанная область видимости имеет больший приоритет, чем заданная через boundedBy.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.zoomMargin" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.options.zoomMargin" type="entry"><parmname>parameters.options.zoomMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      0
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Отступы от границ видимой области карты при показе найденных результатов. Для того чтобы опция применилась, значение noCentering должно быть false. Если задано одно число - оно применяется ко всем сторонам. Если задано два - то это горизонтальные и вертикальные отступы соответственно. Если задан массив из 4х чисел, то это отступы top, right, bottom, left. При включенной опции "useMapMargin" значение "zoomMargin" складывается со значениями, которые были рассчитаны в менеджере отступов <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.state" translate="no">
+                    <xref href="#control.SearchControl/param-parameters.state" type="entry"><parmname>parameters.state</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Объект, описывающий состояние элемента управления.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.useMapMargin" translate="no">
+                    <xref href="#control.SearchControl/param-options.useMapMargin" type="entry"><parmname>options.useMapMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Нужно ли учитывать отступы карты <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref> при показе результатов поиска на карте.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+        
+      
+        
+            <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Пример 1.
+// Создание элемента управления и добавление его на карту.
+
+var searchControl = new ymaps.control.SearchControl({
+     options: {
+         float: 'right',
+        floatIndex: 100,
+         noPlacemark: true
+     }
+});
+myMap.controls.add(searchControl);</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Пример 2
+// Если элемент управления уже добавлен на карту по ключу из хранилища <xref href="control.storage.dita" type="topic"><keyword>control.storage</keyword></xref>,
+// то его экземпляр можно получить с помощью метода control.Manager.get
+// менеджера элементов управления <xref href="control.Manager.dita" type="topic"><keyword>control.Manager</keyword></xref>.
+
+var searchControl = myMap.controls.get('searchControl');
+searchControl.events.add('submit', function () {
+    console.log('request: ' + searchControl.getRequestString());
+}, this);</codeblock><p translate="no"><b>3.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Пример 3.
+// Включим поиск по организациям в элементе управления, уже добавленном на карту.
+// Если элемент управления уже добавлен на карту по ключу из хранилища <xref href="control.storage.dita" type="topic"><keyword>control.storage</keyword></xref>,
+// то его экземпляр можно получить с помощью метода control.Manager.get.
+
+var searchControl = myMap.controls.get('searchControl');
+searchControl.options.set('provider', 'yandex#search');</codeblock><p translate="no"><b>4.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Пример 4.
+// Создадим элемент управления «поиск по карте» с включенным поиском по организациям.
+
+var searchControl = new ymaps.control.SearchControl({
+     options: {
+         float: 'left',
+         provider: 'yandex#search'
+     }
+});</codeblock><p translate="no"><b>5.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Пример 5.
+// Увеличим значение максимальной ширины для поисковой строки в состоянии 'large'.
+map.options.set({
+    // Максимальная ширина для трех состояний: [30, 72, 315].
+    // Изменим ширину для состояния 'large'.
+    searchControlMaxWidth: [30, 72, 500],
+    // Расширим поисковую строку до максимального размера.
+    fitMaxWidth: true
+});</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IControl.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IControl.dita#field_detail/options" type="section"><keyword>IControl</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="control.SearchControl.dita#field_detail/state" type="section"><keyword>state</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Состояние элемента управления. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>size — текущий размер элемента управления;</li>
+    <li>results — массив, содержащий результаты поиска;</li>
+    <li>currentIndex — индекс текущего выбранного элемента;</li>
+    <li>found — общее количество найденных результатов;</li>
+    <li>request — текущий активный запрос;</li>
+    <li>correction — исправленный запрос;</li>
+    <li>noSuggestPanel - флаг, скрывать ли панель поисковых подсказок.</li>
+</ul></p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.SearchControl.dita#event_detail/event_detail/event-clear"><keyword>clear</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие очистки результатов поиска. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.SearchControl.dita#event_detail/event_detail/event-error"><keyword>error</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие ошибки получения результатов поиска с сервера. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>error — информация об ошибке.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.SearchControl.dita#event_detail/event_detail/event-load"><keyword>load</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие получения результатов поиска с сервера. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>skip — сколько элементов было пропущено;</li>
+    <li>count — количество загруженных элементов.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>parentchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменился родительский объект.</p><p>Поля данных:</p>
+<ul>
+    <li>oldParent - старый родитель;</li>
+    <li>newParent - новый родитель.</li>
+</ul>
+                            
+                                <p translate="no">Унаследовано от <xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>IChild</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.SearchControl.dita#event_detail/event_detail/event-resultselect"><keyword>resultselect</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие выбора результата поиска. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>index — индекс выбранного результата.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.SearchControl.dita#event_detail/event_detail/event-resultshow"><keyword>resultshow</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие показа результата поиска. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>index — индекс выбранного результата.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.SearchControl.dita#event_detail/event_detail/event-submit"><keyword>submit</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие отправления поискового запроса на сервер. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.SearchControl.dita#method_detail/clear" type="section"><keyword>clear</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Очищает результаты поиска, а также содержимое поисковой строки элемента управления.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.SearchControl.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на карту.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IControl.dita#method_detail/getParent" type="section"><keyword>getParent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IControlParent.dita" type="topic"><keyword>IControlParent</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на родительский объект или null, если родительский элемент не был установлен.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IControl.dita#method_detail/getParent" type="section"><keyword>IControl</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.SearchControl.dita#method_detail/getRequestString" type="section"><keyword>getRequestString</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает поисковый запрос.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.SearchControl.dita#method_detail/getResponseMetaData" type="section"><keyword>getResponseMetaData</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает метаданные геопоиска.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.SearchControl.dita#method_detail/getResult" type="section"><keyword>getResult</keyword></xref>(<xref href="control.SearchControl.dita#method_detail/getResult-param-index" translate="no" type="row">index</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Получение результатов поиска.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.SearchControl.dita#method_detail/getResultsArray" type="section"><keyword>getResultsArray</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает массив, содержащий все текущие результаты.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.SearchControl.dita#method_detail/getResultsCount" type="section"><keyword>getResultsCount</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Integer</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает количество найденных результатов.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.SearchControl.dita#method_detail/getSelectedIndex" type="section"><keyword>getSelectedIndex</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Integer</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает индекс выбранного элемента.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.SearchControl.dita#method_detail/hideResult" type="section"><keyword>hideResult</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Скрывает результат, показанный на карте.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.SearchControl.dita#method_detail/search" type="section"><keyword>search</keyword></xref>(<xref href="control.SearchControl.dita#method_detail/search-param-request" translate="no" type="row">request</xref>, <xref href="control.SearchControl.dita#method_detail/search-param-options" translate="no" type="row">options</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Осуществляет поиск.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IControl.dita#method_detail/setParent" type="section"><keyword>setParent</keyword></xref>(<xref href="IControl.dita#method_detail/setParent-param-parent" translate="no" type="row">parent</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IChildOnMap.dita" type="topic"><keyword>IChildOnMap</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает родительский объект. Если передать значение null, то элемент управления будет только удален из текущего родительского объекта.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IControl.dita#method_detail/setParent" type="section"><keyword>IControl</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.SearchControl.dita#method_detail/showResult" type="section"><keyword>showResult</keyword></xref>(<xref href="control.SearchControl.dita#method_detail/showResult-param-index" translate="no" type="row">index</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="control.SearchControl.dita" type="topic"><keyword>control.SearchControl</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Отображает результат с заданным индексом.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="state">
+            <title translate="no">state</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>} state</codeblock></p>
+
+            <p>Состояние элемента управления. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>size — текущий размер элемента управления;</li>
+    <li>results — массив, содержащий результаты поиска;</li>
+    <li>currentIndex — индекс текущего выбранного элемента;</li>
+    <li>found — общее количество найденных результатов;</li>
+    <li>request — текущий активный запрос;</li>
+    <li>correction — исправленный запрос;</li>
+    <li>noSuggestPanel - флаг, скрывать ли панель поисковых подсказок.</li>
+</ul></p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-clear">
+            <title translate="no">clear</title>
+            
+             <p>Событие очистки результатов поиска. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-error">
+            <title translate="no">error</title>
+            
+             <p>Событие ошибки получения результатов поиска с сервера. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>error — информация об ошибке.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-load">
+            <title translate="no">load</title>
+            
+             <p>Событие получения результатов поиска с сервера. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>skip — сколько элементов было пропущено;</li>
+    <li>count — количество загруженных элементов.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-resultselect">
+            <title translate="no">resultselect</title>
+            
+             <p>Событие выбора результата поиска. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>index — индекс выбранного результата.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-resultshow">
+            <title translate="no">resultshow</title>
+            
+             <p>Событие показа результата поиска. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>index — индекс выбранного результата.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-submit">
+            <title translate="no">submit</title>
+            
+             <p>Событие отправления поискового запроса на сервер. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="clear">
+        <title translate="no">clear</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} clear()</codeblock></p>
+
+         <p>Очищает результаты поиска, а также содержимое поисковой строки элемента управления.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getMap">
+        <title translate="no">getMap</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="Map.dita" type="topic"><keyword>Map</keyword></xref>} getMap()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на карту.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getRequestString">
+        <title translate="no">getRequestString</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getRequestString()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> поисковый запрос.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getResponseMetaData">
+        <title translate="no">getResponseMetaData</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} getResponseMetaData()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> метаданные геопоиска.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getResult">
+        <title translate="no">getResult</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} getResult(<xref href="control.SearchControl.dita#method_detail/getResult-param-index" translate="no" type="row">index</xref>)</codeblock></p>
+
+         <p>Получение результатов поиска.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект типа <xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getResult-param-index">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getResult-param-index" type="row"><parmname>index</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Индекс результата, начинается с 0.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getResult_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getResultsArray">
+        <title translate="no">getResultsArray</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object[]} getResultsArray()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> массив, содержащий все текущие результаты.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getResultsCount">
+        <title translate="no">getResultsCount</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Integer} getResultsCount()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> количество найденных результатов.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getSelectedIndex">
+        <title translate="no">getSelectedIndex</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Integer} getSelectedIndex()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> индекс выбранного элемента.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="hideResult">
+        <title translate="no">hideResult</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} hideResult()</codeblock></p>
+
+         <p>Скрывает результат, показанный на карте.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Если мы показали какой-то результат на карте с помощью  control.SearchControl.showResult,
+// или он был показан автоматически при поиске, мы можем скрыть его, например,
+// по клику на кнопку.
+var myButton = new ymaps.control.Button("Hide results");
+myButton.events.add('click', function () {
+    searchControl.hideResult();
+}, this);
+myMap.controls.add(myButton, { selectOnClick: false });</codeblock>
+        
+
+    </section>
+    
+        <section id="search">
+        <title translate="no">search</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} search(<xref href="control.SearchControl.dita#method_detail/search-param-request" translate="no" type="row">request</xref>, <xref href="control.SearchControl.dita#method_detail/search-param-options" translate="no" type="row">options</xref>)</codeblock></p>
+
+         <p>Осуществляет поиск.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект типа <xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="search-param-request">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/search-param-request" type="row"><parmname>request</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Запрос.</p>
+                </entry>
+
+            </row>
+            
+            <row id="search-param-options">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/search-param-options" type="row"><parmname>options</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Дополнительные опции провайдера.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="search_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Попробуем найти Москву и вывести поле name
+// первого найденного результата в консоль.
+searchControl.search('Москва').then(function () {
+    var geoObjectsArray = searchControl.getResultsArray();
+    if (geoObjectsArray.length) {
+        // Выводит свойство name первого геообъекта из результатов запроса.
+        console.log(geoObjectsArray[0].properties.get('name'));
+    }
+});</codeblock>
+        
+
+    </section>
+    
+        <section id="showResult">
+        <title translate="no">showResult</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="control.SearchControl.dita" type="topic"><keyword>control.SearchControl</keyword></xref>} showResult(<xref href="control.SearchControl.dita#method_detail/showResult-param-index" translate="no" type="row">index</xref>)</codeblock></p>
+
+         <p>Отображает результат с заданным индексом.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="showResult-param-index">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/showResult-param-index" type="row"><parmname>index</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Индекс результата, начинается с 0.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="showResult_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Мы хотим показывать всегда первый результат,
+// вне зависимости от количества найденных
+// объектов на карте (1 или более).
+var searchControl = new ymaps.control.SearchControl({
+    // Опция отключает автоматический выбор результата поиска.
+    options: { noSelect: true }
+});
+searchControl.events.add('load', function (event) {
+    // Проверяем, что это событие не "дозагрузки" результатов и
+    // по запросу найден хотя бы один результат.
+    if (!event.get('skip') &amp;&amp; searchControl.getResultsCount()) {
+        searchControl.showResult(0);
+    }
+});</codeblock>
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_YTJmMzgx_CACHING --></topic>

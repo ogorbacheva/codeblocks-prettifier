@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="util.querystring.parse" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3" xml:lang="ru">
+
+
+
+
+
+
+
+<title translate="no">util.querystring.parse</title>
+<body>  <section> <p translate="no">Статическая функция.</p> <p>Обрабатывает строку запроса.</p>  <p><b>Возвращает</b> объект, содержащий query-параметры. </p> <p translate="no"><codeblock code-lang="javascript">{ Object } util.querystring.parse(<xref href="#util.querystring.parse/param-string" translate="no">string</xref>[, <xref href="#util.querystring.parse/param-sep" translate="no">sep</xref>[, <xref href="#util.querystring.parse/param-eq" translate="no">eq</xref>[, <xref href="#util.querystring.parse/param-options" translate="no">options</xref>]]])</codeblock></p> <p translate="no"><b>Параметры:</b></p> <table> <tgroup cols="3"> <colspec colname="method_name" colnum="1"/> <colspec colname="default_value" colnum="2"/> <colspec colname="description" colnum="3"/> <thead> <row> <entry align="left" translate="no">Параметр</entry> <entry align="left" translate="no">Значение по умолчанию</entry> <entry align="left" translate="no">Описание</entry> </row> </thead> <tbody> <row id="param-string"> <entry translate="no"> <xref href="#util.querystring.parse/param-string"><parmname>string</parmname></xref><xref href="#util.querystring.parse/constructor_params_options_starred" popup="yes">*</xref> </entry> <entry translate="no"> — </entry> <entry> <p translate="no">Тип: String</p> <p/> <p>Строка запроса.</p> </entry> </row> <row id="param-sep"> <entry translate="no"> <xref href="#util.querystring.parse/param-sep"><parmname>sep</parmname></xref> </entry> <entry translate="no"> '&amp;' </entry> <entry> <p translate="no">Тип: String</p> <p/> <p>Разделитель параметров.</p> </entry> </row> <row id="param-eq"> <entry translate="no"> <xref href="#util.querystring.parse/param-eq"><parmname>eq</parmname></xref> </entry> <entry translate="no"> '=' </entry> <entry> <p translate="no">Тип: String</p> <p/> <p>Разделитель параметра и значения.</p> </entry> </row> <row id="param-options"> <entry translate="no"> <xref href="#util.querystring.parse/param-options"><parmname>options</parmname></xref> </entry> <entry translate="no"> — </entry> <entry> <p translate="no">Тип: Object</p> <p/> <p>Опции.</p> </entry> </row> <row id="param-options.decodeURIComponent"> <entry translate="no"> <xref href="#util.querystring.parse/param-options.decodeURIComponent"><parmname>options.decodeURIComponent</parmname></xref> </entry> <entry translate="no"> decodeURIComponent </entry> <entry> <p translate="no">Тип: Function</p> <p/> <p>Функция для декодирования строки запроса.</p> </entry> </row> </tbody> </tgroup> </table> <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p> </section>       </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</topic>

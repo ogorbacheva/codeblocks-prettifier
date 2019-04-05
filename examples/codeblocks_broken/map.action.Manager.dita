@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="map.action.Manager" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">map.action.Manager</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>map.action.Manager</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IEventEmitter.dita" type="topic"><keyword>IEventEmitter</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Менеджер действий карты. Позволяет выполнять сложные движения на карте и гарантирует, что сложные движения не наложатся друг на друга. У каждой карты уже есть собственный менеджер действий, доступный как <xref href="Map.dita#field_detail/action" type="section"><keyword>Map.action</keyword></xref>. Не создавайте экземпляры этого класса без необходимости.</p>
+    
+
+
+
+    <p translate="no"><b>См.: </b><xref href="Map.dita#field_detail/action" type="section"><keyword>Map.action</keyword></xref> </p>
+
+
+
+
+
+    <p translate="no"><xref href="#map.action.Manager/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#map.action.Manager/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#map.action.Manager/events-summary" translate="no" type="section">События </xref> | <xref href="#map.action.Manager/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">map.action.Manager(<xref href="#map.action.Manager/param-map" translate="no" type="entry">map</xref>)</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-map" translate="no">
+                    
+                        <xref href="#map.action.Manager/param-map" type="entry"><parmname>map</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p>
+                    <p/>
+                    <p>Карта.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Создадим сложное движение: каждые 100 мс центр
+// карты будет смещаться на случайную величину.
+
+// Создадим экземпляр сложного движения.
+var action = new ymaps.map.action.Continuous();
+// Запустим его выполнение на карте.
+myMap.action.execute(action);
+
+// Запомним пиксельный центр карты и уровень масштабирования.
+var center = myMap.getGlobalPixelCenter(),
+    zoom = myMap.getZoom();
+// Каждые 100 миллисекунд будем генерировать случайный сдвиг.
+var interval = window.setInterval(function () {
+    center[0] += Math.round(Math.random() * 100) - 50;
+    center[1] += Math.round(Math.random() * 100) - 50;
+   // Генерируем новый сдвиг карты.
+  action.tick({
+        globalPixelCenter: center,
+       zoom: zoom
+    });
+}, 100);
+
+// Как только пользователь сдвинет карту, наше движение
+// прекратит выполняться и произойдёт событие end.
+var listener = action.events.once('end', function () {
+    listener.removeAll();
+    window.clearInterval(interval);
+});</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.action.Manager.dita#event_detail/event_detail/event-begin"><keyword>begin</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, возникающее, когда действие началось. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - запущенное действие.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.action.Manager.dita#event_detail/event_detail/event-break"><keyword>break</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, возникающее при досрочном прекращении шага действия (например, из-за выполнения другого действия или нового шага того же действия). Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - действие.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.action.Manager.dita#event_detail/event_detail/event-end"><keyword>end</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, возникающее при остановке действия. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - остановленное действие.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.action.Manager.dita#event_detail/event_detail/event-tick"><keyword>tick</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, возникающее, когда очередной шаг действия начинает исполняться. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - выполняемое в данный момент действие;</li>
+    <li>tick – описание шага действия в виде объекта с полями globalPixelCenter, zoom, duration и timingFunction.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.action.Manager.dita#event_detail/event_detail/event-tickcomplete"><keyword>tickcomplete</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, возникающее при окончании выполнения шага действия. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - выполняемое в данный момент действие;</li>
+    <li>tick – описание шага действия в виде объекта с полями globalPixelCenter, zoom, duration и timingFunction.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.action.Manager.dita#method_detail/breakTick" type="section"><keyword>breakTick</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Прерывает очередной шаг действия.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.action.Manager.dita#method_detail/execute" type="section"><keyword>execute</keyword></xref>(<xref href="map.action.Manager.dita#method_detail/execute-param-action" translate="no" type="row">action</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Запускает выполнение действия на карте. Если в этот момент на карте выполняется какое-то другое движение, то оно останавливается (вызывается метод end). Новое движение запускается посредством вызова метода begin.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.action.Manager.dita#method_detail/getCurrentState" type="section"><keyword>getCurrentState</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Определяет состояние карты в момент ее плавного движения.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.action.Manager.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на карту.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.action.Manager.dita#method_detail/setCorrection" type="section"><keyword>setCorrection</keyword></xref>(<xref href="map.action.Manager.dita#method_detail/setCorrection-param-userFunction" translate="no" type="row">userFunction</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Позволяет устанавливать пользовательские коррекции для сложных движений на карте. По окончанию коррекции необходимо вернуть скорректированные значения.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.action.Manager.dita#method_detail/stop" type="section"><keyword>stop</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Останавливает выполнение действия на карте.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-begin">
+            <title translate="no">begin</title>
+            
+             <p>Событие, возникающее, когда действие началось. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - запущенное действие.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-break">
+            <title translate="no">break</title>
+            
+             <p>Событие, возникающее при досрочном прекращении шага действия (например, из-за выполнения другого действия или нового шага того же действия). Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - действие.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-end">
+            <title translate="no">end</title>
+            
+             <p>Событие, возникающее при остановке действия. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - остановленное действие.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-tick">
+            <title translate="no">tick</title>
+            
+             <p>Событие, возникающее, когда очередной шаг действия начинает исполняться. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - выполняемое в данный момент действие;</li>
+    <li>tick – описание шага действия в виде объекта с полями globalPixelCenter, zoom, duration и timingFunction.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Отслеживает все перемещения карты, даже перетаскивание пользователем
+// и плавное масштабирование.
+myMap.action.events.add('tick', function (e) {
+    var tick = e.get('tick');
+    console.log('Сейчас карта переместится в точку (' +
+        myMap.options.get('projection').fromGlobalPixels(tick.globalPixelCenter, tick.zoom).join(',') +
+        ') в течение ' + e.get('tick').duration + ' миллисекунд');
+});</codeblock>
+            
+
+            </section>
+        
+            <section id="event-tickcomplete">
+            <title translate="no">tickcomplete</title>
+            
+             <p>Событие, возникающее при окончании выполнения шага действия. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>action - выполняемое в данный момент действие;</li>
+    <li>tick – описание шага действия в виде объекта с полями globalPixelCenter, zoom, duration и timingFunction.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="breakTick">
+        <title translate="no">breakTick</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} breakTick()</codeblock></p>
+
+         <p>Прерывает очередной шаг действия.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="execute">
+        <title translate="no">execute</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} execute(<xref href="map.action.Manager.dita#method_detail/execute-param-action" translate="no" type="row">action</xref>)</codeblock></p>
+
+         <p>Запускает выполнение действия на карте. Если в этот момент на карте выполняется какое-то другое движение, то оно останавливается (вызывается метод end). Новое движение запускается посредством вызова метода begin.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="execute-param-action">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/execute-param-action" type="row"><parmname>action</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IMapAction.dita" type="topic"><keyword>IMapAction</keyword></xref></p>
+                    <p/>
+                   <p>Действие.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="execute_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getCurrentState">
+        <title translate="no">getCurrentState</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} getCurrentState()</codeblock></p>
+
+         <p>Определяет состояние карты в момент ее плавного движения.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект с полями: isTicking — выполняется ли сейчас шаг плавного движения; tickProgress — какая часть текущего шага выполнена; zoom — масштаб карты во время текущего шага; globalPixelCenter — центр карты в глобальных пикселях в момент текущего шага.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Регистрирует текущий центр карты.
+// Работает даже во время плавного масштабирования или незавершенного
+// перетаскивания карты пользователем.
+window.setInterval(function () {
+    console.log(myMap.action.getCurrentState().center.join(', '));
+}, 100);</codeblock>
+        
+
+    </section>
+    
+        <section id="getMap">
+        <title translate="no">getMap</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="Map.dita" type="topic"><keyword>Map</keyword></xref>} getMap()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на карту.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="setCorrection">
+        <title translate="no">setCorrection</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} setCorrection(<xref href="map.action.Manager.dita#method_detail/setCorrection-param-userFunction" translate="no" type="row">userFunction</xref>)</codeblock></p>
+
+         <p>Позволяет устанавливать пользовательские коррекции для сложных движений на карте. По окончанию коррекции необходимо вернуть скорректированные значения.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setCorrection-param-userFunction">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setCorrection-param-userFunction" type="row"><parmname>userFunction</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Пользовательская функция коррекции шагов.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setCorrection_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Сделаем так, чтобы пользователь не мог перетащить центр карты
+// за пределы МКАД.
+var mkad = [
+    [55.785017, 37.841576],
+    [55.861979, 37.765992],
+    [55.898533, 37.635961],
+    [55.888897, 37.48861],
+    [55.83251, 37.395275],
+    [55.744789, 37.370248],
+    [55.660424, 37.434424],
+    [55.5922, 37.526366],
+    [55.574019, 37.683167],
+    [55.62913, 37.802473],
+    [55.712203, 37.837121]
+],
+mkadPolygon = new ymaps.Polygon([mkad], {}, {
+    fillColor: '#FFFF00',
+    opacity: .4
+});
+myMap.geoObjects.add(mkadPolygon);
+myMap.action.setCorrection(function (tick) {
+    var projection = myMap.options.get('projection'),
+        tickCenter = projection.fromGlobalPixels(tick.globalPixelCenter, tick.zoom);
+    // Если центр карты не входит в нашу область.
+    if (!mkadPolygon.geometry.contains(tickCenter)) {
+        tick.globalPixelCenter = projection.toGlobalPixels(
+            mkadPolygon.geometry.getClosest(tickCenter).position,
+            tick.zoom
+        );
+        tick.duration = 0;
+    }
+    return tick;
+});</codeblock>
+        
+
+    </section>
+    
+        <section id="stop">
+        <title translate="no">stop</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} stop()</codeblock></p>
+
+         <p>Останавливает выполнение действия на карте.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_M2ZiZWNi_CACHING --></topic>

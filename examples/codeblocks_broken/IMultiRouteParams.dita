@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="IMultiRouteParams" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IMultiRouteParams</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IMultiRouteParams</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Интерфейс объекта, описывающего формат задания параметров модели мультимаршрута.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IMultiRouteParams/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#IMultiRouteParams/properties-summary" translate="no" type="section">Поля </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IMultiRouteParams()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IMultiRouteParams.dita#field_detail/avoidTrafficJams" type="section"><keyword>avoidTrafficJams</keyword></xref></entry>
+              <entry colname="col2" translate="no">Boolean</entry>
+        
+              <entry colname="col3">
+                <p>Позволяет прокладывать мультимаршрут с учетом информации о текущих пробках на дорогах. Значение по умолчанию: false.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IMultiRouteParams.dita#field_detail/boundedBy" type="section"><keyword>boundedBy</keyword></xref></entry>
+              <entry colname="col2" translate="no">Number[][]|null</entry>
+        
+              <entry colname="col3">
+                <p>Позволяет задать область на карте, где предположительно находятся искомые объекты. Используется, если точки маршрута заданы почтовым адресом, а не координатами. Значение по умолчанию null.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IMultiRouteParams.dita#field_detail/requestSendInterval" type="section"><keyword>requestSendInterval</keyword></xref></entry>
+              <entry colname="col2" translate="no">String|Number</entry>
+        
+              <entry colname="col3">
+                <p>Величина временного интервала между запросами к сервису маршрутизации. Может быть задана в миллисекундах, либо оптимальное значение будет рассчитываться автоматически. Значение по умолчанию "auto".</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IMultiRouteParams.dita#field_detail/results" type="section"><keyword>results</keyword></xref></entry>
+              <entry colname="col2" translate="no">Integer</entry>
+        
+              <entry colname="col3">
+                <p>Максимально допустимое число маршрутов, возвращаемых мультимаршрутизатором. Значение по умолчанию 3.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IMultiRouteParams.dita#field_detail/reverseGeocoding" type="section"><keyword>reverseGeocoding</keyword></xref></entry>
+              <entry colname="col2" translate="no">Boolean</entry>
+        
+              <entry colname="col3">
+                <p>Использовать ли обратное геокодирование для точек маршрута, заданных координатами.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IMultiRouteParams.dita#field_detail/routingMode" type="section"><keyword>routingMode</keyword></xref></entry>
+              <entry colname="col2" translate="no">String</entry>
+        
+              <entry colname="col3">
+                <p>Тип маршрутизации. Может принимать одно из двух строковых значений:<ul>
+    <li>"auto" — автомобильная маршрутизация;</li>
+    <li>"masstransit" - маршрутизация с использованием общественного транспорта.</li>
+    <li>"pedestrian" — пешеходная маршрутизация.</li>
+    <li>"bicycle" - велосипедный маршрут.</li>
+</ul>Значение по умолчанию "auto".</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IMultiRouteParams.dita#field_detail/searchCoordOrder" type="section"><keyword>searchCoordOrder</keyword></xref></entry>
+              <entry colname="col2" translate="no">String</entry>
+        
+              <entry colname="col3">
+                <p>Определяет способ трактовки описаний опорных точек, заданных в виде массивов координат или геометрий. Может принимать одно из двух значений: "longlat", либо "latlong". По умолчанию используется текущее значение параметра <xref href="https://tech.yandex.ru/maps/doc/jsapi/2.1/dg/concepts/load-docpage/#param" scope="external">coordorder</xref>, который задается при подключении API.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IMultiRouteParams.dita#field_detail/strictBounds" type="section"><keyword>strictBounds</keyword></xref></entry>
+              <entry colname="col2" translate="no">Boolean</entry>
+        
+              <entry colname="col3">
+                <p>Искать объекты только внутри области, заданной параметром boundedBy. Используется, если точки маршрута заданы почтовым адресом, а не координатами. Значение по умолчанию: false.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IMultiRouteParams.dita#field_detail/viaIndexes" type="section"><keyword>viaIndexes</keyword></xref></entry>
+              <entry colname="col2" translate="no">Integer[]</entry>
+        
+              <entry colname="col3">
+                <p>Индексы транзитных точек во множестве опорных точек мультимаршрута. По умолчанию массив пуст.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="avoidTrafficJams">
+            <title translate="no">avoidTrafficJams</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Boolean} avoidTrafficJams</codeblock></p>
+
+            <p>Позволяет прокладывать мультимаршрут с учетом информации о текущих пробках на дорогах. Значение по умолчанию: false.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="boundedBy">
+            <title translate="no">boundedBy</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]|null} boundedBy</codeblock></p>
+
+            <p>Позволяет задать область на карте, где предположительно находятся искомые объекты. Используется, если точки маршрута заданы почтовым адресом, а не координатами. Значение по умолчанию null.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="requestSendInterval">
+            <title translate="no">requestSendInterval</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String|Number} requestSendInterval</codeblock></p>
+
+            <p>Величина временного интервала между запросами к сервису маршрутизации. Может быть задана в миллисекундах, либо оптимальное значение будет рассчитываться автоматически. Значение по умолчанию "auto".</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="results">
+            <title translate="no">results</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Integer} results</codeblock></p>
+
+            <p>Максимально допустимое число маршрутов, возвращаемых мультимаршрутизатором. Значение по умолчанию 3.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="reverseGeocoding">
+            <title translate="no">reverseGeocoding</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Boolean} reverseGeocoding</codeblock></p>
+
+            <p>Использовать ли обратное геокодирование для точек маршрута, заданных координатами.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="routingMode">
+            <title translate="no">routingMode</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} routingMode</codeblock></p>
+
+            <p>Тип маршрутизации. Может принимать одно из двух строковых значений:<ul>
+    <li>"auto" — автомобильная маршрутизация;</li>
+    <li>"masstransit" - маршрутизация с использованием общественного транспорта.</li>
+    <li>"pedestrian" — пешеходная маршрутизация.</li>
+    <li>"bicycle" - велосипедный маршрут.</li>
+</ul>Значение по умолчанию "auto".</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="searchCoordOrder">
+            <title translate="no">searchCoordOrder</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} searchCoordOrder</codeblock></p>
+
+            <p>Определяет способ трактовки описаний опорных точек, заданных в виде массивов координат или геометрий. Может принимать одно из двух значений: "longlat", либо "latlong". По умолчанию используется текущее значение параметра <xref href="https://tech.yandex.ru/maps/doc/jsapi/2.1/dg/concepts/load-docpage/#param" scope="external">coordorder</xref>, который задается при подключении API.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="strictBounds">
+            <title translate="no">strictBounds</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Boolean} strictBounds</codeblock></p>
+
+            <p>Искать объекты только внутри области, заданной параметром boundedBy. Используется, если точки маршрута заданы почтовым адресом, а не координатами. Значение по умолчанию: false.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="viaIndexes">
+            <title translate="no">viaIndexes</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Integer[]} viaIndexes</codeblock></p>
+
+            <p>Индексы транзитных точек во множестве опорных точек мультимаршрута. По умолчанию массив пуст.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic><!-- XLIFF_FARM_ZDNlYzgy_CACHING --></topic>

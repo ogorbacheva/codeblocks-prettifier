@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="geoQuery" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">geoQuery</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>geoQuery</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статическая функция.</p>
+    
+    
+        
+            <p>Формирует набор данных из указанного источника и создает на его основе экземпляр GeoQueryResult.</p>
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+       <p><b>Возвращает</b> результат, содержащий данные из источника.</p>
+       
+    
+
+    
+
+    
+        
+         
+              <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{ <xref href="GeoQueryResult.dita" type="topic"><keyword>GeoQueryResult</keyword></xref> } geoQuery(<xref href="#geoQuery/param-source" translate="no" type="row">source</xref>)</codeblock></p>
+         
+     
+
+    
+        <p translate="no"><b>Параметры:</b></p>
+        
+        
+            
+        
+
+        <table>
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Параметр</entry>
+              <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+        
+        <row id="param-source">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#geoQuery/param-source" type="row"><parmname>source</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Object</p>
+                <p/>
+                <p>Источник геообъектов:<ul>
+    <li>IGeoObject - объект, реализующий соответствующий интерфейс;</li>
+    <li>IGeoObject[] - массив объектов, реализующих соответствующий интерфейс;</li>
+    <li>ICollection - коллекция объектов, реализующих интерфейс IGeoObject;</li>
+    <li>ICollection[] - массив коллекций объектов, реализующих интерфейс IGeoObject;</li>
+    <li>vow.Promise — объект-промис, передающий в функцию-обработчик источник данных для geoQuery;. Также в функцию-обработчик может быть передан объект с полем geoObjects, содержащий источник данных для geoQuery;</li>
+    <li>GeoQueryResult - объект класса GeoQueryResult.</li>
+    <li>String|Object - строка или объект с JSON-описанием объектов;</li>
+</ul>JSON-описание объектов строится по следующему принципу (см. пример ниже). Объектом может быть сущность или коллекция сущностей. Коллекция сущностей представляет из себя объект с полями:<ul>
+    <li>type — тип объекта. Значение поля должно быть равно "FeatureCollection";</li>
+    <li>features - массив дочерних сущностей коллекции. Дочерние объекты могут быть сущностями или вложенными коллекциями сущностей.</li>
+</ul>Сущность представляет собой объект с полями:<ul>
+    <li>type — тип объекта. Значение поля должно быть равно "Feature";</li>
+    <li>geometry — геометрия объекта. Содержит поля type и coordinates. Соответствует параметру, передаваемому в конструктор объекта ymaps.GeoObject;</li>
+    <li>options - опции геообъекта;</li>
+    <li>properties - данные геообъекта.</li>
+</ul></p>
+            </entry>
+        </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+    
+    
+
+
+
+    
+        <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Создание GeoQueryResult из одиночного геообъекта.
+var placemark = new ymaps.Placemark([34, 56]);
+ymaps.geoQuery(placemark).addToMap(myMap);</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Создание GeoQueryResult из массива геообъектов.
+var objects = [
+        new ymaps.Placemark([34, 56]),
+        new ymaps.Rectangle([[34, 56], [36, 57]])
+    ];
+ymaps.geoQuery(objects).addToMap(myMap);</codeblock><p translate="no"><b>3.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Создание GeoQueryResult из коллекции геообъектов.
+var result = ymaps.geoQuery(myMap.geoObjects).searchIntersect(myMap);
+alert("Количество геообъектов в видимой области карты: " + result.getLength());</codeblock><p translate="no"><b>4.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Создание GeoQueryResult из vow.Deferred.
+var result = ymaps.geoQuery(ymaps.geocode('Сыромятнический переулок')).searchInside(myGeoBounds);
+// Поскольку источник данных асинхронный, нужно дождаться обработки результата.
+result.then(function () {
+    alert('Количество объектов, лежащих внутри заданной области: ' + result.getLength());
+});</codeblock><p translate="no"><b>5.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Создание GeoQueryResult из JSON.
+var result = ymaps.geoQuery({
+        type: 'FeatureCollection',
+            features: [
+                {
+                    type: 'Feature',
+                    geometry: {
+                        type: 'Circle',
+                        coordinates: [15, 15],
+                        radius: 100
+                    }
+                },
+                {
+                    type: 'Feature',
+                    geometry: {
+                        type: 'LineString',
+                        coordinates: [[15, 16], [66, 23]]
+                    }
+                },
+                {
+                    type: 'FeatureCollection',
+                    features: [
+                        {
+                            type: 'Feature',
+                            geometry: {
+                                type: 'Point',
+                                coordinates: [12, 41]
+                            },
+                            properties: {
+                              name: 'point'
+                            },
+                            options: {
+                                preset: 'islands#yellowIcon'
+                            }
+                        }
+                    ]
+                }
+            ]
+      });
+// Неточечные объекты добавим на карту как есть.
+result.search('geometry.type != "Point"').addToMap(myMap);
+// Точечные объекты добавим на карту через кластеризатор.
+myMap.geoObjects.add(result.search('geometry.type == "Point"').clusterize());</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_YjhhNmZi_CACHING --></topic>

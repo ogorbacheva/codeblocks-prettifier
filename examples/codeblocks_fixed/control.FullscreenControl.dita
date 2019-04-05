@@ -1,0 +1,1139 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="control.FullscreenControl" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">control.FullscreenControl</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>control.FullscreenControl</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="control.Button.dita" type="topic"><keyword>control.Button</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Элемент управления "Полноэкранный режим". Задать свойство z-index контейнеру карты, находящейся в "полноэкранном режиме", можно с помощью опции Map.options.fullscreenZIndex. Ключ элемента управления в хранилище <xref href="control.storage.dita" type="topic"><keyword>control.storage</keyword></xref> — "fullscreenControl".</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#control.FullscreenControl/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#control.FullscreenControl/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#control.FullscreenControl/events-summary" translate="no" type="section">События </xref> | <xref href="#control.FullscreenControl/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">control.FullscreenControl([<xref href="#control.FullscreenControl/param-parameters" translate="no" type="entry">parameters</xref>])</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-parameters" translate="no">
+                    <xref href="#control.FullscreenControl/param-parameters" type="entry"><parmname>parameters</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Параметры элемента управления.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.data" translate="no">
+                    <xref href="#control.FullscreenControl/param-parameters.data" type="entry"><parmname>parameters.data</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Объект, описывающий данные элемента управления.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.data.title" translate="no">
+                    <xref href="#control.FullscreenControl/param-parameters.data.title" type="entry"><parmname>parameters.data.title</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Текст всплывающей подсказки, которая появляется при наведении на кнопку курсора мыши.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options" translate="no">
+                    <xref href="#control.FullscreenControl/param-parameters.options" type="entry"><parmname>parameters.options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции элемента управления.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.adjustMapMargin" translate="no">
+                    <xref href="#control.FullscreenControl/param-parameters.options.adjustMapMargin" type="entry"><parmname>parameters.options.adjustMapMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Регистрирует ли элемент управления свои размеры в менеджере отступов карты <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.float" translate="no">
+                    <xref href="#control.FullscreenControl/param-parameters.options.float" type="entry"><parmname>parameters.options.float</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     "right"
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Сторона, по которой нужно выравнивать элемент управления. Может принимать три значения: "left", "right" или "none". При значении "left" или "right" элементы управления выстраиваются друг за другом, начиная от левого или правого края карты соответственно. При значении "none" элементы управления позиционируется только по значениям опций left, right, bottom, top относительно границ карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.floatIndex" translate="no">
+                    <xref href="#control.FullscreenControl/param-parameters.options.floatIndex" type="entry"><parmname>parameters.options.floatIndex</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     300
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Приоритет расположения элемента управления. Элемент с максимальным приоритетом находится ближе к указанному в свойстве float краю карты. Не работает при float = "none". Также смотрите описание опции position.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.layout" translate="no">
+                    <xref href="#control.FullscreenControl/param-parameters.options.layout" type="entry"><parmname>parameters.options.layout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="ISelectableControlLayout.dita" type="topic"><keyword>ISelectableControlLayout</keyword></xref>|String</p>
+                    <p/>
+                    <p>Конструктор макета элемента управления, реализующий интерфейс <xref href="ISelectableControlLayout.dita" type="topic"><keyword>ISelectableControlLayout</keyword></xref> или ключ макета в хранилище <xref href="layout.storage.dita" type="topic"><keyword>layout.storage</keyword></xref>. В конструктор макета передается объект, содержащий поля:<ul>
+    <li>control - ссылка на элемент управления;</li>
+    <li>options — менеджер опций элемента управления control.FullscreenControl.options;</li>
+    <li>data — менеджер данных элемента управления control.FullscreenControl.data;</li>
+    <li>state - менеджер состояния элемента управления <xref href="control.FullscreenControl.dita#field_detail/state" type="section"><keyword>control.FullscreenControl.state</keyword></xref>.</li>
+</ul>Макет меняет свой внешний вид на основе данных, состояния и опций элемента управления. Элемент управления, в свою очередь, реагирует на интерфейсные события макета.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.maxWidth" translate="no">
+                    <xref href="#control.FullscreenControl/param-parameters.options.maxWidth" type="entry"><parmname>parameters.options.maxWidth</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     28
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|Number[]</p>
+                    <p/>
+                    <p>Максимальная ширина элемента управления в различных состояниях. Если задано число, то считается, что элемент управления имеет одинаковые максимальные размеры во всех состояниях. Если задан массив, то он будет трактоваться как максимальная ширина в различных состояниях - от меньшего к большему. Количество доступных состояний задается в экземпляре класса <xref href="control.Manager.dita" type="topic"><keyword>control.Manager</keyword></xref> через опцию states. Этот класс обычно является полем <xref href="Map.dita#field_detail/controls" type="section"><keyword>Map.controls</keyword></xref>. По умолчанию у элементов управления есть три состояния - ['small', 'medium', 'large']. По умолчанию элемент управления не изменяет своего размера, всегда имея вид кнопки с иконкой.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position" translate="no">
+                    <xref href="#control.FullscreenControl/param-parameters.options.position" type="entry"><parmname>parameters.options.position</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Объект, описывающий позицию элемента управления. При указании опции position значение опции float автоматически трактуется как "none".</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position.bottom" translate="no">
+                    <xref href="#control.FullscreenControl/param-parameters.options.position.bottom" type="entry"><parmname>parameters.options.position.bottom</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                    <p>Положение относительно нижнего края карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position.left" translate="no">
+                    <xref href="#control.FullscreenControl/param-parameters.options.position.left" type="entry"><parmname>parameters.options.position.left</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                    <p>Положение относительно левого края карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position.right" translate="no">
+                    <xref href="#control.FullscreenControl/param-parameters.options.position.right" type="entry"><parmname>parameters.options.position.right</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                    <p>Положение относительно правого края карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.position.top" translate="no">
+                    <xref href="#control.FullscreenControl/param-parameters.options.position.top" type="entry"><parmname>parameters.options.position.top</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|String</p>
+                    <p/>
+                    <p>Положение относительно верхнего края карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.options.visible" translate="no">
+                    <xref href="#control.FullscreenControl/param-parameters.options.visible" type="entry"><parmname>parameters.options.visible</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Признак того, что элемент управления отображается.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.state" translate="no">
+                    <xref href="#control.FullscreenControl/param-parameters.state" type="entry"><parmname>parameters.state</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Объект, описывающий состояние элемента управления.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.state.enabled" translate="no">
+                    <xref href="#control.FullscreenControl/param-parameters.state.enabled" type="entry"><parmname>parameters.state.enabled</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Признак, активна ли кнопка.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-parameters.state.selected" translate="no">
+                    <xref href="#control.FullscreenControl/param-parameters.state.selected" type="entry"><parmname>parameters.state.selected</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Признак, нажата ли кнопка.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Добавим элемент управления на карту и сразу переведем
+// её в «полноэкранный режим».
+var fullscreenControl = new ymaps.control.FullscreenControl();
+myMap.controls.add(fullscreenControl);
+fullscreenControl.enterFullscreen();</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="control.Button.dita#field_detail/data" type="section"><keyword>data</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Данные кнопки. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>image - иконка кнопки, если есть;</li>
+    <li>content - cодержимое кнопки в виде HTML;</li>
+    <li>title - текст всплывающей подсказки, которая появляется при наведении на кнопку курсора мыши.</li>
+</ul></p>
+                
+                  <p translate="no">Унаследовано от  <xref href="control.Button.dita#field_detail/data" type="section"><keyword>control.Button</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IControl.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IControl.dita#field_detail/options" type="section"><keyword>IControl</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="control.Button.dita#field_detail/press" type="section"><keyword>press</keyword></xref></entry>
+              <entry colname="col2" translate="no"/>
+        
+              <entry colname="col3">
+                <p>Событие, сигнализирующее о том, что кнопка была нажата. В отличии от click генерируется только если состояние isEnabled == true. Экземпляр класса Event.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="control.Button.dita#field_detail/press" type="section"><keyword>control.Button</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="control.FullscreenControl.dita#field_detail/state" type="section"><keyword>state</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Состояние элемента управления. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>fullscreen — признак, находится ля карта в полноэкранном режиме.</li>
+</ul></p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.Button.dita#event_detail/event_detail/event-click"><keyword>click</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Нажатие на кнопку. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="control.Button.dita#event_detail/event_detail/event-click"><keyword>control.Button</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#event_detail/event_detail/event-deselect"><keyword>deselect</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Элемент управления не выбран.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ISelectableControl.dita#event_detail/event_detail/event-deselect"><keyword>ISelectableControl</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#event_detail/event_detail/event-disable"><keyword>disable</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Элемент управления стал недоступным.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ISelectableControl.dita#event_detail/event_detail/event-disable"><keyword>ISelectableControl</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#event_detail/event_detail/event-enable"><keyword>enable</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Элемент управления стал доступным.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ISelectableControl.dita#event_detail/event_detail/event-enable"><keyword>ISelectableControl</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.FullscreenControl.dita#event_detail/event_detail/event-fullscreenenter"><keyword>fullscreenenter</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Карта переключена в полноэкранный режим. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.FullscreenControl.dita#event_detail/event_detail/event-fullscreenexit"><keyword>fullscreenexit</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Карта вышла из полноэкранного режима. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>parentchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменился родительский объект.</p><p>Поля данных:</p>
+<ul>
+    <li>oldParent - старый родитель;</li>
+    <li>newParent - новый родитель.</li>
+</ul>
+                            
+                                <p translate="no">Унаследовано от <xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>IChild</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#event_detail/event_detail/event-select"><keyword>select</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Элемент управления выбран.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ISelectableControl.dita#event_detail/event_detail/event-select"><keyword>ISelectableControl</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#method_detail/deselect" type="section"><keyword>deselect</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Отменяет выбор элемента управления (выключает).</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ISelectableControl.dita#method_detail/deselect" type="section"><keyword>ISelectableControl</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#method_detail/disable" type="section"><keyword>disable</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Делает элемент управления недоступным (запрещены пользовательские действия).</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ISelectableControl.dita#method_detail/disable" type="section"><keyword>ISelectableControl</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#method_detail/enable" type="section"><keyword>enable</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Делает элемент управления доступным (разрешены пользовательские действия).</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ISelectableControl.dita#method_detail/enable" type="section"><keyword>ISelectableControl</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.FullscreenControl.dita#method_detail/enterFullscreen" type="section"><keyword>enterFullscreen</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Позволяет переводить карту в полноэкранный режим.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.FullscreenControl.dita#method_detail/exitFullscreen" type="section"><keyword>exitFullscreen</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Позволяет вывести карту из полноэкранного режима.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="control.Button.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на карту.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="control.Button.dita#method_detail/getMap" type="section"><keyword>control.Button</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IControl.dita#method_detail/getParent" type="section"><keyword>getParent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IControlParent.dita" type="topic"><keyword>IControlParent</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на родительский объект или null, если родительский элемент не был установлен.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IControl.dita#method_detail/getParent" type="section"><keyword>IControl</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#method_detail/isEnabled" type="section"><keyword>isEnabled</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true - элемент управления доступен, false - недоступен.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="ISelectableControl.dita#method_detail/isEnabled" type="section"><keyword>ISelectableControl</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#method_detail/isSelected" type="section"><keyword>isSelected</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true - элемент управления выбран, false - не выбран.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="ISelectableControl.dita#method_detail/isSelected" type="section"><keyword>ISelectableControl</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISelectableControl.dita#method_detail/select" type="section"><keyword>select</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Выбирает (включает) элемент управления.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ISelectableControl.dita#method_detail/select" type="section"><keyword>ISelectableControl</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IControl.dita#method_detail/setParent" type="section"><keyword>setParent</keyword></xref>(<xref href="IControl.dita#method_detail/setParent-param-parent" translate="no" type="row">parent</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IChildOnMap.dita" type="topic"><keyword>IChildOnMap</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает родительский объект. Если передать значение null, то элемент управления будет только удален из текущего родительского объекта.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IControl.dita#method_detail/setParent" type="section"><keyword>IControl</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="state">
+            <title translate="no">state</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>} state</codeblock></p>
+
+            <p>Состояние элемента управления. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>fullscreen — признак, находится ля карта в полноэкранном режиме.</li>
+</ul></p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-fullscreenenter">
+            <title translate="no">fullscreenenter</title>
+            
+             <p>Карта переключена в полноэкранный режим. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-fullscreenexit">
+            <title translate="no">fullscreenexit</title>
+            
+             <p>Карта вышла из полноэкранного режима. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="enterFullscreen">
+        <title translate="no">enterFullscreen</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} enterFullscreen()</codeblock></p>
+
+         <p>Позволяет переводить карту в полноэкранный режим.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="exitFullscreen">
+        <title translate="no">exitFullscreen</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} exitFullscreen()</codeblock></p>
+
+         <p>Позволяет вывести карту из полноэкранного режима.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_ODBmM2Q3_CACHING --></topic>

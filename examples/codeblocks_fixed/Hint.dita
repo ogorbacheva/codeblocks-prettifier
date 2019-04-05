@@ -1,0 +1,730 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Hint" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">Hint</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>Hint</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IHint.dita" type="topic"><keyword>IHint</keyword></xref>, <xref href="Popup.dita" type="topic"><keyword>Popup</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Хинт - всплывающая подсказка, которая может отображать любое HTML-содержимое. Обычно хинт существует на карте в единственном экземпляре, управление им происходит через специальные менеджеры (<xref href="map.Hint.dita" type="topic">maps</xref>, <xref href="geoObject.Hint.dita" type="topic">geo objects</xref>, <xref href="hotspot.layer.Hint.dita" type="topic">hotspot layers</xref> и т.д.). Не создавайте их самостоятельно, если в этом нет необходимости.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#Hint/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#Hint/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#Hint/events-summary" translate="no" type="section">События </xref> | <xref href="#Hint/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">Hint(<xref href="#Hint/param-map" translate="no" type="entry">map</xref>[, <xref href="#Hint/param-options" translate="no" type="entry">options</xref>])</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-map" translate="no">
+                    
+                        <xref href="#Hint/param-map" type="entry"><parmname>map</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p>
+                    <p/>
+                    <p>Ссылка на объект карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options" translate="no">
+                    <xref href="#Hint/param-options" type="entry"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.closeTimeout" translate="no">
+                    <xref href="#Hint/param-options.closeTimeout" type="entry"><parmname>options.closeTimeout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     700
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Задержка закрытия (в мс).</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.contentLayout" translate="no">
+                    <xref href="#Hint/param-options.contentLayout" type="entry"><parmname>options.contentLayout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function|String</p>
+                    <p/>
+                    <p>Макет для содержимого хинта. (Тип: конструктор объекта с интерфейсом ILayout).</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.fitPane" translate="no">
+                    <xref href="#Hint/param-options.fitPane" type="entry"><parmname>options.fitPane</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Флаг, заставляющий инфо-объекта сдвигать свою позицию, чтобы не выходить за границы контейнера.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.holdByMouse" translate="no">
+                    <xref href="#Hint/param-options.holdByMouse" type="entry"><parmname>options.holdByMouse</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Флаг, отменяющий закрытие хинта, находящегося под курсором.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.interactivityModel" translate="no">
+                    <xref href="#Hint/param-options.interactivityModel" type="entry"><parmname>options.interactivityModel</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Ключ модели интерактивности. Доступные ключи и их значения перечислены в описании <xref href="interactivityModel.storage.dita" type="topic"><keyword>interactivityModel.storage</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.layout" translate="no">
+                    <xref href="#Hint/param-options.layout" type="entry"><parmname>options.layout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     islands#hint
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function|String</p>
+                    <p/>
+                    <p>Внешний макет хинта. (Тип: конструктор объекта с интерфейсом ILayout).</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.offset" translate="no">
+                    <xref href="#Hint/param-options.offset" type="entry"><parmname>options.offset</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                    <p>Дополнительное смещение позиции относительно точки привязки.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.openTimeout" translate="no">
+                    <xref href="#Hint/param-options.openTimeout" type="entry"><parmname>options.openTimeout</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     150
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Задержка открытия (в мс).</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.pane" translate="no">
+                    <xref href="#Hint/param-options.pane" type="entry"><parmname>options.pane</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'outerHint'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Ключ пейна, в который помещается оверлей хинта.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.zIndex" translate="no">
+                    <xref href="#Hint/param-options.zIndex" type="entry"><parmname>options.zIndex</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>z-index хинта.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Создаем независимый экземпляр хинта и показываем его с собстенным макетом в центре карты с помощью указания гео-координат.
+(new ymaps.Hint(myMap, {
+    projection: ymaps.projection.wgs84Mercator,
+    layout: ymaps.templateLayoutFactory.createClass('{{ content }}')
+}))
+.open(myMap.getCenter(), 'Привет');</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>ICustomizable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopup.dita#event_detail/event_detail/event-close"><keyword>close</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Закрытие инфо-объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IPopup.dita#event_detail/event_detail/event-close"><keyword>IPopup</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopup.dita#event_detail/event_detail/event-open"><keyword>open</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Открытие инфо-объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IPopup.dita#event_detail/event_detail/event-open"><keyword>IPopup</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopup.dita#method_detail/close" type="section"><keyword>close</keyword></xref>([<xref href="IPopup.dita#method_detail/close-param-force" translate="no" type="row">force</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Закрывает инфо-объект.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPopup.dita#method_detail/close" type="section"><keyword>IPopup</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopup.dita#method_detail/getData" type="section"><keyword>getData</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает данные инфо-объекта.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPopup.dita#method_detail/getData" type="section"><keyword>IPopup</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopup.dita#method_detail/getOverlay" type="section"><keyword>getOverlay</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект-обещание вернуть оверлей.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPopup.dita#method_detail/getOverlay" type="section"><keyword>IPopup</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopup.dita#method_detail/getOverlaySync" type="section"><keyword>getOverlaySync</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IOverlay.dita" type="topic"><keyword>IOverlay</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает оверлей, если тот существует.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPopup.dita#method_detail/getOverlaySync" type="section"><keyword>IPopup</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopup.dita#method_detail/getPosition" type="section"><keyword>getPosition</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает координаты инфо-объекта.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPopup.dita#method_detail/getPosition" type="section"><keyword>IPopup</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopup.dita#method_detail/isOpen" type="section"><keyword>isOpen</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает состояние инфо-объекта: открыт/закрыт.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPopup.dita#method_detail/isOpen" type="section"><keyword>IPopup</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopup.dita#method_detail/open" type="section"><keyword>open</keyword></xref>([<xref href="IPopup.dita#method_detail/open-param-position" translate="no" type="row">position</xref>[, <xref href="IPopup.dita#method_detail/open-param-data" translate="no" type="row">data</xref>]])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Открывает инфо-объект в указанной позиции. Если инфо-объект уже открыт, перемещает его в указанную точку. Формат и суть координат определяется проекцией <xref href="IProjection.dita" type="topic"><keyword>IProjection</keyword></xref>, которая содержится в опциях.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPopup.dita#method_detail/open" type="section"><keyword>IPopup</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopup.dita#method_detail/setData" type="section"><keyword>setData</keyword></xref>(<xref href="IPopup.dita#method_detail/setData-param-data" translate="no" type="row">data</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задаёт инфо-объекту новые данные.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPopup.dita#method_detail/setData" type="section"><keyword>IPopup</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopup.dita#method_detail/setPosition" type="section"><keyword>setPosition</keyword></xref>(<xref href="IPopup.dita#method_detail/setPosition-param-position" translate="no" type="row">position</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задаёт инфо-объекту новую позицию.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPopup.dita#method_detail/setPosition" type="section"><keyword>IPopup</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body><!-- XLIFF_FARM_NzJmMzM0_CACHING --></topic>

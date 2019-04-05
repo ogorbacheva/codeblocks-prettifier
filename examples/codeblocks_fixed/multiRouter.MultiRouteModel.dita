@@ -1,0 +1,1387 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="multiRouter.MultiRouteModel" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">multiRouter.MultiRouteModel</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>multiRouter.MultiRouteModel</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IEventEmitter.dita" type="topic"><keyword>IEventEmitter</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Модель данных мультимаршрута</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#multiRouter.MultiRouteModel/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#multiRouter.MultiRouteModel/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#multiRouter.MultiRouteModel/events-summary" translate="no" type="section">События </xref> | <xref href="#multiRouter.MultiRouteModel/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">multiRouter.MultiRouteModel(<xref href="#multiRouter.MultiRouteModel/param-referencePoints" translate="no" type="entry">referencePoints</xref>[, <xref href="#multiRouter.MultiRouteModel/param-params" translate="no" type="entry">params</xref>])</codeblock></p>
+    
+       
+            
+                <p>Создает модель данных мультимаршрута.</p>
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-referencePoints" translate="no">
+                    
+                        <xref href="#multiRouter.MultiRouteModel/param-referencePoints" type="entry"><parmname>referencePoints</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IMultiRouteReferencePoint.dita" type="topic"><keyword>IMultiRouteReferencePoint</keyword></xref>[]</p>
+                    <p/>
+                    <p>Описание опорных точек мультимаршрута.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-params" translate="no">
+                    <xref href="#multiRouter.MultiRouteModel/param-params" type="entry"><parmname>params</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IMultiRouteParams.dita" type="topic"><keyword>IMultiRouteParams</keyword></xref></p>
+                    <p/>
+                    <p>Параметры маршрутизации.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Создаем модель мультимаршрута.
+var multiRouteModel = new ymaps.multiRouter.MultiRouteModel(['Москва', 'Тверь',
+    'Питер'], {
+    avoidTrafficJams: true,
+    viaIndexes: [1]
+});
+// Создаем отображение мультимаршрута на основе модели.
+var multiRouteView = new ymaps.multiRouter.MultiRoute(multiRouteModel);
+myMap.geoObjects.add(multiRouteView);
+// Подписываемся на события модели мультимаршрута.
+multiRouteView.model.events
+    .add("requestsuccess", function (event) {
+        var routes = event.get("target")
+            .getRoutes();
+        console.log("Найдено маршрутов: " + routes.length);
+        for (var i = 0, l = routes.length; i &lt; l; i++) {
+            console.log("Длина маршрута " + (i + 1) + ": " + routes[i]
+                .properties.get("distance")
+                .text);
+        }
+    })
+    .add("requestfail", function (event) {
+        console.log("Ошибка: " + event.get("error")
+            .message);
+    });</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="multiRouter.MultiRouteModel.dita#field_detail/properties" type="section"><keyword>properties</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Данные мультимаршрута.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRouteModel.dita#event_detail/event_detail/event-requestcancel"><keyword>requestcancel</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Запрос за данными отменен. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>referencePoints: Object[] - массив, описывающий множество опорных точек;</li>
+    <li>params: Object – параметры маршрутизации.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRouteModel.dita#event_detail/event_detail/event-requestchange"><keyword>requestchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменились опорные данные модели мультимаршрута (опорные точки, либо параметры маршрутизации). В результате формируется новый запрос за данными к сервису маршрутизации. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>referencePoints: Object[] - массив, описывающий множество опорных точек;</li>
+    <li>params: Object - параметры маршрутизации.</li>
+    <li>oldReferencePoints: Object[] – массив, описывающий предыдущее множество опорных точек;</li>
+    <li>oldParams: Object - предыдущие параметры маршрутизации.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRouteModel.dita#event_detail/event_detail/event-requestfail"><keyword>requestfail</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Запрос за данными завершился с ошибкой. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>error: Error – объект ошибки.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRouteModel.dita#event_detail/event_detail/event-requestsend"><keyword>requestsend</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Отправлен новый запрос за данными модели мультимаршрута. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>referencePoints: Object[] - массив, описывающий множество опорных точек;</li>
+    <li>params: Object – параметры маршрутизации.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRouteModel.dita#event_detail/event_detail/event-requestsuccess"><keyword>requestsuccess</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Запрос за данными завершился успешно, модель данных обновлена. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>init: Boolean – признак инициализирующего запроса;</li>
+    <li>rough: Boolean - признак промежуточного запроса (используется для оптимизации размера ответа сервера при редактировании маршрута);</li>
+    <li>wayPointsChange: Boolean - признак изменений в наборе путевых точек;</li>
+    <li>viaPointsChange: Boolean - признак изменений в наборе транзитных точек;</li>
+    <li>routesChange: Boolean - признак изменений в наборе маршрутов.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRouteModel.dita#method_detail/destroy" type="section"><keyword>destroy</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Уничтожает модель.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRouteModel.dita#method_detail/getAllPoints" type="section"><keyword>getAllPoints</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>(<xref href="multiRouter.WayPointModel.dita" type="topic"><keyword>multiRouter.WayPointModel</keyword></xref>|<xref href="multiRouter.ViaPointModel.dita" type="topic"><keyword>multiRouter.ViaPointModel</keyword></xref>)[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объединенный массив моделей транзитных и путевых точек в порядке, соответствующем порядку следования соответствующих опорных точек.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRouteModel.dita#method_detail/getJson" type="section"><keyword>getJson</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает JSON-данные модели мультимаршрута.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRouteModel.dita#method_detail/getParams" type="section"><keyword>getParams</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IMultiRouteParams.dita" type="topic"><keyword>IMultiRouteParams</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект, описывающий текущие значения параметров маршрутизации.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRouteModel.dita#method_detail/getPoints" type="section"><keyword>getPoints</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>(<xref href="multiRouter.WayPointModel.dita" type="topic"><keyword>multiRouter.WayPointModel</keyword></xref>|<xref href="multiRouter.ViaPointModel.dita" type="topic"><keyword>multiRouter.ViaPointModel</keyword></xref>)[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устаревшее название метода multiRouter.MultiRouteModel.getAllPoints. Не рекомендуется к использованию.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRouteModel.dita#method_detail/getReferencePointIndexes" type="section"><keyword>getReferencePointIndexes</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект, содержащий следующие поля:<ul>
+    <li>way: Integer[] - индексы опорных точек, соответствующие множеству путевых точек модели;</li>
+    <li>via: Integer[] - индексы опорных точек, соответствующие множеству транзитных точек модели.</li>
+</ul></p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRouteModel.dita#method_detail/getReferencePoints" type="section"><keyword>getReferencePoints</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IMultiRouteReferencePoint.dita" type="topic"><keyword>IMultiRouteReferencePoint</keyword></xref>[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает массив опорных точек мультимаршрута.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRouteModel.dita#method_detail/getRoutes" type="section"><keyword>getRoutes</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="multiRouter.driving.RouteModel.dita" type="topic"><keyword>multiRouter.driving.RouteModel</keyword></xref>[]|<xref href="multiRouter.masstransit.RouteModel.dita" type="topic"><keyword>multiRouter.masstransit.RouteModel</keyword></xref>[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает массив моделей дочерних маршрутов.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRouteModel.dita#method_detail/getViaPoints" type="section"><keyword>getViaPoints</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="multiRouter.ViaPointModel.dita" type="topic"><keyword>multiRouter.ViaPointModel</keyword></xref>[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает массив моделей дочерних транзитных точек.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRouteModel.dita#method_detail/getWayPoints" type="section"><keyword>getWayPoints</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="multiRouter.WayPointModel.dita" type="topic"><keyword>multiRouter.WayPointModel</keyword></xref>[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает массив моделей дочерних путевых точек.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRouteModel.dita#method_detail/setParams" type="section"><keyword>setParams</keyword></xref>(<xref href="multiRouter.MultiRouteModel.dita#method_detail/setParams-param-params" translate="no" type="row">params</xref>[, <xref href="multiRouter.MultiRouteModel.dita#method_detail/setParams-param-extend" translate="no" type="row">extend</xref>[, <xref href="multiRouter.MultiRouteModel.dita#method_detail/setParams-param-clearRequests" translate="no" type="row">clearRequests</xref>]])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает параметры маршрутизации.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.MultiRouteModel.dita#method_detail/setReferencePoints" type="section"><keyword>setReferencePoints</keyword></xref>(<xref href="multiRouter.MultiRouteModel.dita#method_detail/setReferencePoints-param-referencePoints" translate="no" type="row">referencePoints</xref>[, <xref href="multiRouter.MultiRouteModel.dita#method_detail/setReferencePoints-param-viaIndexes" translate="no" type="row">viaIndexes</xref>[, <xref href="multiRouter.MultiRouteModel.dita#method_detail/setReferencePoints-param-clearRequests" translate="no" type="row">clearRequests</xref>]])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает опорные точки мультимаршрута.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="properties">
+            <title translate="no">properties</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>} properties</codeblock></p>
+
+            <p>Данные мультимаршрута.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-requestcancel">
+            <title translate="no">requestcancel</title>
+            
+             <p>Запрос за данными отменен. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>referencePoints: Object[] - массив, описывающий множество опорных точек;</li>
+    <li>params: Object – параметры маршрутизации.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-requestchange">
+            <title translate="no">requestchange</title>
+            
+             <p>Изменились опорные данные модели мультимаршрута (опорные точки, либо параметры маршрутизации). В результате формируется новый запрос за данными к сервису маршрутизации. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>referencePoints: Object[] - массив, описывающий множество опорных точек;</li>
+    <li>params: Object - параметры маршрутизации.</li>
+    <li>oldReferencePoints: Object[] – массив, описывающий предыдущее множество опорных точек;</li>
+    <li>oldParams: Object - предыдущие параметры маршрутизации.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-requestfail">
+            <title translate="no">requestfail</title>
+            
+             <p>Запрос за данными завершился с ошибкой. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>error: Error – объект ошибки.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-requestsend">
+            <title translate="no">requestsend</title>
+            
+             <p>Отправлен новый запрос за данными модели мультимаршрута. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>referencePoints: Object[] - массив, описывающий множество опорных точек;</li>
+    <li>params: Object – параметры маршрутизации.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-requestsuccess">
+            <title translate="no">requestsuccess</title>
+            
+             <p>Запрос за данными завершился успешно, модель данных обновлена. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>init: Boolean – признак инициализирующего запроса;</li>
+    <li>rough: Boolean - признак промежуточного запроса (используется для оптимизации размера ответа сервера при редактировании маршрута);</li>
+    <li>wayPointsChange: Boolean - признак изменений в наборе путевых точек;</li>
+    <li>viaPointsChange: Boolean - признак изменений в наборе транзитных точек;</li>
+    <li>routesChange: Boolean - признак изменений в наборе маршрутов.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="destroy">
+        <title translate="no">destroy</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} destroy()</codeblock></p>
+
+         <p>Уничтожает модель.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getAllPoints">
+        <title translate="no">getAllPoints</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{(<xref href="multiRouter.WayPointModel.dita" type="topic"><keyword>multiRouter.WayPointModel</keyword></xref>|<xref href="multiRouter.ViaPointModel.dita" type="topic"><keyword>multiRouter.ViaPointModel</keyword></xref>)[]} getAllPoints()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>объединенный массив моделей транзитных и путевых точек в порядке, соответствующем порядку следования соответствующих опорных точек.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getJson">
+        <title translate="no">getJson</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} getJson()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> JSON-данные модели мультимаршрута.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getParams">
+        <title translate="no">getParams</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IMultiRouteParams.dita" type="topic"><keyword>IMultiRouteParams</keyword></xref>} getParams()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>объект, описывающий текущие значения параметров маршрутизации.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getPoints">
+        <title translate="no">getPoints</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{(<xref href="multiRouter.WayPointModel.dita" type="topic"><keyword>multiRouter.WayPointModel</keyword></xref>|<xref href="multiRouter.ViaPointModel.dita" type="topic"><keyword>multiRouter.ViaPointModel</keyword></xref>)[]} getPoints()</codeblock></p>
+
+         <p>Устаревшее название метода multiRouter.MultiRouteModel.getAllPoints. Не рекомендуется к использованию.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>объединенный массив моделей транзитных и путевых точек в порядке, соответствующем порядку следования соответствующих опорных точек.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getReferencePointIndexes">
+        <title translate="no">getReferencePointIndexes</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} getReferencePointIndexes()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект, содержащий следующие поля:<ul>
+    <li>way: Integer[] - индексы опорных точек, соответствующие множеству путевых точек модели;</li>
+    <li>via: Integer[] - индексы опорных точек, соответствующие множеству транзитных точек модели.</li>
+</ul></p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getReferencePoints">
+        <title translate="no">getReferencePoints</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IMultiRouteReferencePoint.dita" type="topic"><keyword>IMultiRouteReferencePoint</keyword></xref>[]} getReferencePoints()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> массив опорных точек мультимаршрута.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getRoutes">
+        <title translate="no">getRoutes</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="multiRouter.driving.RouteModel.dita" type="topic"><keyword>multiRouter.driving.RouteModel</keyword></xref>[]|<xref href="multiRouter.masstransit.RouteModel.dita" type="topic"><keyword>multiRouter.masstransit.RouteModel</keyword></xref>[]} getRoutes()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>массив моделей дочерних маршрутов.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getViaPoints">
+        <title translate="no">getViaPoints</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="multiRouter.ViaPointModel.dita" type="topic"><keyword>multiRouter.ViaPointModel</keyword></xref>[]} getViaPoints()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>массив моделей дочерних транзитных точек.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getWayPoints">
+        <title translate="no">getWayPoints</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="multiRouter.WayPointModel.dita" type="topic"><keyword>multiRouter.WayPointModel</keyword></xref>[]} getWayPoints()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>массив моделей дочерних путевых точек.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="setParams">
+        <title translate="no">setParams</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} setParams(<xref href="multiRouter.MultiRouteModel.dita#method_detail/setParams-param-params" translate="no" type="row">params</xref>[, <xref href="multiRouter.MultiRouteModel.dita#method_detail/setParams-param-extend" translate="no" type="row">extend</xref>[, <xref href="multiRouter.MultiRouteModel.dita#method_detail/setParams-param-clearRequests" translate="no" type="row">clearRequests</xref>]])</codeblock></p>
+
+         <p>Задает параметры маршрутизации.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setParams-param-params">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setParams-param-params" type="row"><parmname>params</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IMultiRouteParams.dita" type="topic"><keyword>IMultiRouteParams</keyword></xref></p>
+                    <p/>
+                   <p>Параметры маршрутизации.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setParams-param-extend">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setParams-param-extend" type="row"><parmname>extend</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Позволяет изменить лишь часть параметров, а значения не переданных оставить прежним.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setParams-param-clearRequests">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setParams-param-clearRequests" type="row"><parmname>clearRequests</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Позволяет очистить очередь предыдущих запросов к серверу.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setParams_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="setReferencePoints">
+        <title translate="no">setReferencePoints</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} setReferencePoints(<xref href="multiRouter.MultiRouteModel.dita#method_detail/setReferencePoints-param-referencePoints" translate="no" type="row">referencePoints</xref>[, <xref href="multiRouter.MultiRouteModel.dita#method_detail/setReferencePoints-param-viaIndexes" translate="no" type="row">viaIndexes</xref>[, <xref href="multiRouter.MultiRouteModel.dita#method_detail/setReferencePoints-param-clearRequests" translate="no" type="row">clearRequests</xref>]])</codeblock></p>
+
+         <p>Задает опорные точки мультимаршрута.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setReferencePoints-param-referencePoints">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setReferencePoints-param-referencePoints" type="row"><parmname>referencePoints</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IMultiRouteReferencePoint.dita" type="topic"><keyword>IMultiRouteReferencePoint</keyword></xref>[]</p>
+                    <p/>
+                   <p>Массив опорных точек.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setReferencePoints-param-viaIndexes">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setReferencePoints-param-viaIndexes" type="row"><parmname>viaIndexes</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer[]</p>
+                    <p/>
+                   <p>Индексы транзитных точек в массиве опорных точек.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setReferencePoints-param-clearRequests">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setReferencePoints-param-clearRequests" type="row"><parmname>clearRequests</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> false
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                   <p>Позволяет очистить очередь предыдущих запросов к серверу.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setReferencePoints_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_NTg3MWRm_CACHING --></topic>

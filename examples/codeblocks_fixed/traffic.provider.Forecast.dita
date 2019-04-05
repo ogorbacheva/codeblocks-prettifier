@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="traffic.provider.Forecast" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">traffic.provider.Forecast</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>traffic.provider.Forecast</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="ITrafficProvider.dita" type="topic"><keyword>ITrafficProvider</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Провайдер прогноза пробок. Доступен в хранилище провайдеров под ключом 'traffic#forecast'.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#traffic.provider.Forecast/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#traffic.provider.Forecast/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#traffic.provider.Forecast/events-summary" translate="no" type="section">События </xref> | <xref href="#traffic.provider.Forecast/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">traffic.provider.Forecast([<xref href="#traffic.provider.Forecast/param-options" translate="no" type="entry">options</xref>[, <xref href="#traffic.provider.Forecast/param-state" translate="no" type="entry">state</xref>]])</codeblock></p>
+    
+       
+            
+                <p>Создает провайдер прогноза пробок.</p>
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-options" translate="no">
+                    <xref href="#traffic.provider.Forecast/param-options" type="entry"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции провайдера. Опции для слоев провайдера задаются через опции глобальной коллекции слоев <xref href="Map.dita#field_detail/layers" type="section"><keyword>Map.layers</keyword></xref>.<ul>
+    <li>Опции для картиночного слоя <xref href="Layer.dita" type="topic"><keyword>Layer</keyword></xref> задаются с префиксом 'trafficImage';</li>
+    <li>Опции для картиночного слоя <xref href="hotspot.Layer.dita" type="topic"><keyword>hotspot.Layer</keyword></xref> задаются с префиксом 'trafficJam';</li>
+</ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.autoUpdate" translate="no">
+                    <xref href="#traffic.provider.Forecast/param-options.autoUpdate" type="entry"><parmname>options.autoUpdate</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Флаг, включающий автоматическое обновление данных о пробках. Автоматическое обновление происходит только в том случае, если на карте каждые 4 минуты возникает событие mousemove. Если событие не возникает, пробки перестают обновляться до появления нового события.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-state" translate="no">
+                    <xref href="#traffic.provider.Forecast/param-state" type="entry"><parmname>state</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Состояние провайдера.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-state.timeOffset" translate="no">
+                    <xref href="#traffic.provider.Forecast/param-state.timeOffset" type="entry"><parmname>state.timeOffset</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     900
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>временной интервал между текущим временем и временем прогноза. Измеряется в секундах и кратен 15 минутам (900 секундам).<codeblock xml:space="preserve">// Создадим провайдер пробок с прогнозом на полчаса
+// вперед и разместим его на карте.
+var forecastProvider = new ymaps.traffic.provider.Forecast({}, {timeOffset: 30 * 60});
+forecastProvider.setMap(myMap);
+
+// Запретим показ всплывающих подсказок для пробок.
+myMap.layers.options.set({
+    // Название опции сформировано из опции хотспотного
+    // слоя'openHintOnHover' путем добавления
+    // префикса 'trafficJam'.
+    trafficJamOpenHintOnHover: false
+});
+// ...
+// Удаляем поставщика с карты.
+forecastProvider.setMap(null);</codeblock></p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>ICustomizable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="traffic.provider.Forecast.dita#field_detail/state" type="section"><keyword>state</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Состояние провайдера. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>isInited - признак, готов ли провайдер предоставлять данные;</li>
+    <li>timestamp - текущее время в формате unix timestamp в секундах;</li>
+    <li>localtime - локальное время, для которого сервер в текущий момент отдает данные, в формате 'ЧЧ:ММ';</li>
+    <li>level - уровень загруженности дорог в баллах - от 0 до 10.</li>
+    <li>timeOffset - временной интервал между текущим временем и временем прогноза. Измеряется в секундах и кратен 15 минутам (900 секундам)</li>
+    <li>isotime - строка, содержащая текущую дату в формате "YYYY-MM-DDThh:mm:ss±hhmm".</li>
+</ul></p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ITrafficProvider.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на карту.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="ITrafficProvider.dita#method_detail/getMap" type="section"><keyword>ITrafficProvider</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="traffic.provider.Forecast.dita#method_detail/getTime" type="section"><keyword>getTime</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает время, которое пользователь видит в элементе управления пробками. Объект содержит следующие поля:<ul>
+    <li>dayOfWeek — сокращенное название дня недели ('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun');</li>
+    <li>hours — часы;</li>
+    <li>minutes - минуты.</li>
+</ul>Если центр карты находится в точке, для которой не удается опеределить часовой пояс, функция возвращает null - если мы не знаем, в каком часовом поясе находимся, мы не можем узнать местное время.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ITrafficProvider.dita#method_detail/setMap" type="section"><keyword>setMap</keyword></xref>(<xref href="ITrafficProvider.dita#method_detail/setMap-param-Reference" translate="no" type="row">Reference</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="state">
+            <title translate="no">state</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>} state</codeblock></p>
+
+            <p>Состояние провайдера. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>isInited - признак, готов ли провайдер предоставлять данные;</li>
+    <li>timestamp - текущее время в формате unix timestamp в секундах;</li>
+    <li>localtime - локальное время, для которого сервер в текущий момент отдает данные, в формате 'ЧЧ:ММ';</li>
+    <li>level - уровень загруженности дорог в баллах - от 0 до 10.</li>
+    <li>timeOffset - временной интервал между текущим временем и временем прогноза. Измеряется в секундах и кратен 15 минутам (900 секундам)</li>
+    <li>isotime - строка, содержащая текущую дату в формате "YYYY-MM-DDThh:mm:ss±hhmm".</li>
+</ul></p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getTime">
+        <title translate="no">getTime</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object|null} getTime()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> время, которое пользователь видит в элементе управления пробками. Объект содержит следующие поля:<ul>
+    <li>dayOfWeek — сокращенное название дня недели ('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun');</li>
+    <li>hours — часы;</li>
+    <li>minutes - минуты.</li>
+</ul>Если центр карты находится в точке, для которой не удается опеределить часовой пояс, функция возвращает null - если мы не знаем, в каком часовом поясе находимся, мы не можем узнать местное время.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_YmQ5ZDc4_CACHING --></topic>

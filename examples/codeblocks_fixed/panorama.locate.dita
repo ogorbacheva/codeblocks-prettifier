@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="panorama.locate" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">panorama.locate</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>panorama.locate</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статическая функция.</p>
+    
+    
+        
+            <p>Осуществляет поиск панорамы в заданных точке и слое. Результатом запроса является массив найденных панорам, представленных в виде объектов <xref href="Panorama.dita" type="topic"><keyword>Panorama</keyword></xref>.</p>
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+       <p><b>Возвращает</b> Promise объект, который будет разрешен массивом найденных панорам (если не найдено ни одной панорамы, то массив будет пуст) или отклонен с описанием ошибки.</p>
+       
+    
+
+    
+
+    
+        
+         
+              <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{ <xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref> } panorama.locate(<xref href="#panorama.locate/param-point" translate="no" type="row">point</xref>[, <xref href="#panorama.locate/param-options" translate="no" type="row">options</xref>])</codeblock></p>
+         
+     
+
+    
+        <p translate="no"><b>Параметры:</b></p>
+        
+        
+            
+        
+            
+        
+            
+        
+
+        <table>
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Параметр</entry>
+              <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+        
+        <row id="param-point">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#panorama.locate/param-point" type="row"><parmname>point</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Number[]</p>
+                <p/>
+                <p>Точка, около которой будет произведен поиск панорамы.</p>
+            </entry>
+        </row>
+        
+        <row id="param-options">
+            <entry colname="col1" translate="no">
+                <xref href="#panorama.locate/param-options" type="row"><parmname>options</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Object</p>
+                <p/>
+                <p>Опции.</p>
+            </entry>
+        </row>
+        
+        <row id="param-options.layer">
+            <entry colname="col1" translate="no">
+                <xref href="#panorama.locate/param-options.layer" type="row"><parmname>options.layer</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">   'yandex#panorama'
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: String</p>
+                <p/>
+                <p>Слой, в котором будет произведен поиск панорамы. Доступны два слоя:<ul>
+             <li>'yandex#panorama' — панорамы на земле;</li>
+             <li>'yandex#airPanorama' – воздушные панорамы.</li>
+         </ul></p>
+            </entry>
+        </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+    
+    
+
+
+
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_MzI0OWQx_CACHING --></topic>

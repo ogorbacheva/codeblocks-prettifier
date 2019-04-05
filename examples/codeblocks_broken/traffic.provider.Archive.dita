@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="traffic.provider.Archive" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">traffic.provider.Archive</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>traffic.provider.Archive</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="ITrafficProvider.dita" type="topic"><keyword>ITrafficProvider</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Провайдер архива пробок. Позволяет показывать состояние пробок, типичное для данного региона в конкретный день недели и конкретное время суток.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#traffic.provider.Archive/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#traffic.provider.Archive/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#traffic.provider.Archive/events-summary" translate="no" type="section">События </xref> | <xref href="#traffic.provider.Archive/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">traffic.provider.Archive([<xref href="#traffic.provider.Archive/param-options" translate="no" type="entry">options</xref>[, <xref href="#traffic.provider.Archive/param-state" translate="no" type="entry">state</xref>]])</codeblock></p>
+    
+       
+            
+                <p>Создает экземпляр провайдера архива пробок.</p>
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-options" translate="no">
+                    <xref href="#traffic.provider.Archive/param-options" type="entry"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции провайдера. Опции для слоев провайдера задаются через опции глобальной коллекции слоев <xref href="Map.dita#field_detail/layers" type="section"><keyword>Map.layers</keyword></xref>.<ul>
+    <li>Опции для картиночного слоя <xref href="Layer.dita" type="topic"><keyword>Layer</keyword></xref> задаются с префиксом 'trafficImage';</li>
+    <li>Опции для картиночного слоя <xref href="hotspot.Layer.dita" type="topic"><keyword>hotspot.Layer</keyword></xref> задаются с префиксом 'trafficJam';</li>
+</ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.showCurrentTimeFirst" translate="no">
+                    <xref href="#traffic.provider.Archive/param-options.showCurrentTimeFirst" type="entry"><parmname>options.showCurrentTimeFirst</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>При первом показе архивных данных выставить время, близкое к текущему.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-state" translate="no">
+                    <xref href="#traffic.provider.Archive/param-state" type="entry"><parmname>state</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Состояние провайдера.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-state.timestamp" translate="no">
+                    <xref href="#traffic.provider.Archive/param-state.timestamp" type="entry"><parmname>state.timestamp</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Время, для которого показываются пробки "обычно". Это время, прошедшее с 00:00 понедельника до требуемого времени в секундах. Должно быть кратно 60 * 15 = 900, так как данные на сервере доступны для моментов времени с разницей в 15 минут. Время задается для нулевого часового пояса (UTC+0).</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Создадим провайдер пробок "обычно" и зададим ему timestamp для 17:47 среды
+// в нулевом часовом поясе. // Обратите внимание, что местное время будет зависеть
+// от расположения центра карты.
+// К примеру, 17:47 в нулевом часовом поясе будет соответствовать 21:47 в Москве.
+
+// Вычислим значение параметра timestamp для требуемого времени.
+var timestamp = 2 * 24 * 60 * 60 + // дважды по 24 часа — это время за понедельник и вторник.
+        17 * 60 * 60 + // 17 часов прошло с 00:00 среды.
+        45 * 60, // поскольку время должно быть кратно 15 минутам, берем не 47 минут, а 45.
+    archiveProvider = new ymaps.traffic.provider.Archive({
+        // Запретим при первом открытии выставлять время, близкое к текущему.
+        showCurrentTimeFirst: false
+    }, {
+         // Зададим начальное время самостоятельно.
+        timestamp: timestamp
+    });
+archiveProvider.setMap(map);
+
+ // Запретим показ всплывающих подсказок для слоя пробок.
+myMap.layers.options.set({
+     // Название опции сформировано из опции слоя активных областей
+   // 'openHintOnHover' путем добавления префикса 'trafficJam'.
+    trafficJamOpenHintOnHover: false
+});
+
+// ...
+// Удаляем провайдера с карты.
+archiveProvider.setMap(null);</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>ICustomizable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="traffic.provider.Archive.dita#field_detail/state" type="section"><keyword>state</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Состояние провайдера. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>isInited - признак, готов ли провайдер предоставлять данные;</li>
+    <li>timeZone - смещение по времени для текущего временного пояса относительно UTC+0. Измеряется в секундах.;</li>
+    <li>dst - признак перехода на зимнее/летнее время. При dst='dst' время летнее;</li>
+    <li>timestamp - текущее время во временной зоне UTC+0 в секундах;</li>
+    <li>localtime - локальное время, которое возвращает в ответе сервер;</li>
+    <li>level - уровень загруженности дорог в баллах - от 0 до 10.</li>
+</ul></p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ITrafficProvider.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на карту.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="ITrafficProvider.dita#method_detail/getMap" type="section"><keyword>ITrafficProvider</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="traffic.provider.Archive.dita#method_detail/getTime" type="section"><keyword>getTime</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Возвращает день недели, часы и минуты состояния провайдера с учетом часового пояса и перехода на зимнее/летнее время. То есть то время, которое пользователь видит в элементе управления пробками.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ITrafficProvider.dita#method_detail/setMap" type="section"><keyword>setMap</keyword></xref>(<xref href="ITrafficProvider.dita#method_detail/setMap-param-Reference" translate="no" type="row">Reference</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="traffic.provider.Archive.dita#method_detail/setTime" type="section"><keyword>setTime</keyword></xref>(<xref href="traffic.provider.Archive.dita#method_detail/setTime-param-time" translate="no" type="row">time</xref>[, <xref href="traffic.provider.Archive.dita#method_detail/setTime-param-callback" translate="no" type="row">callback</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Позволяет задавать время для архивного провайдера в минутах, часах и днях недели. Выставляет локальное время только после того, как провайдер инициализирует поля timeZone и dst.<ul>
+    <li>timeZone - поле, которое показывает, в каком часовом поясе на данный момент находится центр карты. При перемещении центра карты из одного часового пояса в другой локальное время может изменяться.</li>
+    <li>dst - признак перехода на летнее/зимнее время. При dst='dst' время летнее.</li>
+</ul>Постоянной составляющей времени для провайдера пробок "обычно" служит поле timestamp, которое отражает текущее время в нулевом часовом поясе (UTC+0). При переходе из одного часового пояса в другой timestamp не изменяется. Значения полей "timestamp", "dst" и "timeZone" можно получить через поле <xref href="traffic.provider.Archive.dita#field_detail/state" type="section"><keyword>traffic.provider.Archive.state</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="state">
+            <title translate="no">state</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>} state</codeblock></p>
+
+            <p>Состояние провайдера. Имена полей, доступных через метод data.Manager.get:<ul>
+    <li>isInited - признак, готов ли провайдер предоставлять данные;</li>
+    <li>timeZone - смещение по времени для текущего временного пояса относительно UTC+0. Измеряется в секундах.;</li>
+    <li>dst - признак перехода на зимнее/летнее время. При dst='dst' время летнее;</li>
+    <li>timestamp - текущее время во временной зоне UTC+0 в секундах;</li>
+    <li>localtime - локальное время, которое возвращает в ответе сервер;</li>
+    <li>level - уровень загруженности дорог в баллах - от 0 до 10.</li>
+</ul></p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">var archiveProvider = new ymaps.traffic.provider.Archive();
+archiveProvider.setMap(myMap);
+archiveProvider.state.events.add('change', function () {
+    if (archiveProvider.state.get('isInited')) {
+        alert('Provider is ready to provide data.');    }});</codeblock>
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getTime">
+        <title translate="no">getTime</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object|null} getTime()</codeblock></p>
+
+         <p>Возвращает день недели, часы и минуты состояния провайдера с учетом часового пояса и перехода на зимнее/летнее время. То есть то время, которое пользователь видит в элементе управления пробками.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект с полями:<ul>
+    <li>dayOfWeek — сокращенное название дня недели ('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun');</li>
+    <li>hours — часы;</li>
+    <li>minutes - минуты.</li>
+</ul>Если центр карты находится в точке, для которой не удается опеределить часовой пояс, функция возвращает null - если мы не знаем, в каком часовом поясе находимся, мы не можем узнать местное время.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="setTime">
+        <title translate="no">setTime</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} setTime(<xref href="traffic.provider.Archive.dita#method_detail/setTime-param-time" translate="no" type="row">time</xref>[, <xref href="traffic.provider.Archive.dita#method_detail/setTime-param-callback" translate="no" type="row">callback</xref>])</codeblock></p>
+
+         <p>Позволяет задавать время для архивного провайдера в минутах, часах и днях недели. Выставляет локальное время только после того, как провайдер инициализирует поля timeZone и dst.<ul>
+    <li>timeZone - поле, которое показывает, в каком часовом поясе на данный момент находится центр карты. При перемещении центра карты из одного часового пояса в другой локальное время может изменяться.</li>
+    <li>dst - признак перехода на летнее/зимнее время. При dst='dst' время летнее.</li>
+</ul>Постоянной составляющей времени для провайдера пробок "обычно" служит поле timestamp, которое отражает текущее время в нулевом часовом поясе (UTC+0). При переходе из одного часового пояса в другой timestamp не изменяется. Значения полей "timestamp", "dst" и "timeZone" можно получить через поле <xref href="traffic.provider.Archive.dita#field_detail/state" type="section"><keyword>traffic.provider.Archive.state</keyword></xref>.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setTime-param-time">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setTime-param-time" type="row"><parmname>time</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Объект с задаваемыми параметрами.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setTime-param-time.dayOfWeek">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setTime-param-time.dayOfWeek" type="row"><parmname>time.dayOfWeek</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Сокращенное название дня недели: 'mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setTime-param-time.hours">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setTime-param-time.hours" type="row"><parmname>time.hours</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Часы.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setTime-param-time.minutes">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setTime-param-time.minutes" type="row"><parmname>time.minutes</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Минуты.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setTime-param-callback">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setTime-param-callback" type="row"><parmname>callback</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция, которая вызывается после того, как было выставлено время. Принимает на вход хэш с выставленными данными.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setTime_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Создадим элемент управления, который сразу показывает на карте
+// провайдер пробок "обычно".
+var trafficControl = new ymaps.control.TrafficControl({
+        shown: true,
+        providerKey: 'traffic#archive'
+    });
+map.controls.add(trafficControl);
+// Как только провайдер получит данные о текущей временной зоне,
+// будет выставлено локальное время.
+trafficControl.getProvider('traffic#archive').setTime({
+    dayOfWeek: 'fri',
+    hours: 9,
+    minutes: 15
+}, function (time) {
+    alert('Локальное время ' + time.hours + ':' + time.minutes + ' set!');});</codeblock>
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_MmI0NjQw_CACHING --></topic>

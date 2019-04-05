@@ -1,0 +1,1368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="objectManager.ObjectCollection" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">objectManager.ObjectCollection</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>objectManager.ObjectCollection</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="ICollection.dita" type="topic"><keyword>ICollection</keyword></xref>, <xref href="ICustomizable.dita" type="topic"><keyword>ICustomizable</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Коллекция объектов, добавленных в слой.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#objectManager.ObjectCollection/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#objectManager.ObjectCollection/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#objectManager.ObjectCollection/events-summary" translate="no" type="section">События </xref> | <xref href="#objectManager.ObjectCollection/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">objectManager.ObjectCollection()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="objectManager.ObjectCollection.dita#field_detail/balloon" type="section"><keyword>balloon</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="objectManager.Balloon.dita" type="topic"><keyword>objectManager.Balloon</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Балун объекта в составе менеджера.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="objectManager.ObjectCollection.dita#field_detail/hint" type="section"><keyword>hint</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="objectManager.Hint.dita" type="topic"><keyword>objectManager.Hint</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Хинт объекта в составе <xref href="ObjectManager.dita" type="topic"><keyword>ObjectManager</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="objectManager.ObjectCollection.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="option.Manager.dita" type="topic"><keyword>option.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций. Имена полей, доступных через метод option.Manager.get:<ul>
+    <li>hasBalloon - флаг наличия у коллекции поля .balloon. Если при клике на объекте не нужно открывать балун, рекомендуется установить эту опцию в значение false, чтобы избежать лишних инициализаций;</li>
+    <li>hasHint - флаг наличия у коллекции поля .hint. Если при наведении на объект не нужно показывать всплывающую подсказку, рекомендуется установить эту опцию в значение false, чтобы избежать лишних инициализаций;</li>
+    <li>hideIconOnBalloonOpen - cкрывать иконку при открытии балуна. Значение по умолчанию true.</li>
+    <li>openBalloonOnClick - показывать балун при клике на объект. Значение по умолчанию true.</li>
+ </ul></p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="objectManager.ObjectCollection.dita#field_detail/overlays" type="section"><keyword>overlays</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="objectManager.OverlayCollection.dita" type="topic"><keyword>objectManager.OverlayCollection</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Коллекция оверлеев одиночных объектов. Все события, за исключением событий add и remove, пропагируются от коллекции оверлеев в коллекцию объектов.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="objectManager.ObjectCollection.dita#event_detail/event_detail/event-add"><keyword>add</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Добавление объекта в коллекцию. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>objectId – идентификатор добавленного объекта;</li>
+    <li>child - добавленный объект.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="objectManager.ObjectCollection.dita#event_detail/event_detail/event-objectoptionschange"><keyword>objectoptionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение опций объекта через метод <xref href="objectManager.ObjectCollection.dita#method_detail/setObjectOptions" type="section"><keyword>objectManager.ObjectCollection.setObjectOptions</keyword></xref>. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>objectId - идентификатор объекта, у которого заменили опции.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="objectManager.ObjectCollection.dita#event_detail/event_detail/event-remove"><keyword>remove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Удаление объекта из коллекции. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>objectId – идентификатор удаленного объекта;</li>
+    <li>child - удаленный объект.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="objectManager.ObjectCollection.dita#method_detail/add" type="section"><keyword>add</keyword></xref>(<xref href="objectManager.ObjectCollection.dita#method_detail/add-param-data" translate="no" type="row">data</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="objectManager.ObjectCollection.dita" type="topic"><keyword>objectManager.ObjectCollection</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Метод полностью дублирует логику <xref href="ObjectManager.dita#method_detail/add" type="section"><keyword>ObjectManager.add</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="objectManager.ObjectCollection.dita#method_detail/each" type="section"><keyword>each</keyword></xref>(<xref href="objectManager.ObjectCollection.dita#method_detail/each-param-callback" translate="no" type="row">callback</xref>, <xref href="objectManager.ObjectCollection.dita#method_detail/each-param-context" translate="no" type="row">context</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Метод, вызывающий переданную функцию-обработчик для всех элементов коллекции.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="objectManager.ObjectCollection.dita#method_detail/getAll" type="section"><keyword>getAll</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает массив объектов, содержащихся в коллекции.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="objectManager.ObjectCollection.dita#method_detail/getById" type="section"><keyword>getById</keyword></xref>(<xref href="objectManager.ObjectCollection.dita#method_detail/getById-param-id" translate="no" type="row">id</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект или null, если объекта с переданным id не существует.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICollection.dita#method_detail/getIterator" type="section"><keyword>getIterator</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IIterator.dita" type="topic"><keyword>IIterator</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает итератор по коллекции.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="ICollection.dita#method_detail/getIterator" type="section"><keyword>ICollection</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="objectManager.ObjectCollection.dita#method_detail/getLength" type="section"><keyword>getLength</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает количество объектов в коллекции.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="objectManager.ObjectCollection.dita#method_detail/getObjectManager" type="section"><keyword>getObjectManager</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="ObjectManager.dita" type="topic"><keyword>ObjectManager</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает родительский слой объектов коллекции.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="objectManager.ObjectCollection.dita#method_detail/remove" type="section"><keyword>remove</keyword></xref>(<xref href="objectManager.ObjectCollection.dita#method_detail/remove-param-data" translate="no" type="row">data</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="objectManager.ObjectCollection.dita" type="topic"><keyword>objectManager.ObjectCollection</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Метод полностью дублирует логику <xref href="ObjectManager.dita#method_detail/remove" type="section"><keyword>ObjectManager.remove</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="objectManager.ObjectCollection.dita#method_detail/removeAll" type="section"><keyword>removeAll</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="objectManager.ObjectCollection.dita" type="topic"><keyword>objectManager.ObjectCollection</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет все элементы коллекции.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="objectManager.ObjectCollection.dita#method_detail/setObjectOptions" type="section"><keyword>setObjectOptions</keyword></xref>(<xref href="objectManager.ObjectCollection.dita#method_detail/setObjectOptions-param-objectId" translate="no" type="row">objectId</xref>, <xref href="objectManager.ObjectCollection.dita#method_detail/setObjectOptions-param-options" translate="no" type="row">options</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="objectManager.ObjectCollection.dita" type="topic"><keyword>objectManager.ObjectCollection</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Метод, позволяющий динамически обновлять опции объекта. Метод следует использовать в случаях, когда вы хотите, чтобы новые опции мгновенно применились к отображению объекта на карте. Обратите внимание, менеджер не учитывает опцию 'visible'.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="balloon">
+            <title translate="no">balloon</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="objectManager.Balloon.dita" type="topic"><keyword>objectManager.Balloon</keyword></xref>} balloon</codeblock></p>
+
+            <p>Балун объекта в составе менеджера.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="hint">
+            <title translate="no">hint</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="objectManager.Hint.dita" type="topic"><keyword>objectManager.Hint</keyword></xref>} hint</codeblock></p>
+
+            <p>Хинт объекта в составе <xref href="ObjectManager.dita" type="topic"><keyword>ObjectManager</keyword></xref>.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="options">
+            <title translate="no">options</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="option.Manager.dita" type="topic"><keyword>option.Manager</keyword></xref>} options</codeblock></p>
+
+            <p>Менеджер опций. Имена полей, доступных через метод option.Manager.get:<ul>
+    <li>hasBalloon - флаг наличия у коллекции поля .balloon. Если при клике на объекте не нужно открывать балун, рекомендуется установить эту опцию в значение false, чтобы избежать лишних инициализаций;</li>
+    <li>hasHint - флаг наличия у коллекции поля .hint. Если при наведении на объект не нужно показывать всплывающую подсказку, рекомендуется установить эту опцию в значение false, чтобы избежать лишних инициализаций;</li>
+    <li>hideIconOnBalloonOpen - cкрывать иконку при открытии балуна. Значение по умолчанию true.</li>
+    <li>openBalloonOnClick - показывать балун при клике на объект. Значение по умолчанию true.</li>
+ </ul></p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Зададим стили для одиночных объектов в составе коллекции.
+objectManager.objects.options.set({
+    preset: 'islands#redIcon',
+    hasBalloon: false,
+    zIndex: 500
+});</codeblock>
+            
+
+            </section>
+        
+            <section id="overlays">
+            <title translate="no">overlays</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="objectManager.OverlayCollection.dita" type="topic"><keyword>objectManager.OverlayCollection</keyword></xref>} overlays</codeblock></p>
+
+            <p>Коллекция оверлеев одиночных объектов. Все события, за исключением событий add и remove, пропагируются от коллекции оверлеев в коллекцию объектов.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">objectManager.objects.overlays.events.add('add', function (e) {    alert('Объект ' + e.get('objectId') + ' показан на карте.');});</codeblock>
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-add">
+            <title translate="no">add</title>
+            
+             <p>Добавление объекта в коллекцию. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>objectId – идентификатор добавленного объекта;</li>
+    <li>child - добавленный объект.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-objectoptionschange">
+            <title translate="no">objectoptionschange</title>
+            
+             <p>Изменение опций объекта через метод <xref href="objectManager.ObjectCollection.dita#method_detail/setObjectOptions" type="section"><keyword>objectManager.ObjectCollection.setObjectOptions</keyword></xref>. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>objectId - идентификатор объекта, у которого заменили опции.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-remove">
+            <title translate="no">remove</title>
+            
+             <p>Удаление объекта из коллекции. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>objectId – идентификатор удаленного объекта;</li>
+    <li>child - удаленный объект.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="add">
+        <title translate="no">add</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="objectManager.ObjectCollection.dita" type="topic"><keyword>objectManager.ObjectCollection</keyword></xref>} add(<xref href="objectManager.ObjectCollection.dita#method_detail/add-param-data" translate="no" type="row">data</xref>)</codeblock></p>
+
+         <p>Метод полностью дублирует логику <xref href="ObjectManager.dita#method_detail/add" type="section"><keyword>ObjectManager.add</keyword></xref>.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="add-param-data">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/add-param-data" type="row"><parmname>data</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object|Object[]|String</p>
+                    <p/>
+                   <p>Объекты, добавляемые в слой.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="add_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">objectManager.objects.add({
+    type: 'Feature',
+    geometry: {
+        type: 'Point',
+        coordinates: [55.33, 36.64]
+    }
+});</codeblock>
+        
+
+    </section>
+    
+        <section id="each">
+        <title translate="no">each</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} each(<xref href="objectManager.ObjectCollection.dita#method_detail/each-param-callback" translate="no" type="row">callback</xref>, <xref href="objectManager.ObjectCollection.dita#method_detail/each-param-context" translate="no" type="row">context</xref>)</codeblock></p>
+
+         <p>Метод, вызывающий переданную функцию-обработчик для всех элементов коллекции.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="each-param-callback">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/each-param-callback" type="row"><parmname>callback</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция-обработчик, в которую передаются объекты коллекции.</p>
+                </entry>
+
+            </row>
+            
+            <row id="each-param-context">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/each-param-context" type="row"><parmname>context</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Контекст выполнения функции-обработчика.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="each_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">var singleCounter = 0,
+    clusterCounter = 0;
+objectManager.objects.each(function (object) {
+    var objectState = objectManager.getObjectState(object.id);
+    if (objectState.isClustered) {
+        clusterCounter++;
+    } else {
+        if (objectState.isShown) {
+            singleCounter++;
+        }
+    }
+});
+alert('Количество одиночных меток на карте: ' + singleCounter);
+alert('Количество кластеризированных меток: ' + clusterCounter);</codeblock>
+        
+
+    </section>
+    
+        <section id="getAll">
+        <title translate="no">getAll</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object[]} getAll()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> массив объектов, содержащихся в коллекции.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getById">
+        <title translate="no">getById</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object|null} getById(<xref href="objectManager.ObjectCollection.dita#method_detail/getById-param-id" translate="no" type="row">id</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>объект или null, если объекта с переданным id не существует.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getById-param-id">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getById-param-id" type="row"><parmname>id</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Идентификатор объекта.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getById_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">objectManager.objects.add('click', function (e) {
+    var objectId = e.get('objectId'),
+        object = objectManager.objects.getById(objectId);
+});</codeblock>
+        
+
+    </section>
+    
+        <section id="getLength">
+        <title translate="no">getLength</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number} getLength()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>количество объектов в коллекции.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">alert('Количество объектов в слое: ' + objectManager.objects.getLength());</codeblock>
+        
+
+    </section>
+    
+        <section id="getObjectManager">
+        <title translate="no">getObjectManager</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="ObjectManager.dita" type="topic"><keyword>ObjectManager</keyword></xref>} getObjectManager()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> родительский слой объектов коллекции.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="remove">
+        <title translate="no">remove</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="objectManager.ObjectCollection.dita" type="topic"><keyword>objectManager.ObjectCollection</keyword></xref>} remove(<xref href="objectManager.ObjectCollection.dita#method_detail/remove-param-data" translate="no" type="row">data</xref>)</codeblock></p>
+
+         <p>Метод полностью дублирует логику <xref href="ObjectManager.dita#method_detail/remove" type="section"><keyword>ObjectManager.remove</keyword></xref>.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="remove-param-data">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/remove-param-data" type="row"><parmname>data</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object|Object[]|String</p>
+                    <p/>
+                   <p>Объекты, которые нужно удалить.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="remove_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Удалим объекты с идентификаторами 34 и 25.
+objectManager.objects.remove([34, 25]);</codeblock>
+        
+
+    </section>
+    
+        <section id="removeAll">
+        <title translate="no">removeAll</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="objectManager.ObjectCollection.dita" type="topic"><keyword>objectManager.ObjectCollection</keyword></xref>} removeAll()</codeblock></p>
+
+         <p>Удаляет все элементы коллекции.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">objectManager.objects.removeAll();</codeblock>
+        
+
+    </section>
+    
+        <section id="setObjectOptions">
+        <title translate="no">setObjectOptions</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="objectManager.ObjectCollection.dita" type="topic"><keyword>objectManager.ObjectCollection</keyword></xref>} setObjectOptions(<xref href="objectManager.ObjectCollection.dita#method_detail/setObjectOptions-param-objectId" translate="no" type="row">objectId</xref>, <xref href="objectManager.ObjectCollection.dita#method_detail/setObjectOptions-param-options" translate="no" type="row">options</xref>)</codeblock></p>
+
+         <p>Метод, позволяющий динамически обновлять опции объекта. Метод следует использовать в случаях, когда вы хотите, чтобы новые опции мгновенно применились к отображению объекта на карте. Обратите внимание, менеджер не учитывает опцию 'visible'.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setObjectOptions-param-objectId">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setObjectOptions-param-objectId" type="row"><parmname>objectId</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Идентификатор объекта, которому нужно задать опции.</p>
+                </entry>
+
+            </row>
+            
+            <row id="setObjectOptions-param-options">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setObjectOptions-param-options" type="row"><parmname>options</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Новые опции объекта.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setObjectOptions_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Меняем цвет иконки при наведении мыши.
+objectManager.objects.events.add('mouseenter', function (e) {
+    var objectId = e.get('objectId'),
+        overlay = objectManager.objects.overlays.getById(objectId);
+    setRedColor(objectId);
+    overlay.events.add('mapchange', setGreenColor);
+});
+
+objectManager.objects.events.add('mouseleave', function (e) {
+    var objectId = e.get('objectId'),
+        overlay = objectManager.objects.overlays.getById(objectId);
+    setGreenColor(objectId);
+    overlay.events.remove('mapchange', setGreenColor);
+});
+
+function setGreenColor (objectId) {
+    objectManager.objects.setObjectOptions(objectId, {
+        preset: 'islands#greenIcon'
+    });
+}
+
+function setRedColor (objectId) {
+    objectManager.objects.setClusterOptions(objectId, {
+        preset: 'islands#redIcon'
+    });
+}</codeblock>
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_ODUxZDEz_CACHING --></topic>

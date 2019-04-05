@@ -1,0 +1,598 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="DomEvent" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">DomEvent</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>DomEvent</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IDomEvent.dita" type="topic"><keyword>IDomEvent</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>DOM-событие в системе API Яндекс.Карт. Предоставляет прокси-методы для доступа к полям и методам исходного DOM-события. Возвращаемые значения нормализованы с учётом особенностей различных браузеров. Также переопределено свойство position, возвращается массив вида [pageX, pageY].</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#DomEvent/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#DomEvent/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">DomEvent(<xref href="#DomEvent/param-originalEvent" translate="no" type="entry">originalEvent</xref>[, <xref href="#DomEvent/param-type" translate="no" type="entry">type</xref>])</codeblock></p>
+    
+       
+            
+                <p>Создаёт DOM-событие в системе API Яндекс.Карт.</p>
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-originalEvent" translate="no">
+                    
+                        <xref href="#DomEvent/param-originalEvent" type="entry"><parmname>originalEvent</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref></p>
+                    <p/>
+                    <p>DOM-событие.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-type" translate="no">
+                    <xref href="#DomEvent/param-type" type="entry"><parmname>type</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Тип события. Если не указан, берётся из originalEvent.type.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEvent.dita#method_detail/allowMapEvent" type="section"><keyword>allowMapEvent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Разрешает распространение данного события на карту.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IEvent.dita#method_detail/allowMapEvent" type="section"><keyword>IEvent</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEvent.dita#method_detail/callMethod" type="section"><keyword>callMethod</keyword></xref>(<xref href="IEvent.dita#method_detail/callMethod-param-name" translate="no" type="row">name</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Вызывает указанный метод у исходного события. Второй и последующие аргументы передаются методу при вызове.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IEvent.dita#method_detail/callMethod" type="section"><keyword>IEvent</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="DomEvent.dita#method_detail/get" type="section"><keyword>get</keyword></xref>(<xref href="DomEvent.dita#method_detail/get-param-name" translate="no" type="row">name</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает значение некоторого свойства. Сначала проверяется, не было ли свойство задано через set, затем проверяется наличие свойства в domEvent.overrideStorage. Если не найдено — то проверяется в originalEvent. Значения свойств кэшируются.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEvent.dita#method_detail/getSourceEvent" type="section"><keyword>getSourceEvent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IDomEvent.dita" type="topic"><keyword>IDomEvent</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает исходное DOM-событие.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IDomEvent.dita#method_detail/getSourceEvent" type="section"><keyword>IDomEvent</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEvent.dita#method_detail/isDefaultPrevented" type="section"><keyword>isDefaultPrevented</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true, если реакция по умолчанию на событие отменена.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IEvent.dita#method_detail/isDefaultPrevented" type="section"><keyword>IEvent</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEvent.dita#method_detail/isImmediatePropagationStopped" type="section"><keyword>isImmediatePropagationStopped</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true, если обработка события прервана.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IEvent.dita#method_detail/isImmediatePropagationStopped" type="section"><keyword>IEvent</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEvent.dita#method_detail/isMapEventAllowed" type="section"><keyword>isMapEventAllowed</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true, если событие карты разрешено.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IEvent.dita#method_detail/isMapEventAllowed" type="section"><keyword>IEvent</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEvent.dita#method_detail/isPropagationStopped" type="section"><keyword>isPropagationStopped</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true, если распространение события прервано,</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IEvent.dita#method_detail/isPropagationStopped" type="section"><keyword>IEvent</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEvent.dita#method_detail/preventDefault" type="section"><keyword>preventDefault</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Отменяет реакцию по умолчанию на событие в рамках системы событий API Яндекс.Карт. Вызов этого метода не влияет на обработку браузером действия по умолчанию исходного DOM-события.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IDomEvent.dita#method_detail/preventDefault" type="section"><keyword>IDomEvent</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEvent.dita#method_detail/stopImmediatePropagation" type="section"><keyword>stopImmediatePropagation</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Прекращает обработку события в системе событий API Яндекс.Карт. Т.е. после вызова данного метода ни один обработчик данного события не будет вызван. Вызов этого метода не влияет на обработку исходного DOM-события на уровне браузера.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IDomEvent.dita#method_detail/stopImmediatePropagation" type="section"><keyword>IDomEvent</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEvent.dita#method_detail/stopPropagation" type="section"><keyword>stopPropagation</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Прекращает распространение DOM-события в системе событий API Яндекс.Карт. Вызов этого метода не влияет на распространение исходного DOM-события по DOM-дереву.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IDomEvent.dita#method_detail/stopPropagation" type="section"><keyword>IDomEvent</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="get">
+        <title translate="no">get</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} get(<xref href="DomEvent.dita#method_detail/get-param-name" translate="no" type="row">name</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> значение свойства. Сначала проверяется, не было ли свойство задано через set, затем проверяется наличие свойства в domEvent.overrideStorage. Если не найдено — то проверяется в originalEvent. Значения свойств кэшируются.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="get-param-name">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/get-param-name" type="row"><parmname>name</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Имя свойства.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="get_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_ZTA0NWUx_CACHING --></topic>

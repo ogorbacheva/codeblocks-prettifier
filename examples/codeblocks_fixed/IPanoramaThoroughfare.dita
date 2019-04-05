@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="../index.xsl"?><topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="IPanoramaThoroughfare" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3" xml:lang="ru">
+
+
+
+<!-- ============================== class title ============================ -->
+
+
+
+<title translate="no">IPanoramaThoroughfare</title>
+<body>
+
+<!-- ============================== class summary ========================== -->
+
+
+
+    <section>
+
+    
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IPanoramaTransition.dita"><keyword>IPanoramaTransition</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Интерфейс, описывающий переход на панораме.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IPanoramaThoroughfare/constructor-summary" translate="no">Конструктор</xref> | <xref href="#IPanoramaThoroughfare/properties-summary" translate="no">Поля </xref> | <xref href="#IPanoramaThoroughfare/methods-summary" translate="no">Методы </xref></p>
+
+
+<!-- ============================== Static "class" (object) summary and detailed desc ========================== -->
+
+
+
+</section>
+
+<!-- ============================== Constructor summary ==================== -->
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript">IPanoramaThoroughfare()</codeblock></p>
+        
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+<!-- ============================== Data Types Summary======================== -->
+ 
+
+
+
+
+
+<!-- ============================== Properties summary ===================== -->
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="field_name" colnum="1" colwidth="25*"/>
+          <colspec colname="field_type" colnum="2" colwidth="15*"/>
+          
+
+           <colspec colname="field_description" colnum="3" colwidth="60*"/>
+          <thead>
+            <row>
+              <entry align="left" translate="no">Имя</entry>
+              <entry align="left" translate="no">Тип</entry>
+          
+              <entry align="left" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry translate="no"><xref href="IPanoramaThoroughfare.dita#field_detail/properties"><keyword>properties</keyword></xref></entry>
+              <entry translate="no"><xref href="data.Manager.dita"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry>
+                <p>Дополнительные свойства перехода.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+<!-- ============================== Constants summary ======================== -->
+
+
+
+<!-- ============================== Events summary ======================== -->
+
+
+
+<!-- ============================== Methods summary ======================== -->
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="method_name" colnum="1"/>
+          
+          
+          <colspec colname="method_returns" colnum="3"/>
+          
+          <colspec colname="method_description" colnum="3"/>
+          <thead>
+            <row>
+              <entry align="left" translate="no">Имя</entry>
+          
+          
+              <entry align="left" translate="no">Возвращает</entry>
+          
+              <entry align="left" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry translate="no"><xref href="IPanoramaTransition.dita#method_detail/getConnectedPanorama"><keyword>getConnectedPanorama</keyword></xref>()</entry>
+                        
+                        
+                        <entry translate="no"><xref href="vow.Promise.dita"><keyword>vow.Promise</keyword></xref></entry>
+                        
+                        <entry>
+                            
+                                
+                                    <p>Возвращает объект-обещание, который будет разрешен объектом
+     связанной панорамы или отклонен с ошибкой.</p>
+                                    
+                                      <p translate="no">Унаследован от  <xref href="IPanoramaTransition.dita#method_detail/getConnectedPanorama"><keyword>IPanoramaTransition</keyword></xref>.</p>
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry translate="no"><xref href="IPanoramaThoroughfare.dita#method_detail/getDirection"><keyword>getDirection</keyword></xref>()</entry>
+                        
+                        
+                        <entry translate="no">Number[]</entry>
+                        
+                        <entry>
+                            
+                                
+                                    <p>Возвращает направление на панораму, на которую указывает переход
+     из панорамы, которой он принадлежит.</p>
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry translate="no"><xref href="IPanoramaThoroughfare.dita#method_detail/getPanorama"><keyword>getPanorama</keyword></xref>()</entry>
+                        
+                        
+                        <entry translate="no"><xref href="IPanorama.dita"><keyword>IPanorama</keyword></xref></entry>
+                        
+                        <entry>
+                            
+                                
+                                    <p>Возвращает панораму, которой принадлежит переход.</p>
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+<!-- ============================== Constructor details ==================== -->
+
+
+<!-- ============================== Field details ========================== -->
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="properties">
+            <title translate="no">properties</title>
+            <p translate="no"><codeblock code-lang="javascript">{<xref href="data.Manager.dita"><keyword>data.Manager</keyword></xref>} properties</codeblock></p>
+
+            <p>Дополнительные свойства перехода.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+<!-- ============================== Typedef details ========================== -->
+
+
+
+
+
+
+
+<!-- ============================== Event details ========================== -->
+
+
+
+<!-- ============================== Method details ========================= -->
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getDirection">
+        <title translate="no">getDirection</title>
+        <p translate="no"><codeblock code-lang="javascript">{Number[]} getDirection()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+         
+            <p><b>Возвращает </b>направление на панораму, на которую указывает переход
+     из панорамы, которой он принадлежит.</p>
+            
+        
+
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getPanorama">
+        <title translate="no">getPanorama</title>
+        <p translate="no"><codeblock code-lang="javascript">{<xref href="IPanorama.dita"><keyword>IPanorama</keyword></xref>} getPanorama()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+         
+            <p><b>Возвращает </b>панораму, которой принадлежит переход.</p>
+            
+        
+
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic>
+
+
+
+</topic>

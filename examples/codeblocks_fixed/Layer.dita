@@ -1,0 +1,1717 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Layer" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">Layer</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>Layer</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="ILayer.dita" type="topic"><keyword>ILayer</keyword></xref>, <xref href="IParentOnMap.dita" type="topic"><keyword>IParentOnMap</keyword></xref>, <xref href="IPositioningContext.dita" type="topic"><keyword>IPositioningContext</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Тайловый слой. Позволяет отображать на карте подложку, состоящую из тайлов.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#Layer/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#Layer/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#Layer/events-summary" translate="no" type="section">События </xref> | <xref href="#Layer/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">Layer(<xref href="#Layer/param-tileUrlTemplate" translate="no" type="entry">tileUrlTemplate</xref>[, <xref href="#Layer/param-options" translate="no" type="entry">options</xref>])</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-tileUrlTemplate" translate="no">
+                    
+                        <xref href="#Layer/param-tileUrlTemplate" type="entry"><parmname>tileUrlTemplate</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|Function</p>
+                    <p/>
+                    <p>Строковый шаблон URL тайла, либо функция, которая генерирует URL тайла. Для строкового шаблона поддерживается подстановка:</p><ul>
+<li>%с заменяется на <codeph>x=номер[0]&amp;y=номер[1]&amp;z=уровень масштабирования</codeph>.</li>
+<li>%x заменяется на номер[0].</li>
+<li>%y — заменяется на номер[1];</li>
+<li>%z — заменяется на уровень масштабирования;</li>
+<li>%l — заменяется на lang=язык;</li>
+<li>%d или %d|n - заменяется на число от 1 до n, в зависимости от номера тайла; n - количество доменов. Используется для распределения нагрузки между несколькими доменами. В качестве n нужно указывать степени двойки (2, 4, 16 и т.д.). Если шаблон имеет %d, то n=4.</li>
+</ul><p>
+</p><p>Функция-шаблон получает на вход три параметра:</p>
+<ul>
+<li>tileNumber - массив из двух чисел, номера тайла по x и y;</li>
+<li>tileZoom - уровень масштабирования;</li>
+<li>Возвращает строку-URL.</li>
+</ul>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options" translate="no">
+                    <xref href="#Layer/param-options" type="entry"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.brightness" translate="no">
+                    <xref href="#Layer/param-options.brightness" type="entry"><parmname>options.brightness</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     0.5
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Яркость слоя. Задается числом от 0 до 1. 0 соответствует черному цвету, 1 - белому.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.notFoundTile" translate="no">
+                    <xref href="#Layer/param-options.notFoundTile" type="entry"><parmname>options.notFoundTile</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      null
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|null</p>
+                    <p/>
+                    <p>Опция, указывающая по какому url нужно загрузить картинку, если картинка для тайла не загрузилась. Если значение null, то будет показан стандартный тайл с текстовым сообщением. Для прозрачных тайлов опция notFoundTile не применяется, и вместо незагруженных тайлов ничего показываться не будет.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.pane" translate="no">
+                    <xref href="#Layer/param-options.pane" type="entry"><parmname>options.pane</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      'ground'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IPane.dita" type="topic"><keyword>IPane</keyword></xref>|String</p>
+                    <p/>
+                    <p>Указатель на пейн слоя или ключ из <xref href="map.pane.Manager.dita" type="topic"><keyword>map.pane.Manager</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.projection" translate="no">
+                    <xref href="#Layer/param-options.projection" type="entry"><parmname>options.projection</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Проекция слоя.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.tileSize" translate="no">
+                    <xref href="#Layer/param-options.tileSize" type="entry"><parmname>options.tileSize</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     [256, 256]
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                    <p>Размер тайлов слоя.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.tileTransparent" translate="no">
+                    <xref href="#Layer/param-options.tileTransparent" type="entry"><parmname>options.tileTransparent</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Флаг, показывающий, являются ли тайлы слоя прозрачными.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.zIndex" translate="no">
+                    <xref href="#Layer/param-options.zIndex" type="entry"><parmname>options.zIndex</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      constants.zIndex.layer
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>zIndex слоя в контейнере слоёв.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Добавляет на карту слой OSM.
+map.layers.add(new ymaps.Layer(
+    'http://tile.openstreetmap.org/%z/%x/%y.png', {
+        projection: ymaps.projection.sphericalMercator
+    }));
+map.copyrights.add('© OpenStreetMap contributors, CC-BY-SA');</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>ICustomizable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayer.dita#event_detail/event_detail/event-brightnesschange"><keyword>brightnesschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие изменения яркости слоя.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ILayer.dita#event_detail/event_detail/event-brightnesschange"><keyword>ILayer</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayer.dita#event_detail/event_detail/event-copyrightschange"><keyword>copyrightschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие изменения доступной информации об авторских правах.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ILayer.dita#event_detail/event_detail/event-copyrightschange"><keyword>ILayer</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IParentOnMap.dita#event_detail/event_detail/event-mapchange"><keyword>mapchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменилась карта. Поля данных:<ul>
+    <li>oldMap - старая карта;</li>
+    <li>newMap - новая карта.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IParentOnMap.dita#event_detail/event_detail/event-mapchange"><keyword>IParentOnMap</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>parentchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменился родительский объект.</p><p>Поля данных:</p>
+<ul>
+    <li>oldParent - старый родитель;</li>
+    <li>newParent - новый родитель.</li>
+</ul>
+                            
+                                <p translate="no">Унаследовано от <xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>IChild</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayer.dita#event_detail/event_detail/event-tileloadchange"><keyword>tileloadchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие изменения состояния загрузки тайла. Поля данных:<ul>
+    <li>readyTileNumber-количество готовых тайлов. Тайл считается готовым, когда она загружен и отрисован. Тип: Number.</li>
+    <li>totalTileNumber-общее количество видимых тайлов. Тип: Number.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ILayer.dita#event_detail/event_detail/event-tileloadchange"><keyword>ILayer</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayer.dita#event_detail/event_detail/event-zoomrangechange"><keyword>zoomrangechange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие изменения доступной информации о диапазоне уровней масштабирования.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ILayer.dita#event_detail/event_detail/event-zoomrangechange"><keyword>ILayer</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Layer.dita#method_detail/clientPixelsToNumber" type="section"><keyword>clientPixelsToNumber</keyword></xref>(<xref href="Layer.dita#method_detail/clientPixelsToNumber-param-clientPixelPoint" translate="no" type="row">clientPixelPoint</xref>, <xref href="Layer.dita#method_detail/clientPixelsToNumber-param-tileZoom" translate="no" type="row">tileZoom</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает номер тайла, в который попадает указанная точка при заданном уровне масштаба тайлов.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPositioningContext.dita#method_detail/fromClientPixels" type="section"><keyword>fromClientPixels</keyword></xref>(<xref href="IPositioningContext.dita#method_detail/fromClientPixels-param-clientPixelPoint" translate="no" type="row">clientPixelPoint</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Преобразует клиентские пиксельные координаты в глобальные.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPositioningContext.dita#method_detail/fromClientPixels" type="section"><keyword>IPositioningContext</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayer.dita#method_detail/getBrightness" type="section"><keyword>getBrightness</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Необязательный метод.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ILayer.dita#method_detail/getBrightness" type="section"><keyword>ILayer</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayer.dita#method_detail/getCopyrights" type="section"><keyword>getCopyrights</keyword></xref>(<xref href="ILayer.dita#method_detail/getCopyrights-param-coords" translate="no" type="row">coords</xref>, <xref href="ILayer.dita#method_detail/getCopyrights-param-zoom" translate="no" type="row">zoom</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Необязательный метод. Запрашивает информацию об авторских правах в указанной точке с указанным коэффициентом масштабирования.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ILayer.dita#method_detail/getCopyrights" type="section"><keyword>ILayer</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IParentOnMap.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на карту.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IParentOnMap.dita#method_detail/getMap" type="section"><keyword>IParentOnMap</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Layer.dita#method_detail/getPane" type="section"><keyword>getPane</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPane.dita" type="topic"><keyword>IPane</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает контейнер, в котором находится слой.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChildOnMap.dita#method_detail/getParent" type="section"><keyword>getParent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IParentOnMap.dita" type="topic"><keyword>IParentOnMap</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на родительский объект или null, если родительский элемент не был установлен.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IChildOnMap.dita#method_detail/getParent" type="section"><keyword>IChildOnMap</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Layer.dita#method_detail/getTileSize" type="section"><keyword>getTileSize</keyword></xref>(<xref href="Layer.dita#method_detail/getTileSize-param-zoom" translate="no" type="row">zoom</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает размеры тайла по горизонтали и вертикали для указанного коэффициента масштабирования.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Layer.dita#method_detail/getTileStatus" type="section"><keyword>getTileStatus</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Возвращает общее число видимых тайлов и число готовых. Тайл считается готовым, когда она загружен и отрисован.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Layer.dita#method_detail/getTileUrl" type="section"><keyword>getTileUrl</keyword></xref>(<xref href="Layer.dita#method_detail/getTileUrl-param-tileNumber" translate="no" type="row">tileNumber</xref>, <xref href="Layer.dita#method_detail/getTileUrl-param-tileZoom" translate="no" type="row">tileZoom</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает URL тайла по его номеру и уровню масштабирования или null если для запрашиваемого участка нет данных.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Layer.dita#method_detail/getTileUrlTemplate" type="section"><keyword>getTileUrlTemplate</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String|Function</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает строковый шаблон URL тайла или функцию, которая его генерирует.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPositioningContext.dita#method_detail/getZoom" type="section"><keyword>getZoom</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает текущий уровень масштабирования, в котором работает контекст позиционирования.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPositioningContext.dita#method_detail/getZoom" type="section"><keyword>IPositioningContext</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ILayer.dita#method_detail/getZoomRange" type="section"><keyword>getZoomRange</keyword></xref>(<xref href="ILayer.dita#method_detail/getZoomRange-param-point" translate="no" type="row">point</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Необязательный метод. Определяет доступный в указанной точке диапазон уровней масштабирования. Если данные есть, то возвращенный объект-promise будет подтвержден и передаст в качестве результата массив из двух чисел - минимальный и максимальный доступный в точке уровень масштабирования. Если данных нет, то promise отклоняется с указанием ошибки.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="ILayer.dita#method_detail/getZoomRange" type="section"><keyword>ILayer</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Layer.dita#method_detail/numberToClientBounds" type="section"><keyword>numberToClientBounds</keyword></xref>(<xref href="Layer.dita#method_detail/numberToClientBounds-param-tileNumber" translate="no" type="row">tileNumber</xref>, <xref href="Layer.dita#method_detail/numberToClientBounds-param-tileZoom" translate="no" type="row">tileZoom</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Преобразует номер и уровень масштаба тайла в занимаемую тайлом область в клиентских координатах родительского контейнера.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Layer.dita#method_detail/restrict" type="section"><keyword>restrict</keyword></xref>(<xref href="Layer.dita#method_detail/restrict-param-number" translate="no" type="row">number</xref>, <xref href="Layer.dita#method_detail/restrict-param-tileZoom" translate="no" type="row">tileZoom</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Integer[]|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Накладывает ограничения на зону видимости тайлов (в том числе зацикленность карты по осям x, y).</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChildOnMap.dita#method_detail/setParent" type="section"><keyword>setParent</keyword></xref>(<xref href="IChildOnMap.dita#method_detail/setParent-param-parent" translate="no" type="row">parent</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IChildOnMap.dita" type="topic"><keyword>IChildOnMap</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает родительский объект. Если передать значение null, то элемент управления будет только удален из текущего родительского объекта.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IChildOnMap.dita#method_detail/setParent" type="section"><keyword>IChildOnMap</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Layer.dita#method_detail/setTileUrlTemplate" type="section"><keyword>setTileUrlTemplate</keyword></xref>(<xref href="Layer.dita#method_detail/setTileUrlTemplate-param-tileUrlTemplate" translate="no" type="row">tileUrlTemplate</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPositioningContext.dita#method_detail/toClientPixels" type="section"><keyword>toClientPixels</keyword></xref>(<xref href="IPositioningContext.dita#method_detail/toClientPixels-param-globalPixelPoint" translate="no" type="row">globalPixelPoint</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Преобразует глобальные пиксельные координаты в клиентские.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPositioningContext.dita#method_detail/toClientPixels" type="section"><keyword>IPositioningContext</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Layer.dita#method_detail/update" type="section"><keyword>update</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет старые тайлы и запрашивает новые.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="clientPixelsToNumber">
+        <title translate="no">clientPixelsToNumber</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[]} clientPixelsToNumber(<xref href="Layer.dita#method_detail/clientPixelsToNumber-param-clientPixelPoint" translate="no" type="row">clientPixelPoint</xref>, <xref href="Layer.dita#method_detail/clientPixelsToNumber-param-tileZoom" translate="no" type="row">tileZoom</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>номер тайла, в который попадает указанная точка при заданном уровне масштаба тайлов.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="clientPixelsToNumber-param-clientPixelPoint">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/clientPixelsToNumber-param-clientPixelPoint" type="row"><parmname>clientPixelPoint</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Точка в клиентских пиксельных координатах.</p>
+                </entry>
+
+            </row>
+            
+            <row id="clientPixelsToNumber-param-tileZoom">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/clientPixelsToNumber-param-tileZoom" type="row"><parmname>tileZoom</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Уровень масштабирования тайла.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="clientPixelsToNumber_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getPane">
+        <title translate="no">getPane</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IPane.dita" type="topic"><keyword>IPane</keyword></xref>} getPane()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> контейнер, в котором находится слой.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getTileSize">
+        <title translate="no">getTileSize</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[]} getTileSize(<xref href="Layer.dita#method_detail/getTileSize-param-zoom" translate="no" type="row">zoom</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>размеры тайла по горизонтали и вертикали для указанного коэффициента масштабирования.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getTileSize-param-zoom">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getTileSize-param-zoom" type="row"><parmname>zoom</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Значение коэффициента мастабирования.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getTileSize_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Покажем тайлы для большего уровня масштабирования,
+// растянутые в два раза до размера 512х512 пикселей.
+// Например, для экономии трафика.
+var layer = new ymaps.Layer('', {
+    projection: ymaps.projection.sphericalMercator
+});
+layer.getTileUrl = function (tileNumber, zoom) {
+    return ['http://tile.openstreetmap.org', Math.max(zoom - 1, 0),
+        tileNumber[0], tileNumber[1]].join('/') + '.png';
+}
+layer.getTileSize = function (zoom) {
+    if (zoom == 0) {
+        return [256, 256];
+    }
+    return [512, 512];
+}
+map.copyrights.add('© OpenStreetMap contributors, CC-BY-SA');</codeblock>
+        
+
+    </section>
+    
+        <section id="getTileStatus">
+        <title translate="no">getTileStatus</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} getTileStatus()</codeblock></p>
+
+         <p>Возвращает общее число видимых тайлов и число готовых. Тайл считается готовым, когда она загружен и отрисован.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект, содержащий следующие поля:<ul>
+  <li>readyTileNumber-количество готовых тайлов. Тип: Number.</li>
+  <li>totalTileNumber - общее количество тайлов. Тип: Number.</li>
+</ul></p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getTileUrl">
+        <title translate="no">getTileUrl</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String|null} getTileUrl(<xref href="Layer.dita#method_detail/getTileUrl-param-tileNumber" translate="no" type="row">tileNumber</xref>, <xref href="Layer.dita#method_detail/getTileUrl-param-tileZoom" translate="no" type="row">tileZoom</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>URL тайла по его номеру и уровню масштабирования или null если для запрашиваемого участка нет данных.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getTileUrl-param-tileNumber">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getTileUrl-param-tileNumber" type="row"><parmname>tileNumber</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: </p>
+                    <p/>
+                   
+                </entry>
+
+            </row>
+            
+            <row id="getTileUrl-param-tileZoom">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getTileUrl-param-tileZoom" type="row"><parmname>tileZoom</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: </p>
+                    <p/>
+                   
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getTileUrl_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Определяет функцию для формирования URL тайлаvar layer = new ymaps.
+Layer('');
+layer.getTileUrl = function (tileNumber, zoom) {
+    return ['http://tile.openstreetmap.org', zoom, tileNumber[0],
+        tileNumber[1]].join('/') + '.png';
+}</codeblock>
+        
+
+    </section>
+    
+        <section id="getTileUrlTemplate">
+        <title translate="no">getTileUrlTemplate</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String|Function} getTileUrlTemplate()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> строковый шаблон URL тайла или функцию, которая его генерирует.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="numberToClientBounds">
+        <title translate="no">numberToClientBounds</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]} numberToClientBounds(<xref href="Layer.dita#method_detail/numberToClientBounds-param-tileNumber" translate="no" type="row">tileNumber</xref>, <xref href="Layer.dita#method_detail/numberToClientBounds-param-tileZoom" translate="no" type="row">tileZoom</xref>)</codeblock></p>
+
+         <p>Преобразует номер и уровень масштаба тайла в занимаемую тайлом область в клиентских координатах родительского контейнера.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>область в клиентских пиксельных координатах.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="numberToClientBounds-param-tileNumber">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/numberToClientBounds-param-tileNumber" type="row"><parmname>tileNumber</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer[]</p>
+                    <p/>
+                   <p>Номер тайла.</p>
+                </entry>
+
+            </row>
+            
+            <row id="numberToClientBounds-param-tileZoom">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/numberToClientBounds-param-tileZoom" type="row"><parmname>tileZoom</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Уровень масштабирования тайла.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="numberToClientBounds_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="restrict">
+        <title translate="no">restrict</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Integer[]|null} restrict(<xref href="Layer.dita#method_detail/restrict-param-number" translate="no" type="row">number</xref>, <xref href="Layer.dita#method_detail/restrict-param-tileZoom" translate="no" type="row">tileZoom</xref>)</codeblock></p>
+
+         <p>Накладывает ограничения на зону видимости тайлов (в том числе зацикленность карты по осям x, y).</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>новый номер тайла с учётом ограничений либо null, если тайл не входит в зону видимости.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="restrict-param-number">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/restrict-param-number" type="row"><parmname>number</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer[]</p>
+                    <p/>
+                   <p>Номер тайла.</p>
+                </entry>
+
+            </row>
+            
+            <row id="restrict-param-tileZoom">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/restrict-param-tileZoom" type="row"><parmname>tileZoom</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Уровень масштабирования тайла.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="restrict_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="setTileUrlTemplate">
+        <title translate="no">setTileUrlTemplate</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} setTileUrlTemplate(<xref href="Layer.dita#method_detail/setTileUrlTemplate-param-tileUrlTemplate" translate="no" type="row">tileUrlTemplate</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setTileUrlTemplate-param-tileUrlTemplate">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setTileUrlTemplate-param-tileUrlTemplate" type="row"><parmname>tileUrlTemplate</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|Function</p>
+                    <p/>
+                   <p>Строковый шаблон URL тайла, либо функция, которая его генерирует.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setTileUrlTemplate_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="update">
+        <title translate="no">update</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} update()</codeblock></p>
+
+         <p>Удаляет старые тайлы и запрашивает новые.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="update-param-updateBounds">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/update-param-updateBounds" type="row"><parmname>updateBounds</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: </p>
+                    <p/>
+                   
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="update_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_NzQyMjhh_CACHING --></topic>

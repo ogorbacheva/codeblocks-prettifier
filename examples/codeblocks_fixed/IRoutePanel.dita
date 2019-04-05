@@ -1,0 +1,780 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="IRoutePanel" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IRoutePanel</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IRoutePanel</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IEventEmitter.dita" type="topic"><keyword>IEventEmitter</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Интерфейс панели маршрута.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IRoutePanel/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#IRoutePanel/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#IRoutePanel/events-summary" translate="no" type="section">События </xref> | <xref href="#IRoutePanel/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IRoutePanel()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IRoutePanel.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций. Названия опций:<ul>
+    <li>allowSwitch: Boolean = true – показать на панели кнопку, позволяющую менять местами начальную и конечную точки маршрута;</li>
+    <li>reverseGeocoding: Boolean = true – включить ли обратное геокодирование при построение маршрута;</li>
+    <li>adjustMapMargin: Boolean = false – будет ли панель маршрута регистрировать свои размеры в <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</li>
+    <li>types: Object = { auto: true, masstransit: true, pedestrian: true, bicycle: true, taxi: false } – типы маршрутизации, которые будут доступны для выбора пользователю. При изменении опции возможных типов маршрута, текущий выбранный тип автоматически меняется. Например, если был выбран пешеходный маршрут, а после этого вебмастер разрешил только автомобильные и на общественном транспорте, то автоматически выберется автомобильный. Доступные типы маршрутизации отображаются в панели только в том случае, если задано два или более типа. Обратите внимание если вы используете политику безопасности контента: для использования типа "такси" нужно обновить правила CSP на <xref href="https://tech.yandex.com/maps/doc/jsapi/2.1/dg/concepts/load-docpage/#load__using-csp" scope="external">новейшую версию</xref>.</li>
+</ul></p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IRoutePanel.dita#field_detail/state" type="section"><keyword>state</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IDataManager.dita" type="topic"><keyword>IDataManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер состояний. Названия состояний:<ul>
+     <li>type: String – тип маршрутизации <xref href="IMultiRouteParams.dita#field_detail/routingMode" type="section"><keyword>IMultiRouteParams.routingMode</keyword></xref>;</li>
+     <li>fromEnabled: Boolean – включить возможность задавать пункт отправления в поле ввода;</li>
+     <li>from: String – адрес или координаты пункта отправления;</li>
+     <li>toEnabled: Boolean – включить возможность задавать пункт назначения в поле ввода;</li>
+     <li>to: String – адрес или координаты пункта назначения.</li>
+</ul></p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IRoutePanel.dita#event_detail/event_detail/event-disable"><keyword>disable</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Зависимости панели не загружены.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IRoutePanel.dita#event_detail/event_detail/event-enable"><keyword>enable</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Панель маршрутизации и ее зависимости загружены и готовы к использованию.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IRoutePanel.dita#method_detail/enable" type="section"><keyword>enable</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Загружает все зависимости панели.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IRoutePanel.dita#method_detail/geolocate" type="section"><keyword>geolocate</keyword></xref>(<xref href="IRoutePanel.dita#method_detail/geolocate-param-name" translate="no" type="row">name</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задать местоположение пользователя в качестве начальной или конечной точки маршрута.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IRoutePanel.dita#method_detail/getRoute" type="section"><keyword>getRoute</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="multiRouter.MultiRoute.dita" type="topic"><keyword>multiRouter.MultiRoute</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                              <note type="attention">Данный метод является устаревшим. См. <xref href="IRoutePanel.dita#method_detail/getRouteAsync" type="section"><keyword>IRoutePanel.getRouteAsync</keyword></xref>.</note>
+                             
+                            
+                                 
+                                     
+                                        <p>Возвращает построенный маршрут.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IRoutePanel.dita#method_detail/getRouteAsync" type="section"><keyword>getRouteAsync</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>.&lt;<xref href="multiRouter.MultiRoute.dita" type="topic"><keyword>multiRouter.MultiRoute</keyword></xref>&gt;</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     <p>Возвращает <xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>, который будет разрешен построенным маршрутом. Promise отклоняется при возникновении ошибки.</p>
+                                 
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IRoutePanel.dita#method_detail/isEnable" type="section"><keyword>isEnable</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true, если панель полностью загружена, false – иначе.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IRoutePanel.dita#method_detail/switchPoints" type="section"><keyword>switchPoints</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Меняет местами начальную и конечную точки маршрута. Изменения автоматически отобразятся в полях ввода на панели маршрута.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="options">
+            <title translate="no">options</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref>} options</codeblock></p>
+
+            <p>Менеджер опций. Названия опций:<ul>
+    <li>allowSwitch: Boolean = true – показать на панели кнопку, позволяющую менять местами начальную и конечную точки маршрута;</li>
+    <li>reverseGeocoding: Boolean = true – включить ли обратное геокодирование при построение маршрута;</li>
+    <li>adjustMapMargin: Boolean = false – будет ли панель маршрута регистрировать свои размеры в <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</li>
+    <li>types: Object = { auto: true, masstransit: true, pedestrian: true, bicycle: true, taxi: false } – типы маршрутизации, которые будут доступны для выбора пользователю. При изменении опции возможных типов маршрута, текущий выбранный тип автоматически меняется. Например, если был выбран пешеходный маршрут, а после этого вебмастер разрешил только автомобильные и на общественном транспорте, то автоматически выберется автомобильный. Доступные типы маршрутизации отображаются в панели только в том случае, если задано два или более типа. Обратите внимание если вы используете политику безопасности контента: для использования типа "такси" нужно обновить правила CSP на <xref href="https://tech.yandex.com/maps/doc/jsapi/2.1/dg/concepts/load-docpage/#load__using-csp" scope="external">новейшую версию</xref>.</li>
+</ul></p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="state">
+            <title translate="no">state</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IDataManager.dita" type="topic"><keyword>IDataManager</keyword></xref>} state</codeblock></p>
+
+            <p>Менеджер состояний. Названия состояний:<ul>
+     <li>type: String – тип маршрутизации <xref href="IMultiRouteParams.dita#field_detail/routingMode" type="section"><keyword>IMultiRouteParams.routingMode</keyword></xref>;</li>
+     <li>fromEnabled: Boolean – включить возможность задавать пункт отправления в поле ввода;</li>
+     <li>from: String – адрес или координаты пункта отправления;</li>
+     <li>toEnabled: Boolean – включить возможность задавать пункт назначения в поле ввода;</li>
+     <li>to: String – адрес или координаты пункта назначения.</li>
+</ul></p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-disable">
+            <title translate="no">disable</title>
+            
+             <p>Зависимости панели не загружены.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-enable">
+            <title translate="no">enable</title>
+            
+             <p>Панель маршрутизации и ее зависимости загружены и готовы к использованию.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="enable">
+        <title translate="no">enable</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} enable()</codeblock></p>
+
+         <p>Загружает все зависимости панели.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="geolocate">
+        <title translate="no">geolocate</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} geolocate(<xref href="IRoutePanel.dita#method_detail/geolocate-param-name" translate="no" type="row">name</xref>)</codeblock></p>
+
+         <p>Задать местоположение пользователя в качестве начальной или конечной точки маршрута.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект-promise. см. <xref href="geolocation.dita" type="topic"><keyword>geolocation</keyword></xref>.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="geolocate-param-name">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/geolocate-param-name" type="row"><parmname>name</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>В качестве какой точки маршрута (начальной или конечной) нужно использовать местоположение пользователя. Принимает значение 'from' или 'to'.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="geolocate_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getRoute">
+        <title translate="no">getRoute</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="multiRouter.MultiRoute.dita" type="topic"><keyword>multiRouter.MultiRoute</keyword></xref>} getRoute()</codeblock></p>
+
+         
+
+        
+
+        
+            <p translate="no"><b>Данный метод является устаревшим. </b>See <xref href="IRoutePanel.dita#method_detail/getRouteAsync" type="section"><keyword>IRoutePanel.getRouteAsync</keyword></xref>.</p>
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> построенный маршрут.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getRouteAsync">
+        <title translate="no">getRouteAsync</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>.&lt;<xref href="multiRouter.MultiRoute.dita" type="topic"><keyword>multiRouter.MultiRoute</keyword></xref>&gt;} getRouteAsync()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+            <p translate="yes">Возвращает <xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>, который:</p><ul>
+<li>будет <b>разрешен</b> построенным маршрутом (объектом <xref href="multiRouter.MultiRoute.dita" type="topic"><keyword>multiRouter.MultiRoute</keyword></xref>),</li><li>либо <b>отклонен</b> с ошибкой.</li></ul>
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="isEnable">
+        <title translate="no">isEnable</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Boolean} isEnable()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> true, если панель полностью загружена, false – иначе.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="switchPoints">
+        <title translate="no">switchPoints</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} switchPoints()</codeblock></p>
+
+         <p>Меняет местами начальную и конечную точки маршрута. Изменения автоматически отобразятся в полях ввода на панели маршрута.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_NjU3OTI1_CACHING --></topic>

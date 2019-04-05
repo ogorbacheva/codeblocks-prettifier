@@ -1,0 +1,1626 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="panorama.Player" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">panorama.Player</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>panorama.Player</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IEventEmitter.dita" type="topic"><keyword>IEventEmitter</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Класс для создания и управления плеером панорам.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#panorama.Player/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#panorama.Player/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#panorama.Player/events-summary" translate="no" type="section">События </xref> | <xref href="#panorama.Player/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">panorama.Player(<xref href="#panorama.Player/param-element" translate="no" type="entry">element</xref>, <xref href="#panorama.Player/param-panorama" translate="no" type="entry">panorama</xref>[, <xref href="#panorama.Player/param-options" translate="no" type="entry">options</xref>])</codeblock></p>
+    
+       
+            
+                <p>Создает экземпляр плеера панорам.</p>
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-element" translate="no">
+                    
+                        <xref href="#panorama.Player/param-element" type="entry"><parmname>element</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: HTMLElement|String</p>
+                    <p/>
+                    <p>Ссылка на HTML-элемент, в котором будет размещен плеер, или идентификатор этого HTML-элемента.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-panorama" translate="no">
+                    
+                        <xref href="#panorama.Player/param-panorama" type="entry"><parmname>panorama</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IPanorama.dita" type="topic"><keyword>IPanorama</keyword></xref></p>
+                    <p/>
+                    <p>Панорама, которая будет открыта в созданном плеере.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options" translate="no">
+                    <xref href="#panorama.Player/param-options" type="entry"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.autoFitToViewport" translate="no">
+                    <xref href="#panorama.Player/param-options.autoFitToViewport" type="entry"><parmname>options.autoFitToViewport</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      "always"
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Опция, позволяющая отключить автоматическое слежение за размером контейнера плеера. По умолчанию плеер всегда следит за размером своего контейнера, перестраивая изображение, если они изменились. Доступные значения:<ul>
+         <li><codeph>none</codeph> – не отслеживать изменения размеров контейнера.</li>
+         <li><codeph>ifNull</codeph> – как только контейнер получит CSS значение 'display', отличное от «none», плеер автоматически подстроит свои размеры под это значение. После отслеживание будет остановлено.</li>
+         <li><codeph>always</codeph> – всегда отслеживать изменения размеров контейнера.</li>
+     </ul></p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.controls" translate="no">
+                    <xref href="#panorama.Player/param-options.controls" type="entry"><parmname>options.controls</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String[]</p>
+                    <p/>
+                    <p>Набор контролов плеера. Доступные контролы:<ul>
+         <li><codeph>closeControl</codeph> – кнопка для закрытия плеера.</li>
+         <li><codeph>fullscreenControl</codeph> – кнопка перевода плеера в полноэкранный режим.</li>
+         <li><codeph>panoramaName</codeph> – название панорамы (автоматически скрывается в плеере маленького размера).</li>
+         <li><codeph>zoomControl</codeph> – кнопки для управления масштабом панорамы.</li>
+     </ul>Набор контролов по умолчанию включает в себя все вышеперечисленные.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.direction" translate="no">
+                    <xref href="#panorama.Player/param-options.direction" type="entry"><parmname>options.direction</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]|String</p>
+                    <p/>
+                    <p>Направление взгляда в формате <codeph>[bearing, pitch]</codeph>, где <codeph>bearing</codeph> – азимут направления в градусах, <codeph>pitch</codeph> – угол подъема над линией горизонта в градусах. Специальное строковое значение <codeph>auto</codeph> означает, что после открытия панорамы будет применено направление, указанное в метаданных панорамы.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.hotkeysEnabled" translate="no">
+                    <xref href="#panorama.Player/param-options.hotkeysEnabled" type="entry"><parmname>options.hotkeysEnabled</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Опция, включающая управление плеером с клавиатуры. Обратите внимание, что при включении плеер начинает перехватывать нажатия некоторых клавиш (например, курсорных), отменяя при это реакцию браузера по умолчанию, что может мешать пользователю взаимодействовать с вашей страницей. Поэтому по умолчанию управление с клавиатуры выключено.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.scrollZoomBehavior" translate="no">
+                    <xref href="#panorama.Player/param-options.scrollZoomBehavior" type="entry"><parmname>options.scrollZoomBehavior</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Опция, позволяющая отключить масштабирование панорамы колесом мыши. По умолчаню включено, и плеер перехватывает события колеса мыши.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.span" translate="no">
+                    <xref href="#panorama.Player/param-options.span" type="entry"><parmname>options.span</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      'auto'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]|String</p>
+                    <p/>
+                    <p>Угловые размеры поля обзора в формате <codeph>[horizontalSpan, verticalSpan]</codeph>, где <codeph>horizontalSpan</codeph> — горизонтальный размер поля, <codeph>verticalSpan</codeph> — вертикальный.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.suppressMapOpenBlock" translate="no">
+                    <xref href="#panorama.Player/param-options.suppressMapOpenBlock" type="entry"><parmname>options.suppressMapOpenBlock</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Нужно ли скрывать предложение открыть текущую панораму в Яндекс.Картах, максимально сохранив всю имеющуюся информацию о ней. <codeph>true</codeph> — скрывать, <codeph>false</codeph> — не скрывать. Ссылка на Яндекс.Карты отображается в левом верхнем углу плеера.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#event_detail/event_detail/event-destroy"><keyword>destroy</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Плеер закрыт пользователем или уничтожен с помощью метода panorama.Player.destroy.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#event_detail/event_detail/event-directionchange"><keyword>directionchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменилось направление взгляда.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#event_detail/event_detail/event-error"><keyword>error</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>В процессе работы плеера возникла ошибка. При этом пользователю будет показан соответствующий экран.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#event_detail/event_detail/event-fullscreenenter"><keyword>fullscreenenter</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Плеер перешел в полноэкранный режим.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#event_detail/event_detail/event-fullscreenexit"><keyword>fullscreenexit</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Плеер вышел из полноэкранного режима.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#event_detail/event_detail/event-markercollapse"><keyword>markercollapse</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Пользователь кликнул по раскрытому маркеру. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>marker – маркер, который был свернут.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#event_detail/event_detail/event-markerexpand"><keyword>markerexpand</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Пользователь кликнул по свернутому маркеру. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>marker – маркер, который был развернут.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#event_detail/event_detail/event-markermouseenter"><keyword>markermouseenter</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>На маркер наведен указатель мыши. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>marker – маркер, на который был наведен указатель мыши.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#event_detail/event_detail/event-markermouseleave"><keyword>markermouseleave</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Пользователь сместил указатель мыши за пределы маркера. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>marker – маркер, с которого был убран указатель мыши.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#event_detail/event_detail/event-panoramachange"><keyword>panoramachange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменилась открытая панорама (например, в результате вызова функции panorama.Player.setPanorama или пользовательского действия).</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#event_detail/event_detail/event-spanchange"><keyword>spanchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменился размер поля обзора.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#method_detail/destroy" type="section"><keyword>destroy</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Уничтожает плеер.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#method_detail/fitToViewport" type="section"><keyword>fitToViewport</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Проверяет размер контейра плеера и, если он изменился с последней проверки, перестраивает изображение.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#method_detail/getDirection" type="section"><keyword>getDirection</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает текущее направление обзора в формате <codeph>[bearing, pitch]</codeph>, где <codeph>bearing</codeph> — азимут направления в градусах, <codeph>pitch</codeph> — угол подъема над линией горизонта в градусах.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#method_detail/getPanorama" type="section"><keyword>getPanorama</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPanorama.dita" type="topic"><keyword>IPanorama</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает панораму, которая открыта в плеере на данный момент.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#method_detail/getSpan" type="section"><keyword>getSpan</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает текущие угловые размеры поля обзора в формате <codeph>[horizontalSpan, verticalSpan]</codeph>, где <codeph>horizontalSpan</codeph> — горизонтальный размер поля в градусах, <codeph>verticalSpan</codeph> — вертикальный размер в градусах.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#method_detail/lookAt" type="section"><keyword>lookAt</keyword></xref>(<xref href="panorama.Player.dita#method_detail/lookAt-param-point" translate="no" type="row">point</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="panorama.Player.dita" type="topic"><keyword>panorama.Player</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Поворачивает обзор так, чтобы в центре поля зрения оказалась переданная точка.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#method_detail/moveTo" type="section"><keyword>moveTo</keyword></xref>(<xref href="panorama.Player.dita#method_detail/moveTo-param-point" translate="no" type="row">point</xref>[, <xref href="panorama.Player.dita#method_detail/moveTo-param-options" translate="no" type="row">options</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Ищет панорамy по заданным параметрам и открывает ее.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#method_detail/setDirection" type="section"><keyword>setDirection</keyword></xref>(<xref href="panorama.Player.dita#method_detail/setDirection-param-direction" translate="no" type="row">direction</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="panorama.Player.dita" type="topic"><keyword>panorama.Player</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает новое направление обзора.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#method_detail/setPanorama" type="section"><keyword>setPanorama</keyword></xref>(<xref href="panorama.Player.dita#method_detail/setPanorama-param-panorama" translate="no" type="row">panorama</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="panorama.Player.dita" type="topic"><keyword>panorama.Player</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Открывает в плеере переданную панораму.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="panorama.Player.dita#method_detail/setSpan" type="section"><keyword>setSpan</keyword></xref>(<xref href="panorama.Player.dita#method_detail/setSpan-param-span" translate="no" type="row">span</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="panorama.Player.dita" type="topic"><keyword>panorama.Player</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает новые размеры поля обзора.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-destroy">
+            <title translate="no">destroy</title>
+            
+             <p>Плеер закрыт пользователем или уничтожен с помощью метода panorama.Player.destroy.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-directionchange">
+            <title translate="no">directionchange</title>
+            
+             <p>Сменилось направление взгляда.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-error">
+            <title translate="no">error</title>
+            
+             <p>В процессе работы плеера возникла ошибка. При этом пользователю будет показан соответствующий экран.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-fullscreenenter">
+            <title translate="no">fullscreenenter</title>
+            
+             <p>Плеер перешел в полноэкранный режим.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-fullscreenexit">
+            <title translate="no">fullscreenexit</title>
+            
+             <p>Плеер вышел из полноэкранного режима.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-markercollapse">
+            <title translate="no">markercollapse</title>
+            
+             <p>Пользователь кликнул по раскрытому маркеру. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>marker – маркер, который был свернут.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-markerexpand">
+            <title translate="no">markerexpand</title>
+            
+             <p>Пользователь кликнул по свернутому маркеру. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>marker – маркер, который был развернут.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-markermouseenter">
+            <title translate="no">markermouseenter</title>
+            
+             <p>На маркер наведен указатель мыши. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>marker – маркер, на который был наведен указатель мыши.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-markermouseleave">
+            <title translate="no">markermouseleave</title>
+            
+             <p>Пользователь сместил указатель мыши за пределы маркера. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>marker – маркер, с которого был убран указатель мыши.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-panoramachange">
+            <title translate="no">panoramachange</title>
+            
+             <p>Сменилась открытая панорама (например, в результате вызова функции panorama.Player.setPanorama или пользовательского действия).</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-spanchange">
+            <title translate="no">spanchange</title>
+            
+             <p>Сменился размер поля обзора.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="destroy">
+        <title translate="no">destroy</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} destroy()</codeblock></p>
+
+         <p>Уничтожает плеер.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="fitToViewport">
+        <title translate="no">fitToViewport</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} fitToViewport()</codeblock></p>
+
+         <p>Проверяет размер контейра плеера и, если он изменился с последней проверки, перестраивает изображение.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getDirection">
+        <title translate="no">getDirection</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[]} getDirection()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> текущее направление обзора в формате <codeph>[bearing, pitch]</codeph>, где <codeph>bearing</codeph> — азимут направления в градусах, <codeph>pitch</codeph> — угол подъема над линией горизонта в градусах.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getPanorama">
+        <title translate="no">getPanorama</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IPanorama.dita" type="topic"><keyword>IPanorama</keyword></xref>} getPanorama()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> открытую панораму в плеере.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getSpan">
+        <title translate="no">getSpan</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[]} getSpan()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> текущие угловые размеры поля обзора в формате <codeph>[horizontalSpan, verticalSpan]</codeph>, где <codeph>horizontalSpan</codeph> — горизонтальный размер поля в градусах, <codeph>verticalSpan</codeph> — вертикальный размер в градусах.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="lookAt">
+        <title translate="no">lookAt</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="panorama.Player.dita" type="topic"><keyword>panorama.Player</keyword></xref>} lookAt(<xref href="panorama.Player.dita#method_detail/lookAt-param-point" translate="no" type="row">point</xref>)</codeblock></p>
+
+         <p>Поворачивает обзор так, чтобы в центре поля зрения оказалась переданная точка.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="lookAt-param-point">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/lookAt-param-point" type="row"><parmname>point</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Точка, на которую будет повернут обзор. Может быть представлена в виде массива двух или трех координат. Первые две координаты интерпретируются как географические координаты точки. Если переданы три координаты, то третья интерпретируется как высота точки относительно панорамы в метрах.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="lookAt_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="moveTo">
+        <title translate="no">moveTo</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} moveTo(<xref href="panorama.Player.dita#method_detail/moveTo-param-point" translate="no" type="row">point</xref>[, <xref href="panorama.Player.dita#method_detail/moveTo-param-options" translate="no" type="row">options</xref>])</codeblock></p>
+
+         <p>Ищет панорамy по заданным параметрам и открывает ее.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>объект-обещание, который будет разрешен, если панорама найдена и успешно открыта в плеере, или отклонен с описанием ошибки в ином случае.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="moveTo-param-point">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/moveTo-param-point" type="row"><parmname>point</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Точка, около которой будет произведен поиск панорамы.</p>
+                </entry>
+
+            </row>
+            
+            <row id="moveTo-param-options">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/moveTo-param-options" type="row"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Опции.</p>
+                </entry>
+
+            </row>
+            
+            <row id="moveTo-param-options.direction">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/moveTo-param-options.direction" type="row"><parmname>options.direction</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> 'auto'
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]|String</p>
+                    <p/>
+                   <p>Направление взгляда в формате <codeph>[bearing, pitch]</codeph>, где <codeph>bearing</codeph> – азимут направления в градусах, <codeph>pitch</codeph> – угол подъема над линией горизонта в градусах. Специальное строковое значение <codeph>auto</codeph> означает, что после открытия панорамы будет применено направление, указанное в метаданных панорамы.</p>
+                </entry>
+
+            </row>
+            
+            <row id="moveTo-param-options.layer">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/moveTo-param-options.layer" type="row"><parmname>options.layer</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> 'yandex#panorama'
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Слой, в котором будет произведен поиск панорамы. Доступны два слоя:<ul>
+             <li>'yandex#panorama' – панорамы на земле;</li>
+             <li>'yandex#airPanorama' – воздушные панорамы.</li>
+         </ul></p>
+                </entry>
+
+            </row>
+            
+            <row id="moveTo-param-options.span">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/moveTo-param-options.span" type="row"><parmname>options.span</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> 'auto'
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]|String</p>
+                    <p/>
+                   <p>Угловые размеры поля обзора в формате <codeph>[horizontalSpan, verticalSpan]</codeph>, где <codeph>horizontalSpan</codeph> – горизонтальный размер поля, <codeph>verticalSpan</codeph> – вертикальный.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="moveTo_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="setDirection">
+        <title translate="no">setDirection</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="panorama.Player.dita" type="topic"><keyword>panorama.Player</keyword></xref>} setDirection(<xref href="panorama.Player.dita#method_detail/setDirection-param-direction" translate="no" type="row">direction</xref>)</codeblock></p>
+
+         <p>Устанавливает новое направление обзора.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setDirection-param-direction">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setDirection-param-direction" type="row"><parmname>direction</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]|String</p>
+                    <p/>
+                   <p>Направление взгляда в формате <codeph>[bearing, pitch]</codeph>, где <codeph>bearing</codeph> – азимут направления в градусах, <codeph>pitch</codeph> – угол подъема над линией горизонта в градусах. Специальное строковое значение <codeph>auto</codeph> означает, что после открытия панорамы будет применено направление, указанное в метаданных панорамы.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setDirection_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="setPanorama">
+        <title translate="no">setPanorama</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="panorama.Player.dita" type="topic"><keyword>panorama.Player</keyword></xref>} setPanorama(<xref href="panorama.Player.dita#method_detail/setPanorama-param-panorama" translate="no" type="row">panorama</xref>)</codeblock></p>
+
+         <p>Открывает в плеере переданную панораму.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setPanorama-param-panorama">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setPanorama-param-panorama" type="row"><parmname>panorama</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IPanorama.dita" type="topic"><keyword>IPanorama</keyword></xref></p>
+                    <p/>
+                   <p>Панорама.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setPanorama_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="setSpan">
+        <title translate="no">setSpan</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="panorama.Player.dita" type="topic"><keyword>panorama.Player</keyword></xref>} setSpan(<xref href="panorama.Player.dita#method_detail/setSpan-param-span" translate="no" type="row">span</xref>)</codeblock></p>
+
+         <p>Устанавливает новые размеры поля обзора.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setSpan-param-span">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setSpan-param-span" type="row"><parmname>span</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]|String</p>
+                    <p/>
+                   <p>Угловые размеры поля обзора в формате <codeph>[horizontalSpan, verticalSpan]</codeph>, где <codeph>horizontalSpan</codeph> — горизонтальный размер поля, <codeph>verticalSpan</codeph> — вертикальный.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setSpan_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_NjE4Zjgy_CACHING --></topic>

@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="projection.sphericalMercator" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">projection.sphericalMercator</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>projection.sphericalMercator</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section id="constructor">
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статический объект.</p>
+    
+    
+
+
+
+    
+        <p translate="no">
+            Экземпляр класса  <xref href="IProjection.dita" type="topic"><keyword>IProjection</keyword></xref>
+        </p>
+    
+
+
+
+   
+        <p>Меркаторовская проекция на сферу. Используется многими картографическими сервисами, в частности, OpenStreetMap.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#projection.sphericalMercator/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+    
+
+    
+
+    
+
+
+
+    
+        <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Создадим карту в сферической проекции Меркатора.
+var map = new ymaps.Map('YMapsID', {
+    center: [55, 37],
+    zoom: 6
+}, {
+    projection: ymaps.projection.sphericalMercator
+});
+map.layers.add(new ymaps.Layer('http://tile.openstreetmap.org/%z/%x/%y.png'));</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IProjection.dita#method_detail/fromGlobalPixels" type="section"><keyword>fromGlobalPixels</keyword></xref>(<xref href="IProjection.dita#method_detail/fromGlobalPixels-param-globalPixelPoint" translate="no" type="row">globalPixelPoint</xref>, <xref href="IProjection.dita#method_detail/fromGlobalPixels-param-zoom" translate="no" type="row">zoom</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Преобразует пиксельные координаты на указанном уровне масштабирования в координаты проекции.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IProjection.dita#method_detail/getCoordSystem" type="section"><keyword>getCoordSystem</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="ICoordSystem.dita" type="topic"><keyword>ICoordSystem</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает координатную систему, используемую проекцией.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IProjection.dita#method_detail/isCycled" type="section"><keyword>isCycled</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Показатель зацикленности проекции.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IProjection.dita#method_detail/toGlobalPixels" type="section"><keyword>toGlobalPixels</keyword></xref>(<xref href="IProjection.dita#method_detail/toGlobalPixels-param-coordPoint" translate="no" type="row">coordPoint</xref>, <xref href="IProjection.dita#method_detail/toGlobalPixels-param-zoom" translate="no" type="row">zoom</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Преобразует координаты проекции в глобальные пиксельные на указанном уровне масштабирования.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body><!-- XLIFF_FARM_ZmE3OGU5_CACHING --></topic>

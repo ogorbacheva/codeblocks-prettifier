@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="IPolygonGeometry" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IPolygonGeometry</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IPolygonGeometry</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IGeometry.dita" type="topic"><keyword>IGeometry</keyword></xref>, <xref href="IPolygonGeometryAccess.dita" type="topic"><keyword>IPolygonGeometryAccess</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Интерфейс геометрии "Многоугольник".</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IPolygonGeometry/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#IPolygonGeometry/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#IPolygonGeometry/events-summary" translate="no" type="section">События </xref> | <xref href="#IPolygonGeometry/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IPolygonGeometry()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>ICustomizable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPolygonGeometryAccess.dita#event_detail/event_detail/event-change"><keyword>change</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение координат. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>oldCoordinates — старые координаты;</li>
+    <li>newCoordinates - новые координаты;</li>
+    <li>oldFillRule - старый алгоритм заливки;</li>
+    <li>newFillRule - новые алгоритм заливки.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IPolygonGeometryAccess.dita#event_detail/event_detail/event-change"><keyword>IPolygonGeometryAccess</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeometry.dita#event_detail/event_detail/event-mapchange"><keyword>mapchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменилась карта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>oldMap - старая карта;</li>
+    <li>newMap - новая карта.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeometry.dita#event_detail/event_detail/event-mapchange"><keyword>IGeometry</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeometry.dita#event_detail/event_detail/event-pixelgeometrychange"><keyword>pixelgeometrychange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменилась пиксельная геометрия. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>pixelGeometry - новая пиксельная геометрия <xref href="IPixelGeometry.dita" type="topic"><keyword>IPixelGeometry</keyword></xref>.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeometry.dita#event_detail/event_detail/event-pixelgeometrychange"><keyword>IGeometry</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPolygonGeometryAccess.dita#method_detail/contains" type="section"><keyword>contains</keyword></xref>(<xref href="IPolygonGeometryAccess.dita#method_detail/contains-param-position" translate="no" type="row">position</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Проверяет, лежит ли переданная точка внутри многоугольника.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPolygonGeometryAccess.dita#method_detail/contains" type="section"><keyword>IPolygonGeometryAccess</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IFreezable.dita#method_detail/freeze" type="section"><keyword>freeze</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IFreezable.dita" type="topic"><keyword>IFreezable</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Переводит объект в "замороженный" режим.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IFreezable.dita#method_detail/freeze" type="section"><keyword>IFreezable</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPolygonGeometryAccess.dita#method_detail/get" type="section"><keyword>get</keyword></xref>(<xref href="IPolygonGeometryAccess.dita#method_detail/get-param-index" translate="no" type="row">index</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает координаты контура c заданным индексом.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPolygonGeometryAccess.dita#method_detail/get" type="section"><keyword>IPolygonGeometryAccess</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeometry.dita#method_detail/getBounds" type="section"><keyword>getBounds</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает координаты двух противоположных углов области, охватывающей геометрию. Первый элемент массива - юго-западный угол области; второй элемент - северо-восточный угол соответственно.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IGeometry.dita#method_detail/getBounds" type="section"><keyword>IGeometry</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPolygonGeometryAccess.dita#method_detail/getChildGeometry" type="section"><keyword>getChildGeometry</keyword></xref>(<xref href="IPolygonGeometryAccess.dita#method_detail/getChildGeometry-param-index" translate="no" type="row">index</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="ILinearRingGeometryAccess.dita" type="topic"><keyword>ILinearRingGeometryAccess</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Создает и возвращает объект <xref href="ILinearRingGeometryAccess.dita" type="topic"><keyword>ILinearRingGeometryAccess</keyword></xref> для заданного контура.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPolygonGeometryAccess.dita#method_detail/getChildGeometry" type="section"><keyword>IPolygonGeometryAccess</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPolygonGeometryAccess.dita#method_detail/getClosest" type="section"><keyword>getClosest</keyword></xref>(<xref href="IPolygonGeometryAccess.dita#method_detail/getClosest-param-anchorPosition" translate="no" type="row">anchorPosition</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Ищет на контуре многоугольника точку, ближайшую к anchorPosition.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPolygonGeometryAccess.dita#method_detail/getClosest" type="section"><keyword>IPolygonGeometryAccess</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPolygonGeometryAccess.dita#method_detail/getCoordinates" type="section"><keyword>getCoordinates</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][][]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает массив координат геометрии.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPolygonGeometryAccess.dita#method_detail/getCoordinates" type="section"><keyword>IPolygonGeometryAccess</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPolygonGeometryAccess.dita#method_detail/getFillRule" type="section"><keyword>getFillRule</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает идентификатор алгоритма заливки.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPolygonGeometryAccess.dita#method_detail/getFillRule" type="section"><keyword>IPolygonGeometryAccess</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPolygonGeometryAccess.dita#method_detail/getLength" type="section"><keyword>getLength</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Integer</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает количество контуров в геометрии.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPolygonGeometryAccess.dita#method_detail/getLength" type="section"><keyword>IPolygonGeometryAccess</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeometry.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает текущую карту.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IGeometry.dita#method_detail/getMap" type="section"><keyword>IGeometry</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeometry.dita#method_detail/getPixelGeometry" type="section"><keyword>getPixelGeometry</keyword></xref>([<xref href="IGeometry.dita#method_detail/getPixelGeometry-param-options" translate="no" type="row">options</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPixelGeometry.dita" type="topic"><keyword>IPixelGeometry</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает пиксельную геометрию, соответствующую данной геометрии, ее опциям и состоянию карты.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IGeometry.dita#method_detail/getPixelGeometry" type="section"><keyword>IGeometry</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPolygonGeometry.dita#method_detail/getType" type="section"><keyword>getType</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает строку "Polygon".</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPolygonGeometryAccess.dita#method_detail/insert" type="section"><keyword>insert</keyword></xref>(<xref href="IPolygonGeometryAccess.dita#method_detail/insert-param-index" translate="no" type="row">index</xref>, <xref href="IPolygonGeometryAccess.dita#method_detail/insert-param-path" translate="no" type="row">path</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPolygonGeometryAccess.dita" type="topic"><keyword>IPolygonGeometryAccess</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет новый контур с заданным индексом.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPolygonGeometryAccess.dita#method_detail/insert" type="section"><keyword>IPolygonGeometryAccess</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IFreezable.dita#method_detail/isFrozen" type="section"><keyword>isFrozen</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает true, если объект находится в "замороженном" режиме, иначе false.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IFreezable.dita#method_detail/isFrozen" type="section"><keyword>IFreezable</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPolygonGeometryAccess.dita#method_detail/remove" type="section"><keyword>remove</keyword></xref>(<xref href="IPolygonGeometryAccess.dita#method_detail/remove-param-index" translate="no" type="row">index</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="ILinearRingGeometryAccess.dita" type="topic"><keyword>ILinearRingGeometryAccess</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет контур с заданным индексом.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPolygonGeometryAccess.dita#method_detail/remove" type="section"><keyword>IPolygonGeometryAccess</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPolygonGeometryAccess.dita#method_detail/set" type="section"><keyword>set</keyword></xref>(<xref href="IPolygonGeometryAccess.dita#method_detail/set-param-index" translate="no" type="row">index</xref>, <xref href="IPolygonGeometryAccess.dita#method_detail/set-param-path" translate="no" type="row">path</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPolygonGeometryAccess.dita" type="topic"><keyword>IPolygonGeometryAccess</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает координаты контура c заданным индексом.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPolygonGeometryAccess.dita#method_detail/set" type="section"><keyword>IPolygonGeometryAccess</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPolygonGeometryAccess.dita#method_detail/setCoordinates" type="section"><keyword>setCoordinates</keyword></xref>(<xref href="IPolygonGeometryAccess.dita#method_detail/setCoordinates-param-coordinates" translate="no" type="row">coordinates</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPolygonGeometryAccess.dita" type="topic"><keyword>IPolygonGeometryAccess</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает массив координат геометрии.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPolygonGeometryAccess.dita#method_detail/setCoordinates" type="section"><keyword>IPolygonGeometryAccess</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPolygonGeometryAccess.dita#method_detail/setFillRule" type="section"><keyword>setFillRule</keyword></xref>(<xref href="IPolygonGeometryAccess.dita#method_detail/setFillRule-param-fillRule" translate="no" type="row">fillRule</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IPolygonGeometryAccess.dita" type="topic"><keyword>IPolygonGeometryAccess</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает алгоритм заливки многоугольника.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPolygonGeometryAccess.dita#method_detail/setFillRule" type="section"><keyword>IPolygonGeometryAccess</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeometry.dita#method_detail/setMap" type="section"><keyword>setMap</keyword></xref>(<xref href="IGeometry.dita#method_detail/setMap-param-map" translate="no" type="row">map</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает карту.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IGeometry.dita#method_detail/setMap" type="section"><keyword>IGeometry</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPolygonGeometryAccess.dita#method_detail/splice" type="section"><keyword>splice</keyword></xref>(<xref href="IPolygonGeometryAccess.dita#method_detail/splice-param-index" translate="no" type="row">index</xref>, <xref href="IPolygonGeometryAccess.dita#method_detail/splice-param-number" translate="no" type="row">number</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="ILinearRingGeometryAccess.dita" type="topic"><keyword>ILinearRingGeometryAccess</keyword></xref>[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет определенное число контуров начиная с заданного индекса. При этом на место удаляемых контуров могут быть добавлены новые. Координаты новых контуров можно передавать дополнительными аргументами после параметра number.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPolygonGeometryAccess.dita#method_detail/splice" type="section"><keyword>IPolygonGeometryAccess</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IFreezable.dita#method_detail/unfreeze" type="section"><keyword>unfreeze</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IFreezable.dita" type="topic"><keyword>IFreezable</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Переводит объект в активный режим.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IFreezable.dita#method_detail/unfreeze" type="section"><keyword>IFreezable</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getType">
+        <title translate="no">getType</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getType()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>строку "Polygon".</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_NTExYjI3_CACHING --></topic>

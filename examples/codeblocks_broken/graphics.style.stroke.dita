@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="graphics.style.stroke" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">graphics.style.stroke</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>graphics.style.stroke</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статический объект.</p>
+    
+    
+        
+            <p>Позволяет изменить стиль линии. Задавать значение можно как используя ключи описанные ниже, так и в формате массива. Следует учесть, что в режиме отображениея VML(IE&lt;9) могут быть использованы только ключи. Также в стиле линии можно указать смещение начала пунктира через поле offset.</p>
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#graphics.style.stroke/properties-summary" translate="no" type="section">Поля </xref></p>
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+    
+
+    
+
+    
+
+
+
+    
+        <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">strokeStyle: 'dot';
+strokeStyle: [1,2];
+strokeStyle: {
+  style: 'dot',
+  offset: 10
+}</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="graphics.style.stroke.dita#field_detail/dash" type="section"><keyword>dash</keyword></xref></entry>
+              <entry colname="col2" translate="no"/>
+        
+              <entry colname="col3">
+                <p>Тире</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="graphics.style.stroke.dita#field_detail/dashdot" type="section"><keyword>dashdot</keyword></xref></entry>
+              <entry colname="col2" translate="no"/>
+        
+              <entry colname="col3">
+                <p>Длинное тире-короткое тире</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="graphics.style.stroke.dita#field_detail/dot" type="section"><keyword>dot</keyword></xref></entry>
+              <entry colname="col2" translate="no"/>
+        
+              <entry colname="col3">
+                <p>Точки</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="graphics.style.stroke.dita#field_detail/longdash" type="section"><keyword>longdash</keyword></xref></entry>
+              <entry colname="col2" translate="no"/>
+        
+              <entry colname="col3">
+                <p>Длинные тире</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="graphics.style.stroke.dita#field_detail/longdashdot" type="section"><keyword>longdashdot</keyword></xref></entry>
+              <entry colname="col2" translate="no"/>
+        
+              <entry colname="col3">
+                <p>Очень длинное тире - точка</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="graphics.style.stroke.dita#field_detail/longdashdotdot" type="section"><keyword>longdashdotdot</keyword></xref></entry>
+              <entry colname="col2" translate="no"/>
+        
+              <entry colname="col3">
+                <p>Длинное тире-точка-точка</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="graphics.style.stroke.dita#field_detail/shortdash" type="section"><keyword>shortdash</keyword></xref></entry>
+              <entry colname="col2" translate="no"/>
+        
+              <entry colname="col3">
+                <p>Короткие тире</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="graphics.style.stroke.dita#field_detail/shortdashdot" type="section"><keyword>shortdashdot</keyword></xref></entry>
+              <entry colname="col2" translate="no"/>
+        
+              <entry colname="col3">
+                <p>Тире-точка</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="graphics.style.stroke.dita#field_detail/shortdashdotdot" type="section"><keyword>shortdashdotdot</keyword></xref></entry>
+              <entry colname="col2" translate="no"/>
+        
+              <entry colname="col3">
+                <p>Тире-точка-точка</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="graphics.style.stroke.dita#field_detail/shortdot" type="section"><keyword>shortdot</keyword></xref></entry>
+              <entry colname="col2" translate="no"/>
+        
+              <entry colname="col3">
+                <p>Точки через двойной интервал</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="graphics.style.stroke.dita#field_detail/solid" type="section"><keyword>solid</keyword></xref></entry>
+              <entry colname="col2" translate="no"/>
+        
+              <entry colname="col3">
+                <p>Сплошная линия</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="dash">
+            <title translate="no">dash</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">dash</codeblock></p>
+
+            <p>Тире</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="dashdot">
+            <title translate="no">dashdot</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">dashdot</codeblock></p>
+
+            <p>Длинное тире-короткое тире</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="dot">
+            <title translate="no">dot</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">dot</codeblock></p>
+
+            <p>Точки</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="longdash">
+            <title translate="no">longdash</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">longdash</codeblock></p>
+
+            <p>Длинные тире</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="longdashdot">
+            <title translate="no">longdashdot</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">longdashdot</codeblock></p>
+
+            <p>Очень длинное тире - точка</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="longdashdotdot">
+            <title translate="no">longdashdotdot</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">longdashdotdot</codeblock></p>
+
+            <p>Длинное тире-точка-точка</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="shortdash">
+            <title translate="no">shortdash</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">shortdash</codeblock></p>
+
+            <p>Короткие тире</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="shortdashdot">
+            <title translate="no">shortdashdot</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">shortdashdot</codeblock></p>
+
+            <p>Тире-точка</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="shortdashdotdot">
+            <title translate="no">shortdashdotdot</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">shortdashdotdot</codeblock></p>
+
+            <p>Тире-точка-точка</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="shortdot">
+            <title translate="no">shortdot</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">shortdot</codeblock></p>
+
+            <p>Точки через двойной интервал</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="solid">
+            <title translate="no">solid</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">solid</codeblock></p>
+
+            <p>Сплошная линия</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic><!-- XLIFF_FARM_M2UwNDJj_CACHING --></topic>

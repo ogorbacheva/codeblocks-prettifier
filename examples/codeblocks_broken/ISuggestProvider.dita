@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="ISuggestProvider" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">ISuggestProvider</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>ISuggestProvider</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Интерфейс провайдера поисковых подсказок.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#ISuggestProvider/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#ISuggestProvider/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">ISuggestProvider()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ISuggestProvider.dita#method_detail/suggest" type="section"><keyword>suggest</keyword></xref>(<xref href="ISuggestProvider.dita#method_detail/suggest-param-request" translate="no" type="row">request</xref>[, <xref href="ISuggestProvider.dita#method_detail/suggest-param-options" translate="no" type="row">options</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Отправляет запрос за поисковыми подсказками. Возвращает объект Promise, который будет либо отклонён с ошибкой, либо подтверждён массивом объектов вида { displayName: "Мытищи, Московская область", value: "Россия, Московская область, Мытищи ", hl: [[0,5]] }. Поле displayName отвечает за представление топонима в удобном для чтения пользователем виде. Поле value – значение, которое необходимо подставить в поле ввода после выбора пользователем данной подсказки. Поле hl – массив диапазонов подсветки, необходимых, чтобы показать, какая именно часть результата совпала с запросом. Диапазон подсветки - массив из двух чисел: индексы начального и конечного символов диапазона.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="suggest">
+        <title translate="no">suggest</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} suggest(<xref href="ISuggestProvider.dita#method_detail/suggest-param-request" translate="no" type="row">request</xref>[, <xref href="ISuggestProvider.dita#method_detail/suggest-param-options" translate="no" type="row">options</xref>])</codeblock></p>
+
+         <p>Отправляет запрос за поисковыми подсказками. Возвращает объект Promise, который будет либо отклонён с ошибкой, либо подтверждён массивом объектов вида { displayName: "Мытищи, Московская область", value: "Россия, Московская область, Мытищи ", hl: [[0,5]] }. Поле displayName отвечает за представление топонима в удобном для чтения пользователем виде. Поле value – значение, которое необходимо подставить в поле ввода после выбора пользователем данной подсказки. Поле hl – массив диапазонов подсветки, необходимых, чтобы показать, какая именно часть результата совпала с запросом. Диапазон подсветки - массив из двух чисел: индексы начального и конечного символов диапазона.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект Promise.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="suggest-param-request">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/suggest-param-request" type="row"><parmname>request</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Строка запроса.</p>
+                </entry>
+
+            </row>
+            
+            <row id="suggest-param-options">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/suggest-param-options" type="row"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Опции.</p>
+                </entry>
+
+            </row>
+            
+            <row id="suggest-param-options.boundedBy">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/suggest-param-options.boundedBy" type="row"><parmname>options.boundedBy</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][]</p>
+                    <p/>
+                   <p>Прямоугольная область на карте, где предположительно находится искомый объект. Должна быть задана как массив, например [[30, 40], [50, 50]].</p>
+                </entry>
+
+            </row>
+            
+            <row id="suggest-param-options.results">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/suggest-param-options.results" type="row"><parmname>options.results</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Максимальное количество возвращаемых результатов.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="suggest_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_ZGNiYjAw_CACHING --></topic>

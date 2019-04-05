@@ -1,0 +1,349 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="geometryEditor.view.MultiPath" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">geometryEditor.view.MultiPath</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>geometryEditor.view.MultiPath</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+    
+    <p translate="no"><note>Конструктор класса geometryEditor.view.MultiPath скрыт, так как данный класс не предназначен для самостоятельной инициализации.</note></p>
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Отображение множества контуров. Конструктор недоступен в package.full (стандартный набор модулей). Данный модуль загружается по требованию.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#geometryEditor.view.MultiPath/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="geometryEditor.view.MultiPath.dita#method_detail/getEdgePlacemarks" type="section"><keyword>getEdgePlacemarks</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает коллекцию промежуточных меток дочерних отображений контуров.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="geometryEditor.view.MultiPath.dita#method_detail/getPathViews" type="section"><keyword>getPathViews</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="geometryEditor.view.Path.dita" type="topic"><keyword>geometryEditor.view.Path</keyword></xref>[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает массив отображений дочерних контуров.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="geometryEditor.view.MultiPath.dita#method_detail/getVertexPlacemarks" type="section"><keyword>getVertexPlacemarks</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает коллекцию меток вершин дочерних отображений контуров.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getEdgePlacemarks">
+        <title translate="no">getEdgePlacemarks</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref>} getEdgePlacemarks()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>коллекцию промежуточных меток дочерних отображений контуров.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getPathViews">
+        <title translate="no">getPathViews</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="geometryEditor.view.Path.dita" type="topic"><keyword>geometryEditor.view.Path</keyword></xref>[]} getPathViews()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>массив отображений дочерних контуров.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getVertexPlacemarks">
+        <title translate="no">getVertexPlacemarks</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref>} getVertexPlacemarks()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>коллекцию меток вершин дочерних отображений контуров.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_MDJhMzFl_CACHING --></topic>

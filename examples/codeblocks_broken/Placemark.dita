@@ -1,0 +1,1336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="Placemark" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">Placemark</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>Placemark</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="GeoObject.dita" type="topic"><keyword>GeoObject</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Метка. Представляет собой геообъект с геометрией <xref href="geometry.Point.dita" type="topic"><keyword>geometry.Point</keyword></xref>.</p>
+    
+
+
+
+    <p translate="no"><b>См.: </b><xref href="GeoObject.dita" type="topic"><keyword>GeoObject</keyword></xref> <xref href="geometry.Point.dita" type="topic"><keyword>geometry.Point</keyword></xref> </p>
+
+
+
+
+
+    <p translate="no"><xref href="#Placemark/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#Placemark/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#Placemark/events-summary" translate="no" type="section">События </xref> | <xref href="#Placemark/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">Placemark(<xref href="#Placemark/param-geometry" translate="no" type="entry">geometry</xref>[, <xref href="#Placemark/param-properties" translate="no" type="entry">properties</xref>[, <xref href="#Placemark/param-options" translate="no" type="entry">options</xref>]])</codeblock></p>
+    
+       
+            
+                <p>Создает экземпляр метки.</p>
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-geometry" translate="no">
+                    
+                        <xref href="#Placemark/param-geometry" type="entry"><parmname>geometry</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]|Object|<xref href="IPointGeometry.dita" type="topic"><keyword>IPointGeometry</keyword></xref></p>
+                    <p/>
+                    <p>Координаты метки или хэш с описанием геометрии, или ссылка на объект точечной геометрии.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-properties" translate="no">
+                    <xref href="#Placemark/param-properties" type="entry"><parmname>properties</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object|<xref href="IDataManager.dita" type="topic"><keyword>IDataManager</keyword></xref></p>
+                    <p/>
+                    <p>Данные метки. Могут задаваться как экземпляр класса, реализующего интерфейс <xref href="IDataManager.dita" type="topic"><keyword>IDataManager</keyword></xref>, либо в виде хэша. При значениях опций по умолчанию геообъектом трактуются следующие поля данных:<ul>
+    <li>iconContent — содержимое иконки геообъекта;</li>
+    <li>hintContent — содержимое всплывающей подсказки геообъекта;</li>
+    <li>balloonContent — содержимое балуна геообъекта;</li>
+    <li>balloonContentHeader — содержимое заголовка балуна геообъекта;</li>
+    <li>balloonContentBody — содержимое основой части балуна геообъекта;</li>
+    <li>balloonContentFooter — содержимое нижней части балуна геообъекта.</li>
+</ul>Поле balloonContent является кратким обозначением для поля balloonContentBody, но при одновременном задании balloonContentBody более приоритетен. Также вы можете дополнить данные метки своими собственными полями и использовать их везде, где это возможно. Например в макете метки или макете балуна.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options" translate="no">
+                    <xref href="#Placemark/param-options" type="entry"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции метки.</p><p><b>Для изменения стиля и цвета иконки используются следующие опции:</b></p>
+<ul>
+     <li><codeph>preset</codeph> — ключ предустановленных стилей метки. Список доступных ключей содержится в описании <xref href="option.presetStorage.dita" type="topic"><keyword>option.presetStorage</keyword></xref>. Опцию <codeph>preset</codeph> можно задавать совместно с опцией <codeph>iconColor</codeph>, только если она принимает одно из следующих значений:<ul>
+             <li>'islands#icon'</li>
+             <li>'islands#dotIcon'</li>
+             <li>'islands#circleIcon'</li>
+             <li>'islands#circleDotIcon'</li>
+         </ul>
+     </li>
+     <li><codeph>iconColor</codeph> — цвет иконки метки. Можно задавать в любом формате, допустимом в CSS (например, по названию или в формате RGB). Эта опция применяется для стандартных иконок в браузерах, поддерживающих SVG.<note>В IE8 данная опция не работает.</note></li>
+</ul><p>
+</p><p><b>Если требуется задать собственный макет иконки, то необходимо указать следующие опции:</b></p>
+<ul>
+    <li>iconLayout — макет иконки. Тип: конструктор объекта с интерфейсом ILayout или его ключ в хранилище. Список доступных макетов:<ul>
+        <li>'default#image' — пользовательское изображение иконки;</li>
+        <li>'default#imageWithContent' — пользовательское изображение иконки с содержимым;</li>
+    </ul>
+    </li>
+    <li>дополнительные опции классов "<xref href="layout.Image.dita" type="topic"><keyword>layout.Image</keyword></xref>" и "<xref href="layout.ImageWithContent.dita" type="topic"><keyword>layout.ImageWithContent</keyword></xref> с префиксом icon.</li>
+</ul><p>
+</p><note>Для задания макета тени иконки используется тот же набор опций, но с префиксом iconShadow. Например, iconShadowLayout.</note><p>
+</p><p><b>Также через класс Placemark можно задать опции отдельных объектов:</b></p>
+<ul>
+    <li>опции <xref href="Balloon.dita#Balloon/constructor-summary" type="section">балуна метки</xref> с префиксом <codeph>balloon</codeph>;</li>
+    <li>Опции <xref href="Hint.dita#Hint/constructor-summary" type="section">всплывающей подсказки</xref> метки с префиксом <codeph>hint</codeph>.</li>
+     <li>Опции редактора геометрии многоульника с префиксом <codeph>editor</codeph>. Смотрите описание класса <xref href="geometryEditor.Point.dita" type="topic"><keyword>geometryEditor.Point</keyword></xref>.</li>
+    <li>Опции геометрии могут задаваться без префикса. Смотрите описание класса <xref href="IGeometry.dita" type="topic"><keyword>IGeometry</keyword></xref> геометрии <xref href="geometry.Point.dita" type="topic"><keyword>geometry.Point</keyword></xref>.</li>
+</ul><p>Ниже приведены остальные опции данного класса.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.cursor" translate="no">
+                    <xref href="#Placemark/param-options.cursor" type="entry"><parmname>options.cursor</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      "pointer"
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Вид курсора над меткой.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.draggable" translate="no">
+                    <xref href="#Placemark/param-options.draggable" type="entry"><parmname>options.draggable</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Определяет возможность перетаскивания метки.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.hasBalloon" translate="no">
+                    <xref href="#Placemark/param-options.hasBalloon" type="entry"><parmname>options.hasBalloon</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Определяет наличие поля balloon у метки.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.hasHint" translate="no">
+                    <xref href="#Placemark/param-options.hasHint" type="entry"><parmname>options.hasHint</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Определяет наличие поля hint у метки.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.hideIconOnBalloonOpen" translate="no">
+                    <xref href="#Placemark/param-options.hideIconOnBalloonOpen" type="entry"><parmname>options.hideIconOnBalloonOpen</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Скрывать метку при открытии балуна.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.iconOffset" translate="no">
+                    <xref href="#Placemark/param-options.iconOffset" type="entry"><parmname>options.iconOffset</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                    <p>Пиксельное смещение иконки относительно заданной позиции.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.iconShape" translate="no">
+                    <xref href="#Placemark/param-options.iconShape" type="entry"><parmname>options.iconShape</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IGeometryJson.dita" type="topic"><keyword>IGeometryJson</keyword></xref>|null</p>
+                    <p/>
+                    <p>Фигура активной области метки. Задается в виде JSON-описания пиксельной геометрии иконки. Эту опцию нужно использовать при создании своих HTML макетов. Координаты геометрии фигуры отсчитываются от точки привязки.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.interactiveZIndex" translate="no">
+                    <xref href="#Placemark/param-options.interactiveZIndex" type="entry"><parmname>options.interactiveZIndex</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Включает режим автоматического изменения z-index метки в зависимости от ее состояния.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.interactivityModel" translate="no">
+                    <xref href="#Placemark/param-options.interactivityModel" type="entry"><parmname>options.interactivityModel</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      "default#geoObject"
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Модель интерактивности. Доступные ключи и их значения перечислены в описании <xref href="interactivityModel.storage.dita" type="topic"><keyword>interactivityModel.storage</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.openBalloonOnClick" translate="no">
+                    <xref href="#Placemark/param-options.openBalloonOnClick" type="entry"><parmname>options.openBalloonOnClick</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Определяет, показывать ли балун при щелчке на метке.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.openEmptyBalloon" translate="no">
+                    <xref href="#Placemark/param-options.openEmptyBalloon" type="entry"><parmname>options.openEmptyBalloon</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Определяет, показывать ли пустой балун при щелчке на метке.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.openEmptyHint" translate="no">
+                    <xref href="#Placemark/param-options.openEmptyHint" type="entry"><parmname>options.openEmptyHint</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Определяет, показывать ли пустой хинт при наведении указателя мыши на метку.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.openHintOnHover" translate="no">
+                    <xref href="#Placemark/param-options.openHintOnHover" type="entry"><parmname>options.openHintOnHover</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Определяет, показывать ли хинт при наведении указателя мыши на метку.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.pane" translate="no">
+                    <xref href="#Placemark/param-options.pane" type="entry"><parmname>options.pane</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      "places"
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Ключ пейна, в который помещается оверлей метки.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.pointOverlay" translate="no">
+                    <xref href="#Placemark/param-options.pointOverlay" type="entry"><parmname>options.pointOverlay</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      "default#placemark"
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|Function</p>
+                    <p/>
+                    <p>Ключ-идентификатор из хранилища <xref href="overlay.storage.dita" type="topic"><keyword>overlay.storage</keyword></xref> или класс оверлея. Функция-генератор принимает три параметра:<ul>
+    <li>geometry: <xref href="IPixelPointGeometry.dita" type="topic"><keyword>IPixelPointGeometry</keyword></xref> — непосредственно пиксельная геометрия;</li>
+    <li>data: <xref href="IDataManager.dita" type="topic"><keyword>IDataManager</keyword></xref> или Object - данные оверлея;</li>
+    <li>options: Object - опции оверлея.</li>
+</ul>Функция возвращает объект <xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.syncOverlayInit" translate="no">
+                    <xref href="#Placemark/param-options.syncOverlayInit" type="entry"><parmname>options.syncOverlayInit</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Включает синхронное добавление оверлея на карту. По умолчанию добавление оверлея осуществляется асинхронно, что позволяет предотвратить зависания браузера при добавлении на карту большого числа геообъектов. Однако, асинхронное добавление не позволяет получать доступ к оверлею сразу после добавления метки на карту.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.useMapMarginInDragging" translate="no">
+                    <xref href="#Placemark/param-options.useMapMarginInDragging" type="entry"><parmname>options.useMapMarginInDragging</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>При перетаскивании объекта к краю карты происходит автоматическое изменение центра карты. Нужно ли учитывать отступы карты при автоматическом смещении центра карты <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.visible" translate="no">
+                    <xref href="#Placemark/param-options.visible" type="entry"><parmname>options.visible</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                      true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Определяет видимость метки.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.zIndex" translate="no">
+                    <xref href="#Placemark/param-options.zIndex" type="entry"><parmname>options.zIndex</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>z-index иконки метки в обычном состоянии. Наименее приоритетный.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.zIndexActive" translate="no">
+                    <xref href="#Placemark/param-options.zIndexActive" type="entry"><parmname>options.zIndexActive</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>z-index иконки метки с открытым балуном. Наиболее приоритетный.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.zIndexDrag" translate="no">
+                    <xref href="#Placemark/param-options.zIndexDrag" type="entry"><parmname>options.zIndexDrag</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>z-index иконки метки при перетаскивании.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.zIndexHover" translate="no">
+                    <xref href="#Placemark/param-options.zIndexHover" type="entry"><parmname>options.zIndexHover</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>z-index иконки метки при наведении на него указателя мыши.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+            <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Создадим метку.
+var placemark = new ymaps.Placemark([55.75, 37.61], {
+    balloonContent: '&lt;img src="http://img-fotki.yandex.ru/get/6114/82599242.2d6/0_88b97_ec425cf5_M" />',
+    iconContent: "Азербайджан"}
+, {
+    preset: "islands#yellowStretchyIcon",
+    // Отключаем кнопку закрытия балуна.
+    balloonCloseButton: false,
+     // Балун будем открывать и закрывать кликом по иконке метки.
+    hideIconOnBalloonOpen: false
+});
+geoMap.geoObjects.add(placemark);</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">var placemark = new ymaps.Placemark([55.75, 37.61], {}, {
+    // Задаем стиль метки (метка в виде круга).
+    preset: "islands#circleDotIcon",
+    // Задаем цвет метки (в формате RGB).
+    iconColor: '#ff0000'
+});
+geoMap.geoObjects.add(placemark);</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="GeoObject.dita#field_detail/balloon" type="section"><keyword>balloon</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="geoObject.Balloon.dita" type="topic"><keyword>geoObject.Balloon</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Балун геообъекта.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="GeoObject.dita#field_detail/balloon" type="section"><keyword>GeoObject</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Placemark.dita#field_detail/editor" type="section"><keyword>editor</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="geometryEditor.Point.dita" type="topic"><keyword>geometryEditor.Point</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Редактор геометрии "Точка".</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="GeoObject.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="event.Manager.dita" type="topic"><keyword>event.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="GeoObject.dita#field_detail/events" type="section"><keyword>GeoObject</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Placemark.dita#field_detail/geometry" type="section"><keyword>geometry</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="geometry.Point.dita" type="topic"><keyword>geometry.Point</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Геометрия типа "Точка".</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="GeoObject.dita#field_detail/hint" type="section"><keyword>hint</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="geoObject.Hint.dita" type="topic"><keyword>geoObject.Hint</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Хинт геообъекта.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="GeoObject.dita#field_detail/hint" type="section"><keyword>GeoObject</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="GeoObject.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="option.Manager.dita" type="topic"><keyword>option.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций геообъекта.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="GeoObject.dita#field_detail/options" type="section"><keyword>GeoObject</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="GeoObject.dita#field_detail/properties" type="section"><keyword>properties</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер данных геообъекта.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="GeoObject.dita#field_detail/properties" type="section"><keyword>GeoObject</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="GeoObject.dita#field_detail/state" type="section"><keyword>state</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Состояние геообъекта. Определяется следующими полями:<ul>
+    <li>active: Boolean - признак того, что на геообъекте открыт балун.</li>
+    <li>hover: Boolean - признак того, что в данный момент на геообъект наведен указатель мыши;</li>
+    <li>drag: Boolean - признак того, что в данный момент геообъект перетаскивается.</li>
+</ul></p>
+                
+                  <p translate="no">Унаследовано от  <xref href="GeoObject.dita#field_detail/state" type="section"><keyword>GeoObject</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObject.dita#event_detail/event_detail/event-balloonclose"><keyword>balloonclose</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Закрытие балуна. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="GeoObject.dita#event_detail/event_detail/event-balloonclose"><keyword>GeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObject.dita#event_detail/event_detail/event-balloonopen"><keyword>balloonopen</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Открытие балуна на геообъекте. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="GeoObject.dita#event_detail/event_detail/event-balloonopen"><keyword>GeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObject.dita#event_detail/event_detail/event-beforedrag"><keyword>beforedrag</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, предшествующее событию drag. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>position - координаты относительно документа. Массива вида [pageX, pageY];</li>
+    <li>pixelOffset - массив из двух чисел, описывающий пиксельный сдвиг на данном шаге;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul>Имена методов, доступных через метод <xref href="Event.dita#method_detail/callMethod" type="section"><keyword>Event.callMethod</keyword></xref>:<ul>
+    <li>setPixelOffset - метод, позволяющий скорректировать значение пиксельного сдвига, который будет фактически применен. В качестве аргумента принимает новый пиксельный сдвиг в виде массива из двух чисел.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то последующее событие "drag" будет отменено.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="GeoObject.dita#event_detail/event_detail/event-beforedrag"><keyword>GeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObject.dita#event_detail/event_detail/event-beforedragstart"><keyword>beforedragstart</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, предшествующее событию dragstart. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>position - координаты относительно документа. Массива вида [pageX, pageY];</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то последующее перетаскивание, как и событие "dragstart", будет отменено.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="GeoObject.dita#event_detail/event_detail/event-beforedragstart"><keyword>GeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-click"><keyword>click</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Однократное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-click"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-contextmenu"><keyword>contextmenu</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Вызов контекстного меню на элементе. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-contextmenu"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-dblclick"><keyword>dblclick</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Двойное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-dblclick"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObject.dita#event_detail/event_detail/event-drag"><keyword>drag</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Перетаскивание геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>position - координаты относительно документа. Массива вида [pageX, pageY];</li>
+    <li>pixelOffset - массив из двух чисел, описывающий пиксельный сдвиг на данном шаге;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="GeoObject.dita#event_detail/event_detail/event-drag"><keyword>GeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObject.dita#event_detail/event_detail/event-dragend"><keyword>dragend</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Завершение перетаскивания геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>position - координаты относительно документа. Массива вида [pageX, pageY];</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="GeoObject.dita#event_detail/event_detail/event-dragend"><keyword>GeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObject.dita#event_detail/event_detail/event-dragstart"><keyword>dragstart</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Начало перетаскивания геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>position - координаты относительно документа. Массива вида [pageX, pageY];</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="GeoObject.dita#event_detail/event_detail/event-dragstart"><keyword>GeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObject.dita#event_detail/event_detail/event-editorstatechange"><keyword>editorstatechange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение состояния редактора геометрии геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>originalEvent - оригинальное событие редактора геометрии.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="GeoObject.dita#event_detail/event_detail/event-editorstatechange"><keyword>GeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#event_detail/event_detail/event-geometrychange"><keyword>geometrychange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение геометрии геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>originalEvent: <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref> - оригинальное событие геометрии.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeoObject.dita#event_detail/event_detail/event-geometrychange"><keyword>IGeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObject.dita#event_detail/event_detail/event-hintclose"><keyword>hintclose</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Закрытие хинта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="GeoObject.dita#event_detail/event_detail/event-hintclose"><keyword>GeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="GeoObject.dita#event_detail/event_detail/event-hintopen"><keyword>hintopen</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Открытие хинта на геообъекте. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="GeoObject.dita#event_detail/event_detail/event-hintopen"><keyword>GeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IParentOnMap.dita#event_detail/event_detail/event-mapchange"><keyword>mapchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменилась карта. Поля данных:<ul>
+    <li>oldMap - старая карта;</li>
+    <li>newMap - новая карта.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IParentOnMap.dita#event_detail/event_detail/event-mapchange"><keyword>IParentOnMap</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousedown"><keyword>mousedown</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Нажатие кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousedown"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseenter"><keyword>mouseenter</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Наведение курсора на объект. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseenter"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseleave"><keyword>mouseleave</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Вывод курсора за пределы объекта. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseleave"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousemove"><keyword>mousemove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Перемещение курсора над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mousemove"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseup"><keyword>mouseup</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Отпускание кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-mouseup"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchend"><keyword>multitouchend</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Окончание мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchend"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchmove"><keyword>multitouchmove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Повторящееся событие при мультисенсорном управлении. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Определяет свойство touches, которое содержит список прикосновений. Каждое прикосновение описано объектом, которое содержит поля:<ul>
+  <li>clientX - координата касания X относительно видимой области браузера;</li>
+  <li>clientY - координата касания Y относительно видимой области браузера;</li>
+  <li>pageX - координата касания X касания относительно начала документа;</li>
+  <li>pageY - координата касания Y касания относительно начала документа.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchmove"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchstart"><keyword>multitouchstart</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Начало мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Определяет свойство touches, которое содержит список прикосновений. Каждое прикосновение описано объектом, которое содержит поля:<ul>
+  <li>clientX - координата касания X относительно видимой области браузера;</li>
+  <li>clientY - координата касания Y относительно видимой области браузера;</li>
+  <li>pageX - координата касания X касания относительно начала документа;</li>
+  <li>pageY - координата касания Y касания относительно начала документа.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-multitouchstart"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#event_detail/event_detail/event-overlaychange"><keyword>overlaychange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение оверлея геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>overlay: <xref href="IOverlay.dita" type="topic"><keyword>IOverlay</keyword></xref>|null - ссылка на оверлей;</li>
+    <li>oldOverlay: <xref href="IOverlay.dita" type="topic"><keyword>IOverlay</keyword></xref>|null - предыдущий оверлей геообъекта.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeoObject.dita#event_detail/event_detail/event-overlaychange"><keyword>IGeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>parentchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменился родительский объект.</p><p>Поля данных:</p>
+<ul>
+    <li>oldParent - старый родитель;</li>
+    <li>newParent - новый родитель.</li>
+</ul>
+                            
+                                <p translate="no">Унаследовано от <xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>IChild</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#event_detail/event_detail/event-propertieschange"><keyword>propertieschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение данных геообъекта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>originalEvent: <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref> - оригинальное событие менеджера данных.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IGeoObject.dita#event_detail/event_detail/event-propertieschange"><keyword>IGeoObject</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IDomEventEmitter.dita#event_detail/event_detail/event-wheel"><keyword>wheel</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Скролл мышкой. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IDomEventEmitter.dita#event_detail/event_detail/event-wheel"><keyword>IDomEventEmitter</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IParentOnMap.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на карту.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IParentOnMap.dita#method_detail/getMap" type="section"><keyword>IParentOnMap</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#method_detail/getOverlay" type="section"><keyword>getOverlay</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект-обещание, который подтверждается объектом оверлея в момент его фактического создания, либо отклоняется с передачей соответствующей ошибки.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IGeoObject.dita#method_detail/getOverlay" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IGeoObject.dita#method_detail/getOverlaySync" type="section"><keyword>getOverlaySync</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IOverlay.dita" type="topic"><keyword>IOverlay</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Метод предоставляет синхронный доступ к оверлею.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IGeoObject.dita#method_detail/getOverlaySync" type="section"><keyword>IGeoObject</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChildOnMap.dita#method_detail/getParent" type="section"><keyword>getParent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IParentOnMap.dita" type="topic"><keyword>IParentOnMap</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на родительский объект или null, если родительский элемент не был установлен.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IChildOnMap.dita#method_detail/getParent" type="section"><keyword>IChildOnMap</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChildOnMap.dita#method_detail/setParent" type="section"><keyword>setParent</keyword></xref>(<xref href="IChildOnMap.dita#method_detail/setParent-param-parent" translate="no" type="row">parent</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IChildOnMap.dita" type="topic"><keyword>IChildOnMap</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает родительский объект. Если передать значение null, то элемент управления будет только удален из текущего родительского объекта.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IChildOnMap.dita#method_detail/setParent" type="section"><keyword>IChildOnMap</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="editor">
+            <title translate="no">editor</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="geometryEditor.Point.dita" type="topic"><keyword>geometryEditor.Point</keyword></xref>} editor</codeblock></p>
+
+            <p>Редактор геометрии "Точка".</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="geometry">
+            <title translate="no">geometry</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="geometry.Point.dita" type="topic"><keyword>geometry.Point</keyword></xref>} geometry</codeblock></p>
+
+            <p>Геометрия типа "Точка".</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic><!-- XLIFF_FARM_ZWJhZDBi_CACHING --></topic>

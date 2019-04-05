@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="multiRouter.masstransit.TransferSegmentModel" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">multiRouter.masstransit.TransferSegmentModel</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>multiRouter.masstransit.TransferSegmentModel</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+    
+    <p translate="no"><note>Конструктор класса multiRouter.masstransit.TransferSegmentModel скрыт, так как данный класс не предназначен для самостоятельной инициализации.</note></p>
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IEventEmitter.dita" type="topic"><keyword>IEventEmitter</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Модель данных сегмента перехода пути маршрута общественного транспорта. Сегментом пути маршрута общественного транспорта называется часть пути от одной пересадки до другой.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#multiRouter.masstransit.TransferSegmentModel/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#multiRouter.masstransit.TransferSegmentModel/events-summary" translate="no" type="section">События </xref> | <xref href="#multiRouter.masstransit.TransferSegmentModel/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+       
+            
+                <p>Создает модель данных сегмента перехода пути маршрута общественного транспорта.</p>
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="multiRouter.masstransit.TransferSegmentModel.dita#field_detail/geometry" type="section"><keyword>geometry</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="geometry.base.LineString.dita" type="topic"><keyword>geometry.base.LineString</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Геометрия сегмента.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="multiRouter.masstransit.TransferSegmentModel.dita#field_detail/path" type="section"><keyword>path</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="multiRouter.masstransit.PathModel.dita" type="topic"><keyword>multiRouter.masstransit.PathModel</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Ссылка на родительскую модель пути.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="multiRouter.masstransit.TransferSegmentModel.dita#field_detail/properties" type="section"><keyword>properties</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Данные сегмента. Доступны следующие поля:<ul>
+    <li>index: Integer – порядковый номер сегмента во множестве сегментов соответствующего пути маршрута;</li>
+    <li>type: String - идентификатор типа сегмента, принимающий значение "transfer" для сегментов переходов;</li>
+    <li>text: String - текстовое описание сегмента;</li>
+    <li>distance: Object - объект с полями "text" и "value", описывающий протяженность сегмента в метрах;</li>
+    <li>duration: Object - объект с полями "text" и "value", описывающий время проезда сегмента в секундах;</li>
+    <li>lodIndex: Integer - порядковый номер первой точки сегмента во множестве всех координат соответствующего ему пути маршрута.</li>
+</ul></p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.masstransit.TransferSegmentModel.dita#event_detail/event_detail/event-update"><keyword>update</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Обновление модели новыми данными. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.masstransit.TransferSegmentModel.dita#method_detail/destroy" type="section"><keyword>destroy</keyword></xref>(<xref href="multiRouter.masstransit.TransferSegmentModel.dita#method_detail/destroy-param-segmentJson" translate="no" type="row">segmentJson</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Обновляет состояние модели.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.masstransit.TransferSegmentModel.dita#method_detail/getType" type="section"><keyword>getType</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает идентификатор типа сегмента. Для сегментов перехода маршрутов общественного транспорта возвращается строка "transfer".</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="geometry">
+            <title translate="no">geometry</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="geometry.base.LineString.dita" type="topic"><keyword>geometry.base.LineString</keyword></xref>} geometry</codeblock></p>
+
+            <p>Геометрия сегмента.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="path">
+            <title translate="no">path</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="multiRouter.masstransit.PathModel.dita" type="topic"><keyword>multiRouter.masstransit.PathModel</keyword></xref>} path</codeblock></p>
+
+            <p>Ссылка на родительскую модель пути.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="properties">
+            <title translate="no">properties</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>} properties</codeblock></p>
+
+            <p>Данные сегмента. Доступны следующие поля:<ul>
+    <li>index: Integer – порядковый номер сегмента во множестве сегментов соответствующего пути маршрута;</li>
+    <li>type: String - идентификатор типа сегмента, принимающий значение "transfer" для сегментов переходов;</li>
+    <li>text: String - текстовое описание сегмента;</li>
+    <li>distance: Object - объект с полями "text" и "value", описывающий протяженность сегмента в метрах;</li>
+    <li>duration: Object - объект с полями "text" и "value", описывающий время проезда сегмента в секундах;</li>
+    <li>lodIndex: Integer - порядковый номер первой точки сегмента во множестве всех координат соответствующего ему пути маршрута.</li>
+</ul></p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-update">
+            <title translate="no">update</title>
+            
+             <p>Обновление модели новыми данными. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="destroy">
+        <title translate="no">destroy</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} destroy(<xref href="multiRouter.masstransit.TransferSegmentModel.dita#method_detail/destroy-param-segmentJson" translate="no" type="row">segmentJson</xref>)</codeblock></p>
+
+         <p>Обновляет состояние модели.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="destroy-param-segmentJson">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/destroy-param-segmentJson" type="row"><parmname>segmentJson</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>JSON-данные.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="destroy_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getType">
+        <title translate="no">getType</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getType()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> идентификатор типа сегмента. Для сегментов перехода маршрутов общественного транспорта возвращается строка "transfer".</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_NjcwM2U4_CACHING --></topic>

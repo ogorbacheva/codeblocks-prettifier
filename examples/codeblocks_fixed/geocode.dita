@@ -1,0 +1,399 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="geocode" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">geocode</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>geocode</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статическая функция.</p>
+    
+    
+        
+            <p>Обрабатывает запросы геокодирования. Результат запроса может быть представлен в формате JSON или в виде объекта <xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref>. Формат ответа геокодера описан в разделе <xref href="http://api.yandex.ru/maps/doc/geocoder/desc/concepts/response_structure.xml" scope="external">Геокодирование</xref>.</p>
+        
+    
+
+
+
+
+
+
+
+    <p translate="no"><b>См.: </b><xref href="GeocodeResult.dita" type="topic"><keyword>GeocodeResult</keyword></xref> </p>
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+       <p><b>Возвращает</b> объект-promise.</p>
+       
+    
+
+    
+
+    
+        
+         
+              <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{ <xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref> } geocode(<xref href="#geocode/param-request" translate="no" type="row">request</xref>[, <xref href="#geocode/param-options" translate="no" type="row">options</xref>])</codeblock></p>
+         
+     
+
+    
+        <p translate="no"><b>Параметры:</b></p>
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+
+        <table>
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Параметр</entry>
+              <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+        
+        <row id="param-request">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#geocode/param-request" type="row"><parmname>request</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: String|Number[]</p>
+                <p/>
+                <p>Адрес, для которого необходимо определить координаты (прямое геокодирование) или координаты, для которых необходимо определить адрес (обратное геокодирование).</p>
+            </entry>
+        </row>
+        
+        <row id="param-options">
+            <entry colname="col1" translate="no">
+                <xref href="#geocode/param-options" type="row"><parmname>options</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Object</p>
+                <p/>
+                <p>Опции.</p>
+            </entry>
+        </row>
+        
+        <row id="param-options.boundedBy">
+            <entry colname="col1" translate="no">
+                <xref href="#geocode/param-options.boundedBy" type="row"><parmname>options.boundedBy</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Number[][]</p>
+                <p/>
+                <p>Прямоугольная область на карте, где предположительно находится искомый объект.</p>
+            </entry>
+        </row>
+        
+        <row id="param-options.json">
+            <entry colname="col1" translate="no">
+                <xref href="#geocode/param-options.json" type="row"><parmname>options.json</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  false
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Boolean</p>
+                <p/>
+                <p>Если true, то в функцию-обработчик передается JSON. В противном случае в функцию обработчик передается объект, содержащий в поле geoObjects результаты геокодирования в виде коллекции <xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref>. При геокодировании посредством геокодера 'yandex#map' в коллекции будут находиться объекты <xref href="GeocodeResult.dita" type="topic"><keyword>GeocodeResult</keyword></xref>.</p>
+            </entry>
+        </row>
+        
+        <row id="param-options.kind">
+            <entry colname="col1" translate="no">
+                <xref href="#geocode/param-options.kind" type="row"><parmname>options.kind</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  'house'
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: String</p>
+                <p/>
+                <p/><p>Вид топонима (только для обратного геокодирования).</p><p>
+</p><p>Список возможных значений:</p>
+<ul><li>house - дом;</li>
+<li>street - улица;</li>
+<li>metro - станция метро;</li>
+<li>district - район города;</li>
+<li>locality - населенный пункт (город/поселок/деревня/село/...).</li></ul>
+            </entry>
+        </row>
+        
+        <row id="param-options.provider">
+            <entry colname="col1" translate="no">
+                <xref href="#geocode/param-options.provider" type="row"><parmname>options.provider</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">   'yandex#map'
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: <xref href="IGeocodeProvider.dita" type="topic"><keyword>IGeocodeProvider</keyword></xref>|String</p>
+                <p/>
+                <p>Провайдер геокодирования. Можно воспользоваться одним из стандартных провайдеров:<ul>
+    <li>'yandex#map' - поиск по карте.</li>
+</ul></p>
+            </entry>
+        </row>
+        
+        <row id="param-options.results">
+            <entry colname="col1" translate="no">
+                <xref href="#geocode/param-options.results" type="row"><parmname>options.results</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  10
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Integer</p>
+                <p/>
+                <p>Максимальное количество возвращаемых результатов.</p>
+            </entry>
+        </row>
+        
+        <row id="param-options.searchCoordOrder">
+            <entry colname="col1" translate="no">
+                <xref href="#geocode/param-options.searchCoordOrder" type="row"><parmname>options.searchCoordOrder</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: String</p>
+                <p/>
+                <p>Определяет каким образом нужно интерпретировать координаты в запросе.</p>
+            </entry>
+        </row>
+        
+        <row id="param-options.skip">
+            <entry colname="col1" translate="no">
+                <xref href="#geocode/param-options.skip" type="row"><parmname>options.skip</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  0
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Integer</p>
+                <p/>
+                <p>Число результатов, которое необходимо пропустить.</p>
+            </entry>
+        </row>
+        
+        <row id="param-options.strictBounds">
+            <entry colname="col1" translate="no">
+                <xref href="#geocode/param-options.strictBounds" type="row"><parmname>options.strictBounds</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  false
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Boolean</p>
+                <p/>
+                <p>Искать только внутри области, заданной опцией boundedBy.</p>
+            </entry>
+        </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+    
+    
+
+
+
+    
+        <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Осуществляет поиск объекта с именем "Москва".
+// Полученный результат сразу отображается на карте.
+var myGeocoder = ymaps.geocode("Moscow");
+myGeocoder.then(function (res) {
+    map.geoObjects.add(res.geoObjects);
+    // Выведем в консоль данные, полученные в результате геокодирования объекта.
+    console.log(res.geoObjects.get(0)
+        .properties.get('metaDataProperty')
+        .getAll());
+}, function (err) {
+    // Обработка ошибки.
+});</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Реализуем интерфейс IGeocodeProvider.
+var randomPointProvider = {
+        geocode: function (request, options) {
+            var deferred = ymaps.vow.defer(),
+                geoObjects = new ymaps.GeoObjectCollection(),
+                results = options.results || 10;
+            for (var i = 0; i &lt; results; i++) {
+                geoObjects.add(new ymaps.GeoObject({
+                    geometry: {
+                        type: "Point",
+                        coordinates: [(Math.random() - 0.5) *
+                            180, (Math.random() - 0.5) * 360
+                            ]
+                    },
+                    properties: {
+                        name: request + ' ' + i,
+                        description: request +
+                            '\'s description ' + i,
+                        balloonContentBody: '&lt;p&gt;' +
+                            request + ' ' + i + '&lt;/p&gt;'
+                    }
+                }));
+            }
+            var response = {
+                geoObjects: geoObjects,
+                // Геообъекты поисковой выдачи.
+                // Метаинформация ответа.
+                metaData: {
+                    geocoder: {
+                        request: request,
+                        // Строка обработанного запроса.
+                        found: results,
+                        // Количество найденных результатов.
+                        results: results,
+                        // Количество результатов в ответе.
+                        skip: options.skip || 0
+                        // Количество пропущенных результатов.
+                    }
+                }
+            };
+            // Выполняем асинхронную обработку.
+            setTimeout(function () {
+                deferred.resolve(response);
+            }, 0);
+            return deferred.promise();
+        }
+    },
+    myGeocoder = ymaps.geocode("Москва", {
+        provider: randomPointProvider
+    });
+myGeocoder.then(
+    function (res) {
+        map.geoObjects.add(res.geoObjects);
+    },
+    function (err) {
+        // Обработка ошибки.
+    }
+);</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_YWU3NTFh_CACHING --></topic>

@@ -1,0 +1,775 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Monitor" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">Monitor</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>Monitor</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Объект, отслеживающий изменения определенных полей данных на заданном менеджере данных. Также может использоваться для отслеживания изменений опций.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#Monitor/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#Monitor/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">Monitor(<xref href="#Monitor/param-dataManager" translate="no" type="entry">dataManager</xref>)</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-dataManager" translate="no">
+                    
+                        <xref href="#Monitor/param-dataManager" type="entry"><parmname>dataManager</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IDataManager.dita" type="topic"><keyword>IDataManager</keyword></xref>|<xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></p>
+                    <p/>
+                    <p>Менеджер данных.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Отслеживание изменений опции метки.
+var placemark = new ymaps.Placemark([0, 0]),
+    optionMonitor = new ymaps.Monitor(placemark.options);
+optionMonitor.add("cursor", function (newValue) {
+    alert("cursor: " + newValue);
+});
+myMap.geoObjects.add(placemark);
+// Выведет строку "cursor: arrow".
+myMap.options.set({
+    geoObjectCursor: "arrow"
+});</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Monitor.dita#method_detail/add" type="section"><keyword>add</keyword></xref>(<xref href="Monitor.dita#method_detail/add-param-name" translate="no" type="row">name</xref>, <xref href="Monitor.dita#method_detail/add-param-changeCallback" translate="no" type="row">changeCallback</xref>[, <xref href="Monitor.dita#method_detail/add-param-context" translate="no" type="row">context</xref>[, <xref href="Monitor.dita#method_detail/add-param-params" translate="no" type="row">params</xref>]])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Monitor.dita" type="topic"><keyword>Monitor</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Включает наблюдение за определенным полем, либо группой полей данных.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Monitor.dita#method_detail/forceChange" type="section"><keyword>forceChange</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Monitor.dita" type="topic"><keyword>Monitor</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Инициирует проверку изменения значений наблюдаемых полей данных.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Monitor.dita#method_detail/get" type="section"><keyword>get</keyword></xref>(<xref href="Monitor.dita#method_detail/get-param-name" translate="no" type="row">name</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает текущее значение одного из наблюдаемых полей данных.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Monitor.dita#method_detail/remove" type="section"><keyword>remove</keyword></xref>(<xref href="Monitor.dita#method_detail/remove-param-name" translate="no" type="row">name</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Monitor.dita" type="topic"><keyword>Monitor</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Отключает наблюдение за определенным полем, либо группой полей данных.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Monitor.dita#method_detail/removeAll" type="section"><keyword>removeAll</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Monitor.dita" type="topic"><keyword>Monitor</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Отключает наблюдение для всех полей данных.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="add">
+        <title translate="no">add</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="Monitor.dita" type="topic"><keyword>Monitor</keyword></xref>} add(<xref href="Monitor.dita#method_detail/add-param-name" translate="no" type="row">name</xref>, <xref href="Monitor.dita#method_detail/add-param-changeCallback" translate="no" type="row">changeCallback</xref>[, <xref href="Monitor.dita#method_detail/add-param-context" translate="no" type="row">context</xref>[, <xref href="Monitor.dita#method_detail/add-param-params" translate="no" type="row">params</xref>]])</codeblock></p>
+
+         <p>Включает наблюдение за определенным полем, либо группой полей данных.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="add-param-name">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/add-param-name" type="row"><parmname>name</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|String[]</p>
+                    <p/>
+                   <p>Имя, либо массив имен полей данных, за которыми устанавливается наблюдение.</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-changeCallback">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/add-param-changeCallback" type="row"><parmname>changeCallback</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Обработчик изменения поля данных, либо одного из полей данных группы.</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-context">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/add-param-context" type="row"><parmname>context</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Контекст исполнения обработчика изменений данных, а также опциональных обработчиков.</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-params">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/add-param-params" type="row"><parmname>params</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Опциональные параметры.</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-params.compareCallback">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/add-param-params.compareCallback" type="row"><parmname>params.compareCallback</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Обработчик сравнивающий старое и новое значения поля данных. Принимает два аргумента: старое значение, новое значение. Менее приоритетен по отношению к обработчикам заданным с помощью параметра compareCallbacks.</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-params.compareCallbacks">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/add-param-params.compareCallbacks" type="row"><parmname>params.compareCallbacks</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Хэш вида {имя поля данных: ссылка на обработчик}. Данный параметр позволяет задать индивидуальные обработчики сравнения значений для различных полей данных в группе.</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-params.defaultValue">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/add-param-params.defaultValue" type="row"><parmname>params.defaultValue</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Значение по умолчанию, используемое в том случае, если поле данных не определено.</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-params.defaultValues">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/add-param-params.defaultValues" type="row"><parmname>params.defaultValues</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Хэш вида {имя поля данных: значение по умолчанию}. Данный параметр позволяет задать индивидуальные значения по умолчанию для различных полей данных в группе.</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-params.resolveCallback">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/add-param-params.resolveCallback" type="row"><parmname>params.resolveCallback</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Обработчик разрешающий значение поля данных. Принимает два аргумента: имя поля данных, ссылку на менеджер данных. Менее приоритетен по отношению к обработчикам заданным с помощью параметра resolveCallbacks.</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-params.resolveCallbacks">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/add-param-params.resolveCallbacks" type="row"><parmname>params.resolveCallbacks</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Хэш вида {имя поля данных: ссылка на обработчик}. Данный параметр позволяет задать индивидуальные обработчики разрешения значений для различных полей данных в группе.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="add_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="forceChange">
+        <title translate="no">forceChange</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="Monitor.dita" type="topic"><keyword>Monitor</keyword></xref>} forceChange()</codeblock></p>
+
+         <p>Инициирует проверку изменения значений наблюдаемых полей данных.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="get">
+        <title translate="no">get</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} get(<xref href="Monitor.dita#method_detail/get-param-name" translate="no" type="row">name</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>текущее значение одного из наблюдаемых полей данных.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="get-param-name">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/get-param-name" type="row"><parmname>name</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Имя поля данных.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="get_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="remove">
+        <title translate="no">remove</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="Monitor.dita" type="topic"><keyword>Monitor</keyword></xref>} remove(<xref href="Monitor.dita#method_detail/remove-param-name" translate="no" type="row">name</xref>)</codeblock></p>
+
+         <p>Отключает наблюдение за определенным полем, либо группой полей данных.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="remove-param-name">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/remove-param-name" type="row"><parmname>name</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|String[]</p>
+                    <p/>
+                   <p>Имя, либо массив имен полей данных, для которых отключается наблюдение.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="remove_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="removeAll">
+        <title translate="no">removeAll</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="Monitor.dita" type="topic"><keyword>Monitor</keyword></xref>} removeAll()</codeblock></p>
+
+         <p>Отключает наблюдение для всех полей данных.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_MWFiNTc2_CACHING --></topic>

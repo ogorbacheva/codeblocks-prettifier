@@ -1,0 +1,942 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="IEventManager" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IEventManager</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IEventManager</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IEventTrigger.dita" type="topic"><keyword>IEventTrigger</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Менеджер событий. При помощи менеджера событий можно подписываться на события и отписываться от них, а также инициировать сами события.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IEventManager/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#IEventManager/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IEventManager()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEventManager.dita#method_detail/add" type="section"><keyword>add</keyword></xref>(<xref href="IEventManager.dita#method_detail/add-param-types" translate="no" type="row">types</xref>, <xref href="IEventManager.dita#method_detail/add-param-callback" translate="no" type="row">callback</xref>[, <xref href="IEventManager.dita#method_detail/add-param-context" translate="no" type="row">context</xref>[, <xref href="IEventManager.dita#method_detail/add-param-priority" translate="no" type="row">priority</xref>]])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет новую подписку.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEventManager.dita#method_detail/fire" type="section"><keyword>fire</keyword></xref>(<xref href="IEventManager.dita#method_detail/fire-param-type" translate="no" type="row">type</xref>[, <xref href="IEventManager.dita#method_detail/fire-param-event" translate="no" type="row">event</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Инициирует событие.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEventManager.dita#method_detail/getParent" type="section"><keyword>getParent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на родительский менеджер событий.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEventManager.dita#method_detail/group" type="section"><keyword>group</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IEventGroup.dita" type="topic"><keyword>IEventGroup</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает группу слушателей событий, ассоциированную с данным менеджером событий.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEventManager.dita#method_detail/once" type="section"><keyword>once</keyword></xref>(<xref href="IEventManager.dita#method_detail/once-param-types" translate="no" type="row">types</xref>, <xref href="IEventManager.dita#method_detail/once-param-callback" translate="no" type="row">callback</xref>[, <xref href="IEventManager.dita#method_detail/once-param-context" translate="no" type="row">context</xref>[, <xref href="IEventManager.dita#method_detail/once-param-priority" translate="no" type="row">priority</xref>]])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет слушателя, который вызовет функцию-обработчик только 1 раз.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEventManager.dita#method_detail/remove" type="section"><keyword>remove</keyword></xref>(<xref href="IEventManager.dita#method_detail/remove-param-types" translate="no" type="row">types</xref>, <xref href="IEventManager.dita#method_detail/remove-param-callback" translate="no" type="row">callback</xref>[, <xref href="IEventManager.dita#method_detail/remove-param-context" translate="no" type="row">context</xref>[, <xref href="IEventManager.dita#method_detail/remove-param-priority" translate="no" type="row">priority</xref>]])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет существующую подписку.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEventManager.dita#method_detail/setParent" type="section"><keyword>setParent</keyword></xref>(<xref href="IEventManager.dita#method_detail/setParent-param-parent" translate="no" type="row">parent</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает родительский менеджер событий.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="add">
+        <title translate="no">add</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref>} add(<xref href="IEventManager.dita#method_detail/add-param-types" translate="no" type="row">types</xref>, <xref href="IEventManager.dita#method_detail/add-param-callback" translate="no" type="row">callback</xref>[, <xref href="IEventManager.dita#method_detail/add-param-context" translate="no" type="row">context</xref>[, <xref href="IEventManager.dita#method_detail/add-param-priority" translate="no" type="row">priority</xref>]])</codeblock></p>
+
+         <p>Добавляет новую подписку.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="add-param-types">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/add-param-types" type="row"><parmname>types</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|String[]</p>
+                    <p/>
+                   <p>Тип события или массив типов.</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-callback">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/add-param-callback" type="row"><parmname>callback</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция-обработчик события. В качестве параметра в функцию передается объект, описывающий событие. Может быть либо произвольным объектом, либо реализовывать интерфейс <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref>.</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-context">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/add-param-context" type="row"><parmname>context</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Контекст исполнения обработчика.</p>
+                </entry>
+
+            </row>
+            
+            <row id="add-param-priority">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/add-param-priority" type="row"><parmname>priority</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> 0
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Приоритет подписки.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="add_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="fire">
+        <title translate="no">fire</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref>} fire(<xref href="IEventManager.dita#method_detail/fire-param-type" translate="no" type="row">type</xref>[, <xref href="IEventManager.dita#method_detail/fire-param-event" translate="no" type="row">event</xref>])</codeblock></p>
+
+         <p>Инициирует событие.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="fire-param-type">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/fire-param-type" type="row"><parmname>type</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Тип события.</p>
+                </entry>
+
+            </row>
+            
+            <row id="fire-param-event">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/fire-param-event" type="row"><parmname>event</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object|<xref href="Event.dita" type="topic"><keyword>Event</keyword></xref></p>
+                    <p/>
+                   <p>Событие. Если передан хэш с данными, то для него будет вызван метод createEventObject, и дальнейшие действия будут производиться с новым созданным событием.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="fire_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getParent">
+        <title translate="no">getParent</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref>|null} getParent()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на родительский менеджер событий.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="group">
+        <title translate="no">group</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IEventGroup.dita" type="topic"><keyword>IEventGroup</keyword></xref>} group()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>группу слушателей событий, ассоциированную с данным менеджером событий.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="once">
+        <title translate="no">once</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref>} once(<xref href="IEventManager.dita#method_detail/once-param-types" translate="no" type="row">types</xref>, <xref href="IEventManager.dita#method_detail/once-param-callback" translate="no" type="row">callback</xref>[, <xref href="IEventManager.dita#method_detail/once-param-context" translate="no" type="row">context</xref>[, <xref href="IEventManager.dita#method_detail/once-param-priority" translate="no" type="row">priority</xref>]])</codeblock></p>
+
+         <p>Добавляет слушателя, который вызовет функцию-обработчик только 1 раз.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="once-param-types">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/once-param-types" type="row"><parmname>types</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|String[]</p>
+                    <p/>
+                   <p>Тип события или массив типов.</p>
+                </entry>
+
+            </row>
+            
+            <row id="once-param-callback">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/once-param-callback" type="row"><parmname>callback</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция-обработчик события. В качестве параметра в функцию передается объект, описывающий событие. Этот объект должен реализовывать интерфейс <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref>.</p>
+                </entry>
+
+            </row>
+            
+            <row id="once-param-context">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/once-param-context" type="row"><parmname>context</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Контекст исполнения обработчика.</p>
+                </entry>
+
+            </row>
+            
+            <row id="once-param-priority">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/once-param-priority" type="row"><parmname>priority</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> 0
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Приоритет подписки.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="once_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="remove">
+        <title translate="no">remove</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref>} remove(<xref href="IEventManager.dita#method_detail/remove-param-types" translate="no" type="row">types</xref>, <xref href="IEventManager.dita#method_detail/remove-param-callback" translate="no" type="row">callback</xref>[, <xref href="IEventManager.dita#method_detail/remove-param-context" translate="no" type="row">context</xref>[, <xref href="IEventManager.dita#method_detail/remove-param-priority" translate="no" type="row">priority</xref>]])</codeblock></p>
+
+         <p>Удаляет существующую подписку.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="remove-param-types">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/remove-param-types" type="row"><parmname>types</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|String[]</p>
+                    <p/>
+                   <p>Тип события или массив типов.</p>
+                </entry>
+
+            </row>
+            
+            <row id="remove-param-callback">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/remove-param-callback" type="row"><parmname>callback</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция-обработчик события. В качестве параметра в функцию передается объект, описывающий событие. Этот объект должен реализовывать интерфейс <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref>.</p>
+                </entry>
+
+            </row>
+            
+            <row id="remove-param-context">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/remove-param-context" type="row"><parmname>context</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Контекст исполнения обработчика.</p>
+                </entry>
+
+            </row>
+            
+            <row id="remove-param-priority">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/remove-param-priority" type="row"><parmname>priority</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> 0
+                    </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Приоритет подписки.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="remove_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="setParent">
+        <title translate="no">setParent</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} setParent(<xref href="IEventManager.dita#method_detail/setParent-param-parent" translate="no" type="row">parent</xref>)</codeblock></p>
+
+         <p>Устанавливает родительский менеджер событий.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setParent-param-parent">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setParent-param-parent" type="row"><parmname>parent</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref>|null</p>
+                    <p/>
+                   <p>Родительский менеджер событий.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setParent_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_MTU1OGNj_CACHING --></topic>

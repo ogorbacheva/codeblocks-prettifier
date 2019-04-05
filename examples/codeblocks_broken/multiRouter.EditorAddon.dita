@@ -1,0 +1,1391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="multiRouter.EditorAddon" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">multiRouter.EditorAddon</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>multiRouter.EditorAddon</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+    
+    <p translate="no"><note>Конструктор класса multiRouter.EditorAddon скрыт, так как данный класс не предназначен для самостоятельной инициализации.</note></p>
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="ICustomizable.dita" type="topic"><keyword>ICustomizable</keyword></xref>, <xref href="IEventEmitter.dita" type="topic"><keyword>IEventEmitter</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Аддон редактора мультимаршрута.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#multiRouter.EditorAddon/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#multiRouter.EditorAddon/events-summary" translate="no" type="section">События </xref> | <xref href="#multiRouter.EditorAddon/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+       
+            
+                <p>Создает аддон редактора мультимаршрута.</p>
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>ICustomizable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#field_detail/state" type="section"><keyword>state</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер состояния редактора мультимаршрута.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-beforemidpointadd"><keyword>beforemidpointadd</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, предшествующее событию midpointadd. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>coords: Number[] - координаты добавления промежуточной точки;</li>
+    <li>pointType: String – идентификатор типа добавляемой промежуточной точки;</li>
+    <li>insertIndex: Integer – индекс вставки промежуточной точки во множестве опорных точек мультимаршрута.</li>
+</ul>Имена методов, доступных через метод <xref href="Event.dita#method_detail/callMethod" type="section"><keyword>Event.callMethod</keyword></xref>:<ul>
+    <li>setPointType - метод, позволяющий задать тип добавляемой точки. В качестве аргумента принимает строковый идентификатор типа (смотрите описание опции midPointsType).</li>
+    <li>setInsertIndex - метод, позволяющий скорректировать индекс вставки промежуточной точки, который будет фактически применен. В качестве аргумента принимает новый индекс.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то последующее добавление промежуточной точки маршрута, как и событие "midpointadd", будет отменено.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-beforemidpointdrag"><keyword>beforemidpointdrag</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, предшествующее событию midpointdrag. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>pixelOffset: Number[] - пиксельный сдвиг по осям на данном шаге;</li>
+</ul>Имена методов, доступных через метод <xref href="Event.dita#method_detail/callMethod" type="section"><keyword>Event.callMethod</keyword></xref>:<ul>
+    <li>setPixelOffset - метод, позволяющий скорректировать значение пиксельного сдвига, который будет фактически применен. В качестве аргумента принимает новый пиксельный сдвиг в виде массива из двух чисел.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то последующее событие "midpointdrag" будет отменено.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-beforemidpointpinshow"><keyword>beforemidpointpinshow</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, предшествующее событию midpointpinshow. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>pin: <xref href="Placemark.dita" type="topic"><keyword>Placemark</keyword></xref> - ссылка на объект маркера;</li>
+    <li>globalPixels: Number[] - глобальные пиксельные координаты маркера;</li>
+    <li>segment: <xref href="multiRouter.driving.Segment.dita" type="topic"><keyword>multiRouter.driving.Segment</keyword></xref> – ссылка на сегмент маршрута, над которым появился маркер.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то последующее событие "midpointpinshow" будет отменено, а маркер будет скрыт.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-beforeviapointdrag"><keyword>beforeviapointdrag</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, предшествующее событию viapointdrag. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>pixelOffset: Number[] - пиксельный сдвиг по осям на данном шаге;</li>
+    <li>viaPoint: <xref href="multiRouter.ViaPoint.dita" type="topic"><keyword>multiRouter.ViaPoint</keyword></xref> – ссылка на объект перетаскиваемой транзитной точки.</li>
+</ul>Имена методов, доступных через метод <xref href="Event.dita#method_detail/callMethod" type="section"><keyword>Event.callMethod</keyword></xref>:<ul>
+    <li>setPixelOffset - метод, позволяющий скорректировать значение пиксельного сдвига, который будет фактически применен. В качестве аргумента принимает новый пиксельный сдвиг в виде массива из двух чисел.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то последующее событие "viapointdrag" будет отменено.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-beforeviapointdragstart"><keyword>beforeviapointdragstart</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, предшествующее событию viapointdragstart. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>domEvent: <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref> – исходное DOM-событие, если оно имеется;</li>
+    <li>viaPoint: <xref href="multiRouter.ViaPoint.dita" type="topic"><keyword>multiRouter.ViaPoint</keyword></xref> – ссылка на объект перетаскиваемой транзитной точки.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то последующее перетаскивание, как и событие "viapointdragstart", будет отменено.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-beforeviapointremove"><keyword>beforeviapointremove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, предшествующее событию viapointremove. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>viaPoint: <xref href="multiRouter.ViaPoint.dita" type="topic"><keyword>multiRouter.ViaPoint</keyword></xref> - ссылка на объект удаляемой транзитной точки.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то удаление транзитной точки, как и последующее событие "viapointremove", будет отменено.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-beforewaypointadd"><keyword>beforewaypointadd</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, предшествующее событию waypointadd. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>coords: Number[] - координаты добавленной путевой точки.</li>
+</ul>Имена методов, доступных через метод <xref href="Event.dita#method_detail/callMethod" type="section"><keyword>Event.callMethod</keyword></xref>:<ul>
+    <li>setCoords - метод, позволяющий скорректировать координаты добавляемой путевой точки. В качестве аргумента принимает новые координаты в виде массива из двух чисел.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то добавление путевой точки, как и последующее событие "waypointadd", будет отменено.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-beforewaypointdrag"><keyword>beforewaypointdrag</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, предшествующее событию waypointdrag. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>pixelOffset: Number[] - пиксельный сдвиг по осям на данном шаге;</li>
+    <li>wayPoint: <xref href="multiRouter.WayPoint.dita" type="topic"><keyword>multiRouter.WayPoint</keyword></xref> – ссылка на объект перетаскиваемой путевой точки.</li>
+</ul>Имена методов, доступных через метод <xref href="Event.dita#method_detail/callMethod" type="section"><keyword>Event.callMethod</keyword></xref>:<ul>
+    <li>setPixelOffset - метод, позволяющий скорректировать значение пиксельного сдвига, который будет фактически применен. В качестве аргумента принимает новый пиксельный сдвиг в виде массива из двух чисел.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то последующее событие "waypointdrag" будет отменено.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-beforewaypointdragstart"><keyword>beforewaypointdragstart</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, предшествующее событию waypointdragstart. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>domEvent: <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref> – исходное DOM-событие, если оно имеется;</li>
+    <li>wayPoint: <xref href="multiRouter.WayPoint.dita" type="topic"><keyword>multiRouter.WayPoint</keyword></xref> – ссылка на объект перетаскиваемой путевой точки.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то последующее перетаскивание, как и событие "waypointdragstart", будет отменено.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-beforewaypointremove"><keyword>beforewaypointremove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие, предшествующее событию waypointremove. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>wayPoint: <xref href="multiRouter.WayPoint.dita" type="topic"><keyword>multiRouter.WayPoint</keyword></xref> - ссылка на объект удаляемой путевой точки.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то удаление путевой точки, как и последующее событие "waypointremove", будет отменено.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-midpointadd"><keyword>midpointadd</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Добавление промежуточной точки маршрута. Тип точки определяется значением опции midPointsType. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>coords: Number[] - координаты добавления промежуточной точки;</li>
+    <li>pointType: String – идентификатор типа добавляемой промежуточной точки;</li>
+    <li>insertIndex: Integer – индекс вставки промежуточной точки во множестве опорных точек мультимаршрута.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-midpointdrag"><keyword>midpointdrag</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Перетаскивание добавленной промежуточной точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>pixelOffset: Number[] - пиксельный сдвиг по осям на данном шаге;</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-midpointdragend"><keyword>midpointdragend</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Завершение перетаскивания добавленной промежуточной точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-midpointpinshow"><keyword>midpointpinshow</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Появление перетаскиваемого маркера при наведении на активный маршрут. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>pin: <xref href="Placemark.dita" type="topic"><keyword>Placemark</keyword></xref> - ссылка на объект маркера;</li>
+    <li>globalPixels: Number[] - глобальные пиксельные координаты маркера;</li>
+    <li>segment: <xref href="multiRouter.driving.Segment.dita" type="topic"><keyword>multiRouter.driving.Segment</keyword></xref> – ссылка на сегмент маршрута, над которым появился маркер.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-start"><keyword>start</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Включение редактора. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-stop"><keyword>stop</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Выключение редактора. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-viapointdrag"><keyword>viapointdrag</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Перетаскивание транзитной точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>pixelOffset: Number[] - пиксельный сдвиг по осям на данном шаге;</li>
+    <li>viaPoint: <xref href="multiRouter.ViaPoint.dita" type="topic"><keyword>multiRouter.ViaPoint</keyword></xref> – ссылка на объект перетаскиваемой транзитной точки.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-viapointdragend"><keyword>viapointdragend</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Завершение перетаскивания транзитной точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>viaPoint: <xref href="multiRouter.ViaPoint.dita" type="topic"><keyword>multiRouter.ViaPoint</keyword></xref> – ссылка на объект перетаскиваемой транзитной точки.</li> </ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-viapointdragstart"><keyword>viapointdragstart</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Начало перетаскивания транзитной точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>domEvent: <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref> – исходное DOM-событие, если оно имеется;</li>
+    <li>viaPoint: <xref href="multiRouter.ViaPoint.dita" type="topic"><keyword>multiRouter.ViaPoint</keyword></xref> – ссылка на объект перетаскиваемой транзитной точки.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-viapointremove"><keyword>viapointremove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Удаление транзитной точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>viaPoint: <xref href="multiRouter.ViaPoint.dita" type="topic"><keyword>multiRouter.ViaPoint</keyword></xref> - ссылка на объект удаленной транзитной точки.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-waypointadd"><keyword>waypointadd</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Добавление путевой точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>coords: Number[] - координаты добавленной путевой точки.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-waypointdrag"><keyword>waypointdrag</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Перетаскивание путевой точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>pixelOffset: Number[] - пиксельный сдвиг по осям на данном шаге;</li>
+    <li>wayPoint: <xref href="multiRouter.WayPoint.dita" type="topic"><keyword>multiRouter.WayPoint</keyword></xref> – ссылка на объект перетаскиваемой путевой точки.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-waypointdragend"><keyword>waypointdragend</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Завершение перетаскивания путевой точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>wayPoint: <xref href="multiRouter.WayPoint.dita" type="topic"><keyword>multiRouter.WayPoint</keyword></xref> – ссылка на объект перетаскиваемой путевой точки.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-waypointdragstart"><keyword>waypointdragstart</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Начало перетаскивания путевой точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>domEvent: <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref> – исходное DOM-событие, если оно имеется;</li>
+    <li>wayPoint: <xref href="multiRouter.WayPoint.dita" type="topic"><keyword>multiRouter.WayPoint</keyword></xref> – ссылка на объект перетаскиваемой путевой точки.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#event_detail/event_detail/event-waypointremove"><keyword>waypointremove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Удаление путевой точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>wayPoint: <xref href="multiRouter.WayPoint.dita" type="topic"><keyword>multiRouter.WayPoint</keyword></xref> - ссылка на объект удаленной путевой точки.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#method_detail/isActive" type="section"><keyword>isActive</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает признак того, что редактор в данный момент включен.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#method_detail/start" type="section"><keyword>start</keyword></xref>(<xref href="multiRouter.EditorAddon.dita#method_detail/start-param-state" translate="no" type="row">state</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Включает редактор.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.EditorAddon.dita#method_detail/stop" type="section"><keyword>stop</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Отключает редактор.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="state">
+            <title translate="no">state</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>} state</codeblock></p>
+
+            <p>Менеджер состояния редактора мультимаршрута.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-beforemidpointadd">
+            <title translate="no">beforemidpointadd</title>
+            
+             <p>Событие, предшествующее событию midpointadd. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>coords: Number[] - координаты добавления промежуточной точки;</li>
+    <li>pointType: String – идентификатор типа добавляемой промежуточной точки;</li>
+    <li>insertIndex: Integer – индекс вставки промежуточной точки во множестве опорных точек мультимаршрута.</li>
+</ul>Имена методов, доступных через метод <xref href="Event.dita#method_detail/callMethod" type="section"><keyword>Event.callMethod</keyword></xref>:<ul>
+    <li>setPointType - метод, позволяющий задать тип добавляемой точки. В качестве аргумента принимает строковый идентификатор типа (смотрите описание опции midPointsType).</li>
+    <li>setInsertIndex - метод, позволяющий скорректировать индекс вставки промежуточной точки, который будет фактически применен. В качестве аргумента принимает новый индекс.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то последующее добавление промежуточной точки маршрута, как и событие "midpointadd", будет отменено.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-beforemidpointdrag">
+            <title translate="no">beforemidpointdrag</title>
+            
+             <p>Событие, предшествующее событию midpointdrag. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>pixelOffset: Number[] - пиксельный сдвиг по осям на данном шаге;</li>
+</ul>Имена методов, доступных через метод <xref href="Event.dita#method_detail/callMethod" type="section"><keyword>Event.callMethod</keyword></xref>:<ul>
+    <li>setPixelOffset - метод, позволяющий скорректировать значение пиксельного сдвига, который будет фактически применен. В качестве аргумента принимает новый пиксельный сдвиг в виде массива из двух чисел.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то последующее событие "midpointdrag" будет отменено.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-beforemidpointpinshow">
+            <title translate="no">beforemidpointpinshow</title>
+            
+             <p>Событие, предшествующее событию midpointpinshow. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>pin: <xref href="Placemark.dita" type="topic"><keyword>Placemark</keyword></xref> - ссылка на объект маркера;</li>
+    <li>globalPixels: Number[] - глобальные пиксельные координаты маркера;</li>
+    <li>segment: <xref href="multiRouter.driving.Segment.dita" type="topic"><keyword>multiRouter.driving.Segment</keyword></xref> – ссылка на сегмент маршрута, над которым появился маркер.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то последующее событие "midpointpinshow" будет отменено, а маркер будет скрыт.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-beforeviapointdrag">
+            <title translate="no">beforeviapointdrag</title>
+            
+             <p>Событие, предшествующее событию viapointdrag. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>pixelOffset: Number[] - пиксельный сдвиг по осям на данном шаге;</li>
+    <li>viaPoint: <xref href="multiRouter.ViaPoint.dita" type="topic"><keyword>multiRouter.ViaPoint</keyword></xref> – ссылка на объект перетаскиваемой транзитной точки.</li>
+</ul>Имена методов, доступных через метод <xref href="Event.dita#method_detail/callMethod" type="section"><keyword>Event.callMethod</keyword></xref>:<ul>
+    <li>setPixelOffset - метод, позволяющий скорректировать значение пиксельного сдвига, который будет фактически применен. В качестве аргумента принимает новый пиксельный сдвиг в виде массива из двух чисел.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то последующее событие "viapointdrag" будет отменено.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-beforeviapointdragstart">
+            <title translate="no">beforeviapointdragstart</title>
+            
+             <p>Событие, предшествующее событию viapointdragstart. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>domEvent: <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref> – исходное DOM-событие, если оно имеется;</li>
+    <li>viaPoint: <xref href="multiRouter.ViaPoint.dita" type="topic"><keyword>multiRouter.ViaPoint</keyword></xref> – ссылка на объект перетаскиваемой транзитной точки.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то последующее перетаскивание, как и событие "viapointdragstart", будет отменено.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-beforeviapointremove">
+            <title translate="no">beforeviapointremove</title>
+            
+             <p>Событие, предшествующее событию viapointremove. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>viaPoint: <xref href="multiRouter.ViaPoint.dita" type="topic"><keyword>multiRouter.ViaPoint</keyword></xref> - ссылка на объект удаляемой транзитной точки.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то удаление транзитной точки, как и последующее событие "viapointremove", будет отменено.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-beforewaypointadd">
+            <title translate="no">beforewaypointadd</title>
+            
+             <p>Событие, предшествующее событию waypointadd. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>coords: Number[] - координаты добавленной путевой точки.</li>
+</ul>Имена методов, доступных через метод <xref href="Event.dita#method_detail/callMethod" type="section"><keyword>Event.callMethod</keyword></xref>:<ul>
+    <li>setCoords - метод, позволяющий скорректировать координаты добавляемой путевой точки. В качестве аргумента принимает новые координаты в виде массива из двух чисел.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то добавление путевой точки, как и последующее событие "waypointadd", будет отменено.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-beforewaypointdrag">
+            <title translate="no">beforewaypointdrag</title>
+            
+             <p>Событие, предшествующее событию waypointdrag. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>pixelOffset: Number[] - пиксельный сдвиг по осям на данном шаге;</li>
+    <li>wayPoint: <xref href="multiRouter.WayPoint.dita" type="topic"><keyword>multiRouter.WayPoint</keyword></xref> – ссылка на объект перетаскиваемой путевой точки.</li>
+</ul>Имена методов, доступных через метод <xref href="Event.dita#method_detail/callMethod" type="section"><keyword>Event.callMethod</keyword></xref>:<ul>
+    <li>setPixelOffset - метод, позволяющий скорректировать значение пиксельного сдвига, который будет фактически применен. В качестве аргумента принимает новый пиксельный сдвиг в виде массива из двух чисел.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то последующее событие "waypointdrag" будет отменено.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-beforewaypointdragstart">
+            <title translate="no">beforewaypointdragstart</title>
+            
+             <p>Событие, предшествующее событию waypointdragstart. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>domEvent: <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref> – исходное DOM-событие, если оно имеется;</li>
+    <li>wayPoint: <xref href="multiRouter.WayPoint.dita" type="topic"><keyword>multiRouter.WayPoint</keyword></xref> – ссылка на объект перетаскиваемой путевой точки.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то последующее перетаскивание, как и событие "waypointdragstart", будет отменено.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-beforewaypointremove">
+            <title translate="no">beforewaypointremove</title>
+            
+             <p>Событие, предшествующее событию waypointremove. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>wayPoint: <xref href="multiRouter.WayPoint.dita" type="topic"><keyword>multiRouter.WayPoint</keyword></xref> - ссылка на объект удаляемой путевой точки.</li>
+</ul>Если у данного события вызвать метод <xref href="Event.dita#method_detail/preventDefault" type="section"><keyword>Event.preventDefault</keyword></xref>, то удаление путевой точки, как и последующее событие "waypointremove", будет отменено.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-midpointadd">
+            <title translate="no">midpointadd</title>
+            
+             <p>Добавление промежуточной точки маршрута. Тип точки определяется значением опции midPointsType. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>coords: Number[] - координаты добавления промежуточной точки;</li>
+    <li>pointType: String – идентификатор типа добавляемой промежуточной точки;</li>
+    <li>insertIndex: Integer – индекс вставки промежуточной точки во множестве опорных точек мультимаршрута.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-midpointdrag">
+            <title translate="no">midpointdrag</title>
+            
+             <p>Перетаскивание добавленной промежуточной точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>pixelOffset: Number[] - пиксельный сдвиг по осям на данном шаге;</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-midpointdragend">
+            <title translate="no">midpointdragend</title>
+            
+             <p>Завершение перетаскивания добавленной промежуточной точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-midpointpinshow">
+            <title translate="no">midpointpinshow</title>
+            
+             <p>Появление перетаскиваемого маркера при наведении на активный маршрут. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>pin: <xref href="Placemark.dita" type="topic"><keyword>Placemark</keyword></xref> - ссылка на объект маркера;</li>
+    <li>globalPixels: Number[] - глобальные пиксельные координаты маркера;</li>
+    <li>segment: <xref href="multiRouter.driving.Segment.dita" type="topic"><keyword>multiRouter.driving.Segment</keyword></xref> – ссылка на сегмент маршрута, над которым появился маркер.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-start">
+            <title translate="no">start</title>
+            
+             <p>Включение редактора. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-stop">
+            <title translate="no">stop</title>
+            
+             <p>Выключение редактора. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-viapointdrag">
+            <title translate="no">viapointdrag</title>
+            
+             <p>Перетаскивание транзитной точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>pixelOffset: Number[] - пиксельный сдвиг по осям на данном шаге;</li>
+    <li>viaPoint: <xref href="multiRouter.ViaPoint.dita" type="topic"><keyword>multiRouter.ViaPoint</keyword></xref> – ссылка на объект перетаскиваемой транзитной точки.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-viapointdragend">
+            <title translate="no">viapointdragend</title>
+            
+             <p>Завершение перетаскивания транзитной точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>viaPoint: <xref href="multiRouter.ViaPoint.dita" type="topic"><keyword>multiRouter.ViaPoint</keyword></xref> – ссылка на объект перетаскиваемой транзитной точки.</li> </ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-viapointdragstart">
+            <title translate="no">viapointdragstart</title>
+            
+             <p>Начало перетаскивания транзитной точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>domEvent: <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref> – исходное DOM-событие, если оно имеется;</li>
+    <li>viaPoint: <xref href="multiRouter.ViaPoint.dita" type="topic"><keyword>multiRouter.ViaPoint</keyword></xref> – ссылка на объект перетаскиваемой транзитной точки.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-viapointremove">
+            <title translate="no">viapointremove</title>
+            
+             <p>Удаление транзитной точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>viaPoint: <xref href="multiRouter.ViaPoint.dita" type="topic"><keyword>multiRouter.ViaPoint</keyword></xref> - ссылка на объект удаленной транзитной точки.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-waypointadd">
+            <title translate="no">waypointadd</title>
+            
+             <p>Добавление путевой точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>coords: Number[] - координаты добавленной путевой точки.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-waypointdrag">
+            <title translate="no">waypointdrag</title>
+            
+             <p>Перетаскивание путевой точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>pixelOffset: Number[] - пиксельный сдвиг по осям на данном шаге;</li>
+    <li>wayPoint: <xref href="multiRouter.WayPoint.dita" type="topic"><keyword>multiRouter.WayPoint</keyword></xref> – ссылка на объект перетаскиваемой путевой точки.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-waypointdragend">
+            <title translate="no">waypointdragend</title>
+            
+             <p>Завершение перетаскивания путевой точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>wayPoint: <xref href="multiRouter.WayPoint.dita" type="topic"><keyword>multiRouter.WayPoint</keyword></xref> – ссылка на объект перетаскиваемой путевой точки.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-waypointdragstart">
+            <title translate="no">waypointdragstart</title>
+            
+             <p>Начало перетаскивания путевой точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>domEvent: <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref> – исходное DOM-событие, если оно имеется;</li>
+    <li>wayPoint: <xref href="multiRouter.WayPoint.dita" type="topic"><keyword>multiRouter.WayPoint</keyword></xref> – ссылка на объект перетаскиваемой путевой точки.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-waypointremove">
+            <title translate="no">waypointremove</title>
+            
+             <p>Удаление путевой точки. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>wayPoint: <xref href="multiRouter.WayPoint.dita" type="topic"><keyword>multiRouter.WayPoint</keyword></xref> - ссылка на объект удаленной путевой точки.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="isActive">
+        <title translate="no">isActive</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Boolean} isActive()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>признак того, что редактор в данный момент включен.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="start">
+        <title translate="no">start</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} start(<xref href="multiRouter.EditorAddon.dita#method_detail/start-param-state" translate="no" type="row">state</xref>)</codeblock></p>
+
+         <p>Включает редактор.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="start-param-state">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/start-param-state" type="row"><parmname>state</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Начальное состояние редактора.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="start_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="stop">
+        <title translate="no">stop</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} stop()</codeblock></p>
+
+         <p>Отключает редактор.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_OWQ2ZDNl_CACHING --></topic>

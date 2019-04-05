@@ -1,0 +1,1134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="option.presetStorage" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">option.presetStorage</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>option.presetStorage</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section id="constructor">
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статический объект.</p>
+    
+    
+
+
+
+    
+        <p translate="no">
+            Экземпляр класса  <xref href="util.Storage.dita" type="topic"><keyword>util.Storage</keyword></xref>
+        </p>
+    
+
+
+
+   
+        <p>Хранилище предустановленных опций. Список доступных ключей:</p><p><b>Метки с текстом</b></p><p>
+</p><p>Содержимое метки задается через поле <xref href="GeoObject.dita#GeoObject/param-feature.properties" type="entry">properties.iconContent</xref>.</p><p>
+  </p><p><table frame="all">
+      <tgroup cols="4">
+        <colspec colname="col1" colnum="1" rowheader="headers"/>
+        <colspec colname="col2" colnum="2" rowheader="headers"/>
+        <colspec colname="col3" colnum="3" popup="no" rowheader="headers"/>
+        <colspec colname="col4" colnum="4" popup="no" rowheader="headers"/>
+        <thead>
+          <row>
+            <entry colname="col1"><b>Значок</b></entry>
+            <entry colname="col2"><b>Ключ</b></entry>
+            <entry colname="col3"><b>Значок</b></entry>
+            <entry colname="col4"><b>Ключ</b></entry>
+          </row>
+          </thead>
+          <tbody>
+          <row>
+            <entry colname="col1"><image href="../images/styles/blueIcon.png" placement="inline"/></entry>
+            <entry colname="col2">'islands#blueIcon'</entry>
+            <entry colname="col3"><image href="../images/styles/darkGreenIcon.png" placement="inline"/></entry>
+            <entry colname="col4">'islands#darkGreenIcon'</entry>
+          </row>
+          <row>
+            <entry colname="col1"><image href="../images/styles/redIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#redIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/violetIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#violetIcon'</entry>
+          </row>
+          <row>
+           <entry colname="col1"><image href="../images/styles/darkOrangeIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#darkOrangeIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/blackIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blackIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/nightIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#nightIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/yellowIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#yellowIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/darkBlueIcon.png" placement="inline"/></entry>
+            <entry colname="col2">'islands#darkBlueIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/greenIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#greenIcon'</entry>
+         </row>
+         <row>
+            <entry colname="col1"><image href="../images/styles/pinkIcon.png" placement="inline"/></entry>
+            <entry colname="col2">'islands#pinkIcon'</entry>
+            <entry colname="col3"><image href="../images/styles/orangeIcon.png" placement="inline"/></entry>
+            <entry colname="col4">'islands#orangeIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/grayIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#grayIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/lightBlueIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#lightBlueIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/brownIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#brownIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/oliveIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#oliveIcon'</entry>
+         </row>
+       </tbody>
+     </tgroup>
+   </table></p><p>
+ </p><p><b>Метки с текстом (иконки тянутся под контент)</b></p><p>
+ </p><p>Содержимое метки задается через поле <xref href="GeoObject.dita#GeoObject/param-feature.properties" type="entry">properties.iconContent</xref>.</p><p>
+ </p><p><table frame="all">
+     <tgroup cols="4">
+       <colspec colname="col1" colnum="1" rowheader="headers"/>
+       <colspec colname="col2" colnum="2" rowheader="headers"/>
+       <colspec colname="col3" colnum="3" popup="no" rowheader="headers"/>
+       <colspec colname="col4" colnum="4" popup="no" rowheader="headers"/>
+       <thead>
+         <row>
+           <entry colname="col1"><b>Значок</b></entry>
+           <entry colname="col2"><b>Ключ</b></entry>
+           <entry colname="col3"><b>Значок</b></entry>
+           <entry colname="col4"><b>Ключ</b></entry>
+         </row>
+         </thead>
+         <tbody>
+         <row>
+           <entry colname="col1"><image href="../images/styles/blueStr.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueStretchyIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/darkGreenStr.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#darkGreenStretchyIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/redStr.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#redStretchyIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/violetStr.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#violetStretchyIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/darkOrangeStr.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#darkOrangeStretchyIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/blackStr.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blackStretchyIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/nightStr.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#nightStretchyIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/yellowStr.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#yellowStretchyIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/darkBlueStr.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#darkBlueStretchyIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/greenStr.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#greenStretchyIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/pinkStr.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#pinkStretchyIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/orangeStr.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#orangeStretchyIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/grayStr.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#grayStretchyIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/lightBlueStr.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#lightBlueStretchyIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/brownStr.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#brownStretchyIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/oliveStr.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#oliveStretchyIcon'</entry>
+         </row>
+       </tbody>
+     </tgroup>
+   </table></p><p>
+ </p><p><b>Метки без содержимого с точкой в центре</b></p><p>
+ </p><p><table frame="all">
+     <tgroup cols="4">
+       <colspec colname="col1" colnum="1" rowheader="headers"/>
+       <colspec colname="col2" colnum="2" rowheader="headers"/>
+       <colspec colname="col3" colnum="3" popup="no" rowheader="headers"/>
+       <colspec colname="col4" colnum="4" popup="no" rowheader="headers"/>
+       <thead>
+         <row>
+           <entry colname="col1"><b>Значок</b></entry>
+           <entry colname="col2"><b>Ключ</b></entry>
+           <entry colname="col3"><b>Значок</b></entry>
+           <entry colname="col4"><b>Ключ</b></entry>
+         </row>
+         </thead>
+         <tbody>
+         <row>
+           <entry colname="col1"><image href="../images/styles/blueDotIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueDotIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/darkGreenDotIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#darkGreenDotIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/redDotIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#redDotIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/violetDotIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#violetDotIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/darkOrangeDotIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#darkOrangeDotIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/blackDotIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blackDotIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/nightDotIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#nightDotIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/yellowDotIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#yellowDotIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/darkBlueDotIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#darkBlueDotIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/greenDotIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#greenDotIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/pinkDotIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#pinkDotIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/orangeDotIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#orangeDotIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/grayDotIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#grayDotIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/lightBlueDotIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#lightBlueDotIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/brownDotIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#brownDotIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/oliveDotIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#oliveDotIcon'</entry>
+         </row>
+       </tbody>
+     </tgroup>
+   </table></p><p>
+ </p><p><b>Метки в виде кругов с текстом</b></p><p>
+ </p><p>Содержимое метки задается через поле <xref href="GeoObject.dita#GeoObject/param-feature.properties" type="entry">properties.iconContent</xref>.</p><p>
+ </p><p><table frame="all">
+     <tgroup cols="6">
+       <colspec colname="col1" colnum="1" rowheader="headers"/>
+       <colspec colname="col2" colnum="2" rowheader="headers"/>
+       <colspec colname="col3" colnum="3" rowheader="headers"/>
+       <colspec colname="col4" colnum="4" popup="no" rowheader="headers"/>
+       <colspec colname="col5" colnum="5" popup="no" rowheader="headers"/>
+       <colspec colname="col6" colnum="6" rowheader="headers"/>
+       <thead>
+         <row>
+           <entry colname="col1"><b>Значок</b></entry>
+           <entry colname="col2"><b>Ключ</b></entry>
+           <entry colname="col3"><b>Значок</b></entry>
+           <entry colname="col4"><b>Ключ</b></entry>
+         </row>
+         </thead>
+         <tbody>
+         <row>
+           <entry colname="col1"><image href="../images/styles/blueCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/darkGreenCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#darkGreenCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/redCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#redCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/violetCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#violetCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/darkOrangeCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#darkOrangeCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/blackCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blackCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/nightCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#nightCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/yellowCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#yellowCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/darkBlueCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#darkBlueCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/greenCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#greenCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/pinkCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#pinkCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/orangeCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#orangeCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/grayCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#grayCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/lightBlueCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#lightBlueCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/brownCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#brownCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/oliveCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#oliveCircleIcon'</entry>
+         </row>
+       </tbody>
+     </tgroup>
+   </table></p><p>
+ </p><p><b>Метки в виде кругов с точкой в центре</b></p><p>
+ </p><p><table frame="all">
+     <tgroup cols="6">
+       <colspec colname="col1" colnum="1" rowheader="headers"/>
+       <colspec colname="col2" colnum="2" rowheader="headers"/>
+       <colspec colname="col3" colnum="3" rowheader="headers"/>
+       <colspec colname="col4" colnum="4" popup="no" rowheader="headers"/>
+       <colspec colname="col5" colnum="5" popup="no" rowheader="headers"/>
+       <colspec colname="col6" colnum="6" rowheader="headers"/>
+       <thead>
+         <row>
+           <entry colname="col1"><b>Значок</b></entry>
+           <entry colname="col2"><b>Ключ</b></entry>
+           <entry colname="col3"><b>Значок</b></entry>
+           <entry colname="col4"><b>Ключ</b></entry>
+         </row>
+         </thead>
+         <tbody>
+         <row>
+           <entry colname="col1"><image href="../images/styles/blueCircleDotIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueCircleDotIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/darkGreenCircleDotIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#darkGreenCircleDotIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/redCircleDotIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#redCircleDotIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/violetCircleDotIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#violetCircleDotIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/darkOrangeCircleDotIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#darkOrangeCircleDotIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/blackCircleDotIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blackCircleDotIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/nightCircleDotIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#nightCircleDotIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/yellowCircleDotIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#yellowCircleDotIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/darkBlueCircleDotIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#darkBlueCircleDotIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/greenCircleDotIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#greenCircleDotIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/pinkCircleDotIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#pinkCircleDotIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/orangeCircleDotIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#orangeCircleDotIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/grayCircleDotIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#grayCircleDotIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/lightBlueCircleDotIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#lightBlueCircleDotIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/brownCircleDotIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#brownCircleDotIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/oliveCircleDotIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#oliveCircleDotIcon'</entry>
+         </row>
+       </tbody>
+     </tgroup>
+   </table></p><p>
+  </p><p><b>Метки со значком</b></p><p>
+   </p><p>Ключ для данного типа меток формируется по следующему правилу: 'islands#{цвет}{значок}Icon'. Например, 'islands#blueHomeIcon'. Ниже приведен список доступных значков и соответствующих для них ключей. Список доступных цветов можно посмотреть в любой другой таблице.</p><p>
+   </p><p><table frame="all">
+     <tgroup cols="6">
+       <colspec colname="col1" colnum="1" rowheader="headers"/>
+       <colspec colname="col2" colnum="2" rowheader="headers"/>
+       <colspec colname="col3" colnum="3" rowheader="headers"/>
+       <colspec colname="col4" colnum="4" popup="no" rowheader="headers"/>
+       <colspec colname="col5" colnum="5" popup="no" rowheader="headers"/>
+       <colspec colname="col6" colnum="6" rowheader="headers"/>
+       <thead>
+         <row>
+           <entry colname="col1"><b>Значок</b></entry>
+           <entry colname="col2"><b>Ключ</b></entry>
+           <entry colname="col3"><b>Значок</b></entry>
+           <entry colname="col4"><b>Ключ</b></entry>
+         </row>
+         </thead>
+         <tbody>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueAirportIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueAirportIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueAttentionIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueAttentionIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueAutoIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueAutoIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueBarIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueBarIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueBarberIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueBarberIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueBeachIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueBeachIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueBicycleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueBicycleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueBicycle2Icon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueBicycle2Icon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueBookIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueBookIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueCarWashIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueCarWashIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueChristianIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueChristianIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueCinemaIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueCinemaIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueCircusIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueCircusIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueCourtIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueCourtIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueDeliveryIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueDeliveryIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueDiscountIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueDiscountIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueDogIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueDogIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueEducationIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueEducationIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueEntertainmentCenterIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueEntertainmentCenterIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueFactoryIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueFactoryIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueFamilyIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueFamilyIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueFashionIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueFashionIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueFoodIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueFoodIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueFuelStationIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueFuelStationIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueGardenIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueGardenIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueGovernmentIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueGovernmentIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueHeartIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueHeartIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueHomeIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueHomeIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueHotelIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueHotelIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueHydroIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueHydroIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueInfoIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueInfoIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueLaundryIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueLaundryIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueLeisureIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueLeisureIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueMassTransitIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueMassTransitIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueMedicalIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueMedicalIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueMoneyIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueMoneyIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueMountainIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueMountainIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueNightClubIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueNightClubIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueObservationIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueObservationIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueParkIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueParkIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueParkingIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueParkingIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/bluePersonIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#bluePersonIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/bluePocketIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#bluePocketIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/bluePoolIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#bluePoolIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/bluePostIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#bluePostIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueRailwayIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueRailwayIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueRapidTransitIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueRapidTransitIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueRepairShopIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueRepairShopIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueRunIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueRunIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueScienceIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueScienceIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueShoppingIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueShoppingIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueSouvenirsIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueSouvenirsIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueSportIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueSportIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueStarIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueStarIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueTheaterIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueTheaterIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueToiletIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueToiletIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueUnderpassIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueUnderpassIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueVegetationIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueVegetationIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueVideoIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueVideoIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueWasteIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueWasteIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueWaterParkIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueWaterParkIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueWaterwayIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueWaterwayIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueWorshipIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueWorshipIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueZooIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueZooIcon'</entry>
+         </row>
+       </tbody>
+     </tgroup>
+   </table></p><p>
+   </p><p><b>Метки в виде круга со значком</b></p><p>
+   </p><p>Ключ для данного типа меток формируется по следующему правилу: 'islands#{цвет}{значок}CircleIcon'. Например, 'islands#blueHomeCircleIcon'. Ниже приведен список доступных значков и соответствующих для них ключей. Список доступных цветов можно посмотреть в любой другой таблице.</p><p>
+   </p><p><table frame="all">
+     <tgroup cols="6">
+       <colspec colname="col1" colnum="1" rowheader="headers"/>
+       <colspec colname="col2" colnum="2" rowheader="headers"/>
+       <colspec colname="col3" colnum="3" rowheader="headers"/>
+       <colspec colname="col4" colnum="4" popup="no" rowheader="headers"/>
+       <colspec colname="col5" colnum="5" popup="no" rowheader="headers"/>
+       <colspec colname="col6" colnum="6" rowheader="headers"/>
+       <thead>
+         <row>
+           <entry colname="col1"><b>Значок</b></entry>
+           <entry colname="col2"><b>Ключ</b></entry>
+           <entry colname="col3"><b>Значок</b></entry>
+           <entry colname="col4"><b>Ключ</b></entry>
+         </row>
+         </thead>
+         <tbody>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueHomeCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueHomeCircleIcon'</entry>
+          <entry colname="col3"><image href="../images/styles/signs/blueScienceCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueScienceCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueAirportCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueAirportCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueAttentionCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueAttentionCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueAutoCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueAutoCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueBarCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueBarCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueBarberCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueBarberCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueBeachCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueBeachCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueBicycleCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueBicycleCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueBicycle2CircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueBicycle2CircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueBookCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueBookCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueCarWashCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueCarWashCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueChristianCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueChristianCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueCinemaCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueCinemaCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueCircusCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueCircusCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueCourtCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueCourtCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueDeliveryCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueDeliveryCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueDiscountCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueDiscountCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueDogCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueDogCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueEducationCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueEducationCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueEntertainmentCenterCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueEntertainmentCenterCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueFactoryCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueFactoryCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueFamilyCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueFamilyCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueFashionCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueFashionCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueFoodCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueFoodCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueFuelStationCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueFuelStationCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueGardenCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueGardenCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueGovernmentCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueGovernmentCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueHeartCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueHeartCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueHomeCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueHomeCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueHotelCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueHotelCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueHydroCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueHydroCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueInfoCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueInfoCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueLaundryCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueLaundryCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueLeisureCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueLeisureCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueMassTransitCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueMassTransitCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueMedicalCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueMedicalCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueMoneyCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueMoneyCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueMountainCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueMountainCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueNightClubCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueNightClubCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueObservationCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueObservationCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueParkCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueParkCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueParkingCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueParkingCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/bluePersonCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#bluePersonCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/bluePocketCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#bluePocketCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/bluePoolCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#bluePoolCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/bluePostCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#bluePostCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueRailwayCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueRailwayCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueRapidTransitCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueRapidTransitCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueRepairShopCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueRepairShopCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueRunCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueRunCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueScienceCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueScienceCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueShoppingCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueShoppingCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueSouvenirsCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueSouvenirsCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueSportCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueSportCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueStarCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueStarCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueTheaterCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueTheaterCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueToiletCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueToiletCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueUnderpassCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueUnderpassCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueVegetationCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueVegetationCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueVideoCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueVideoCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueWasteCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueWasteCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueWaterParkCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueWaterParkCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueWaterwayCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueWaterwayCircleIcon'</entry>
+         </row>
+         <row>
+           <entry colname="col1"><image href="../images/styles/signs/blueWorshipCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col2">'islands#blueWorshipCircleIcon'</entry>
+           <entry colname="col3"><image href="../images/styles/signs/blueZooCircleIcon.png" placement="inline"/></entry>
+           <entry colname="col4">'islands#blueZooCircleIcon'</entry>
+         </row>
+       </tbody>
+     </tgroup>
+   </table></p><p>
+   </p><p><b>Пиктограммы</b></p><p>
+   </p><p><table frame="all">
+    <tgroup cols="2">
+      <colspec colname="col1" colnum="1" rowheader="headers"/>
+      <colspec colname="col2" colnum="2" popup="no" rowheader="headers"/>
+      <thead>
+          <row>
+              <entry colname="col1"><b>Значок</b></entry>
+              <entry colname="col2"><b>Ключ</b></entry>
+          </row>
+      </thead>
+        <tbody>
+          <row>
+             <entry colname="col1"><image href="../images/styles/geolocation.png" placement="inline"/></entry>
+             <entry colname="col2">'islands#geolocationIcon'</entry>
+         </row>
+       </tbody>
+     </tgroup>
+   </table></p><p>
+  </p><p><b>Значки кластеров</b></p><p>
+    </p><p><table frame="all">
+    <tgroup cols="4">
+      <colspec colname="col1" colnum="1" rowheader="headers"/>
+      <colspec colname="col2" colnum="2" popup="no" rowheader="headers"/>
+      <colspec colname="col3" colnum="3" rowheader="headers"/>
+      <colspec colname="col4" colnum="4" rowheader="headers"/>
+      <thead>
+          <row>
+              <entry colname="col1"><b>Значок</b></entry>
+              <entry colname="col2"><b>Ключ</b></entry>
+              <entry colname="col3"><b>Значок</b></entry>
+              <entry colname="col4"><b>Ключ</b></entry>
+          </row>
+      </thead>
+      <tbody>
+          <row>
+             <entry colname="col1"><image href="../images/styles/clusterer/blue.png" placement="inline"/></entry>
+             <entry colname="col2">'islands#blueClusterIcons'</entry>
+             <entry colname="col3"><image href="../images/styles/clusterer/blueInverted.png" placement="inline"/></entry>
+             <entry colname="col4">'islands#invertedBlueClusterIcons'</entry>
+         </row>
+         <row>
+              <entry colname="col1"><image href="../images/styles/clusterer/red.png" placement="inline"/></entry>
+              <entry colname="col2">'islands#redClusterIcons'</entry>
+              <entry colname="col3"><image href="../images/styles/clusterer/redInverted.png" placement="inline"/></entry>
+              <entry colname="col4">'islands#invertedRedClusterIcons'</entry>
+         </row>
+         <row>
+              <entry colname="col1"><image href="../images/styles/clusterer/darkOrange.png" placement="inline"/></entry>
+              <entry colname="col2">'islands#darkOrangeClusterIcons'</entry>
+              <entry colname="col3"><image href="../images/styles/clusterer/darkOrangeInverted.png" placement="inline"/></entry>
+              <entry colname="col4">'islands#invertedDarkOrangeClusterIcons'</entry>
+         </row>
+         <row>
+              <entry colname="col1"><image href="../images/styles/clusterer/night.png" placement="inline"/></entry>
+              <entry colname="col2">'islands#nightClusterIcons'</entry>
+              <entry colname="col3"><image href="../images/styles/clusterer/nightInverted.png" placement="inline"/></entry>
+              <entry colname="col4">'islands#invertedNightClusterIcons'</entry>
+         </row>
+          <row>
+              <entry colname="col1"><image href="../images/styles/clusterer/darkBlue.png" placement="inline"/></entry>
+              <entry colname="col2">'islands#darkBlueClusterIcons'</entry>
+              <entry colname="col3"><image href="../images/styles/clusterer/darkBlueInverted.png" placement="inline"/></entry>
+              <entry colname="col4">'islands#invertedDarkBlueClusterIcons'</entry>
+         </row>
+         <row>
+              <entry colname="col1"><image href="../images/styles/clusterer/pink.png" placement="inline"/></entry>
+              <entry colname="col2">'islands#pinkClusterIcons'</entry>
+              <entry colname="col3"><image href="../images/styles/clusterer/pinkInverted.png" placement="inline"/></entry>
+              <entry colname="col4">'islands#invertedPinkClusterIcons'</entry>
+          </row>
+          <row>
+              <entry colname="col1"><image href="../images/styles/clusterer/gray.png" placement="inline"/></entry>
+              <entry colname="col2">'islands#grayClusterIcons'</entry>
+              <entry colname="col3"><image href="../images/styles/clusterer/grayInverted.png" placement="inline"/></entry>
+              <entry colname="col4">'islands#invertedGrayClusterIcons'</entry>
+         </row>
+         <row>
+              <entry colname="col1"><image href="../images/styles/clusterer/brown.png" placement="inline"/></entry>
+              <entry colname="col2">'islands#brownClusterIcons'</entry>
+              <entry colname="col3"><image href="../images/styles/clusterer/brownInverted.png" placement="inline"/></entry>
+              <entry colname="col4">'islands#invertedBrownClusterIcons'</entry>
+         </row>
+         <row>
+              <entry colname="col1"><image href="../images/styles/clusterer/darkGreen.png" placement="inline"/></entry>
+              <entry colname="col2">'islands#darkGreenClusterIcons'</entry>
+              <entry colname="col3"><image href="../images/styles/clusterer/darkGreenInverted.png" placement="inline"/></entry>
+              <entry colname="col4">'islands#invertedDarkGreenClusterIcons'</entry>
+         </row>
+         <row>
+              <entry colname="col1"><image href="../images/styles/clusterer/violet.png" placement="inline"/></entry>
+              <entry colname="col2">'islands#violetClusterIcons'</entry>
+              <entry colname="col3"><image href="../images/styles/clusterer/violetInverted.png" placement="inline"/></entry>
+              <entry colname="col4">'islands#invertedVioletClusterIcons'</entry>
+         </row>
+         <row>
+              <entry colname="col1"><image href="../images/styles/clusterer/black.png" placement="inline"/></entry>
+              <entry colname="col2">'islands#blackClusterIcons'</entry>
+              <entry colname="col3"><image href="../images/styles/clusterer/blackInverted.png" placement="inline"/></entry>
+              <entry colname="col4">'islands#invertedBlackClusterIcons'</entry>
+         </row>
+          <row>
+              <entry colname="col1"><image href="../images/styles/clusterer/yellow.png" placement="inline"/></entry>
+              <entry colname="col2">'islands#yellowClusterIcons'</entry>
+              <entry colname="col3"><image href="../images/styles/clusterer/yellowInverted.png" placement="inline"/></entry>
+              <entry colname="col4">'islands#invertedYellowClusterIcons'</entry>
+         </row>
+         <row>
+              <entry colname="col1"><image href="../images/styles/clusterer/green.png" placement="inline"/></entry>
+              <entry colname="col2">'islands#greenClusterIcons'</entry>
+              <entry colname="col3"><image href="../images/styles/clusterer/greenInverted.png" placement="inline"/></entry>
+              <entry colname="col4">'islands#invertedGreenClusterIcons'</entry>
+         </row>
+          <row>
+              <entry colname="col1"><image href="../images/styles/clusterer/orange.png" placement="inline"/></entry>
+              <entry colname="col2">'islands#orangeClusterIcons'</entry>
+              <entry colname="col3"><image href="../images/styles/clusterer/orangeInverted.png" placement="inline"/></entry>
+              <entry colname="col4">'islands#invertedOrangeClusterIcons'</entry>
+         </row>
+         <row>
+              <entry colname="col1"><image href="../images/styles/clusterer/lightBlue.png" placement="inline"/></entry>
+              <entry colname="col2">'islands#lightBlueClusterIcons'</entry>
+              <entry colname="col3"><image href="../images/styles/clusterer/lightBlueInverted.png" placement="inline"/></entry>
+              <entry colname="col4">'islands#invertedLightBlueClusterIcons'</entry>
+         </row>
+          <row>
+              <entry colname="col1"><image href="../images/styles/clusterer/olive.png" placement="inline"/></entry>
+              <entry colname="col2">'islands#oliveClusterIcons'</entry>
+              <entry colname="col3"><image href="../images/styles/clusterer/oliveInverted.png" placement="inline"/></entry>
+              <entry colname="col4">'islands#invertedOliveClusterIcons'</entry>
+          </row>
+      </tbody>
+ </tgroup>
+ </table></p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#option.presetStorage/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+    
+
+    
+
+    
+
+
+
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.Storage.dita#method_detail/add" type="section"><keyword>add</keyword></xref>(<xref href="util.Storage.dita#method_detail/add-param-key" translate="no" type="row">key</xref>, <xref href="util.Storage.dita#method_detail/add-param-object" translate="no" type="row">object</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="util.Storage.dita" type="topic"><keyword>util.Storage</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет объект в хранилище.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.Storage.dita#method_detail/get" type="section"><keyword>get</keyword></xref>(<xref href="util.Storage.dita#method_detail/get-param-key" translate="no" type="row">key</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект, хранящийся под указанным ключом, или исходный key, в случае, если это не строка.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.Storage.dita#method_detail/remove" type="section"><keyword>remove</keyword></xref>(<xref href="util.Storage.dita#method_detail/remove-param-key" translate="no" type="row">key</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="util.Storage.dita" type="topic"><keyword>util.Storage</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет пару "ключ: значение" из хранилища.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body><!-- XLIFF_FARM_ZjY0NmQ4_CACHING --></topic>

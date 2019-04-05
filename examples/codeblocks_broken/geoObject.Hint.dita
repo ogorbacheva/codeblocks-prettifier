@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="geoObject.Hint" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">geoObject.Hint</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>geoObject.Hint</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IHintManager.dita" type="topic"><keyword>IHintManager</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Менеджер хинта геообъекта. Позволяет управлять хинтом геообъекта, открывать и скрывать его. Передает хинту данные в формате <xref href="IGeoObjectPopupData.dita" type="topic"><keyword>IGeoObjectPopupData</keyword></xref>. Использует внутри себя менеджер хинтов карты <xref href="map.Hint.dita" type="topic"><keyword>map.Hint</keyword></xref>. Геообъекты содержат экземпляр этого класса, доступный как myGeoObject.hint. Не создавайте экземпляры этого класса без необходимости.</p>
+    
+
+
+
+    <p translate="no"><b>См.: </b><xref href="Hint.dita" type="topic"><keyword>Hint</keyword></xref> <xref href="GeoObject.dita#field_detail/hint" type="section"><keyword>GeoObject.hint</keyword></xref> </p>
+
+
+
+
+
+    <p translate="no"><xref href="#geoObject.Hint/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#geoObject.Hint/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#geoObject.Hint/events-summary" translate="no" type="section">События </xref> | <xref href="#geoObject.Hint/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">geoObject.Hint(<xref href="#geoObject.Hint/param-geoObject" translate="no" type="entry">geoObject</xref>)</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-geoObject" translate="no">
+                    
+                        <xref href="#geoObject.Hint/param-geoObject" type="entry"><parmname>geoObject</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Геообъект.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopupManager.dita#event_detail/event_detail/event-close"><keyword>close</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Закрытие инфо-объекта. Названия полей доступны через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>target - ссылка на объект, на котором был закрыт инфо-объект.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IPopupManager.dita#event_detail/event_detail/event-close"><keyword>IPopupManager</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopupManager.dita#event_detail/event_detail/event-open"><keyword>open</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Открытие инфо-объекта. Названия полей доступны через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>target - ссылка на объект, на котором был открыт инфо-объект.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IPopupManager.dita#event_detail/event_detail/event-open"><keyword>IPopupManager</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopupManager.dita#method_detail/close" type="section"><keyword>close</keyword></xref>([<xref href="IPopupManager.dita#method_detail/close-param-force" translate="no" type="row">force</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Закрывает инфо-объект.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPopupManager.dita#method_detail/close" type="section"><keyword>IPopupManager</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopupManager.dita#method_detail/destroy" type="section"><keyword>destroy</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Отключает менеджер инфо-объекта.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPopupManager.dita#method_detail/destroy" type="section"><keyword>IPopupManager</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopupManager.dita#method_detail/getData" type="section"><keyword>getData</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает данные инфо-объекта или null.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPopupManager.dita#method_detail/getData" type="section"><keyword>IPopupManager</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopupManager.dita#method_detail/getOptions" type="section"><keyword>getOptions</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает менеджер опций или null.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPopupManager.dita#method_detail/getOptions" type="section"><keyword>IPopupManager</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopupManager.dita#method_detail/getOverlay" type="section"><keyword>getOverlay</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект-обещание вернуть оверлей.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPopupManager.dita#method_detail/getOverlay" type="section"><keyword>IPopupManager</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopupManager.dita#method_detail/getOverlaySync" type="section"><keyword>getOverlaySync</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IOverlay.dita" type="topic"><keyword>IOverlay</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает оверлей, если тот существует.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPopupManager.dita#method_detail/getOverlaySync" type="section"><keyword>IPopupManager</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopupManager.dita#method_detail/getPosition" type="section"><keyword>getPosition</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает координаты инфо-объекта или `null`.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPopupManager.dita#method_detail/getPosition" type="section"><keyword>IPopupManager</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopupManager.dita#method_detail/isOpen" type="section"><keyword>isOpen</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает состояние инфо-объекта: открыт/закрыт.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IPopupManager.dita#method_detail/isOpen" type="section"><keyword>IPopupManager</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="geoObject.Hint.dita#method_detail/open" type="section"><keyword>open</keyword></xref>([<xref href="geoObject.Hint.dita#method_detail/open-param-position" translate="no" type="row">position</xref>[, <xref href="geoObject.Hint.dita#method_detail/open-param-data" translate="no" type="row">data</xref>[, <xref href="geoObject.Hint.dita#method_detail/open-param-options" translate="no" type="row">options</xref>]]])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Открывает хинт геообъекта.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="geoObject.Hint.dita#method_detail/setData" type="section"><keyword>setData</keyword></xref>([<xref href="geoObject.Hint.dita#method_detail/setData-param-data" translate="no" type="row">data</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает новые пользовательские данные.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopupManager.dita#method_detail/setOptions" type="section"><keyword>setOptions</keyword></xref>(<xref href="IPopupManager.dita#method_detail/setOptions-param-options" translate="no" type="row">options</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задаёт инфо-объекту новые опции.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPopupManager.dita#method_detail/setOptions" type="section"><keyword>IPopupManager</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPopupManager.dita#method_detail/setPosition" type="section"><keyword>setPosition</keyword></xref>(<xref href="IPopupManager.dita#method_detail/setPosition-param-position" translate="no" type="row">position</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задаёт инфо-объекту новую позицию.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IPopupManager.dita#method_detail/setPosition" type="section"><keyword>IPopupManager</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="open">
+        <title translate="no">open</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} open([<xref href="geoObject.Hint.dita#method_detail/open-param-position" translate="no" type="row">position</xref>[, <xref href="geoObject.Hint.dita#method_detail/open-param-data" translate="no" type="row">data</xref>[, <xref href="geoObject.Hint.dita#method_detail/open-param-options" translate="no" type="row">options</xref>]]])</codeblock></p>
+
+         <p>Открывает хинт геообъекта.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект-promise.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="open-param-position">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/open-param-position" type="row"><parmname>position</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Координаты открытия. По умолчанию: геометрический центр тяжести геообъекта. Проекцию координат можно указать в опциях, иначе используется проекция геообъекта.</p>
+                </entry>
+
+            </row>
+            
+            <row id="open-param-data">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/open-param-data" type="row"><parmname>data</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Данные, добавляемые в поле <i>userData</i> объекта данных, передаваемых хинту.</p>
+                </entry>
+
+            </row>
+            
+            <row id="open-param-options">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/open-param-options" type="row"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Опции.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="setData">
+        <title translate="no">setData</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} setData([<xref href="geoObject.Hint.dita#method_detail/setData-param-data" translate="no" type="row">data</xref>])</codeblock></p>
+
+         <p>Устанавливает новые пользовательские данные.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект-promise.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setData-param-data">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/setData-param-data" type="row"><parmname>data</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Данные, добавляемые в поле <i>userData</i> объекта данных, передаваемых хинту.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_MWExMmUx_CACHING --></topic>

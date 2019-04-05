@@ -1,0 +1,493 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="multiRouter.masstransit.StopModel" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">multiRouter.masstransit.StopModel</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>multiRouter.masstransit.StopModel</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+    
+    <p translate="no"><note>Конструктор класса multiRouter.masstransit.StopModel скрыт, так как данный класс не предназначен для самостоятельной инициализации.</note></p>
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IEventEmitter.dita" type="topic"><keyword>IEventEmitter</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Модель данных остановки транспортного сегмента маршрута общественного транспорта.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#multiRouter.masstransit.StopModel/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#multiRouter.masstransit.StopModel/events-summary" translate="no" type="section">События </xref> | <xref href="#multiRouter.masstransit.StopModel/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+       
+            
+                <p>Создает модель данных остановки транспортного сегмента.</p>
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="multiRouter.masstransit.StopModel.dita#field_detail/geometry" type="section"><keyword>geometry</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="geometry.base.Point.dita" type="topic"><keyword>geometry.base.Point</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Геометрия остановки.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="multiRouter.masstransit.StopModel.dita#field_detail/properties" type="section"><keyword>properties</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Данные остановки. Доступны следующие поля:<ul>
+    <li>Integer – порядковый номер остановки во множестве остановок соответствующего транспортного сегмента;</li>
+    <li>id: String – идентификатор остановки;</li>
+    <li>name: String – название остановки;</li>
+    <li>lodIndex: Integer – порядковый номер точки остановки во множестве всех координат соответствующего ей пути маршрута.</li>
+</ul></p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="multiRouter.masstransit.StopModel.dita#field_detail/segment" type="section"><keyword>segment</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="multiRouter.masstransit.TransportSegmentModel.dita" type="topic"><keyword>multiRouter.masstransit.TransportSegmentModel</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Ссылка на родительскую модель транспортного сегмента.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.masstransit.StopModel.dita#event_detail/event_detail/event-update"><keyword>update</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Обновление модели новыми данными. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="multiRouter.masstransit.StopModel.dita#method_detail/update" type="section"><keyword>update</keyword></xref>(<xref href="multiRouter.masstransit.StopModel.dita#method_detail/update-param-stopJson" translate="no" type="row">stopJson</xref>)</entry>
+                        
+                        
+                        <entry colname="col2">
+                            
+                            
+                                <p>Обновляет состояние модели.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="geometry">
+            <title translate="no">geometry</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="geometry.base.Point.dita" type="topic"><keyword>geometry.base.Point</keyword></xref>} geometry</codeblock></p>
+
+            <p>Геометрия остановки.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="properties">
+            <title translate="no">properties</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="data.Manager.dita" type="topic"><keyword>data.Manager</keyword></xref>} properties</codeblock></p>
+
+            <p>Данные остановки. Доступны следующие поля:<ul>
+    <li>Integer – порядковый номер остановки во множестве остановок соответствующего транспортного сегмента;</li>
+    <li>id: String – идентификатор остановки;</li>
+    <li>name: String – название остановки;</li>
+    <li>lodIndex: Integer – порядковый номер точки остановки во множестве всех координат соответствующего ей пути маршрута.</li>
+</ul></p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="segment">
+            <title translate="no">segment</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="multiRouter.masstransit.TransportSegmentModel.dita" type="topic"><keyword>multiRouter.masstransit.TransportSegmentModel</keyword></xref>} segment</codeblock></p>
+
+            <p>Ссылка на родительскую модель транспортного сегмента.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-update">
+            <title translate="no">update</title>
+            
+             <p>Обновление модели новыми данными. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="update">
+        <title translate="no">update</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} update(<xref href="multiRouter.masstransit.StopModel.dita#method_detail/update-param-stopJson" translate="no" type="row">stopJson</xref>)</codeblock></p>
+
+         <p>Обновляет состояние модели.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="update-param-stopJson">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/update-param-stopJson" type="row"><parmname>stopJson</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>JSON-данные.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="update_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_NjIxMzQw_CACHING --></topic>

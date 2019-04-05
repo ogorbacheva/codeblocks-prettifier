@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="getZoomRange" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">getZoomRange</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>getZoomRange</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статическая функция.</p>
+    
+    
+        
+            <p>Определяет доступный диапазон уровней масштабирования в указанной точке для указанного типа карты.</p>
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+       <p><b>Возвращает</b> Promise объект, который будет подтверждён массивом из двух чисел — максимальный и минимальный уровень масштабирования в данной точке.</p>
+       
+    
+
+    
+
+    
+        
+         
+              <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{ <xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref> } getZoomRange(<xref href="#getZoomRange/param-mapType" translate="no" type="row">mapType</xref>, <xref href="#getZoomRange/param-coords" translate="no" type="row">coords</xref>, <xref href="#getZoomRange/param-customizable" translate="no" type="row">customizable</xref>)</codeblock></p>
+         
+     
+
+    
+        <p translate="no"><b>Параметры:</b></p>
+        
+        
+            
+        
+            
+        
+            
+        
+
+        <table>
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Параметр</entry>
+              <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+        
+        <row id="param-mapType">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#getZoomRange/param-mapType" type="row"><parmname>mapType</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: String|<xref href="MapType.dita" type="topic"><keyword>MapType</keyword></xref></p>
+                <p/>
+                <p>Тип карты. Cтрока-ключ из <xref href="mapType.storage.dita" type="topic"><keyword>mapType.storage</keyword></xref>, либо экземпляр класса <xref href="MapType.dita" type="topic"><keyword>MapType</keyword></xref>.</p>
+            </entry>
+        </row>
+        
+        <row id="param-coords">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#getZoomRange/param-coords" type="row"><parmname>coords</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Number[]</p>
+                <p/>
+                <p>Координаты точки, для которой нужно узнать диапазон доступных уровней масштабирования.</p>
+            </entry>
+        </row>
+        
+        <row id="param-customizable">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#getZoomRange/param-customizable" type="row"><parmname>customizable</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: <xref href="ICustomizable.dita" type="topic"><keyword>ICustomizable</keyword></xref>=null</p>
+                <p/>
+                <p>Объект, который содержит менеджер опций. Опции объекта будут учитываться при получении результата.</p>
+            </entry>
+        </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+    
+    
+
+
+
+    
+        <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Пусть мы хотим инициализировать карту на максимальном масштабе.
+var myMap;
+ymaps.getZoomRange('yandex#map', [55.750516, 37.615924]).then(function (result) {
+     myMap = new ymaps.Map('mapContainer', {
+         center: [55.750516, 37.615924],
+         zoom: result[1]
+     });
+});</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Инициализируем карту с помощью геокодера, с центром на доме 16 по улице Льва Толстого
+// на максимально возможном масштабе.
+var myMap;
+ymaps.geocode("Москва, Льва Толстого, 16").then(function (geoData) {
+    var coords = geoData.geoObjects.get(0).geometry.getCoordinates();
+    ymaps.getZoomRange('yandex#map', coords).then(function (zoomRange) {
+        myMap = new ymaps.Map('mapContainer', {
+           center: coords,
+           zoom: zoomRange[1]
+        });
+    });
+});</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_MTU1YTJh_CACHING --></topic>

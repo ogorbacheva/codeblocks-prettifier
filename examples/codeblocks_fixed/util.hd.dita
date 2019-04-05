@@ -1,0 +1,458 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="util.hd" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">util.hd</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>util.hd</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section id="constructor">
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статический объект.</p>
+    
+    
+
+
+
+
+
+   
+        <p>Позволяет работать с HD экранами различных устройств.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#util.hd/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+    
+
+    
+
+    
+
+
+
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.hd.dita#method_detail/getPixelRatio" type="section"><keyword>getPixelRatio</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает отношение виртуальных пикселей на экране к физическим.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.hd.dita#method_detail/selectRatio" type="section"><keyword>selectRatio</keyword></xref>(<xref href="util.hd.dita#method_detail/selectRatio-param-hash" translate="no" type="row">hash</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает результат выборки — пиксельное соотношение, либо 1, если передана, например, строка.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.hd.dita#method_detail/selectValue" type="section"><keyword>selectValue</keyword></xref>(<xref href="util.hd.dita#method_detail/selectValue-param-hash" translate="no" type="row">hash</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает из переданного хэша объект равный или наиболее близкий к ключу соотношения пикселей. В случае, если передан не хэш, а, например, строка или функция, вернется она же.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getPixelRatio">
+        <title translate="no">getPixelRatio</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number} getPixelRatio()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> отношение виртуальных пикселей на экране к физическим.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="selectRatio">
+        <title translate="no">selectRatio</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number} selectRatio(<xref href="util.hd.dita#method_detail/selectRatio-param-hash" translate="no" type="row">hash</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> результат выборки — пиксельное соотношение, либо 1, если передана, например, строка.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="selectRatio-param-hash">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/selectRatio-param-hash" type="row"><parmname>hash</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IRatioMap.dita" type="topic"><keyword>IRatioMap</keyword></xref></p>
+                    <p/>
+                   <p>Объект типа <xref href="IRatioMap.dita" type="topic"><keyword>IRatioMap</keyword></xref> для экранов с различным пиксельным соотношением.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="selectRatio_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="selectValue">
+        <title translate="no">selectValue</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} selectValue(<xref href="util.hd.dita#method_detail/selectValue-param-hash" translate="no" type="row">hash</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> из переданного хэша объект равный или наиболее близкий к ключу соотношения пикселей. В случае, если передан не хэш, а, например, строка или функция, вернется она же.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="selectValue-param-hash">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/selectValue-param-hash" type="row"><parmname>hash</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object|<xref href="IRatioMap.dita" type="topic"><keyword>IRatioMap</keyword></xref></p>
+                    <p/>
+                   <p>Объект типа <xref href="IRatioMap.dita" type="topic"><keyword>IRatioMap</keyword></xref> для экранов с различным пиксельным соотношением.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="selectValue_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// В балун нужно добавить картинку, чтобы она хорошо смотрелась на HD экранах.
+var balloonImages = {
+    // Normal picture.
+    "1": "100x100.png",
+    // Картинка для retina-экранов.
+    "2": "200x200.png"
+};
+var img = ymaps.util.hd.selectValue(balloonImages);
+// Добавим точку на карту.
+myMap.geoObjects.add(new ymaps.GeoObject({
+    geometry: "Point",
+    coordinates: [55, 37],
+    properties: {
+        balloonContent: '&lt;img src="' + img +
+            '" width="100" alt="" &gt;'
+    }
+}, {}));</codeblock>
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_NWU4MzFj_CACHING --></topic>

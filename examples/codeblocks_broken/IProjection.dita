@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="IProjection" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IProjection</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IProjection</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Проекция. Описывает, каким образом реальная карта проецируется на бесконечную пиксельную плоскость. Один "мир" должен иметь размеры 256х256 пикселей на нулевом масштабе, при этом левый верхний угол "мира" имеет координаты (0, 0), координатные оси направлены вправо и вниз. "Миры" могут быть склеенными по любой оси (либо по обеим осям сразу).</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IProjection/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#IProjection/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IProjection()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IProjection.dita#method_detail/fromGlobalPixels" type="section"><keyword>fromGlobalPixels</keyword></xref>(<xref href="IProjection.dita#method_detail/fromGlobalPixels-param-globalPixelPoint" translate="no" type="row">globalPixelPoint</xref>, <xref href="IProjection.dita#method_detail/fromGlobalPixels-param-zoom" translate="no" type="row">zoom</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Преобразует пиксельные координаты на указанном уровне масштабирования в координаты проекции.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IProjection.dita#method_detail/getCoordSystem" type="section"><keyword>getCoordSystem</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="ICoordSystem.dita" type="topic"><keyword>ICoordSystem</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает координатную систему, используемую проекцией.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IProjection.dita#method_detail/isCycled" type="section"><keyword>isCycled</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Показатель зацикленности проекции.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IProjection.dita#method_detail/toGlobalPixels" type="section"><keyword>toGlobalPixels</keyword></xref>(<xref href="IProjection.dita#method_detail/toGlobalPixels-param-coordPoint" translate="no" type="row">coordPoint</xref>, <xref href="IProjection.dita#method_detail/toGlobalPixels-param-zoom" translate="no" type="row">zoom</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Преобразует координаты проекции в глобальные пиксельные на указанном уровне масштабирования.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="fromGlobalPixels">
+        <title translate="no">fromGlobalPixels</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[]} fromGlobalPixels(<xref href="IProjection.dita#method_detail/fromGlobalPixels-param-globalPixelPoint" translate="no" type="row">globalPixelPoint</xref>, <xref href="IProjection.dita#method_detail/fromGlobalPixels-param-zoom" translate="no" type="row">zoom</xref>)</codeblock></p>
+
+         <p>Преобразует пиксельные координаты на указанном уровне масштабирования в координаты проекции.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>точку в координатах проекции.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="fromGlobalPixels-param-globalPixelPoint">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/fromGlobalPixels-param-globalPixelPoint" type="row"><parmname>globalPixelPoint</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Точка в пиксельных координатах.</p>
+                </entry>
+
+            </row>
+            
+            <row id="fromGlobalPixels-param-zoom">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/fromGlobalPixels-param-zoom" type="row"><parmname>zoom</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Уровень масштабирования.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="fromGlobalPixels_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getCoordSystem">
+        <title translate="no">getCoordSystem</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="ICoordSystem.dita" type="topic"><keyword>ICoordSystem</keyword></xref>} getCoordSystem()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> координатную систему, используемую проекцией.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="isCycled">
+        <title translate="no">isCycled</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Boolean[]} isCycled()</codeblock></p>
+
+         <p>Показатель зацикленности проекции.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>пару флагов, показывающих, склеена ли карта по пиксельным осям (x/y).</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="toGlobalPixels">
+        <title translate="no">toGlobalPixels</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[]} toGlobalPixels(<xref href="IProjection.dita#method_detail/toGlobalPixels-param-coordPoint" translate="no" type="row">coordPoint</xref>, <xref href="IProjection.dita#method_detail/toGlobalPixels-param-zoom" translate="no" type="row">zoom</xref>)</codeblock></p>
+
+         <p>Преобразует координаты проекции в глобальные пиксельные на указанном уровне масштабирования.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>пару пиксельных координат.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="toGlobalPixels-param-coordPoint">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/toGlobalPixels-param-coordPoint" type="row"><parmname>coordPoint</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Точка в координатах проекции.</p>
+                </entry>
+
+            </row>
+            
+            <row id="toGlobalPixels-param-zoom">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/toGlobalPixels-param-zoom" type="row"><parmname>zoom</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Уровень масштабирования.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="toGlobalPixels_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_MWEyYjlk_CACHING --></topic>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="modules.require" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">modules.require</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>modules.require</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статическая функция.</p>
+    
+    
+        
+            <p>Запрос получения модулей.</p>
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+       <p><b>Возвращает</b> Promise объект, который подтверждается запрошенными модулями. Либо отклоняется в случае, если произошла ошибка. К примеру, один из запрошенных модулей отсутствует в модульной системе.</p>
+       
+    
+
+    
+
+    
+        
+         
+              <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{ <xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref> } modules.require(<xref href="#modules.require/param-modules" translate="no" type="row">modules</xref>[, <xref href="#modules.require/param-successCallback" translate="no" type="row">successCallback</xref>[, <xref href="#modules.require/param-errorCallback" translate="no" type="row">errorCallback</xref>[, <xref href="#modules.require/param-context" translate="no" type="row">context</xref>]]])</codeblock></p>
+         
+     
+
+    
+        <p translate="no"><b>Параметры:</b></p>
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+
+        <table>
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Параметр</entry>
+              <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+        
+        <row id="param-modules">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#modules.require/param-modules" type="row"><parmname>modules</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: String|String[]</p>
+                <p/>
+                <p>Название модуля или массив названий модулей.</p>
+            </entry>
+        </row>
+        
+        <row id="param-successCallback">
+            <entry colname="col1" translate="no">
+                <xref href="#modules.require/param-successCallback" type="row"><parmname>successCallback</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Function</p>
+                <p/>
+                <p>Функция, которая будет вызвана после получения всех модулей. В функцию как аргументы будут переданы запрошенные сущности. Порядок аргументов будет соответствовать порядку в массиве modules.</p>
+            </entry>
+        </row>
+        
+        <row id="param-errorCallback">
+            <entry colname="col1" translate="no">
+                <xref href="#modules.require/param-errorCallback" type="row"><parmname>errorCallback</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Function</p>
+                <p/>
+                <p>Функция, которая будет вызвана в случае ошибки.</p>
+            </entry>
+        </row>
+        
+        <row id="param-context">
+            <entry colname="col1" translate="no">
+                <xref href="#modules.require/param-context" type="row"><parmname>context</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Object</p>
+                <p/>
+                <p>Контекст исполнения функции обратного вызова.</p>
+            </entry>
+        </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+    
+    
+
+
+
+    
+        <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Запрашиваем модули 'Map' и 'Placemark', используя Promise.
+ymaps.modules.require(['Map', 'Placemark'])
+    .spread(
+        function (Map, Placemark) {
+            var myMap = new Map("map", {
+                center: [55.72, 37.64],
+                zoom: 5
+            });
+            myMap.geoObjects.add(
+                new Placemark(myMap.getCenter())
+            );
+        },
+        function (error) {
+            // Обработка ошибки.
+        },
+        this
+   );</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">// Запрашиваем модуль 'Map'.
+ymaps.modules.require('Map')
+    .spread(
+        function (Map) {
+            var myMap = new Map("map", {
+                center: [55.72, 37.64],
+                zoom: 5
+            });
+        },
+        this
+    );</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_ZTVkZmQx_CACHING --></topic>

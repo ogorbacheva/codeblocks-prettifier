@@ -1,0 +1,1025 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="util.pixelBounds" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">util.pixelBounds</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>util.pixelBounds</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section id="constructor">
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статический объект.</p>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#util.pixelBounds/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+    
+
+    
+
+    
+
+
+
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.pixelBounds.dita#method_detail/areIntersecting" type="section"><keyword>areIntersecting</keyword></xref>(<xref href="util.pixelBounds.dita#method_detail/areIntersecting-param-bounds1" translate="no" type="row">bounds1</xref>, <xref href="util.pixelBounds.dita#method_detail/areIntersecting-param-bounds2" translate="no" type="row">bounds2</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p/><p>Определяет пересекаются ли две прямоугольные области.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.pixelBounds.dita#method_detail/containsBounds" type="section"><keyword>containsBounds</keyword></xref>(<xref href="util.pixelBounds.dita#method_detail/containsBounds-param-outer" translate="no" type="row">outer</xref>, <xref href="util.pixelBounds.dita#method_detail/containsBounds-param-inner" translate="no" type="row">inner</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p/><p>Определяет содержат ли прямоугольная область другую прямоугольную область полностью.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.pixelBounds.dita#method_detail/containsPoint" type="section"><keyword>containsPoint</keyword></xref>(<xref href="util.pixelBounds.dita#method_detail/containsPoint-param-bounds" translate="no" type="row">bounds</xref>, <xref href="util.pixelBounds.dita#method_detail/containsPoint-param-point" translate="no" type="row">point</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p/><p>Определяет содержат ли прямоугольная область точку.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.pixelBounds.dita#method_detail/fromBounds" type="section"><keyword>fromBounds</keyword></xref>(<xref href="util.pixelBounds.dita#method_detail/fromBounds-param-sourceBounds" translate="no" type="row">sourceBounds</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p/><p>Вычисляет прямоугольную область, в которую попадают все переданные.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.pixelBounds.dita#method_detail/fromPoints" type="section"><keyword>fromPoints</keyword></xref>(<xref href="util.pixelBounds.dita#method_detail/fromPoints-param-points" translate="no" type="row">points</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p/><p>Вычисляет прямоугольную область, в которую попадают переданные точки.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.pixelBounds.dita#method_detail/getCenter" type="section"><keyword>getCenter</keyword></xref>(<xref href="util.pixelBounds.dita#method_detail/getCenter-param-bounds" translate="no" type="row">bounds</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p/><p>Вычисляет центр прямоугольникой области.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.pixelBounds.dita#method_detail/getIntersection" type="section"><keyword>getIntersection</keyword></xref>(<xref href="util.pixelBounds.dita#method_detail/getIntersection-param-bounds1" translate="no" type="row">bounds1</xref>, <xref href="util.pixelBounds.dita#method_detail/getIntersection-param-bounds2" translate="no" type="row">bounds2</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p/><p>Вычисляет пересечение двух прямоугольных областей.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.pixelBounds.dita#method_detail/getSize" type="section"><keyword>getSize</keyword></xref>(<xref href="util.pixelBounds.dita#method_detail/getSize-param-bounds" translate="no" type="row">bounds</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p/><p>Вычисляет размеры прямоугольной области.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="areIntersecting">
+        <title translate="no">areIntersecting</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Boolean} areIntersecting(<xref href="util.pixelBounds.dita#method_detail/areIntersecting-param-bounds1" translate="no" type="row">bounds1</xref>, <xref href="util.pixelBounds.dita#method_detail/areIntersecting-param-bounds2" translate="no" type="row">bounds2</xref>)</codeblock></p>
+
+         <p/><p>Определяет пересекаются ли две прямоугольные области.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> признак пересечения.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="areIntersecting-param-bounds1">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/areIntersecting-param-bounds1" type="row"><parmname>bounds1</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][]</p>
+                    <p/>
+                   <p>Первая область.</p>
+                </entry>
+
+            </row>
+            
+            <row id="areIntersecting-param-bounds2">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/areIntersecting-param-bounds2" type="row"><parmname>bounds2</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][]</p>
+                    <p/>
+                   <p>Вторая область.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="areIntersecting_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="containsBounds">
+        <title translate="no">containsBounds</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Boolean} containsBounds(<xref href="util.pixelBounds.dita#method_detail/containsBounds-param-outer" translate="no" type="row">outer</xref>, <xref href="util.pixelBounds.dita#method_detail/containsBounds-param-inner" translate="no" type="row">inner</xref>)</codeblock></p>
+
+         <p/><p>Определяет содержат ли прямоугольная область другую прямоугольную область полностью.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> признак попадания.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="containsBounds-param-outer">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/containsBounds-param-outer" type="row"><parmname>outer</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][]</p>
+                    <p/>
+                   <p>Внешняя область</p>
+                </entry>
+
+            </row>
+            
+            <row id="containsBounds-param-inner">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/containsBounds-param-inner" type="row"><parmname>inner</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][]</p>
+                    <p/>
+                   <p>Проверяемая область.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="containsBounds_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="containsPoint">
+        <title translate="no">containsPoint</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Boolean} containsPoint(<xref href="util.pixelBounds.dita#method_detail/containsPoint-param-bounds" translate="no" type="row">bounds</xref>, <xref href="util.pixelBounds.dita#method_detail/containsPoint-param-point" translate="no" type="row">point</xref>)</codeblock></p>
+
+         <p/><p>Определяет содержат ли прямоугольная область точку.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> признак попадания.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="containsPoint-param-bounds">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/containsPoint-param-bounds" type="row"><parmname>bounds</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][]</p>
+                    <p/>
+                   <p>Внешняя область</p>
+                </entry>
+
+            </row>
+            
+            <row id="containsPoint-param-point">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/containsPoint-param-point" type="row"><parmname>point</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Проверяемая точка.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="containsPoint_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="fromBounds">
+        <title translate="no">fromBounds</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]} fromBounds(<xref href="util.pixelBounds.dita#method_detail/fromBounds-param-sourceBounds" translate="no" type="row">sourceBounds</xref>)</codeblock></p>
+
+         <p/><p>Вычисляет прямоугольную область, в которую попадают все переданные.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>вычисленная область.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="fromBounds-param-sourceBounds">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/fromBounds-param-sourceBounds" type="row"><parmname>sourceBounds</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][][]</p>
+                    <p/>
+                   <p>Массив прямоугольных обласлей</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="fromBounds_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="fromPoints">
+        <title translate="no">fromPoints</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]} fromPoints(<xref href="util.pixelBounds.dita#method_detail/fromPoints-param-points" translate="no" type="row">points</xref>)</codeblock></p>
+
+         <p/><p>Вычисляет прямоугольную область, в которую попадают переданные точки.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>вычисленная область.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="fromPoints-param-points">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/fromPoints-param-points" type="row"><parmname>points</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][]</p>
+                    <p/>
+                   <p>Массив точек.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="fromPoints_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getCenter">
+        <title translate="no">getCenter</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[]} getCenter(<xref href="util.pixelBounds.dita#method_detail/getCenter-param-bounds" translate="no" type="row">bounds</xref>)</codeblock></p>
+
+         <p/><p>Вычисляет центр прямоугольникой области.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> точку-центр в координатной системе входящих данных.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getCenter-param-bounds">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getCenter-param-bounds" type="row"><parmname>bounds</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][]</p>
+                    <p/>
+                   <p>Область.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getCenter_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getIntersection">
+        <title translate="no">getIntersection</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]|null} getIntersection(<xref href="util.pixelBounds.dita#method_detail/getIntersection-param-bounds1" translate="no" type="row">bounds1</xref>, <xref href="util.pixelBounds.dita#method_detail/getIntersection-param-bounds2" translate="no" type="row">bounds2</xref>)</codeblock></p>
+
+         <p/><p>Вычисляет пересечение двух прямоугольных областей.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>прямоугольную область, которая образуется пересечением переданных, либо <codeph>Null</codeph>, если области не пересекаются.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getIntersection-param-bounds1">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getIntersection-param-bounds1" type="row"><parmname>bounds1</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][]</p>
+                    <p/>
+                   <p>Первая область.</p>
+                </entry>
+
+            </row>
+            
+            <row id="getIntersection-param-bounds2">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getIntersection-param-bounds2" type="row"><parmname>bounds2</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][]</p>
+                    <p/>
+                   <p>Вторая область.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getIntersection_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getSize">
+        <title translate="no">getSize</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[]} getSize(<xref href="util.pixelBounds.dita#method_detail/getSize-param-bounds" translate="no" type="row">bounds</xref>)</codeblock></p>
+
+         <p/><p>Вычисляет размеры прямоугольной области.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> размер области.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getSize-param-bounds">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getSize-param-bounds" type="row"><parmname>bounds</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[][]</p>
+                    <p/>
+                   <p>Область.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getSize_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_NWM4NmQz_CACHING --></topic>

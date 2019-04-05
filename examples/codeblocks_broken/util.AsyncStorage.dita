@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="util.AsyncStorage" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">util.AsyncStorage</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>util.AsyncStorage</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="util.Storage.dita" type="topic"><keyword>util.Storage</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Хранилище, которое предоставляет асинхронный доступ к значениям по ключам.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#util.AsyncStorage/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#util.AsyncStorage/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">util.AsyncStorage()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.Storage.dita#method_detail/add" type="section"><keyword>add</keyword></xref>(<xref href="util.Storage.dita#method_detail/add-param-key" translate="no" type="row">key</xref>, <xref href="util.Storage.dita#method_detail/add-param-object" translate="no" type="row">object</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="util.Storage.dita" type="topic"><keyword>util.Storage</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет объект в хранилище.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="util.Storage.dita#method_detail/add" type="section"><keyword>util.Storage</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.AsyncStorage.dita#method_detail/define" type="section"><keyword>define</keyword></xref>(<xref href="util.AsyncStorage.dita#method_detail/define-param-key" translate="no" type="row">key</xref>[, <xref href="util.AsyncStorage.dita#method_detail/define-param-depends" translate="no" type="row">depends</xref>, <xref href="util.AsyncStorage.dita#method_detail/define-param-resolveCallback" translate="no" type="row">resolveCallback</xref>[, <xref href="util.AsyncStorage.dita#method_detail/define-param-context" translate="no" type="row">context</xref>]])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="util.AsyncStorage.dita" type="topic"><keyword>util.AsyncStorage</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Определяет в хранилище асинхронное значение.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.Storage.dita#method_detail/get" type="section"><keyword>get</keyword></xref>(<xref href="util.Storage.dita#method_detail/get-param-key" translate="no" type="row">key</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект, хранящийся под указанным ключом, или исходный key, в случае, если это не строка.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="util.Storage.dita#method_detail/get" type="section"><keyword>util.Storage</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.AsyncStorage.dita#method_detail/isDefined" type="section"><keyword>isDefined</keyword></xref>(<xref href="util.AsyncStorage.dita#method_detail/isDefined-param-key" translate="no" type="row">key</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Проверка доступности ключа в хранилище.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.Storage.dita#method_detail/remove" type="section"><keyword>remove</keyword></xref>(<xref href="util.Storage.dita#method_detail/remove-param-key" translate="no" type="row">key</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="util.Storage.dita" type="topic"><keyword>util.Storage</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет пару "ключ: значение" из хранилища.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="util.Storage.dita#method_detail/remove" type="section"><keyword>util.Storage</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="util.AsyncStorage.dita#method_detail/require" type="section"><keyword>require</keyword></xref>(<xref href="util.AsyncStorage.dita#method_detail/require-param-keys" translate="no" type="row">keys</xref>[, <xref href="util.AsyncStorage.dita#method_detail/require-param-successCallback" translate="no" type="row">successCallback</xref>[, <xref href="util.AsyncStorage.dita#method_detail/require-param-errorCallback" translate="no" type="row">errorCallback</xref>[, <xref href="util.AsyncStorage.dita#method_detail/require-param-context" translate="no" type="row">context</xref>]]])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Асинхронный запрос на получение значений из хранилища.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="define">
+        <title translate="no">define</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="util.AsyncStorage.dita" type="topic"><keyword>util.AsyncStorage</keyword></xref>} define(<xref href="util.AsyncStorage.dita#method_detail/define-param-key" translate="no" type="row">key</xref>[, <xref href="util.AsyncStorage.dita#method_detail/define-param-depends" translate="no" type="row">depends</xref>, <xref href="util.AsyncStorage.dita#method_detail/define-param-resolveCallback" translate="no" type="row">resolveCallback</xref>[, <xref href="util.AsyncStorage.dita#method_detail/define-param-context" translate="no" type="row">context</xref>]])</codeblock></p>
+
+         <p>Определяет в хранилище асинхронное значение.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="define-param-key">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/define-param-key" type="row"><parmname>key</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Ключ, по которому можно будет произвести асинхронный вызов.</p>
+                </entry>
+
+            </row>
+            
+            <row id="define-param-depends">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/define-param-depends" type="row"><parmname>depends</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String[]</p>
+                    <p/>
+                   <p>Массив ключей значений из текущего хранилища, которые должны быть проинициализированы перед текущим. Этот аргумент может быть пропущен.</p>
+                </entry>
+
+            </row>
+            
+            <row id="define-param-resolveCallback">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/define-param-resolveCallback" type="row"><parmname>resolveCallback</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция, которая определяет значение, доступное по ключу. Первым аргументом в resolveCallback поступит provide-функция, в которую нужно будет передать значение. Вызов provide-функции может быть отложен во времени. Последующие аргументы — это значения из хранилища, указанные в зависимостях. Порядок модулей будет соответствовать порядку в массиве depends.</p>
+                </entry>
+
+            </row>
+            
+            <row id="define-param-context">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/define-param-context" type="row"><parmname>context</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Контекст исполнения функции.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="define_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">asyncStorage    .define('red', function (provide) {        provide('#FF0000');     });</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">asyncStorage
+    .define('green', function (provide) {
+        // Вызов provide-функции может быть асинхронным.
+        setTimeout(function () {
+            provide('#008000');
+        }, 400);
+    });</codeblock><p translate="no"><b>3.</b></p><codeblock code-lang="javascript" xml:space="preserve">asyncStorage
+    .define('yellow', function (provide) {
+         provide('#FFFF00');
+    })
+    // Для определения значения ключа 'violet' необходимо значение ключа 'yellow'.
+    .define('violet', ['yellow'], function (provide, yellow) {
+        console.log(yellow); // #FFFF00
+        setTimeout(function () {
+            provide('#9B30FF');
+        }, 400);
+    });</codeblock><p translate="no"><b>4.</b></p><codeblock code-lang="javascript" xml:space="preserve">var asyncStorage = new ymaps.util.AsyncStorage();
+asyncStorage
+    .define('red', function (provide) {
+        provide('#FF0000');
+     })
+    .define('green', function (provide) {
+        setTimeout(function () {
+            provide('#008000');
+        }, 400);
+    })
+    .define('yellow', function (provide) {
+         provide('#FFFF00');
+    })
+    .define('violet', ['yellow'], function (provide, yellow) {
+        setTimeout(function () {
+            provide('#9B30FF');
+        }, 400);
+    });
+// Запрос.
+asyncStorage.require(['red', 'green', 'violet'])
+    .spread(function (red, green, violet) {
+         console.log(red, green, violet); // #FF0000 #008000 #9B30FF
+         // После перевого асинхронного обращения
+         // значения будут доступны через синхронный интерфейс.
+         console.log(asyncStorage.get('red'), asyncStorage.get('green'), asyncStorage.get('violet')); // #FF0000 #008000
+        // Значение ключа 'yellow' теперь тоже содержится в хранилище, 
+        // так как было необходимо для определения 'violet'.
+         console.log(asyncStorage.get('yellow')); // #FFFF00
+    });</codeblock>
+        
+
+    </section>
+    
+        <section id="isDefined">
+        <title translate="no">isDefined</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Boolean} isDefined(<xref href="util.AsyncStorage.dita#method_detail/isDefined-param-key" translate="no" type="row">key</xref>)</codeblock></p>
+
+         <p>Проверка доступности ключа в хранилище.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> true, если ключ опреден, false — иначе.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="isDefined-param-key">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/isDefined-param-key" type="row"><parmname>key</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Ключ значения.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="isDefined_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">if (asyncStorage.isDefined('red')) {
+    asyncStorage.require('red')
+        .spread(function (red) {
+            // ...
+        });}</codeblock>
+        
+
+    </section>
+    
+        <section id="require">
+        <title translate="no">require</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} require(<xref href="util.AsyncStorage.dita#method_detail/require-param-keys" translate="no" type="row">keys</xref>[, <xref href="util.AsyncStorage.dita#method_detail/require-param-successCallback" translate="no" type="row">successCallback</xref>[, <xref href="util.AsyncStorage.dita#method_detail/require-param-errorCallback" translate="no" type="row">errorCallback</xref>[, <xref href="util.AsyncStorage.dita#method_detail/require-param-context" translate="no" type="row">context</xref>]]])</codeblock></p>
+
+         <p>Асинхронный запрос на получение значений из хранилища.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> Promise объект, который предоставляет асинхронный доступ к значению.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="require-param-keys">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/require-param-keys" type="row"><parmname>keys</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|String[]</p>
+                    <p/>
+                   <p>Ключ или массив ключей.</p>
+                </entry>
+
+            </row>
+            
+            <row id="require-param-successCallback">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/require-param-successCallback" type="row"><parmname>successCallback</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция обратного вызова, которая будет вызвана после получения всех значений. В функцию как аргументы будут переданы значения из хранилища. Порядок аргументов будет соответствовать порядку в массиве keys.</p>
+                </entry>
+
+            </row>
+            
+            <row id="require-param-errorCallback">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/require-param-errorCallback" type="row"><parmname>errorCallback</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция обратного вызова, которая будет вызвана в случае ошибки. В функцию будет передан объект ошибки.</p>
+                </entry>
+
+            </row>
+            
+            <row id="require-param-context">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/require-param-context" type="row"><parmname>context</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Контекст исполнения функции обратного вызова.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="require_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">asyncStorage.require(['green'])
+    .spread(function (green) {
+        // ...
+    });</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">var asyncStorage = new ymaps.util.AsyncStorage();
+asyncStorage
+    .define('red', function (provide) {
+        provide('#FF0000');
+     })
+    .define('green', function (provide) {
+        setTimeout(function () {
+            provide('#008000');
+        }, 400);
+    });
+// Запрашиваем
+asyncStorage.require(['red', 'green'])
+    .spread(function (red, green) {
+         console.log(red, green); // #FF0000 #008000
+    });</codeblock>
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_OTgwYTdl_CACHING --></topic>

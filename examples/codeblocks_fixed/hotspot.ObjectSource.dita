@@ -1,0 +1,1071 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="hotspot.ObjectSource" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">hotspot.ObjectSource</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>hotspot.ObjectSource</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Стандартная реализация интерфейса <xref href="IHotspotObjectSource.dita" type="topic"><keyword>IHotspotObjectSource</keyword></xref>.<note>Модуль является устаревшим. Он поддерживается в версии 2.1 для обратной совместимости. Используйте модуль hotspot.layer.ObjectSource.</note></p>
+    
+
+
+
+    <p translate="no"><b>См.: </b>hotspot.layer.ObjectSource </p>
+
+
+
+
+
+    <p translate="no"><xref href="#hotspot.ObjectSource/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#hotspot.ObjectSource/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">hotspot.ObjectSource()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.ObjectSource.dita#method_detail/getKey" type="section"><keyword>getKey</keyword></xref>(<xref href="hotspot.ObjectSource.dita#method_detail/getKey-param-tileNumber" translate="no" type="row">tileNumber</xref>, <xref href="hotspot.ObjectSource.dita#method_detail/getKey-param-zoom" translate="no" type="row">zoom</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Возвращает имя callback-функции (padding) в JSONP-запросе, если оно статическое, либо null, если можно использовать динамический JSONP-callback. Шаблоны поддерживают те же подстановки, что и в шаблоне url тайла. Все символы, не являющиеся буквой, цифрой или символом '_', будут заменены на '_'.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.ObjectSource.dita#method_detail/getKeyTemplate" type="section"><keyword>getKeyTemplate</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает шаблон идентификатора тайла.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.ObjectSource.dita#method_detail/getTileUrl" type="section"><keyword>getTileUrl</keyword></xref>(<xref href="hotspot.ObjectSource.dita#method_detail/getTileUrl-param-tileNumber" translate="no" type="row">tileNumber</xref>, <xref href="hotspot.ObjectSource.dita#method_detail/getTileUrl-param-zoom" translate="no" type="row">zoom</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает URL данных для конкретного тайла.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.ObjectSource.dita#method_detail/getTileUrlTemplate" type="section"><keyword>getTileUrlTemplate</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает шаблон URL данных для тайла.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.ObjectSource.dita#method_detail/parseResponse" type="section"><keyword>parseResponse</keyword></xref>(<xref href="hotspot.ObjectSource.dita#method_detail/parseResponse-param-layer" translate="no" type="row">layer</xref>, <xref href="hotspot.ObjectSource.dita#method_detail/parseResponse-param-res" translate="no" type="row">res</xref>, <xref href="hotspot.ObjectSource.dita#method_detail/parseResponse-param-callback" translate="no" type="row">callback</xref>, <xref href="hotspot.ObjectSource.dita#method_detail/parseResponse-param-tileNumber" translate="no" type="row">tileNumber</xref>, <xref href="hotspot.ObjectSource.dita#method_detail/parseResponse-param-zoom" translate="no" type="row">zoom</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Разбирает ответ сервера. Возвращает в callback массив объектов-активных областей, сформированных по JSON-описанию.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.ObjectSource.dita#method_detail/restrict" type="section"><keyword>restrict</keyword></xref>(<xref href="hotspot.ObjectSource.dita#method_detail/restrict-param-layer" translate="no" type="row">layer</xref>, <xref href="hotspot.ObjectSource.dita#method_detail/restrict-param-tileNumber" translate="no" type="row">tileNumber</xref>, <xref href="hotspot.ObjectSource.dita#method_detail/restrict-param-zoom" translate="no" type="row">zoom</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Boolean</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Метод, который вызывается перед тем, как отправить запрос за данными для тайла. Если метод возвращает true, то запрос на сервер посылаться не будет, и в качестве ответа вернется пустой массив объектов. Стандартная реализация метода проверяет, лежит ли параметр zoom в пределах [options.minZoom, options.maxZoom]. А также проверяет, попадает ли центр запрашиваемого тайла в указанные options.bounds. Если options.bounds=null, то проверка для этого параметра не осуществляется.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.ObjectSource.dita#method_detail/setKeyTemplate" type="section"><keyword>setKeyTemplate</keyword></xref>(<xref href="hotspot.ObjectSource.dita#method_detail/setKeyTemplate-param-template" translate="no" type="row">template</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает новый шаблон идентификатора тайла.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.ObjectSource.dita#method_detail/setTileUrlTemplate" type="section"><keyword>setTileUrlTemplate</keyword></xref>(<xref href="hotspot.ObjectSource.dita#method_detail/setTileUrlTemplate-param-template" translate="no" type="row">template</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Задает новый шаблон URL данных для тайла.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getKey">
+        <title translate="no">getKey</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getKey(<xref href="hotspot.ObjectSource.dita#method_detail/getKey-param-tileNumber" translate="no" type="row">tileNumber</xref>, <xref href="hotspot.ObjectSource.dita#method_detail/getKey-param-zoom" translate="no" type="row">zoom</xref>)</codeblock></p>
+
+         <p>Возвращает имя callback-функции (padding) в JSONP-запросе, если оно статическое, либо null, если можно использовать динамический JSONP-callback. Шаблоны поддерживают те же подстановки, что и в шаблоне url тайла. Все символы, не являющиеся буквой, цифрой или символом '_', будут заменены на '_'.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> идентификатор тайла. Используется для формирования padding в JSONP-запросе за данными тайла.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getKey-param-tileNumber">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getKey-param-tileNumber" type="row"><parmname>tileNumber</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Номер тайла (тайловые координаты).</p>
+                </entry>
+
+            </row>
+            
+            <row id="getKey-param-zoom">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getKey-param-zoom" type="row"><parmname>zoom</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Уровень масштабирования.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getKey_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getKeyTemplate">
+        <title translate="no">getKeyTemplate</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getKeyTemplate()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> шаблон идентификатора тайла.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getTileUrl">
+        <title translate="no">getTileUrl</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getTileUrl(<xref href="hotspot.ObjectSource.dita#method_detail/getTileUrl-param-tileNumber" translate="no" type="row">tileNumber</xref>, <xref href="hotspot.ObjectSource.dita#method_detail/getTileUrl-param-zoom" translate="no" type="row">zoom</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>URL данных для конкретного тайла.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getTileUrl-param-tileNumber">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getTileUrl-param-tileNumber" type="row"><parmname>tileNumber</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Номер тайла (тайловые координаты).</p>
+                </entry>
+
+            </row>
+            
+            <row id="getTileUrl-param-zoom">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getTileUrl-param-zoom" type="row"><parmname>zoom</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Уровень масштабирования.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getTileUrl_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">var hotspotObjectSource = new ymaps.hotspot.ObjectSource('dataSource/?%c');
+hotspotObjectSource.getTileUrl = function (tileNumber, zoom) {
+    if (zoom &gt; 10) {
+        // Для крупных масштабов используем выставленный путь к данным.
+        return ymaps.hotspot.ObjectSource.prototype.call(this, tileNumber,
+            zoom);
+    } else {
+        // Для мелких масштабов используем другой путь.
+        return 'otherSource/getHotspots.xml?z=' + zoom +
+            '&lt;codeph&gt;&amp;&lt;/codeph&gt;x=' + tileNumber[0] +
+            '&lt;codeph&gt;&amp;&lt;/codeph&gt;y=' + tileNumber[1];
+    }
+};</codeblock>
+        
+
+    </section>
+    
+        <section id="getTileUrlTemplate">
+        <title translate="no">getTileUrlTemplate</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getTileUrlTemplate()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> шаблон URL данных для тайла.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="parseResponse">
+        <title translate="no">parseResponse</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} parseResponse(<xref href="hotspot.ObjectSource.dita#method_detail/parseResponse-param-layer" translate="no" type="row">layer</xref>, <xref href="hotspot.ObjectSource.dita#method_detail/parseResponse-param-res" translate="no" type="row">res</xref>, <xref href="hotspot.ObjectSource.dita#method_detail/parseResponse-param-callback" translate="no" type="row">callback</xref>, <xref href="hotspot.ObjectSource.dita#method_detail/parseResponse-param-tileNumber" translate="no" type="row">tileNumber</xref>, <xref href="hotspot.ObjectSource.dita#method_detail/parseResponse-param-zoom" translate="no" type="row">zoom</xref>)</codeblock></p>
+
+         <p>Разбирает ответ сервера. Возвращает в callback массив объектов-активных областей, сформированных по JSON-описанию.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="parseResponse-param-layer">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/parseResponse-param-layer" type="row"><parmname>layer</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="hotspot.Layer.dita" type="topic"><keyword>hotspot.Layer</keyword></xref></p>
+                    <p/>
+                   <p>Слой, которому принадлежат объекты.</p>
+                </entry>
+
+            </row>
+            
+            <row id="parseResponse-param-res">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/parseResponse-param-res" type="row"><parmname>res</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Ответ сервера.</p>
+                </entry>
+
+            </row>
+            
+            <row id="parseResponse-param-callback">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/parseResponse-param-callback" type="row"><parmname>callback</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Function</p>
+                    <p/>
+                   <p>Функция-обработчик.</p>
+                </entry>
+
+            </row>
+            
+            <row id="parseResponse-param-tileNumber">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/parseResponse-param-tileNumber" type="row"><parmname>tileNumber</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Номер тайла, для которого пришел ответ.</p>
+                </entry>
+
+            </row>
+            
+            <row id="parseResponse-param-zoom">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/parseResponse-param-zoom" type="row"><parmname>zoom</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Коэффициент масштабирования, для которого пришел ответ. массива объектов.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="parseResponse_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="restrict">
+        <title translate="no">restrict</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Boolean} restrict(<xref href="hotspot.ObjectSource.dita#method_detail/restrict-param-layer" translate="no" type="row">layer</xref>, <xref href="hotspot.ObjectSource.dita#method_detail/restrict-param-tileNumber" translate="no" type="row">tileNumber</xref>, <xref href="hotspot.ObjectSource.dita#method_detail/restrict-param-zoom" translate="no" type="row">zoom</xref>)</codeblock></p>
+
+         <p>Метод, который вызывается перед тем, как отправить запрос за данными для тайла. Если метод возвращает true, то запрос на сервер посылаться не будет, и в качестве ответа вернется пустой массив объектов. Стандартная реализация метода проверяет, лежит ли параметр zoom в пределах [options.minZoom, options.maxZoom]. А также проверяет, попадает ли центр запрашиваемого тайла в указанные options.bounds. Если options.bounds=null, то проверка для этого параметра не осуществляется.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>true - тайл вышел за пределы области данных (для данного тайла данных нет), false - не вышел (данные есть).</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="restrict-param-layer">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/restrict-param-layer" type="row"><parmname>layer</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="hotspot.Layer.dita" type="topic"><keyword>hotspot.Layer</keyword></xref></p>
+                    <p/>
+                   <p>Слой активных областей.</p>
+                </entry>
+
+            </row>
+            
+            <row id="restrict-param-tileNumber">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/restrict-param-tileNumber" type="row"><parmname>tileNumber</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Номер тайла.</p>
+                </entry>
+
+            </row>
+            
+            <row id="restrict-param-zoom">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/restrict-param-zoom" type="row"><parmname>zoom</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Integer</p>
+                    <p/>
+                   <p>Уровень масштабирования.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="restrict_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Пример переопределения метода "restrict".
+// Предположим что у нас есть данные только для Мурманска и Новосибирска.
+var myMap = new ymaps.Map('map', {
+    center: [32.5, 68.9],
+    zoom: 9
+});
+var geoBounds = [
+    [[31.729958, 69.369182], [34.203324, 68.666473]],
+// Murmansk
+    [[82.179084, 55.341085], [83.725642, 54.670738]]
+// Novosibirsk
+];
+var projection = myMap.options.get('projection');
+var myHotspotSource = new ymaps.hotspot.ObjectSource(
+    'http://www.myDomain.ru/tiles/?%c', '%c');
+myHotspotSource.restrict = function (layer, tileNumber, zoom) {
+    // Рассчет границ для городов на этом уровне масштабирования.
+    var boundsFromPoints = ymaps.util.bounds.fromPoints;
+    var toGlobalPixels = projection.toGlobalPixels;
+    var pixelBounds = [
+        boundsFromPoints(
+            toGlobalPixels(geoBounds[0][0], zoom),
+            toGlobalPixels(geoBounds[0][1], zoom)
+        ),
+        boundsFromPoints(
+            toGlobalPixels(geoBounds[1][0], zoom),
+            toGlobalPixels(geoBounds[1][1], zoom)
+        )
+    ];
+    // Рассчет границ тайла.
+    var leftTop = [tileNumber[0] * 256, tileNumber[1] * 256];
+    var tileBounds = [leftTop, [leftTop[0] + 256, leftTop[1] + 256]];
+    var intersects = ymaps.util.bounds.intersects;
+    // Если пиксельные границы перекаются с границами указанной области,
+    // нужно запросить дополнительные данные.
+    if (intersects(pixelBounds[0], tileBounds) || (intersects(pixelBounds[
+            1], tileBounds))) {
+        return false;
+    }
+    // Для всех других тайлов этот источник не предоставляет данных.
+    return true;
+}</codeblock>
+        
+
+    </section>
+    
+        <section id="setKeyTemplate">
+        <title translate="no">setKeyTemplate</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} setKeyTemplate(<xref href="hotspot.ObjectSource.dita#method_detail/setKeyTemplate-param-template" translate="no" type="row">template</xref>)</codeblock></p>
+
+         <p>Задает новый шаблон идентификатора тайла.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setKeyTemplate-param-template">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setKeyTemplate-param-template" type="row"><parmname>template</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Шаблон идентификатора.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setKeyTemplate_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="setTileUrlTemplate">
+        <title translate="no">setTileUrlTemplate</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} setTileUrlTemplate(<xref href="hotspot.ObjectSource.dita#method_detail/setTileUrlTemplate-param-template" translate="no" type="row">template</xref>)</codeblock></p>
+
+         <p>Задает новый шаблон URL данных для тайла.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="setTileUrlTemplate-param-template">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/setTileUrlTemplate-param-template" type="row"><parmname>template</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Шаблон URL</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="setTileUrlTemplate_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_ZGM3ZDY2_CACHING --></topic>

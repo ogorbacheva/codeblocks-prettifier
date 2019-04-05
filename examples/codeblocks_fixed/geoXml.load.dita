@@ -1,0 +1,231 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="geoXml.load" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">geoXml.load</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>geoXml.load</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статическая функция.</p>
+    
+    
+        
+            <p>Загружает XML-файл с географическими данными и преобразует его в коллекцию <xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref>. Сформированная коллекция может быть передана заданной функции для последующей обработки. Поддерживаемые форматы XML-данных: YMapsML, KML, GPX. Для самой верхней коллекции геообъектов GPX-файла доступны следующие пресеты:<ul>
+    <li>'gpx#interactive' - обеспечивает вывод информации о точке маршрута при клике. Также при использовании этого пресета в макете балуна становятся доступными следующие свойства геообъекта: time, velocity, trackName, trackDescription, pointName, pointDescription, lon, lat, sym. Используется по умолчанию.</li>
+    <li>'gpx#plain' - элементы gpx-коллекции ведут себя как обычные геообъекты;</li>
+</ul></p>
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+       <p><b>Возвращает</b> объект-promise. Если xml-файл по указанному урлу будет успешно загружен, promise будет подтверждён и получит в качестве параметров объект со следующими полями:<ul>
+    <li>geoObjects - коллекция геообъектов <xref href="GeoObjectCollection.dita" type="topic"><keyword>GeoObjectCollection</keyword></xref>;</li>
+    <li>mapState - описание состояния карты <xref href="IMapState.dita" type="topic"><keyword>IMapState</keyword></xref> (только для YMapsML);</li>
+</ul>
+        </p>
+       
+    
+
+    
+
+    
+        
+         
+              <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{ <xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref> } geoXml.load(<xref href="#geoXml.load/param-url" translate="no" type="row">url</xref>)</codeblock></p>
+         
+     
+
+    
+        <p translate="no"><b>Параметры:</b></p>
+        
+        
+            
+        
+
+        <table>
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Параметр</entry>
+              <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+        
+        <row id="param-url">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#geoXml.load/param-url" type="row"><parmname>url</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: String</p>
+                <p/>
+                <p>URL файла с географическими данными.</p>
+            </entry>
+        </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+    
+    
+
+
+
+    
+        <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Создаем и инициализируем карту.
+// Загрузим и отобразим a ymapsml-файл из сервиса Мои Карты.
+ymaps.geoXml.load(
+        'http://maps.yandex.ru/export/usermaps/HNQ5uTUgbjy6L0dW2uReUjSoXb1Ad7jw/'
+        )
+    .then(function (res) {
+        // Добавим объекты на карту.
+        map.geoObjects.add(res.geoObjects);
+        // Установим тип и границы карты.
+        // res.mapState.getBounds() границы устанавливаются в асинхронном режиме,
+        // так как сначала нужно получить информацию о доступных уровнях масштабирования для заданных границ.
+        // res.mapState.getType() добавляется на карту в синхронном режиме.
+        if (res.mapState) {
+            res.mapState.applyToMap(map)
+                .then(function () {
+                    alert('Изменены границы карты ' + res.mapState
+                        .getBounds()
+                        .toString());
+                });
+        }
+        // Если информация о границах не предоставлена в repr:View YMapsML файла,
+        // можно применить gml:boundedBy верхнего элемента ymaps:GeoObjectCollection.
+        else if (res.geoObjects.properties.get('boundedBy')) {
+            map.setBounds(res.geoObjects.properties.get('boundedBy'), {
+                checkZoomRange: true
+            });
+        }
+    });
+// Загрузка и отображение kml-файла.
+ymaps.geoXml.load(
+        'http://api.yandex.ru/maps/doc/jsapi/1.x/examples/kml/demonstration.xml'
+        )
+    .then(function (res) {
+        map.geoObjects.add(res.geoObjects);
+    });
+// Загрузка и отображение gpx-файла.
+ymaps.geoXml.load('http://karmatsky.narod2.ru/MskChel2.xml')
+    .then(function (res) {
+        res.geoObjects.options.set({
+            balloonContentBodyLayout: ymaps.templateLayoutFactory
+                .createClass(
+                    // Будем показывать в балуне только свойство name геообъекта и скорость.
+                    '&lt;b&gt;{{ properties.name }}&lt;/b&gt; {{ properties.velocity }}'
+                )
+        });
+        map.geoObjects.add(res.geoObjects);
+        // Метаданные о границах из gpx-файла хранятся в свойствах коллекции res.geoObjects.
+        // Применим эти границы к карте.
+        if (res.geoObjects.properties.get('boundedBy')) {
+            map.setBounds(res.geoObjects.properties.get('boundedBy'), {
+                checkZoomRange: true
+            });
+        }
+    });</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_YzljYTBi_CACHING --></topic>

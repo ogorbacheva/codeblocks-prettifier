@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="panorama.isSupported" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">panorama.isSupported</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>panorama.isSupported</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статическая функция.</p>
+    
+    
+        
+            <p>Проверяет, поддерживает ли панорамный плеер платформу.</p>
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+       <p><b>Возвращает</b> <codeph>true</codeph>, если браузер поддерживается плеером и <codeph>false</codeph> в ином случае.</p>
+       
+    
+
+    
+
+    
+        
+         
+              <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{ Boolean } panorama.isSupported()</codeblock></p>
+         
+     
+
+    
+    
+
+
+
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_NTMwNTM0_CACHING --></topic>

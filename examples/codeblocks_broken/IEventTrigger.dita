@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="IEventTrigger" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IEventTrigger</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IEventTrigger</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Объект инициирующий события.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IEventTrigger/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#IEventTrigger/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IEventTrigger()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IEventTrigger.dita#method_detail/fire" type="section"><keyword>fire</keyword></xref>(<xref href="IEventTrigger.dita#method_detail/fire-param-type" translate="no" type="row">type</xref>[, <xref href="IEventTrigger.dita#method_detail/fire-param-eventObject" translate="no" type="row">eventObject</xref>])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IEventTrigger.dita" type="topic"><keyword>IEventTrigger</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Инициирует событие.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="fire">
+        <title translate="no">fire</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IEventTrigger.dita" type="topic"><keyword>IEventTrigger</keyword></xref>} fire(<xref href="IEventTrigger.dita#method_detail/fire-param-type" translate="no" type="row">type</xref>[, <xref href="IEventTrigger.dita#method_detail/fire-param-eventObject" translate="no" type="row">eventObject</xref>])</codeblock></p>
+
+         <p>Инициирует событие.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="fire-param-type">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/fire-param-type" type="row"><parmname>type</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                   <p>Тип события.</p>
+                </entry>
+
+            </row>
+            
+            <row id="fire-param-eventObject">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/fire-param-eventObject" type="row"><parmname>eventObject</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object|<xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref></p>
+                    <p/>
+                   <p>Объект, описывающий событие. Может быть либо произвольным объектом, либо реализовывать интерфейс <xref href="IEvent.dita" type="topic"><keyword>IEvent</keyword></xref>. Во втором случае после вызова каждого обработчика будет проверяться значение метода isImmediatePropagationStopped() - если оно истинно, оповещение о событии немедленно прекращается.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="fire_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_ODk5YWVh_CACHING --></topic>

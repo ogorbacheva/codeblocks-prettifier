@@ -1,0 +1,776 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="map.Copyrights" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">map.Copyrights</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>map.Copyrights</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Менеджер размещённой на карте информации об авторских правах. У каждой карты уже есть собственный менеджер информации об авторских правах, доступный как map.copyrights. Не инстанцируйте экземпляры этого класса без необходимости.</p>
+    
+
+
+
+    <p translate="no"><b>См.: </b><xref href="Map.dita#field_detail/copyrights" type="section"><keyword>Map.copyrights</keyword></xref> </p>
+
+
+
+
+
+    <p translate="no"><xref href="#map.Copyrights/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#map.Copyrights/events-summary" translate="no" type="section">События </xref> | <xref href="#map.Copyrights/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">map.Copyrights(<xref href="#map.Copyrights/param-map" translate="no" type="entry">map</xref>)</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-map" translate="no">
+                    
+                        <xref href="#map.Copyrights/param-map" type="entry"><parmname>map</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p>
+                    <p/>
+                    <p>Карта.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Добавим статическую информацию об авторских правах на карту.
+var accessor = map.copyrights.add('© Gerardus Mercator');
+// .....
+// Удаление информации об авторских правах.
+accessor.remove();</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.Copyrights.dita#event_detail/event_detail/event-change"><keyword>change</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Событие изменения размещённой на карте информации об авторских правах. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>oldCopyrights - старый массив информации об авторских правах;</li>
+    <li>newCopyrights - новый массив информации об авторских правах;</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.Copyrights.dita#method_detail/add" type="section"><keyword>add</keyword></xref>(<xref href="map.Copyrights.dita#method_detail/add-param-customCopyrights" translate="no" type="row">customCopyrights</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="ICopyrightsAccessor.dita" type="topic"><keyword>ICopyrightsAccessor</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет на карту статическую (не зависящую от текущего центра и масштаба карты) информацию об авторских правах.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.Copyrights.dita#method_detail/addProvider" type="section"><keyword>addProvider</keyword></xref>(<xref href="map.Copyrights.dita#method_detail/addProvider-param-provider" translate="no" type="row">provider</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="map.Copyrights.dita" type="topic"><keyword>map.Copyrights</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет нового провайдера информации об авторских правах.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.Copyrights.dita#method_detail/get" type="section"><keyword>get</keyword></xref>([<xref href="map.Copyrights.dita#method_detail/get-param-point" translate="no" type="row">point</xref>[, <xref href="map.Copyrights.dita#method_detail/get-param-zoom" translate="no" type="row">zoom</xref>]])</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Определяет информацию об авторских правах в указанной точке.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.Copyrights.dita#method_detail/getPromoLink" type="section"><keyword>getPromoLink</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает внешнюю ссылку из блока "Открыть в Яндекс.Картах".</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="map.Copyrights.dita#method_detail/removeProvider" type="section"><keyword>removeProvider</keyword></xref>(<xref href="map.Copyrights.dita#method_detail/removeProvider-param-provider" translate="no" type="row">provider</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="map.Copyrights.dita" type="topic"><keyword>map.Copyrights</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет провайдера информации об авторских правах.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-change">
+            <title translate="no">change</title>
+            
+             <p>Событие изменения размещённой на карте информации об авторских правах. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>oldCopyrights - старый массив информации об авторских правах;</li>
+    <li>newCopyrights - новый массив информации об авторских правах;</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="add">
+        <title translate="no">add</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="ICopyrightsAccessor.dita" type="topic"><keyword>ICopyrightsAccessor</keyword></xref>} add(<xref href="map.Copyrights.dita#method_detail/add-param-customCopyrights" translate="no" type="row">customCopyrights</xref>)</codeblock></p>
+
+         <p>Добавляет на карту статическую (не зависящую от текущего центра и масштаба карты) информацию об авторских правах.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект, позволяющий управлять добавленной информацией.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="add-param-customCopyrights">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/add-param-customCopyrights" type="row"><parmname>customCopyrights</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String|HTMLElement|String[]|HTMLElement[]</p>
+                    <p/>
+                   <p>Информация об авторских правах в виде строки, DOM-элемента либо массива строк/DOM-элементов.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="add_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="addProvider">
+        <title translate="no">addProvider</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="map.Copyrights.dita" type="topic"><keyword>map.Copyrights</keyword></xref>} addProvider(<xref href="map.Copyrights.dita#method_detail/addProvider-param-provider" translate="no" type="row">provider</xref>)</codeblock></p>
+
+         <p>Добавляет нового провайдера информации об авторских правах.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="addProvider-param-provider">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/addProvider-param-provider" type="row"><parmname>provider</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="ICopyrightsProvider.dita" type="topic"><keyword>ICopyrightsProvider</keyword></xref></p>
+                    <p/>
+                   <p>Провайдер.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="addProvider_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Создадим динамический провайдер информации об авторских правах,
+// который будет получать актуальную информацию об авторских правах для
+// конкретной точки карты с удаленного сервера.
+var myProvider = {
+    getCopyrights: function (center, zoom) {
+        var deferred = ymaps.vow.defer();
+        $.ajax('http://some.server/copyrights/?ll=' + center.join(',') +
+            '&amp;z=' + zoom, {
+                // Сервер должен вернуть массив строк.
+                success: function (res) {
+                    deferred.resolve(res);
+                }
+            });
+        return deferred.promise();
+    }
+};
+// Добавим провайдер на карту; теперь при изменении центра или уровня
+// масштабирования менеджер информации об авторских правах карты будет
+// перезапрашивать акутальную информацию с удаленного сервера и отображать
+// полученные данные автоматически.
+map.copyrights.addProvider(myProvider);</codeblock>
+        
+
+    </section>
+    
+        <section id="get">
+        <title translate="no">get</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} get([<xref href="map.Copyrights.dita#method_detail/get-param-point" translate="no" type="row">point</xref>[, <xref href="map.Copyrights.dita#method_detail/get-param-zoom" translate="no" type="row">zoom</xref>]])</codeblock></p>
+
+         <p>Определяет информацию об авторских правах в указанной точке.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> Promise объект, который будет подтверждён массивом строк/DOM-элементов.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="get-param-point">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/get-param-point" type="row"><parmname>point</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Точка (в географических координатах), для которой требуется определить информацию об авторских правах. Если не указана, берётся текущий центр карты.</p>
+                </entry>
+
+            </row>
+            
+            <row id="get-param-zoom">
+                <entry colname="col1" translate="no">
+                <xref href="#method_detail/get-param-zoom" type="row"><parmname>zoom</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Уровень масштабирования, для которого требуется определить информацию об авторских правах. Если не указан, берётся текущий уровень масштабирования карты.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getPromoLink">
+        <title translate="no">getPromoLink</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getPromoLink()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> внешнюю ссылку из блока "Открыть в Яндекс.Картах".</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="removeProvider">
+        <title translate="no">removeProvider</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="map.Copyrights.dita" type="topic"><keyword>map.Copyrights</keyword></xref>} removeProvider(<xref href="map.Copyrights.dita#method_detail/removeProvider-param-provider" translate="no" type="row">provider</xref>)</codeblock></p>
+
+         <p>Удаляет провайдера информации об авторских правах.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="removeProvider-param-provider">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/removeProvider-param-provider" type="row"><parmname>provider</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="ICopyrightsProvider.dita" type="topic"><keyword>ICopyrightsProvider</keyword></xref></p>
+                    <p/>
+                   <p>Провайдер.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="removeProvider_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_Njg4YjM2_CACHING --></topic>

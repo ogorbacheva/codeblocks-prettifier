@@ -1,0 +1,563 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="vow" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">vow</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>vow</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section id="constructor">
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статический объект.</p>
+    
+    
+
+
+
+
+
+   
+        <p>Содержит методы для создания и обработки объектов-promise.</p><p><note>
+  <p>Данный класс является частью библиотеки <xref href="https://github.com/dfilatov/vow/" scope="external">Vow</xref>.</p><p>
+  </p><p>Ниже описаны только некоторые методы. Полный список методов доступен здесь: <xref href="http://dfilatov.github.io/vow/" scope="external">http://dfilatov.github.io/vow/</xref>.</p><p>
+  </p><p>Copyright (c) 2012-2013 Filatov Dmitry (<xref href="mailto:dfilatov@yandex-team.ru" scope="external">dfilatov@yandex-team.ru</xref>). Dual licensed under the <xref href="http://www.opensource.org/licenses/mit-license.php" scope="external">MIT</xref> and <xref href="http://www.gnu.org/licenses/gpl.html" scope="external">GPL</xref> licenses.</p>
+</note></p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#vow/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+    
+
+    
+
+    
+
+
+
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="vow.dita#method_detail/all" type="section"><keyword>all</keyword></xref>(<xref href="vow.dita#method_detail/all-param-iterable" translate="no" type="row">iterable</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект-promise, который будет разрешен или отклонён только когда будут разрешены или отклонены все указанные объекты.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="vow.dita#method_detail/defer" type="section"><keyword>defer</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Deferred.dita" type="topic"><keyword>vow.Deferred</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Создаёт новый deferred-объект. Эквивалент для `new ymaps.vow.Deferred()`.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="vow.dita#method_detail/reject" type="section"><keyword>reject</keyword></xref>(<xref href="vow.dita#method_detail/reject-param-reason" translate="no" type="row">reason</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает объект-promise, отклонённый с указанной причиной.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="vow.dita#method_detail/resolve" type="section"><keyword>resolve</keyword></xref>(<xref href="vow.dita#method_detail/resolve-param-value" translate="no" type="row">value</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает Promise объект, разрешённый указанным значением.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="all">
+        <title translate="no">all</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} all(<xref href="vow.dita#method_detail/all-param-iterable" translate="no" type="row">iterable</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>объект-promise, который будет разрешен или отклонён только когда будут разрешены или отклонены все указанные объекты.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="all-param-iterable">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/all-param-iterable" type="row"><parmname>iterable</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object|Object[]</p>
+                    <p/>
+                   <p>Набор объектов-promise и/или значений.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="all_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Примеры: </b></p><p translate="no"><b>1.</b></p><codeblock code-lang="javascript" xml:space="preserve">var deferred1 = ymaps.vow.defer(),
+    deferred2 = ymaps.vow.defer();
+ymaps.vow.all([deferred1.promise(), deferred2.promise(), 3])
+    .then(function (value) {
+        // Здесь value =&gt; [1, 2, 3].
+    });
+deferred1.resolve(1);
+deferred2.resolve(2);</codeblock><p translate="no"><b>2.</b></p><codeblock code-lang="javascript" xml:space="preserve">var deferred1 = ymaps.vow.defer(),
+    deferred2 = ymaps.vow.defer();
+ymaps.vow.all({
+        p1: deferred1.promise(),
+        p2: deferred2.promise(),
+        p3: 3
+    })
+    .then(function (value) {
+        // Здесь value =&gt; { p1 : 1, p2 : 2, p3 : 3 }.
+    });
+deferred1.resolve(1);
+deferred2.resolve(2);</codeblock>
+        
+
+    </section>
+    
+        <section id="defer">
+        <title translate="no">defer</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Deferred.dita" type="topic"><keyword>vow.Deferred</keyword></xref>} defer()</codeblock></p>
+
+         <p>Создаёт новый deferred-объект. Эквивалент для `new ymaps.vow.Deferred()`.</p>
+
+        
+            <p translate="no"><b>См.: </b><xref href="vow.Deferred.dita" type="topic"><keyword>vow.Deferred</keyword></xref> </p>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>объект-deferred.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="reject">
+        <title translate="no">reject</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} reject(<xref href="vow.dita#method_detail/reject-param-reason" translate="no" type="row">reason</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>объект-promise, отклонённый с указанной причиной.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="reject-param-reason">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/reject-param-reason" type="row"><parmname>reason</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Причина отклонения.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="reject_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="resolve">
+        <title translate="no">resolve</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} resolve(<xref href="vow.dita#method_detail/resolve-param-value" translate="no" type="row">value</xref>)</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> Promise объект, разрешённый указанным значением.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="resolve-param-value">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/resolve-param-value" type="row"><parmname>value</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                   <p>Значение.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="resolve_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_MWMyYmE1_CACHING --></topic>

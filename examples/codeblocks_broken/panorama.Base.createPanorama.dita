@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="panorama.Base.createPanorama" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">panorama.Base.createPanorama</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>panorama.Base.createPanorama</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статическая функция.</p>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+       <p><b>Возвращает</b> экземпляр панорамы.</p>
+       
+    
+
+    
+
+    
+        
+         
+              <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{ <xref href="IPanorama.dita" type="topic"><keyword>IPanorama</keyword></xref> } panorama.Base.createPanorama(<xref href="#panorama.Base.createPanorama/param-params" translate="no" type="row">params</xref>)</codeblock></p>
+         
+     
+
+    
+        <p translate="no"><b>Параметры:</b></p>
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+
+        <table>
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Параметр</entry>
+              <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+        
+        <row id="param-params">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#panorama.Base.createPanorama/param-params" type="row"><parmname>params</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Object</p>
+                <p/>
+                <p>Параметры панорамы.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.angularBBox">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#panorama.Base.createPanorama/param-params.angularBBox" type="row"><parmname>params.angularBBox</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Number[]</p>
+                <p/>
+                <p>Угловой</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.coordSystem">
+            <entry colname="col1" translate="no">
+                <xref href="#panorama.Base.createPanorama/param-params.coordSystem" type="row"><parmname>params.coordSystem</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: <xref href="ICoordSystem.dita" type="topic"><keyword>ICoordSystem</keyword></xref></p>
+                <p/>
+                <p>Координатная система, в которой задана позиция панорамы. По умолчанию будет использована <xref href="coordSystem.geo.dita" type="topic"><keyword>coordSystem.geo</keyword></xref>.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.name">
+            <entry colname="col1" translate="no">
+                <xref href="#panorama.Base.createPanorama/param-params.name" type="row"><parmname>params.name</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">   ''
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: String</p>
+                <p/>
+                <p>Название панорамы.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.position">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#panorama.Base.createPanorama/param-params.position" type="row"><parmname>params.position</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Number[]</p>
+                <p/>
+                <p>Позиция панорамы.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.tileLevels">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#panorama.Base.createPanorama/param-params.tileLevels" type="row"><parmname>params.tileLevels</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: <xref href="IPanoramaTileLevel.dita" type="topic"><keyword>IPanoramaTileLevel</keyword></xref>[]</p>
+                <p/>
+                <p>Массив уровней детализации панорамного изображения.</p>
+            </entry>
+        </row>
+        
+        <row id="param-params.tileSize">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#panorama.Base.createPanorama/param-params.tileSize" type="row"><parmname>params.tileSize</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Number[]</p>
+                <p/>
+                <p>Размер тайлов панорамного изображения.</p>
+            </entry>
+        </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+    
+    
+
+
+
+    
+        <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">var player = new ymaps.panorama.Player(
+    'player',
+    ymaps.panorama.Base.createPanorama({
+        coordSystem: ymaps.coordSystem.cartesian,
+         // Пусть наша панорама будет в центре системы координат.
+        position: [0, 0],
+        name: 'My panorama',
+         // Пусть наша панорама будет полносферической.
+        angularBBox: [0.5 * Math.PI, 2 * Math.PI, -0.5 * Math.PI, 0],
+        tileSize: [512, 512],
+        tileLevels: [{
+            getTileUrl: function (x, y) {
+                return '/' + x + '/' + y + '.jpg';
+           },
+
+            getImageSize: function () {
+                return [4096, 2048];
+            }
+        }]
+    })
+);</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_MGVjODdj_CACHING --></topic>

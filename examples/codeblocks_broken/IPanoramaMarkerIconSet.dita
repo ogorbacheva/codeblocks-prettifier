@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="IPanoramaMarkerIconSet" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IPanoramaMarkerIconSet</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IPanoramaMarkerIconSet</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Интерфейс, описывающий набор иконок маркера.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IPanoramaMarkerIconSet/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#IPanoramaMarkerIconSet/properties-summary" translate="no" type="section">Поля </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IPanoramaMarkerIconSet()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IPanoramaMarkerIconSet.dita#field_detail/default" type="section"><keyword>default</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IPanoramaMarkerIcon.dita" type="topic"><keyword>IPanoramaMarkerIcon</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Иконка состояния по умолчанию.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IPanoramaMarkerIconSet.dita#field_detail/expanded" type="section"><keyword>expanded</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IPanoramaMarkerIcon.dita" type="topic"><keyword>IPanoramaMarkerIcon</keyword></xref>|null</entry>
+        
+              <entry colname="col3">
+                <p>Иконка для "активного" состояния маркера. Маркер переходит в это состояние при клике по нему; при повторном клике маркер становится неактивным.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IPanoramaMarkerIconSet.dita#field_detail/expandedHovered" type="section"><keyword>expandedHovered</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IPanoramaMarkerIcon.dita" type="topic"><keyword>IPanoramaMarkerIcon</keyword></xref>|null</entry>
+        
+              <entry colname="col3">
+                <p>Иконка для "активного подсвеченного" состояния. Маркер переходит в это состояние, когда он активен и над ним находится курсор.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IPanoramaMarkerIconSet.dita#field_detail/hovered" type="section"><keyword>hovered</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IPanoramaMarkerIcon.dita" type="topic"><keyword>IPanoramaMarkerIcon</keyword></xref>|null</entry>
+        
+              <entry colname="col3">
+                <p>Иконка для "подсвеченного" состояния маркера. В него маркер переходит, когда на него наводится курсор мыши.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="default">
+            <title translate="no">default</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IPanoramaMarkerIcon.dita" type="topic"><keyword>IPanoramaMarkerIcon</keyword></xref>} default</codeblock></p>
+
+            <p>Иконка состояния по умолчанию.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="expanded">
+            <title translate="no">expanded</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IPanoramaMarkerIcon.dita" type="topic"><keyword>IPanoramaMarkerIcon</keyword></xref>|null} expanded</codeblock></p>
+
+            <p>Иконка для "активного" состояния маркера. Маркер переходит в это состояние при клике по нему; при повторном клике маркер становится неактивным.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="expandedHovered">
+            <title translate="no">expandedHovered</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IPanoramaMarkerIcon.dita" type="topic"><keyword>IPanoramaMarkerIcon</keyword></xref>|null} expandedHovered</codeblock></p>
+
+            <p>Иконка для "активного подсвеченного" состояния. Маркер переходит в это состояние, когда он активен и над ним находится курсор.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="hovered">
+            <title translate="no">hovered</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IPanoramaMarkerIcon.dita" type="topic"><keyword>IPanoramaMarkerIcon</keyword></xref>|null} hovered</codeblock></p>
+
+            <p>Иконка для "подсвеченного" состояния маркера. В него маркер переходит, когда на него наводится курсор мыши.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic><!-- XLIFF_FARM_MDY4NDNm_CACHING --></topic>

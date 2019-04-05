@@ -1,0 +1,1578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="Clusterer" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">Clusterer</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>Кластеризатор</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IChildOnMap.dita" type="topic"><keyword>IChildOnMap</keyword></xref>, <xref href="ICustomizable.dita" type="topic"><keyword>ICustomizable</keyword></xref>, <xref href="IEventEmitter.dita" type="topic"><keyword>IEventEmitter</keyword></xref>, <xref href="IParentOnMap.dita" type="topic"><keyword>IParentOnMap</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Кластеризатор геообъектов. Кластеризует объекты в видимой области карты. Если объект не попадает в видимую область карты, он не будет добавлен на карту. Обратите внимание, что кластеризатор не поддерживает реакцию на изменение координат объектов (программно, или в результате драга). Если у объекта в кластеризаторе необходимо изменить координаты, следует удалить объект из кластеризатора, поменять его геометрию, а затем добавить обратно.</p>
+    
+
+
+
+    <p translate="no"><b>См.: </b><xref href="ClusterPlacemark.dita" type="topic"><keyword>ClusterPlacemark</keyword></xref> </p>
+
+
+
+
+
+    <p translate="no"><xref href="#Clusterer/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#Clusterer/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#Clusterer/events-summary" translate="no" type="section">События </xref> | <xref href="#Clusterer/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">Clusterer([<xref href="#Clusterer/param-options" translate="no" type="entry">options</xref>])</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-options" translate="no">
+                    <xref href="#Clusterer/param-options" type="entry"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции. Опции для дочерних объектов-кластеров задаются с префиксом "cluster". См. <xref href="ClusterPlacemark.dita" type="topic"><keyword>ClusterPlacemark</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.gridSize" translate="no">
+                    <xref href="#Clusterer/param-options.gridSize" type="entry"><parmname>options.gridSize</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     64
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Размер ячейки кластеризации в пикселях. Значение должно быть равно 2^n (в область 256 на 256 пикселей должно умещаться ровное количество ячеек).</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.groupByCoordinates" translate="no">
+                    <xref href="#Clusterer/param-options.groupByCoordinates" type="entry"><parmname>options.groupByCoordinates</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Специальный режим работы кластеризатора при котором кластеры образуются только из геобъектов с одинаковыми координатами.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.hasBalloon" translate="no">
+                    <xref href="#Clusterer/param-options.hasBalloon" type="entry"><parmname>options.hasBalloon</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Флаг наличия у кластеризатора поля .balloon. Если при клике на кластер не нужно открывать балун, рекомендуется установить эту опцию в значение false, чтобы избежать лишних инициализаций;</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.hasHint" translate="no">
+                    <xref href="#Clusterer/param-options.hasHint" type="entry"><parmname>options.hasHint</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Флаг наличия у кластеризатора поля .hint. Если при наведении на кластер не нужно показывать всплывающую подсказку, рекомендуется установить эту опцию в значение false, чтобы избежать лишних инициализаций;</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.margin" translate="no">
+                    <xref href="#Clusterer/param-options.margin" type="entry"><parmname>options.margin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     10
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|Number[]</p>
+                    <p/>
+                    <p>Число или массив чисел, задающие отступ для центра кластера относительно ячеек кластеризации. Если задано одно число - оно применяется ко всем сторонам. Если задано два - то это вертикальные и горизонтальные отступы соответственно. Если задан массив из 4х чисел, то это отступы top, right, bottom, left.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.maxZoom" translate="no">
+                    <xref href="#Clusterer/param-options.maxZoom" type="entry"><parmname>options.maxZoom</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     Infinity
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                    <p>Максимальный коэффициент масштабирования карты, на котором происходит кластеризация объектов. Даже если кластеризация отключена, будут показаны только объекты в видимой области карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.minClusterSize" translate="no">
+                    <xref href="#Clusterer/param-options.minClusterSize" type="entry"><parmname>options.minClusterSize</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     2
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Минимальное количество объектов, образующих кластер.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.preset" translate="no">
+                    <xref href="#Clusterer/param-options.preset" type="entry"><parmname>options.preset</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Ключ предустановленных опций кластеризатора. Список ключей, доступных в пакете package.clusters, содержится в описании <xref href="option.presetStorage.dita" type="topic"><keyword>option.presetStorage</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.showInAlphabeticalOrder" translate="no">
+                    <xref href="#Clusterer/param-options.showInAlphabeticalOrder" type="entry"><parmname>options.showInAlphabeticalOrder</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Показывать метки в балуне в алфавитном порядке при нажатии на кластер. Геообъекты кластера сортируются по специальным полям в данных этих геообъектов - clusterCaption (или balloonContentHeader, если предыдущее поле не определено). По умолчанию геообъекты показываются в порядке добавления в кластеризатор.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.useMapMargin" translate="no">
+                    <xref href="#Clusterer/param-options.useMapMargin" type="entry"><parmname>options.useMapMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Нужно ли учитывать отступы карты <xref href="map.margin.Manager.dita" type="topic"><keyword>map.margin.Manager</keyword></xref> при приближении карты после клика на кластере.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.viewportMargin" translate="no">
+                    <xref href="#Clusterer/param-options.viewportMargin" type="entry"><parmname>options.viewportMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     128
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|Number[]</p>
+                    <p/>
+                    <p>Отступ для области, в которой производится кластеризация. Кластеризация проводится для видимой области карты. С помощью данной опции область кластеризации расширяется по отношению к видимой области карты.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.zoomMargin" translate="no">
+                    <xref href="#Clusterer/param-options.zoomMargin" type="entry"><parmname>options.zoomMargin</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     0
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number|Number[]</p>
+                    <p/>
+                    <p>Отступы от границ видимой области карты, которые соблюдаются при приближении карты после клика на кластере. Рекомендуется устанавливать значение опции в соответствии с размером иконок кластеров и меток. Например, если метка попадает в видимую область карты только нижним концом ножки, стоит выставить ненулевой отступ top, чтобы метка оставалась полностью видна после того, как кластер распался. Если задано одно число - оно применяется ко всем сторонам. Если задано два - то это горизонтальные и вертикальные отступы соответственно. Если задан массив из 4х чисел, то это отступы top, right, bottom, left.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Создание кластеризатора.
+
+// Создадим карту, на которой необходимо кластеризовать геообъекты.
+var map = new ymaps.Map('mapsID', { center: [56.034, 36.992], zoom: 8 }),
+// Создадим массив геообъектов.
+myGeoObjects = [];
+myGeoObjects[0] = new ymaps.GeoObject({
+    geometry: { type: "Point", coordinates: [56.034, 36.992] },    properties: {
+        clusterCaption: 'Геообъект №1',
+        balloonContentBody: 'Содержимое балуна геообъекта №1.'
+    }
+});
+myGeoObjects[1] = new ymaps.GeoObject({
+    geometry: { type: "Point", coordinates: [56.021, 36.983] },    properties: {
+        clusterCaption: 'Геообъект №2',
+        balloonContentBody: 'Содержимое балуна геообъекта №2.'
+   }
+});
+// Создадим кластеризатор и запретим приближать карту при клике на кластеры.
+var clusterer = new ymaps.Clusterer({ clusterDisableClickZoom: true });
+clusterer.add(myGeoObjects);
+map.geoObjects.add(clusterer);</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Clusterer.dita#field_detail/balloon" type="section"><keyword>balloon</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="clusterer.Balloon.dita" type="topic"><keyword>clusterer.Balloon</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Балун кластеризатора.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Clusterer.dita#field_detail/balloonclose" type="section"><keyword>balloonclose</keyword></xref></entry>
+              <entry colname="col2" translate="no"/>
+        
+              <entry colname="col3">
+                <p>Закрытие балуна.<ul>
+    <li>target - ссылка на менеджер балуна кластеризатора;</li>
+    <li>cluster - ссылка на объект-кластер.</li>
+</ul>Экземпляр класса Event.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Clusterer.dita#field_detail/balloonopen" type="section"><keyword>balloonopen</keyword></xref></entry>
+              <entry colname="col2" translate="no"/>
+        
+              <entry colname="col3">
+                <p>Открытие балуна на кластере. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>target - ссылка на менеджер балуна кластеризатора;</li>
+    <li>cluster - ссылка на объект-кластер.</li>
+</ul>Экземпляр класса Event.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="Clusterer.dita#field_detail/hint" type="section"><keyword>hint</keyword></xref></entry>
+              <entry colname="col2" translate="no">clusterer.hint</entry>
+        
+              <entry colname="col3">
+                <p>Хинт кластеризатора.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>ICustomizable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Clusterer.dita#event_detail/event_detail/event-hintclose"><keyword>hintclose</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Закрытие хинта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Clusterer.dita#event_detail/event_detail/event-hintopen"><keyword>hintopen</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Открытие хинта на кластере. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IParentOnMap.dita#event_detail/event_detail/event-mapchange"><keyword>mapchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменилась карта. Поля данных:<ul>
+    <li>oldMap - старая карта;</li>
+    <li>newMap - новая карта.</li>
+</ul></p>
+                            
+                                <p translate="no">Унаследовано от <xref href="IParentOnMap.dita#event_detail/event_detail/event-mapchange"><keyword>IParentOnMap</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>parentchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменился родительский объект.</p><p>Поля данных:</p>
+<ul>
+    <li>oldParent - старый родитель;</li>
+    <li>newParent - новый родитель.</li>
+</ul>
+                            
+                                <p translate="no">Унаследовано от <xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>IChild</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Clusterer.dita#method_detail/add" type="section"><keyword>add</keyword></xref>(<xref href="Clusterer.dita#method_detail/add-param-objects" translate="no" type="row">objects</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Clusterer.dita" type="topic"><keyword>Clusterer</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Добавляет геообъект или массив геообъектов в кластеризатор.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Clusterer.dita#method_detail/createCluster" type="section"><keyword>createCluster</keyword></xref>(<xref href="Clusterer.dita#method_detail/createCluster-param-center" translate="no" type="row">center</xref>, <xref href="Clusterer.dita#method_detail/createCluster-param-geoObjects" translate="no" type="row">geoObjects</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Функция для создания кластера кластеризатором. Вызывается кластеризатором непосредственно в процессе кластеризации. Принимает на вход центр кластера и массив геообъектов, попадающих в данный кластер. Возвращает кластер, который потом будет добавлен на карту. Если требуется, чтобы кластеризатор создавал пользовательские объекты-кластеры, следует переопределить этот метод у кластеризатора.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Clusterer.dita#method_detail/getBounds" type="section"><keyword>getBounds</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[][]|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает географические координаты прямоугольной области, охватывающей все элементы кластера.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Clusterer.dita#method_detail/getClusters" type="section"><keyword>getClusters</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Метод для получения текущего массива объектов-кластеров. Обратите внимание, что объекты-кластеры меняются при изменении масштаба карты или при сдвиге центра карты. Если необходимо выполнять операции над всеми кластерами, корректнее переопределить метод createCluster и добавлять необходимые операции в его вызов.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Clusterer.dita#method_detail/getGeoObjects" type="section"><keyword>getGeoObjects</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает массив геообъектов, добавленных в кластеризатор.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IParentOnMap.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на карту.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IParentOnMap.dita#method_detail/getMap" type="section"><keyword>IParentOnMap</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Clusterer.dita#method_detail/getObjectState" type="section"><keyword>getObjectState</keyword></xref>(<xref href="Clusterer.dita#method_detail/getObjectState-param-geoObject" translate="no" type="row">geoObject</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Object</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Функция для получения информации о текущем состоянии объекта, добавленного в кластеризатор.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChildOnMap.dita#method_detail/getParent" type="section"><keyword>getParent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IParentOnMap.dita" type="topic"><keyword>IParentOnMap</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на родительский объект или null, если родительский элемент не был установлен.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IChildOnMap.dita#method_detail/getParent" type="section"><keyword>IChildOnMap</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Clusterer.dita#method_detail/remove" type="section"><keyword>remove</keyword></xref>(<xref href="Clusterer.dita#method_detail/remove-param-objects" translate="no" type="row">objects</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Clusterer.dita" type="topic"><keyword>Clusterer</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет геообъекты из кластеризатора.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="Clusterer.dita#method_detail/removeAll" type="section"><keyword>removeAll</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Clusterer.dita" type="topic"><keyword>Clusterer</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Удаляет все геообъекты из кластеризатора.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChildOnMap.dita#method_detail/setParent" type="section"><keyword>setParent</keyword></xref>(<xref href="IChildOnMap.dita#method_detail/setParent-param-parent" translate="no" type="row">parent</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IChildOnMap.dita" type="topic"><keyword>IChildOnMap</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает родительский объект. Если передать значение null, то элемент управления будет только удален из текущего родительского объекта.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IChildOnMap.dita#method_detail/setParent" type="section"><keyword>IChildOnMap</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="balloon">
+            <title translate="no">balloon</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="clusterer.Balloon.dita" type="topic"><keyword>clusterer.Balloon</keyword></xref>} balloon</codeblock></p>
+
+            <p>Балун кластеризатора.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="balloonclose">
+            <title translate="no">balloonclose</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">balloonclose</codeblock></p>
+
+            <p>Закрытие балуна.<ul>
+    <li>target - ссылка на менеджер балуна кластеризатора;</li>
+    <li>cluster - ссылка на объект-кластер.</li>
+</ul>Экземпляр класса Event.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="balloonopen">
+            <title translate="no">balloonopen</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">balloonopen</codeblock></p>
+
+            <p>Открытие балуна на кластере. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>target - ссылка на менеджер балуна кластеризатора;</li>
+    <li>cluster - ссылка на объект-кластер.</li>
+</ul>Экземпляр класса Event.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+                <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">clusterer.events.add('balloonopen', function (e) {
+    var clusterPlacemark = e.get('cluster');
+});</codeblock>
+            
+
+            </section>
+        
+            <section id="hint">
+            <title translate="no">hint</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{clusterer.hint} hint</codeblock></p>
+
+            <p>Хинт кластеризатора.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-hintclose">
+            <title translate="no">hintclose</title>
+            
+             <p>Закрытие хинта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-hintopen">
+            <title translate="no">hintopen</title>
+            
+             <p>Открытие хинта на кластере. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="add">
+        <title translate="no">add</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="Clusterer.dita" type="topic"><keyword>Clusterer</keyword></xref>} add(<xref href="Clusterer.dita#method_detail/add-param-objects" translate="no" type="row">objects</xref>)</codeblock></p>
+
+         <p>Добавляет геообъект или массив геообъектов в кластеризатор.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="add-param-objects">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/add-param-objects" type="row"><parmname>objects</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>|<xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>[]</p>
+                    <p/>
+                   <p>Массив геообъектов или единичный геообъект.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="add_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">var myPlacemark = new ymaps.Placemark([35, 21]);
+clusterer.add(myPlacemark);
+var placemarks = [
+    new ymaps.Placemark([44, 55]),
+    new ymaps.Placemark([34, 45])
+];
+clusterer.add(placemarks);</codeblock>
+        
+
+    </section>
+    
+        <section id="createCluster">
+        <title translate="no">createCluster</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>} createCluster(<xref href="Clusterer.dita#method_detail/createCluster-param-center" translate="no" type="row">center</xref>, <xref href="Clusterer.dita#method_detail/createCluster-param-geoObjects" translate="no" type="row">geoObjects</xref>)</codeblock></p>
+
+         <p>Функция для создания кластера кластеризатором. Вызывается кластеризатором непосредственно в процессе кластеризации. Принимает на вход центр кластера и массив геообъектов, попадающих в данный кластер. Возвращает кластер, который потом будет добавлен на карту. Если требуется, чтобы кластеризатор создавал пользовательские объекты-кластеры, следует переопределить этот метод у кластеризатора.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>объект-кластер. По умолчанию создает экземпляры класса <xref href="ClusterPlacemark.dita" type="topic"><keyword>ClusterPlacemark</keyword></xref>.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="createCluster-param-center">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/createCluster-param-center" type="row"><parmname>center</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Центр кластера в геокоординатах.</p>
+                </entry>
+
+            </row>
+            
+            <row id="createCluster-param-geoObjects">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/createCluster-param-geoObjects" type="row"><parmname>geoObjects</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>[]</p>
+                    <p/>
+                   <p>Массив плейсмарков в кластере.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="createCluster_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Зададим всплывающую подсказку кластерам в зависимости от состава.
+var clusterer = new ymaps.Clusterer();
+clusterer.createCluster = function (center, geoObjects) {
+     // Создаем метку-кластер с помощью стандартной реализации метода.
+    var clusterPlacemark = ymaps.Clusterer.prototype.createCluster.call(this, center, geoObjects),
+        geoObjectsLength = clusterPlacemark.getGeoObjects().length,
+        hintContent;
+    if (geoObjectsLength &lt; 10) {
+        hintContent = 'Мало меток';
+    } else if (geoObjectsLength &lt; 100) {
+        hintContent = 'Нормально так меток';
+    } else {
+        hintContent = 'Меток навалом';
+    }
+    clusterPlacemark.properties.set('hintContent', hintContent);
+    return clusterPlacemark;
+};</codeblock>
+        
+
+    </section>
+    
+        <section id="getBounds">
+        <title translate="no">getBounds</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[][]|null} getBounds()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> географические координаты прямоугольной области, охватывающей все элементы кластера.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">var clusterer = new ymaps.Clusterer();
+clusterer.add(myPlacemarks);
+map.setBounds(clusterer.getBounds());
+map.geoObjects.add(clusterer);</codeblock>
+        
+
+    </section>
+    
+        <section id="getClusters">
+        <title translate="no">getClusters</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>[]} getClusters()</codeblock></p>
+
+         <p>Метод для получения текущего массива объектов-кластеров. Обратите внимание, что объекты-кластеры меняются при изменении масштаба карты или при сдвиге центра карты. Если необходимо выполнять операции над всеми кластерами, корректнее переопределить метод createCluster и добавлять необходимые операции в его вызов.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>массив кластеров, добавленных на карту в данный момент.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">map.events.add('boundschange', function () {
+    var clusters = clusterer.getClusters();
+    alert('Карта была перемещена и сейчас показывается ' + clusters.length + ' кластеров.');});</codeblock>
+        
+
+    </section>
+    
+        <section id="getGeoObjects">
+        <title translate="no">getGeoObjects</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>[]} getGeoObjects()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>массив геообъектов, добавленных в кластеризатор.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Посчитаем количество объектов, попавших в видимую область карты.
+var geoObjects = clusterer.getGeoObjects(),
+    shownObjectsCounter = 0;
+for (var i = 0, l = geoObjects.length; i &lt; l; i++) {
+    if (clusterer.getObjectState(geoObjects[i]).isShown) {
+        shownObjectsCounter++;
+    }
+}
+alert('Сейчас на карте показаны ' + shownObjectsCounter + ' меток из ' + geoObjects.length + '.');</codeblock>
+        
+
+    </section>
+    
+        <section id="getObjectState">
+        <title translate="no">getObjectState</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Object} getObjectState(<xref href="Clusterer.dita#method_detail/getObjectState-param-geoObject" translate="no" type="row">geoObject</xref>)</codeblock></p>
+
+         <p>Функция для получения информации о текущем состоянии объекта, добавленного в кластеризатор.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> объект, содержащий следующие поля:<ul>
+  <li>isShown - признак, указывающий, находится ли объект в видимой области карты;</li>
+  <li>cluster - ссылка на кластер, в который добавлен объект;</li>
+  <li>isClustered - признак, указывающий, попал ли объект в состав кластера.</li>
+</ul></p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getObjectState-param-geoObject">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getObjectState-param-geoObject" type="row"><parmname>geoObject</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref></p>
+                    <p/>
+                   <p>Геообъект, для которого нужно получить состояние.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getObjectState_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Открытие балуна кластера с выбранным объектом.
+// Получим данные о состоянии объекта внутри кластера.
+var geoObjectState = clusterer.getObjectState(myGeoObjects[1]);
+// Проверяем, находится ли объект в видимой области карты.
+if (geoObjectState.isShown) {
+
+    // Если объект попадает в кластер, открываем балун кластера с нужным выбранным объектом.
+    if (geoObjectState.isClustered) {
+        geoObjectState.cluster.state.set('activeObject', myGeoObjects[1]);
+        clusterer.balloon.open(geoObjectState.cluster);
+
+    } else {
+        // Если объект не попал в кластер, открываем его собственный балун.
+        myGeoObjects[1].balloon.open();
+    }
+}</codeblock>
+        
+
+    </section>
+    
+        <section id="remove">
+        <title translate="no">remove</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="Clusterer.dita" type="topic"><keyword>Clusterer</keyword></xref>} remove(<xref href="Clusterer.dita#method_detail/remove-param-objects" translate="no" type="row">objects</xref>)</codeblock></p>
+
+         <p>Удаляет геообъекты из кластеризатора.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="remove-param-objects">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/remove-param-objects" type="row"><parmname>objects</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>|<xref href="IGeoObject.dita" type="topic"><keyword>IGeoObject</keyword></xref>[]</p>
+                    <p/>
+                   <p>Массив геообъектов.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="remove_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">var myPlacemark = new ymaps.Placemark([35, 21]),
+    placemarks = [
+        new ymaps.Placemark([44, 55]),
+        new ymaps.Placemark([34, 45]),
+        ...
+    ];
+clusterer.add(myPlacemark).add(placemarks);
+...
+// Удалим первые 10 объектов массива из кластеризатора.
+clusterer.remove(placemarks.slice(0, 10));</codeblock>
+        
+
+    </section>
+    
+        <section id="removeAll">
+        <title translate="no">removeAll</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="Clusterer.dita" type="topic"><keyword>Clusterer</keyword></xref>} removeAll()</codeblock></p>
+
+         <p>Удаляет все геообъекты из кластеризатора.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на себя.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">clusterer.add(placemark1);
+clusterer.add(placemark2);
+clusterer.removeAll();</codeblock>
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_MTQ5YzVj_CACHING --></topic>

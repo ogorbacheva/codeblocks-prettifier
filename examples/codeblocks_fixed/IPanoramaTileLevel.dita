@@ -1,0 +1,352 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="IPanoramaTileLevel" xml:lang="ru" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">IPanoramaTileLevel</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>IPanoramaTileLevel</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+
+
+   
+        <p>Интерфейс для описания уровней масштабирования панорамного изображения.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#IPanoramaTileLevel/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#IPanoramaTileLevel/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">IPanoramaTileLevel()</codeblock></p>
+    
+       
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+      
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPanoramaTileLevel.dita#method_detail/getImageSize" type="section"><keyword>getImageSize</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>Number[]</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает размер всего изображения в пикселах.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IPanoramaTileLevel.dita#method_detail/getTileUrl" type="section"><keyword>getTileUrl</keyword></xref>(<xref href="IPanoramaTileLevel.dita#method_detail/getTileUrl-param-x" translate="no" type="row">x</xref>, <xref href="IPanoramaTileLevel.dita#method_detail/getTileUrl-param-y" translate="no" type="row">y</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p>String</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Вычисляет URL тайла по его положению в панорамном изображении. Положение задается парой индексов: горизонтальным и вертикальным. Горизонтальный индекс отсчитывается слева с нуля и растет направо. Вертикальный отсчитывается с верха изображения и растет вниз.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getImageSize">
+        <title translate="no">getImageSize</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{Number[]} getImageSize()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>размер всего изображения в пикселах.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getTileUrl">
+        <title translate="no">getTileUrl</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{String} getTileUrl(<xref href="IPanoramaTileLevel.dita#method_detail/getTileUrl-param-x" translate="no" type="row">x</xref>, <xref href="IPanoramaTileLevel.dita#method_detail/getTileUrl-param-y" translate="no" type="row">y</xref>)</codeblock></p>
+
+         <p>Вычисляет URL тайла по его положению в панорамном изображении. Положение задается парой индексов: горизонтальным и вертикальным. Горизонтальный индекс отсчитывается слева с нуля и растет направо. Вертикальный отсчитывается с верха изображения и растет вниз.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает </b>URL тайла с переданными индексами.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getTileUrl-param-x">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getTileUrl-param-x" type="row"><parmname>x</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Горизонтальный индекс тайла.</p>
+                </entry>
+
+            </row>
+            
+            <row id="getTileUrl-param-y">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getTileUrl-param-y" type="row"><parmname>y</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                   <p>Вертикальный индекс тайла.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getTileUrl_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_NmVhM2E3_CACHING --></topic>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="suggest" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">suggest</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>suggest</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+    
+        <p translate="no">Статическая функция.</p>
+    
+    
+        
+            <p>Обрабатывает запросы за поисковыми подсказками. Возвращает объект Promise, который будет либо отклонён с ошибкой, либо подтверждён массивом объектов вида { displayName: "Мытищи, Московская область", value: "Россия, Московская область, Мытищи " }. Поле displayName отвечает за представление топонима в удобном для чтения пользователем виде, поле value — значение, которое необходимо подставить в поле ввода после выбора пользователем данной подсказки.</p>
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+       
+       <p><b>Возвращает</b> объект Promise.</p>
+       
+    
+
+    
+
+    
+        
+         
+              <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{ <xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref> } suggest(<xref href="#suggest/param-request" translate="no" type="row">request</xref>[, <xref href="#suggest/param-options" translate="no" type="row">options</xref>])</codeblock></p>
+         
+     
+
+    
+        <p translate="no"><b>Параметры:</b></p>
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+
+        <table>
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" rowheader="headers"/>
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Параметр</entry>
+              <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+        
+        <row id="param-request">
+            <entry colname="col1" translate="no">
+                
+                <xref href="#suggest/param-request" type="row"><parmname>request</parmname></xref>
+                <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: String</p>
+                <p/>
+                <p>Строка запроса.</p>
+            </entry>
+        </row>
+        
+        <row id="param-options">
+            <entry colname="col1" translate="no">
+                <xref href="#suggest/param-options" type="row"><parmname>options</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Object</p>
+                <p/>
+                <p>Опции.</p>
+            </entry>
+        </row>
+        
+        <row id="param-options.boundedBy">
+            <entry colname="col1" translate="no">
+                <xref href="#suggest/param-options.boundedBy" type="row"><parmname>options.boundedBy</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Number[][]</p>
+                <p/>
+                <p>Прямоугольная область на карте, где предположительно находится искомый объект. Должна быть задана как массив, например [[30, 40], [50, 50]].</p>
+            </entry>
+        </row>
+        
+        <row id="param-options.provider">
+            <entry colname="col1" translate="no">
+                <xref href="#suggest/param-options.provider" type="row"><parmname>options.provider</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">   'yandex#map'
+                    
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: <xref href="ISuggestProvider.dita" type="topic"><keyword>ISuggestProvider</keyword></xref>|String</p>
+                <p/>
+                <p>Провайдер поисковых подсказок. Можно воспользоваться встроенным провайдером подсказок для объектов карты 'yandex#map' или задать собственный.</p>
+            </entry>
+        </row>
+        
+        <row id="param-options.results">
+            <entry colname="col1" translate="no">
+                <xref href="#suggest/param-options.results" type="row"><parmname>options.results</parmname></xref>
+            </entry>
+
+            <entry colname="col2" translate="no">  — 
+            </entry>
+            <entry colname="col3">
+                <p translate="no">Тип: Number</p>
+                <p/>
+                <p>Максимальное количество возвращаемых результатов.</p>
+            </entry>
+        </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+    
+    
+
+
+
+    
+        <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">ymaps.suggest('мыт').then(function (items) {
+    // items - массив поисковых подсказок.&#13;
+});</codeblock>
+    
+
+
+
+</section>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><!-- XLIFF_FARM_MGM0ZTI5_CACHING --></topic>

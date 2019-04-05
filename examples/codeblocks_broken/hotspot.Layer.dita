@@ -1,0 +1,1732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic id="hotspot.Layer" xml:lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:yandex:names:tc:dita:xsd:yandexTopic.xsd:1.3">
+
+
+
+
+
+
+
+<title translate="no">hotspot.Layer</title>
+ <prolog>
+        <metadata>
+            <keywords>
+                <keyword>hotspot.Layer</keyword>
+            </keywords>
+        </metadata>
+    </prolog>
+
+<body>
+
+
+
+
+
+    <section>
+
+    
+    
+
+
+
+
+
+
+    
+        <p translate="no">Расширяет
+            <xref href="IChildOnMap.dita" type="topic"><keyword>IChildOnMap</keyword></xref>, <xref href="ICustomizable.dita" type="topic"><keyword>ICustomizable</keyword></xref>.</p>
+    
+
+
+
+   
+        <p>Слой активных областей.</p>
+    
+
+
+
+
+
+
+
+    <p translate="no"><xref href="#hotspot.Layer/constructor-summary" translate="no" type="section">Конструктор</xref> | <xref href="#hotspot.Layer/properties-summary" translate="no" type="section">Поля </xref> | <xref href="#hotspot.Layer/events-summary" translate="no" type="section">События </xref> | <xref href="#hotspot.Layer/methods-summary" translate="no" type="section">Методы </xref></p>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+      <section id="constructor-summary">
+
+    
+        <title translate="no">Конструктор</title>
+
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">hotspot.Layer(<xref href="#hotspot.Layer/param-objectSource" translate="no" type="entry">objectSource</xref>[, <xref href="#hotspot.Layer/param-options" translate="no" type="entry">options</xref>])</codeblock></p>
+    
+       
+            
+                <p>Создает слой активных областей. Каждая отдельная область в составе слоя представляет собой объект - <xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>.</p>
+            
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <table>
+             <tgroup cols="3">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+                <colspec colname="col2" colnum="2" rowheader="headers"/>
+              <colspec colname="col3" colnum="3" rowheader="headers"/>
+              <thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row>
+                <entry colname="col1" id="param-objectSource" translate="no">
+                    
+                        <xref href="#hotspot.Layer/param-objectSource" type="entry"><parmname>objectSource</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IHotspotObjectSource.dita" type="topic"><keyword>IHotspotObjectSource</keyword></xref></p>
+                    <p/>
+                    <p>Источник объектов слоя.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options" translate="no">
+                    <xref href="#hotspot.Layer/param-options" type="entry"><parmname>options</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Object</p>
+                    <p/>
+                    <p>Опции слоя. Опции для балунов <xref href="Balloon.dita" type="topic"><keyword>Balloon</keyword></xref> и хинтов <xref href="Hint.dita" type="topic"><keyword>Hint</keyword></xref> хотспотного слоя нужно указывать с префиксами 'balloon' и 'hint'.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.cursor" translate="no">
+                    <xref href="#hotspot.Layer/param-options.cursor" type="entry"><parmname>options.cursor</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'pointer'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Тип курсора.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.dontChangeCursor" translate="no">
+                    <xref href="#hotspot.Layer/param-options.dontChangeCursor" type="entry"><parmname>options.dontChangeCursor</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Опция, позволяющая запретить изменение курсора при наведении на объект слоя. По умолчанию курсоры изменяются.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.hasBalloon" translate="no">
+                    <xref href="#hotspot.Layer/param-options.hasBalloon" type="entry"><parmname>options.hasBalloon</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Флаг, показывающий, есть ли у слоя балуны. Если значение флага false, у слоя не будет создано поле .balloon.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.hasHint" translate="no">
+                    <xref href="#hotspot.Layer/param-options.hasHint" type="entry"><parmname>options.hasHint</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Флаг, показывающий, есть ли у слоя хинты. Если значение флага false, у слоя не будет создано поле .hint.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.interactivityModel" translate="no">
+                    <xref href="#hotspot.Layer/param-options.interactivityModel" type="entry"><parmname>options.interactivityModel</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'default#layer'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Модель интерактивности слоя. Доступные ключи и их значения перечислены в описании <xref href="interactivityModel.storage.dita" type="topic"><keyword>interactivityModel.storage</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.openBalloonOnClick" translate="no">
+                    <xref href="#hotspot.Layer/param-options.openBalloonOnClick" type="entry"><parmname>options.openBalloonOnClick</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Опция, позволяющая запретить открытие балуна при клике на хотспотном объекте. По умолчанию открытие балуна разрешено;</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.openEmptyBalloon" translate="no">
+                    <xref href="#hotspot.Layer/param-options.openEmptyBalloon" type="entry"><parmname>options.openEmptyBalloon</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Открывать балун с пустым содержимым.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.openEmptyHint" translate="no">
+                    <xref href="#hotspot.Layer/param-options.openEmptyHint" type="entry"><parmname>options.openEmptyHint</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     false
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: String</p>
+                    <p/>
+                    <p>Показывать всплывающую подсказку с пустым содержимым.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.openHintOnHover" translate="no">
+                    <xref href="#hotspot.Layer/param-options.openHintOnHover" type="entry"><parmname>options.openHintOnHover</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     true
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Boolean</p>
+                    <p/>
+                    <p>Опция, позволяющая запретить показ хинта при наведении на хотспотный объект. По умолчанию показ хинтов разрешен.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.pane" translate="no">
+                    <xref href="#hotspot.Layer/param-options.pane" type="entry"><parmname>options.pane</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     'events'
+                    
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: <xref href="IEventPane.dita" type="topic"><keyword>IEventPane</keyword></xref></p>
+                    <p/>
+                    <p>Контейнер элементов карты, на котором слушаются события.</p>
+                </entry>
+            </row>
+            
+            <row>
+                <entry colname="col1" id="param-options.zIndex" translate="no">
+                    <xref href="#hotspot.Layer/param-options.zIndex" type="entry"><parmname>options.zIndex</parmname></xref>
+                </entry>
+                <entry colname="col2" translate="no">
+                     — 
+                </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number</p>
+                    <p/>
+                    <p>Значение zIndex слоя. Когда активный объект ищется в пределах одного слоя, то при одновременном попадании курсора в два объекта выбирается объект с наибольшми значением zIndex. При дальнейшей работе - например при определении, фигура какого слоя является более приоритетной, используется значение zIndex слоя. Обратите внимание, что zIndex слоя будет определять взаимное расположение объектов слоя и одиночных объектов, добавленных в определенные пейны карты. Например, если вы хотите наложить хотспотные объекты поверх площадных объектов, стоит задать хотспотному слою zIndex=201. См. <xref href="map.pane.Manager.dita" type="topic"><keyword>map.pane.Manager</keyword></xref>.</p>
+                </entry>
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+        
+            <p id="constructor_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+        
+        
+      
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Создаем источник хотспотных данных. Не указываем значение ключа,
+// поэтому имя функции-обработчика (padding jsonp запроса) будет генерироваться динамически.
+var objectSource = new ymaps.hotspot.ObjectSource('tiles/?%c'),
+    hotspotLayer = new ymaps.hotspot.Layer(objectSource, {
+        zIndex: 100,
+        // Разрешаем показывать балун без содержимого.
+        showEmptyBalloon: true
+    });</codeblock>
+        
+
+    </section>
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="properties-summary">
+        <title translate="no">Поля</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" colwidth="25*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="15*" rowheader="headers"/>
+          
+
+           <colspec colname="col3" colnum="3" colwidth="60*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Тип</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#field_detail/balloon" type="section"><keyword>balloon</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="hotspot.layer.Balloon.dita" type="topic"><keyword>hotspot.layer.Balloon</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Балун хотспотного слоя.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>events</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IEventManager.dita" type="topic"><keyword>IEventManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер событий.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="IEventEmitter.dita#field_detail/events" type="section"><keyword>IEventEmitter</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#field_detail/hint" type="section"><keyword>hint</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="hotspot.layer.Hint.dita" type="topic"><keyword>hotspot.layer.Hint</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Хинт хотспотного слоя.</p>
+                
+              </entry>
+            </row>
+        
+            <row>
+              <entry colname="col1" translate="no"><xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>options</keyword></xref></entry>
+              <entry colname="col2" translate="no"><xref href="IOptionManager.dita" type="topic"><keyword>IOptionManager</keyword></xref></entry>
+        
+              <entry colname="col3">
+                <p>Менеджер опций.</p>
+                
+                  <p translate="no">Унаследовано от  <xref href="ICustomizable.dita#field_detail/options" type="section"><keyword>ICustomizable</keyword></xref>.</p>
+                
+              </entry>
+            </row>
+        
+        </tbody>
+        </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        <section id="events-summary">
+        <title translate="no">События</title>
+        <table>
+          <tgroup cols="2">
+          <colspec colname="col1" colnum="1" colwidth="35*" rowheader="headers"/>
+          <colspec colname="col2" colnum="2" colwidth="65*" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+              <entry align="left" colname="col2" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#event_detail/event_detail/event-addtomap"><keyword>addtomap</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Слой добавлен на карту.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#event_detail/event_detail/event-balloonclose"><keyword>balloonclose</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Закрытие балуна. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#event_detail/event_detail/event-balloonopen"><keyword>balloonopen</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Открытие балуна на хотспотном слое. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#event_detail/event_detail/event-click"><keyword>click</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Однократное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#event_detail/event_detail/event-contextmenu"><keyword>contextmenu</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Вызов контекстного меню на элементе. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#event_detail/event_detail/event-dblclick"><keyword>dblclick</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Двойное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#event_detail/event_detail/event-hintclose"><keyword>hintclose</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Закрытие хинта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#event_detail/event_detail/event-hintopen"><keyword>hintopen</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Открытие хинта на хотспотном слое. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#event_detail/event_detail/event-mousedown"><keyword>mousedown</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Нажатие кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#event_detail/event_detail/event-mouseenter"><keyword>mouseenter</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Наведение курсора на объект. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#event_detail/event_detail/event-mouseleave"><keyword>mouseleave</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Вывод курсора за пределы объекта. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#event_detail/event_detail/event-mousemove"><keyword>mousemove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Перемещение курсора над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#event_detail/event_detail/event-mouseup"><keyword>mouseup</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Отпускание кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#event_detail/event_detail/event-multitouchend"><keyword>multitouchend</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Окончание мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Имена полей, доступных через метод IMultiTouchEvent.get:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#event_detail/event_detail/event-multitouchmove"><keyword>multitouchmove</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Повторящееся событие при мультисенсорном управлении. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Имена полей, доступных через метод IMultiTouchEvent.get:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#event_detail/event_detail/event-multitouchstart"><keyword>multitouchstart</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Начало мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Имена полей, доступных через метод IMultiTouchEvent.get:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>optionschange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Изменение в опциях объекта.</p>
+                            
+                                <p translate="no">Унаследовано от <xref href="ICustomizable.dita#event_detail/event_detail/event-optionschange"><keyword>ICustomizable</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>parentchange</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Сменился родительский объект.</p><p>Поля данных:</p>
+<ul>
+    <li>oldParent - старый родитель;</li>
+    <li>newParent - новый родитель.</li>
+</ul>
+                            
+                                <p translate="no">Унаследовано от <xref href="IChild.dita#event_detail/event_detail/event-parentchange"><keyword>IChild</keyword></xref>.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#event_detail/event_detail/event-removefrommap"><keyword>removefrommap</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Слой удален с карты.</p>
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#event_detail/event_detail/event-wheel"><keyword>wheel</keyword></xref></entry>
+                        <entry colname="col2">
+                            <p>Скролл мышкой. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+                            
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+            </table>
+            </section>
+    
+
+
+
+
+
+
+    
+    
+    
+        <section id="methods-summary">
+        <title translate="no">Методы</title>
+                        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <table>
+        
+          <tgroup cols="3">
+          <colspec colname="col1" colnum="1" rowheader="headers"/>
+          
+          
+          <colspec colname="col2" colnum="3" rowheader="headers"/>
+          
+          <colspec colname="col3" colnum="3" rowheader="headers"/>
+          <thead>
+            <row>
+              <entry align="left" colname="col1" translate="no">Имя</entry>
+          
+          
+              <entry align="left" colname="col2" translate="no">Возвращает</entry>
+          
+              <entry align="left" colname="col3" translate="no">Описание</entry>
+            </row>
+          </thead>
+        <tbody>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#method_detail/getMap" type="section"><keyword>getMap</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="Map.dita" type="topic"><keyword>Map</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на карту.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#method_detail/getObjectInPosition" type="section"><keyword>getObjectInPosition</keyword></xref>(<xref href="hotspot.Layer.dita#method_detail/getObjectInPosition-param-coords" translate="no" type="row">coords</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Метод, позволяющий получить объект слоя в указанной географической точке на текущем масштабе. Если данные для тайла, в который попадает точка, не подгружены, вызов метода спровоцирует их загрузку. После этого поиск будет производиться по загруженным данным.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#method_detail/getObjectsInPosition" type="section"><keyword>getObjectsInPosition</keyword></xref>(<xref href="hotspot.Layer.dita#method_detail/getObjectsInPosition-param-coords" translate="no" type="row">coords</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Метод, позволяющий получить объект слоя в указанной географической точке на текущем масштабе. Если данные для тайла, в который попадает точка, не подгружены, вызов метода спровоцирует их загрузку. После этого поиск будет производиться по загруженным данным.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#method_detail/getObjectSource" type="section"><keyword>getObjectSource</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IHotspotObjectSource.dita" type="topic"><keyword>IHotspotObjectSource</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает источник объектов слоя активных областей.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChildOnMap.dita#method_detail/getParent" type="section"><keyword>getParent</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IParentOnMap.dita" type="topic"><keyword>IParentOnMap</keyword></xref>|null</p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                 
+                                     
+                                        <p>Возвращает ссылку на родительский объект или null, если родительский элемент не был установлен.</p>
+                                        
+                                          <p translate="no">Унаследован от  <xref href="IChildOnMap.dita#method_detail/getParent" type="section"><keyword>IChildOnMap</keyword></xref>.</p>
+                                        
+                                    
+                                
+                            
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="IChildOnMap.dita#method_detail/setParent" type="section"><keyword>setParent</keyword></xref>(<xref href="IChildOnMap.dita#method_detail/setParent-param-parent" translate="no" type="row">parent</xref>)</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"><p><xref href="IChildOnMap.dita" type="topic"><keyword>IChildOnMap</keyword></xref></p></entry>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Устанавливает родительский объект. Если передать значение null, то элемент управления будет только удален из текущего родительского объекта.</p>
+                                
+                                  <p translate="no">Унаследован от  <xref href="IChildOnMap.dita#method_detail/setParent" type="section"><keyword>IChildOnMap</keyword></xref>.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                    <row>
+                        <entry colname="col1" translate="no"><xref href="hotspot.Layer.dita#method_detail/update" type="section"><keyword>update</keyword></xref>()</entry>
+                        
+                        
+                            
+                                <entry colname="col2" translate="no"/>
+                             
+                        
+                        <entry colname="col3">
+                            
+                            
+                                <p>Обновляет слой активных областей. После выполнения этой команды загруженные ранее объекты удаляются из контейнера и запрашиваются новые данные.</p>
+                                
+                             
+                        </entry>
+                    </row>
+                
+                </tbody>
+            </tgroup>
+        </table>
+        </section>
+    
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <topic id="field_detail">
+        <title translate="no">Описание полей</title>
+        <body>
+        
+            <section id="balloon">
+            <title translate="no">balloon</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="hotspot.layer.Balloon.dita" type="topic"><keyword>hotspot.layer.Balloon</keyword></xref>} balloon</codeblock></p>
+
+            <p>Балун хотспотного слоя.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+            <section id="hint">
+            <title translate="no">hint</title>
+            <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="hotspot.layer.Hint.dita" type="topic"><keyword>hotspot.layer.Hint</keyword></xref>} hint</codeblock></p>
+
+            <p>Хинт хотспотного слоя.</p>
+
+            
+
+            
+                
+
+            
+
+            
+
+            
+
+            
+
+            </section>
+        
+    </body>
+    </topic>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <topic id="event_detail">
+        <title translate="no">Описание событий</title>
+        <body>
+        
+            <section id="event-addtomap">
+            <title translate="no">addtomap</title>
+            
+             <p>Слой добавлен на карту.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-balloonclose">
+            <title translate="no">balloonclose</title>
+            
+             <p>Закрытие балуна. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-balloonopen">
+            <title translate="no">balloonopen</title>
+            
+             <p>Открытие балуна на хотспотном слое. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-click">
+            <title translate="no">click</title>
+            
+             <p>Однократное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-contextmenu">
+            <title translate="no">contextmenu</title>
+            
+             <p>Вызов контекстного меню на элементе. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-dblclick">
+            <title translate="no">dblclick</title>
+            
+             <p>Двойное нажатие левой кнопки мыши на объекте. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-hintclose">
+            <title translate="no">hintclose</title>
+            
+             <p>Закрытие хинта. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-hintopen">
+            <title translate="no">hintopen</title>
+            
+             <p>Открытие хинта на хотспотном слое. Экземпляр класса <xref href="Event.dita" type="topic"><keyword>Event</keyword></xref>.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-mousedown">
+            <title translate="no">mousedown</title>
+            
+             <p>Нажатие кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-mouseenter">
+            <title translate="no">mouseenter</title>
+            
+             <p>Наведение курсора на объект. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-mouseleave">
+            <title translate="no">mouseleave</title>
+            
+             <p>Вывод курсора за пределы объекта. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-mousemove">
+            <title translate="no">mousemove</title>
+            
+             <p>Перемещение курсора над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-mouseup">
+            <title translate="no">mouseup</title>
+            
+             <p>Отпускание кнопки мыши над объектом. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-multitouchend">
+            <title translate="no">multitouchend</title>
+            
+             <p>Окончание мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Имена полей, доступных через метод IMultiTouchEvent.get:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-multitouchmove">
+            <title translate="no">multitouchmove</title>
+            
+             <p>Повторящееся событие при мультисенсорном управлении. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Имена полей, доступных через метод IMultiTouchEvent.get:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-multitouchstart">
+            <title translate="no">multitouchstart</title>
+            
+             <p>Начало мультисенсорного управления. Данное событие доступно только на устройствах, которые поддерживают множественные сенсорные прикосновения. Возвращает реализацию интерфейса IMultiTouchEvent c информацией о прикосновениях. Имена полей, доступных через метод IMultiTouchEvent.get:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-removefrommap">
+            <title translate="no">removefrommap</title>
+            
+             <p>Слой удален с карты.</p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+            <section id="event-wheel">
+            <title translate="no">wheel</title>
+            
+             <p>Скролл мышкой. При использовании следует иметь в виду, что при сенсорном вводе события мыши будут эмулироваться. Более детальное описание доступно в <xref href="domEvent.manager.dita" type="topic"><keyword>domEvent.manager</keyword></xref>. Экземпляр класса Event. Имена полей, доступных через метод <xref href="Event.dita#method_detail/get" type="section"><keyword>Event.get</keyword></xref>:<ul>
+    <li>activeObject (<xref href="hotspot.layer.Object.dita" type="topic"><keyword>hotspot.layer.Object</keyword></xref>) — объект слоя, на котором произошло событие;</li>
+    <li>coords - географические координаты точки, в которой произошло событие;</li>
+    <li>globalPixels - координаты события в глобальных пикселях от левого верхнего угла мира;</li>
+    <li>pagePixels - координаты события в пикселях от левого верхнего угла страницы;</li>
+    <li>clientPixels - координаты события в пикселях от левого верхнего угла окна браузера;</li>
+    <li>domEvent - исходное DOM-событие (в виде объекта <xref href="DomEvent.dita" type="topic"><keyword>DomEvent</keyword></xref>), если оно имеется.</li>
+</ul></p>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            
+
+            </section>
+        
+
+    </body>
+    </topic>
+
+
+
+
+
+    <topic id="method_detail">
+    <title translate="no">Описание методов</title>
+    <body>
+    
+        <section id="getMap">
+        <title translate="no">getMap</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="Map.dita" type="topic"><keyword>Map</keyword></xref>} getMap()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> ссылку на карту.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+        <section id="getObjectInPosition">
+        <title translate="no">getObjectInPosition</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} getObjectInPosition(<xref href="hotspot.Layer.dita#method_detail/getObjectInPosition-param-coords" translate="no" type="row">coords</xref>)</codeblock></p>
+
+         <p>Метод, позволяющий получить объект слоя в указанной географической точке на текущем масштабе. Если данные для тайла, в который попадает точка, не подгружены, вызов метода спровоцирует их загрузку. После этого поиск будет производиться по загруженным данным.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> Promise, который будет разрешен объектом слоя, в который попадает заданная точка. Если точка попадает в несколько объектов слоя, вернется объект с максимальным значением zIndex.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getObjectInPosition-param-coords">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getObjectInPosition-param-coords" type="row"><parmname>coords</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Географические координаты точки.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getObjectInPosition_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getObjectsInPosition">
+        <title translate="no">getObjectsInPosition</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="vow.Promise.dita" type="topic"><keyword>vow.Promise</keyword></xref>} getObjectsInPosition(<xref href="hotspot.Layer.dita#method_detail/getObjectsInPosition-param-coords" translate="no" type="row">coords</xref>)</codeblock></p>
+
+         <p>Метод, позволяющий получить объект слоя в указанной географической точке на текущем масштабе. Если данные для тайла, в который попадает точка, не подгружены, вызов метода спровоцирует их загрузку. После этого поиск будет производиться по загруженным данным.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> Promise, который будет разрешен массивом объектов слоя, в которые попадает заданная точка.</p>
+
+            
+        
+        
+        
+
+        
+            <p translate="no"><b>Параметры:</b></p>
+            
+            
+               
+            
+            <table>
+              <tgroup cols="4">
+              <colspec colname="col1" colnum="1" rowheader="headers"/>
+              <colspec colname="col2" colnum="2" rowheader="headers"/>
+             <colspec colname="col3" colnum="3" rowheader="headers"/>
+               <colspec colname="col4" colnum="4"/><thead>
+                <row>
+                  <entry align="left" colname="col1" translate="no">Параметр</entry>
+                  <entry align="left" colname="col2" translate="no">Значение по умолчанию</entry>
+                  <entry align="left" colname="col3" translate="no">Описание</entry>
+
+                </row>
+              </thead>
+            <tbody>
+            
+            
+            <row id="getObjectsInPosition-param-coords">
+                <entry colname="col1" translate="no">
+                
+                        <xref href="#method_detail/getObjectsInPosition-param-coords" type="row"><parmname>coords</parmname></xref>
+                         <xref href="../warehouse/index.dita#index/required-field" popup="yes" type="p">*</xref>
+                    
+                </entry>
+                <entry colname="col2" translate="no"> — </entry>
+                <entry colname="col3">
+                    <p translate="no">Тип: Number[]</p>
+                    <p/>
+                   <p>Географические координаты точки.</p>
+                </entry>
+
+            </row>
+            
+            </tbody>
+            </tgroup>
+            </table>
+            
+              <p id="getObjectsInPosition_params_options_starred" translate="no"><sup>*</sup> Обязательный параметр/опция.</p>
+            
+        
+
+        
+
+    </section>
+    
+        <section id="getObjectSource">
+        <title translate="no">getObjectSource</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{<xref href="IHotspotObjectSource.dita" type="topic"><keyword>IHotspotObjectSource</keyword></xref>} getObjectSource()</codeblock></p>
+
+         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+         
+            <p><b>Возвращает</b> источник объектов слоя активных областей.</p>
+
+            
+        
+        
+        
+
+        
+
+        
+            <p translate="no"><b>Пример: </b></p><codeblock code-lang="javascript" xml:space="preserve">// Обновление источника данных для слоя активных областей.
+hotspotLayer.getObjectSource().setTileUrlTemplate('newSource/?%c');
+hotspotLayer.update();</codeblock>
+        
+
+    </section>
+    
+        <section id="update">
+        <title translate="no">update</title>
+        <p translate="no"><codeblock code-lang="javascript" xml:space="preserve">{} update()</codeblock></p>
+
+         <p>Обновляет слой активных областей. После выполнения этой команды загруженные ранее объекты удаляются из контейнера и запрашиваются новые данные.</p>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+        
+        
+
+        
+
+        
+
+    </section>
+    
+</body>
+</topic><!-- XLIFF_FARM_YTRiZGIy_CACHING --></topic>
