@@ -2,12 +2,12 @@
 
 There are the following scripts in this repository:
 
-- **beautify-js-code.js** — Formats all codeblocks in dita files.
-- **code-analizer.js** - Validates js-examples.
+- **beautify-js-code.js** — Formats all the codeblocks in dita files.
+- **code-analizer.js** - Validates the js-examples.
 
-You can use these scripts only in console. The [npm](https://nodejs.org/en/download/package-manager/) packager manager is required.
+You can use these scripts only in console. **The [npm](https://nodejs.org/en/download/package-manager/) packager manager is required.**
 
-Note: Only codeblocks with russian comments are supported. If examples in codeblocks have comments in english, the correct work of this module is not guaranteed.
+Note: Only codeblocks with russian comments are supported. If the examples in codeblocks have english comments, the correct work of this module is not guaranteed.
 
 # How it works
 
@@ -34,13 +34,13 @@ myMap.geoObjects.add(object);
 </codeblock>
 ```
 
-To see more examples, you can use the folder `examples/`. It contains dita files that were broken after translation ([Maps API reference](https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Balloon-docpage/)).
+To see more examples, you can use the folder `examples/`. It contains dita files that are broken after Matecat translation (files are taken from [Maps JSAPI reference](https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Balloon-docpage/)).
 
 Note: information about the `code-analizer.js` will be added later.
 
 # Usage
 
-At first, install the required libraries using `npm`. Execute the following command in console (you must be in this project folder):
+At first, install the third-party libraries that are required for the scripts work. To do this, execute the following command in console (you must be in the current project folder):
 
 ``` bash
 $ npm install
@@ -48,14 +48,14 @@ $ npm install
 
 ## beautify-js-code.js
 
-In console:
+In console (before start the script, better to pray that it works correctly):
 
 ```
-$ node beautify-js-code.js 'path-to-dita-files' 'path-to-out'
+$ node beautify-js-code.js 'path-to-dir-with-broken-dita-files' 'path-to-out-dir'
 ```
 
-- 'path-to-dita-files' — Path to the directory that contains dita files with broken codebloks.
-- 'path-to-out' — Path to the output directory. where dita files with formatted codeblocks will
+- 'path-to-dir-with-broken-dita-files' — Path to the directory that contains dita files with broken codebloks.
+- 'path-to-out-dir' — Path to the output directory. The dita files with fixed codeblocks will be replaced there.
 
 Example:
 
