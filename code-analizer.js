@@ -1,7 +1,7 @@
 /**
  * Created by ogorbacheva on 02.03.19.
  *
- * node node beautify-js-code.js 'path'
+ * node beautify-js-code.js 'path-to-dir-with-js-files'
  *
  * Пример: node code-analizer.js 'reference_codeblocks/'
  */
