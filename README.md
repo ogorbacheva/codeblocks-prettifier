@@ -1,4 +1,4 @@
-# Сodeblocks prettifier
+# Сodeblocks Prettifier
 
 There are the following scripts in this repository:
 
@@ -36,19 +36,23 @@ myMap.geoObjects.add(object);
 
 To see more examples, you can use the folder `examples/`. It contains dita files that are broken after Matecat translation (files are taken from [Maps JSAPI reference](https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Balloon-docpage/)).
 
-Note: information about the `code-analizer.js` will be added later.
+_Information about the `code-analizer.js` will be added later._
 
-# Usage
+# Getting Started
 
 At first, install the third-party libraries that are required for the scripts work. To do this, execute the following command in console (you must be in the current project folder):
 
 ``` bash
-$ npm install
+codeblocks-prettifier$ npm install
 ```
 
-## beautify-js-code.js
+All the required libraries are specified in the 'package.json' file.
 
-In console (before start the script, better to pray that it works correctly):
+## Usage
+
+**beautify-js-code.js**
+
+In console (before starting the script, better to pray that it works correctly):
 
 ```
 $ node beautify-js-code.js 'path-to-dir-with-broken-dita-files' 'path-to-out-dir'
