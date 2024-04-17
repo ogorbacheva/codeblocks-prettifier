@@ -27,7 +27,6 @@ Output:
 
 ```
 <codeblock code-lang="javascript" xml:space="preserve">
-<codeblock code-lang="javascript" xml:space="preserve">
 // Добавление геообъекта на карту.
 var object = new ymaps.Placemark([34, 56]);
 myMap.geoObjects.add(object);
